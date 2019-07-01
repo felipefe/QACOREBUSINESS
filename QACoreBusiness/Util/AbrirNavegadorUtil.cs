@@ -16,7 +16,7 @@ namespace QACoreBusiness.Util
         public void IniciarNavegador()
         {
 
-            driverNavegadorChrome = new ChromeDriver(@"C:\Users\CoreBusiness\source\repos\QADeltacon\QADeltacon\chromeDrive\");
+            driverNavegadorChrome = new ChromeDriver(@"C:\Projetos\QACOREBUSINESS\QACOREBUSINESS\webdriver\");
             driverNavegadorChrome.Manage().Window.Maximize();
 
         }
@@ -35,7 +35,7 @@ namespace QACoreBusiness.Util
         internal void InsereDados()
         {
          
-            driverNavegadorChrome.FindElement(By.Id("UserName")).SendKeys("felipe");
+            driverNavegadorChrome.FindElement(By.Id("UserName")).SendKeys("admin");
             driverNavegadorChrome.FindElement(By.Id("Password")).SendKeys("1234");
            
         }
