@@ -7,42 +7,54 @@ using Xunit;
 
 namespace QACoreBusiness.Util
 {
+    public class AccountLogon
+    {
+        public string URL => "http://192.168.0.2/COREBusiness/Account/LogOn";
+        public IWebDriver Driver;
+        public IWebElement Usuario => Driver.FindElement(By.Id("Username"));
+        public IWebElement Senha => Driver.FindElement(By.Id("Password"));
+        public IWebElement BotaoEfetuarLogin => Driver.FindElement(By.XPath("//button[@type='submit'][@name='action']"));
+    }
   
     public class AbrirNavegadorUtil
     {
+        AccountLogon tela;
         IWebDriver driverNavegadorChrome;
 
       
         public void IniciarNavegador()
         {
 
-            driverNavegadorChrome = new ChromeDriver(@"C:\Projetos\QACOREBUSINESS\QACOREBUSINESS\webdriver\");
+            driverNavegadorChrome = new ChromeDriver(@"C:\Users\felipe\Source\Repos\felipefe\QACOREBUSINESS\webdriver\");
             driverNavegadorChrome.Manage().Window.Maximize();
+
+            tela = new AccountLogon { Driver = driverNavegadorChrome };
 
         }
 
         internal void CliqueEntrarSistema()
         {
-       
-            driverNavegadorChrome.FindElement(By.Name("action")).Click();
+            tela.BotaoEfetuarLogin.Click();
+
         }
 
         internal void TelaDeLogin()
         {
-            driverNavegadorChrome.Navigate().GoToUrl("http://localhost/COREBusiness");
+            driverNavegadorChrome.Navigate().GoToUrl("http://192.168.0.2/COREBusiness");
         }
 
         internal void InsereDados()
         {
-         
-            driverNavegadorChrome.FindElement(By.Id("UserName")).SendKeys("admin");
-            driverNavegadorChrome.FindElement(By.Id("Password")).SendKeys("1234");
+            tela.Usuario.SendKeys("admin");
+            tela.Senha.SendKeys("1234");
            
         }
 
-        public void NavegadorAberto()
+        public void PaginaInicialCoreBusiness()
         {
-            Assert.Contains("Chrome", driverNavegadorChrome.ToString());
+            String URL = driverNavegadorChrome.Url;
+            Assert.Equal<String>("http://192.168.0.2/COREBusiness/Home/MosaicoV2", URL);
+          
         }
 
     }

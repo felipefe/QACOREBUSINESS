@@ -36,7 +36,7 @@ namespace QACoreBusiness.StepDefinitions
         [Then(@"acessar a pagina inicial do hub de contexto")]
         public void EntaoAcessarAPaginaInicialDoHubDeContexto()
         {
-            abrirNavegadorUtil.NavegadorAberto();
+            abrirNavegadorUtil.PaginaInicialCoreBusiness();
         }
     }
 }
