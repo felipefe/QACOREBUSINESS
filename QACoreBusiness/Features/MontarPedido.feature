@@ -1,8 +1,4 @@
-﻿#language:pt
-
-#language:pt
-
-Feature: Montar pedido
+﻿Feature: Montar pedido
 
 Background: Estar logado no Corebusiness
 Given que usuário esteja logado
