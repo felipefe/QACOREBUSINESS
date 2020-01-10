@@ -1,5 +1,7 @@
 ﻿#language:pt
 
+#language:pt
+
 Feature: Montar pedido
 
 Background: Estar logado no Corebusiness
@@ -23,7 +25,7 @@ Then uma mensagem de pessoa adicionada ao pedido deve aparecer
 
 @inserir_cliente_restricao_pedido
 Scenario: Inserir cliente com restriçao ao pedido
-Given que eu esteja na tela de edição do pedido
+Given que eu esteja na tela de ediçao do pedido
 And pesquise o cliente por CP ou nome
 When eu clicar no cliente 
 And em seguida no botão selecionar

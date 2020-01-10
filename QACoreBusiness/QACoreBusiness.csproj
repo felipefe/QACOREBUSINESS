@@ -22,9 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\FaturarPedido.feature.cs">
-      <DependentUpon>FaturarPedido.feature</DependentUpon>
-    </Compile>
     <Compile Update="Features\AbrirNavegador.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -40,10 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\FaturarPedido.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\AbrirNavegador.feature">
    
     </SpecFlowFeatureFiles>
