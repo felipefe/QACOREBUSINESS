@@ -1,4 +1,4 @@
-﻿Feature: SeparacaoPedido
+﻿Feature: PedidoSeparacao
 
 Background: Estar logado no Corebusiness 
 			e estar na tela de pedidos

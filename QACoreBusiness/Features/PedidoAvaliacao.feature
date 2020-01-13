@@ -1,4 +1,4 @@
-﻿Feature: AvaliacaoPedido
+﻿Feature: PedidoAvaliacao
 
 Background: Estar logado no Corebusiness 
 			e estar na tela de pedidos

@@ -1,4 +1,4 @@
-﻿Feature: ConferenciaPedido
+﻿Feature: PedidoConferencia
 
 Background: Estar logado no Corebusiness 
 			e estar na tela de pedidos
@@ -17,7 +17,7 @@ And seja colado no editText Código do Produto
 And a quantidade seja copiada da coluna Qtd. Total 
 And seja colada no editText Quantidade
 When eu clicar Enter
-And uma mensagem de conferido com sucesso seja exibida
+And uma mensagem de conferido com sucesso deve aparecer
 And eu clicar em Concluir processo
 And clicar em finalizar
 And ser redirecionado para tela de COM Finalizar Conferencia
@@ -38,14 +38,16 @@ When eu clicar Enter
 Then uma mensagem de Codigo Invalido é exibida
 
 
-@conferencia_pedido_quantidade_errado
-Scenario: Conferencia de pedido quantidade errado
+@conferencia_pedido_quantidade_errada
+Scenario: Conferencia de pedido quantidade errada
 Given que eu acesse as action do pedido
 And clique no botao Conferencia
 And seja redirecionado para tela de WMS Conferencia
 And o SKU seja copiado da coluna Código
 And seja colado no editText Código do Produto
 And a quantidade seja copiada da coluna Qtd. Total 
-And seja colada no editText Quantidade
+And seja colada no editText Quantidade uma quantidade diferente da copiada
 When eu clicar Enter
 Then a quantidade da coluna Qtd. Conferida deve ser diferente da coluna Qtd. Total
+
+
