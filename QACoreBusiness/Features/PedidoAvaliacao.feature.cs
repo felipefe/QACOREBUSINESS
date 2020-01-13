@@ -17,17 +17,17 @@ namespace QACoreBusiness.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AvaliacaoPedidoFeature : Xunit.IClassFixture<AvaliacaoPedidoFeature.FixtureData>, System.IDisposable
+    public partial class PedidoAvaliacaoFeature : Xunit.IClassFixture<PedidoAvaliacaoFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "AvaliacaoPedido.feature"
+#line 1 "PedidoAvaliacao.feature"
 #line hidden
         
-        public AvaliacaoPedidoFeature(AvaliacaoPedidoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PedidoAvaliacaoFeature(PedidoAvaliacaoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AvaliacaoPedido", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoAvaliacao", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -89,7 +89,7 @@ testRunner.And("que eu tenha um pedido em situaçao de avaliçao", ((string)(nul
         }
         
         [Xunit.FactAttribute(DisplayName="Avaliar pedido e prosseguir")]
-        [Xunit.TraitAttribute("FeatureTitle", "AvaliacaoPedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
         [Xunit.TraitAttribute("Description", "Avaliar pedido e prosseguir")]
         [Xunit.TraitAttribute("Category", "avaliar_pedido")]
         public virtual void AvaliarPedidoEProsseguir()
@@ -116,7 +116,7 @@ testRunner.Then("serei redirecionado para tela WMS Separaçao", ((string)(null))
         }
         
         [Xunit.FactAttribute(DisplayName="Bloquear pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "AvaliacaoPedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
         [Xunit.TraitAttribute("Description", "Bloquear pedido")]
         [Xunit.TraitAttribute("Category", "bloquear_pedido")]
         public virtual void BloquearPedido()
@@ -145,7 +145,7 @@ testRunner.And("a situaçao do pedido deve ser Não Liberado / Recusado", ((stri
         }
         
         [Xunit.FactAttribute(DisplayName="Cancelar e retornar pedido para ediçao")]
-        [Xunit.TraitAttribute("FeatureTitle", "AvaliacaoPedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
         [Xunit.TraitAttribute("Description", "Cancelar e retornar pedido para ediçao")]
         [Xunit.TraitAttribute("Category", "cancelar_retornar_pedido_para_ediçao")]
         public virtual void CancelarERetornarPedidoParaEdicao()
@@ -180,12 +180,12 @@ testRunner.And("a situaçao do pedido deve ser Lançamento / Ediçao", ((string)
             
             public FixtureData()
             {
-                AvaliacaoPedidoFeature.FeatureSetup();
+                PedidoAvaliacaoFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                AvaliacaoPedidoFeature.FeatureTearDown();
+                PedidoAvaliacaoFeature.FeatureTearDown();
             }
         }
     }

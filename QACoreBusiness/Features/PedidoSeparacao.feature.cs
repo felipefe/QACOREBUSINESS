@@ -17,17 +17,17 @@ namespace QACoreBusiness.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SeparacaoPedidoFeature : Xunit.IClassFixture<SeparacaoPedidoFeature.FixtureData>, System.IDisposable
+    public partial class PedidoSeparacaoFeature : Xunit.IClassFixture<PedidoSeparacaoFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "SeparacaoPedido.feature"
+#line 1 "PedidoSeparacao.feature"
 #line hidden
         
-        public SeparacaoPedidoFeature(SeparacaoPedidoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PedidoSeparacaoFeature(PedidoSeparacaoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SeparacaoPedido", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoSeparacao", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -89,7 +89,7 @@ testRunner.And("tenha um pedido em situaçao de Separaçao", ((string)(null)), (
         }
         
         [Xunit.FactAttribute(DisplayName="Separar itens pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "SeparacaoPedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoSeparacao")]
         [Xunit.TraitAttribute("Description", "Separar itens pedido")]
         [Xunit.TraitAttribute("Category", "separar_itens_pedido")]
         public virtual void SepararItensPedido()
@@ -130,12 +130,12 @@ testRunner.Then("ser redirecionado para tela de WMS Conferencia", ((string)(null
             
             public FixtureData()
             {
-                SeparacaoPedidoFeature.FeatureSetup();
+                PedidoSeparacaoFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SeparacaoPedidoFeature.FeatureTearDown();
+                PedidoSeparacaoFeature.FeatureTearDown();
             }
         }
     }
