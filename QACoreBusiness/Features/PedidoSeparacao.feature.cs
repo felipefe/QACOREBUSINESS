@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 12
-testRunner.Given("que eu acesse as action do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
 testRunner.And("clique no botao Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14

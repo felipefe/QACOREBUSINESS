@@ -75,8 +75,12 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 4
-testRunner.Given("que eu tenha um pedido criado que possua item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu tenha um pedido criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
+testRunner.And("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+testRunner.And("o pedido possua itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
 testRunner.And("valor liquido maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -94,26 +98,24 @@ testRunner.And("valor liquido maior que zero", ((string)(null)), ((TechTalk.Spec
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir negociçao ao pedido", null, new string[] {
                         "inserir_negociacao_pedido"});
-#line 8
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 9
-testRunner.Given("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
-testRunner.And("clique na sessao de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
-testRunner.When("eu clicar em Criar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("que eu cliquei na sessao de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
-testRunner.And("inserir uma descriçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("eu clicar no botao Criar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
-testRunner.And("selecionar a forma de pagamento {Avista - Dinheiro}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("inserir uma descriçao no editText", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
-testRunner.And("clicar em salvar negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecionar a forma de pagamento {Avista - Dinheiro}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.Then("o valor total geral da negocição deve ser maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
+testRunner.Then("o valor total geral da negociçao deve ser maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
 testRunner.And("uma mensagem de dados atualizados deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

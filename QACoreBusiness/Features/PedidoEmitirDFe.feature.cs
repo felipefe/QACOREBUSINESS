@@ -75,7 +75,7 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 8
-testRunner.Given("que usuário esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que usuario esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
 testRunner.And("acesse o contexto de meus pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
@@ -106,7 +106,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 17
-testRunner.Given("que eu acesse as action do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
 testRunner.When("clicar no botao Emitir Documentos Fiscais", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
@@ -131,13 +131,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 26
-testRunner.Given("que eu acesse as action do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
 testRunner.When("clicar no botao Emitir Documentos Fiscais", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
 testRunner.And("acessar as action do pedido novamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
-testRunner.And("clicar em Documentos Fiscais Gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicar no botao Documentos Fiscais Gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
 testRunner.And("ser redirecionado para tela COM Documentos de Venda", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31

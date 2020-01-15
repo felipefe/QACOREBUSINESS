@@ -76,6 +76,8 @@ namespace QACoreBusiness.Features
 #line 3
 #line 4
 testRunner.Given("que eu tenha um pedido criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+testRunner.And("esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -84,25 +86,23 @@ testRunner.Given("que eu tenha um pedido criado", ((string)(null)), ((TechTalk.S
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Inserir item ao pedido")]
+        [Xunit.FactAttribute(DisplayName="Inserir item com reserva ao pedido por sku")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoInserirItem")]
-        [Xunit.TraitAttribute("Description", "Inserir item ao pedido")]
-        [Xunit.TraitAttribute("Category", "inserir_item_valido_pedido")]
-        public virtual void InserirItemAoPedido()
+        [Xunit.TraitAttribute("Description", "Inserir item com reserva ao pedido por sku")]
+        [Xunit.TraitAttribute("Category", "inserir_item_pedido_por_sku")]
+        public virtual void InserirItemComReservaAoPedidoPorSku()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir item ao pedido", null, new string[] {
-                        "inserir_item_valido_pedido"});
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir item com reserva ao pedido por sku", null, new string[] {
+                        "inserir_item_pedido_por_sku"});
+#line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 8
-testRunner.Given("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-testRunner.And("clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-testRunner.When("eu pesquisar o produto por SKU {QA999} ou por nome {JBL Charge 3}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("eu pesquisar no editText o produto por SKU {TST00001}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
 testRunner.And("eu clicar no item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
@@ -110,6 +110,35 @@ testRunner.And("em seguida clicar em adicionar", ((string)(null)), ((TechTalk.Sp
 #line 13
 testRunner.Then("uma mensagem de item adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
+testRunner.And("sua tag de reserva estoque deve ser {Normal}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Inserir item com reserva ao pedido por nome")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoInserirItem")]
+        [Xunit.TraitAttribute("Description", "Inserir item com reserva ao pedido por nome")]
+        [Xunit.TraitAttribute("Category", "inserir_item_pedido_por_nome")]
+        public virtual void InserirItemComReservaAoPedidoPorNome()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir item com reserva ao pedido por nome", null, new string[] {
+                        "inserir_item_pedido_por_nome"});
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 18
+testRunner.Given("que eu clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+testRunner.When("eu pesquisar no editText o produto por nome {Boné Oakley}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+testRunner.And("eu clicar no item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+testRunner.And("em seguida clicar em adicionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+testRunner.Then("uma mensagem de item adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
 testRunner.And("sua tag de reserva estoque deve ser {Normal}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -123,24 +152,22 @@ testRunner.And("sua tag de reserva estoque deve ser {Normal}", ((string)(null)),
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir item ao pedido sem reserva", null, new string[] {
                         "inserir_item_sem_reserva_pedido"});
-#line 17
+#line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 18
-testRunner.Given("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 19
-testRunner.And("clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 20
-testRunner.When("eu pesquisar o produto por SKU {QA666} ou por nome {JBL Flip 4}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 27
+testRunner.Given("que eu clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+testRunner.When("eu pesquisar no editText o produto por SKU {TST00002}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
 testRunner.And("eu clicar no item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 30
 testRunner.And("em seguida clicar em adicionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
+#line 31
 testRunner.Then("uma mensagem de item adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
+#line 32
 testRunner.And("sua tag de reserva estoque deve ser {Sem reserva}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -154,24 +181,22 @@ testRunner.And("sua tag de reserva estoque deve ser {Sem reserva}", ((string)(nu
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Item nao inserido ao pedido", null, new string[] {
                         "inserir_item_invalido_pedido"});
-#line 27
+#line 35
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 28
-testRunner.Given("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 29
-testRunner.And("clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
-testRunner.When("eu pesquisar o produto por SKU {QA333} ou por nome {JBL GO 2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 36
+testRunner.Given("que eu clique na sessão de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
+testRunner.When("eu pesquisar no editText o produto por SKU {TST0003}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
 testRunner.And("eu clicar no item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 39
 testRunner.And("em seguida clicar em adicionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
-testRunner.Then("uma mensagem de item nao adicionado ao pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
+#line 40
+testRunner.Then("uma mensagem de item nao adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 41
 testRunner.And("uma outra mensagem com os detalhes deverao aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

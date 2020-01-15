@@ -102,7 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 12
-testRunner.Given("que eu acesse as action do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
 testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
@@ -149,7 +149,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 30
-testRunner.Given("que eu acesse as action do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
 testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
@@ -184,7 +184,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 43
-testRunner.Given("que eu acesse as action do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 44
 testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45

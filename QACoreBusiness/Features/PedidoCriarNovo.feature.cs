@@ -76,6 +76,10 @@ namespace QACoreBusiness.Features
 #line 3
 #line 4
 testRunner.Given("que usuário esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 5
+testRunner.And("que esteja no hub principal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+testRunner.And("acesse o contexto Meus Pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -84,27 +88,25 @@ testRunner.Given("que usuário esteja logado", ((string)(null)), ((TechTalk.Spec
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Acessar Meus pedidos e criar o pedido")]
+        [Xunit.FactAttribute(DisplayName="Criar novo pedido")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoCriarNovo")]
-        [Xunit.TraitAttribute("Description", "Acessar Meus pedidos e criar o pedido")]
+        [Xunit.TraitAttribute("Description", "Criar novo pedido")]
         [Xunit.TraitAttribute("Category", "criar_pedido")]
-        public virtual void AcessarMeusPedidosECriarOPedido()
+        public virtual void CriarNovoPedido()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Acessar Meus pedidos e criar o pedido", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar novo pedido", null, new string[] {
                         "criar_pedido"});
-#line 7
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 8
-testRunner.Given("que o usuario esteja no hub principal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
-testRunner.And("acesse o contexto Meus Pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-testRunner.When("clicar em criar novo pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("o usuario clicar no botao Criar Novo Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
 testRunner.Then("um novo pedido deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+testRunner.And("ser redirecionado para tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
