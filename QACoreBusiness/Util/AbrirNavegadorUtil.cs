@@ -24,6 +24,12 @@ namespace QACoreBusiness.Util
 
         }
 
+        internal void MensagemLoginInvalido()
+        {
+            IWebElement msgLoginInvalido = driverNavegadorChrome.FindElement(By.XPath("//span[@class='card-title']"));
+            Assert.Equal<String>("Erro ao efetuar login", msgLoginInvalido.Text);
+        }
+
         internal void CliqueEntrarSistema()
         {
             tela.BotaoEfetuarLogin.Click();
@@ -32,7 +38,7 @@ namespace QACoreBusiness.Util
 
         internal void TelaDeLogin()
         {
-            driverNavegadorChrome.Navigate().GoToUrl("http://dcbtestserver/COREBusiness");
+            driverNavegadorChrome.Navigate().GoToUrl(AccountLogon.URL);
         }
 
         internal void InsereDados()
@@ -42,12 +48,20 @@ namespace QACoreBusiness.Util
            
         }
 
+        public void InsereDadosInvalidos()
+        {
+            tela.Usuario.SendKeys("goku");
+            tela.Senha.SendKeys("cacaroto");
+        }
+
         public void PaginaInicialCoreBusiness()
         {
             String URL = driverNavegadorChrome.Url;
-            Assert.Equal<String>("http://dcbtestserver/COREBusiness/Home/MosaicoV2", URL);
+            Assert.Equal<String>( AccountLogon.URL + "/Home/MosaicoV2", URL);
           
         }
+
+    
 
     }
 

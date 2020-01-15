@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt"), "AbrirNavegadorELogar", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AbrirNavegadorELogar", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,19 +84,44 @@ namespace QACoreBusiness.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("abrir navegador e realizar login", null, new string[] {
                         "abrir_sistema_login"});
-#line 6
+#line 4
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 5
+testRunner.When("o sistema rodar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+testRunner.And("estiver na tela de login coreBusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
-testRunner.When("o sistema rodar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Quando ");
+testRunner.And("as informações de aceso forem inseridas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
-testRunner.And("estiver na tela de login coreBusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
+testRunner.And("o botão de logar for clicado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.And("as informações de aceso forem inseridas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
-#line 10
-testRunner.And("o botão de logar for clicado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "E ");
-#line 11
-testRunner.Then("acessar a pagina inicial do hub de contexto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Então ");
+testRunner.Then("acessar a pagina inicial do hub de contexto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="abrir navegador e inserir login invalido")]
+        [Xunit.TraitAttribute("FeatureTitle", "AbrirNavegadorELogar")]
+        [Xunit.TraitAttribute("Description", "abrir navegador e inserir login invalido")]
+        [Xunit.TraitAttribute("Category", "abrir_sistema_login_invalido")]
+        public virtual void AbrirNavegadorEInserirLoginInvalido()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("abrir navegador e inserir login invalido", null, new string[] {
+                        "abrir_sistema_login_invalido"});
+#line 13
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 14
+testRunner.When("o sistema rodar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+testRunner.And("estiver na tela de login coreBusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+testRunner.And("as informações de aceso forem inseridas erroneamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+testRunner.And("o botão de logar for clicado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+testRunner.Then("uma mensagem de Erro ao efetuar login deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
