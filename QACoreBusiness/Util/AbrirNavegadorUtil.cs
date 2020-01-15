@@ -32,7 +32,7 @@ namespace QACoreBusiness.Util
 
         internal void TelaDeLogin()
         {
-            driverNavegadorChrome.Navigate().GoToUrl("http://192.168.0.2/COREBusiness");
+            driverNavegadorChrome.Navigate().GoToUrl("http://dcbtestserver/COREBusiness");
         }
 
         internal void InsereDados()
@@ -45,7 +45,7 @@ namespace QACoreBusiness.Util
         public void PaginaInicialCoreBusiness()
         {
             String URL = driverNavegadorChrome.Url;
-            Assert.Equal<String>("http://192.168.0.2/COREBusiness/Home/MosaicoV2", URL);
+            Assert.Equal<String>("http://dcbtestserver/COREBusiness/Home/MosaicoV2", URL);
           
         }
 
