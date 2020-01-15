@@ -9,7 +9,7 @@ And tenha um pedido em situaçao de Conferência
 
 @conferencia_pedido
 Scenario: Conferencia de pedido
-Given que eu acesse as action do pedido
+Given que eu acesse as actions do pedido
 And clique no botao Conferencia
 And seja redirecionado para tela de WMS Conferencia
 And o SKU seja copiado da coluna Código
@@ -27,7 +27,7 @@ And o sistema deverá redirecionar para tela Entrega e Remessas do Pedido
 
 @conferencia_pedido_codigo_errado
 Scenario: Conferencia de pedido codigo errado
-Given que eu acesse as action do pedido
+Given que eu acesse as actions do pedido
 And clique no botao Conferencia
 And seja redirecionado para tela de WMS Conferencia
 And o SKU seja copiado da coluna Código
@@ -40,7 +40,7 @@ Then uma mensagem de Codigo Invalido é exibida
 
 @conferencia_pedido_quantidade_errada
 Scenario: Conferencia de pedido quantidade errada
-Given que eu acesse as action do pedido
+Given que eu acesse as actions do pedido
 And clique no botao Conferencia
 And seja redirecionado para tela de WMS Conferencia
 And o SKU seja copiado da coluna Código

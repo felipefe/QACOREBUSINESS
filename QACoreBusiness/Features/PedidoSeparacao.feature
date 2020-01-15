@@ -9,7 +9,7 @@ And tenha um pedido em situaçao de Separaçao
 
 @separar_itens_pedido
 Scenario: Separar itens pedido
-Given que eu acesse as action do pedido
+Given que eu acesse as actions do pedido
 And clique no botao Separaçao
 And seja redirecionado para tela WMS Separaçao
 And clique no botao Definir todos

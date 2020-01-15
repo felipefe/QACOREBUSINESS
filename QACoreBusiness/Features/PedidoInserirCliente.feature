@@ -2,20 +2,26 @@
 
 Background: Ter um pedido criado
 Given que eu tenha um pedido criado
+And que eu esteja na tela de ediçao do pedido
 
-@inserir_cliente_valido_pedido
-Scenario: Inserir o cliente no pedido com sucesso
-Given que eu esteja na tela de ediçao do pedido
-When eu pesquisar o cliente por CP {027.703.320-90} ou por nome {felipe fernandes}
-And eu clicar no cliente 
+@inserir_cp_cliente_valido_pedido
+Scenario: Inserir o cliente por CP no pedido com sucesso
+When eu pesquisar no editText o cliente por CP {348.166.709-47}
+And eu clicar no cliente listado
 And em seguida no botao selecionar
 Then uma mensagem de pessoa adicionada ao pedido deve aparecer
 
-@inserir_cliente_restricao_pedido
+@inserir_nome_cliente_valido_pedido
+Scenario: Inserir o cliente por nome no pedido com sucesso
+When eu pesquisar no editText o cliente por nome {Valentina La Ferrugem}
+And eu clicar no cliente listado
+And em seguida no botao selecionar
+Then uma mensagem de pessoa adicionada ao pedido deve aparecer
+
+@inserir_cliente_restrito_pedido
 Scenario: Inserir cliente com restriçao ao pedido
-Given que eu esteja na tela de ediçao do pedido
-When eu pesquisar o cliente por CP {237.683.859-22} ou por nome {valentina ctb}
-And eu clicar no cliente 
+When eu pesquisar no editText o cliente por nome {Luiz Inacio da Silva - Restrição}
+And eu clicar no cliente listado
 And em seguida no botao selecionar
 Then uma mensagem de pessoa adicionada ao pedido deve aparecer
 And um alerta referente a situaçao é exibido
