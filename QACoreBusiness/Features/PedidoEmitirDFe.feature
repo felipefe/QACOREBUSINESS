@@ -7,7 +7,7 @@ Background: Estar logado no Corebusiness
 			e esteja em ambiente de homologação
 Given que usuario esteja logado
 And acesse o contexto de meus pedidos
-And que eu tenha um pedido em situaçao de emissao de documentos fiscais
+And que eu tenha um pedido em situaçao de {Conferido}
 And o serviço coreservice esteja rodando
 And esteja em ambiente de homologacao
 #verificar situacao para coreservice e ambiente de homologaçao
