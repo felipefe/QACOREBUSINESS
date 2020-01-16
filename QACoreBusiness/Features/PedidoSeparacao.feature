@@ -17,4 +17,5 @@ And depois clicar no botao Marcar Todos
 When eu clicar no botao Finalizar
 And ser redicionado para a tela COM Finalizar Separaçao
 And clicar no botao Finalizao Separaçao
-Then ser redirecionado para tela de WMS Conferencia
+Then serei redirecionado para index de pedidos
+And a situaçao do meu pedido deve ser alterada para {Conferência}

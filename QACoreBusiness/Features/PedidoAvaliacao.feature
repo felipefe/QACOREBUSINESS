@@ -8,12 +8,13 @@ And acesse o contexto de meus pedidos
 And que eu tenha um pedido em situaçao de avaliçao
 
 @avaliar_pedido
-Scenario: Avaliar pedido e prosseguir
+Scenario: Avaliar pedido
 Given que eu acesse as actions do pedido
 And clique no botao Avaliaçao do Pedido
 And seja redirecionado para tela de avaliar pedido
 When eu clicar no botao Prosseguir
-Then serei redirecionado para tela WMS Separaçao
+Then serei redirecionado para index de pedidos
+And a situação do meu pedido deve ser {Separação}
 
 #@bloquear_pedido
 #Scenario: Bloquear pedido

@@ -12,7 +12,7 @@ And tenha adicionado itens
 And tenha adicionado negociaçao
 And tenha adicionado vendedor
 When eu clicar no botao Efetivar Pedido
-Then o sistema redireciona para tela de pedidos
+Then o sistema redireciona para index de pedidos
 
 @efetivar_pedido_falha
 Scenario: Falha efetivar pedido
