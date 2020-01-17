@@ -9,13 +9,13 @@ namespace QACoreBusiness.Util
     class PedidoCriarNovoUtil
     {
         IWebDriver driver = ChromeDriverNavegador.driver;
-        ElementsCreatePedido createPedido;
+        ElementsPedidoCriarNovo createPedido;
 
 
         public void AcessarIndexPedidos()
         {
-            createPedido = new ElementsCreatePedido { Driver = driver };
-            driver.Navigate().GoToUrl(ElementsCreatePedido.UrlIndexPedido);
+            createPedido = new ElementsPedidoCriarNovo { Driver = driver };
+            driver.Navigate().GoToUrl(ElementsPedidoCriarNovo.UrlIndexPedido);
         }
 
         public void CriarNovoPedido()
@@ -25,7 +25,7 @@ namespace QACoreBusiness.Util
 
         public void UrlEditPedido()
         {
-            Assert.Contains(ElementsCreatePedido.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(ElementsPedidoCriarNovo.UrlContainsEditPedido, driver.Url);
         }
     }
 }

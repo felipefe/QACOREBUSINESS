@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QACoreBusiness.Util
 {
-    class ElementsAccountLogon
+    class ElementsAbrirNavegador
     {
         public static string URL => "http://dcbtestserver/COREBusiness";
 

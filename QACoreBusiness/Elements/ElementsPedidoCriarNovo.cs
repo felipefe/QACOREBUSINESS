@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QACoreBusiness.Util
 {
-    class ElementsCreatePedido
+    class ElementsPedidoCriarNovo
     {
         public IWebDriver Driver;
         public static string UrlIndexPedido = "http://dcbtestserver/COREBusiness/COM/Pedido";

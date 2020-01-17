@@ -11,7 +11,7 @@ namespace QACoreBusiness.Util
 
     public class AbrirNavegadorUtil
     {
-        ElementsAccountLogon tela;
+        ElementsAbrirNavegador tela;
         IWebDriver driverNavegadorChrome;
 
       
@@ -21,7 +21,7 @@ namespace QACoreBusiness.Util
             driverNavegadorChrome = ChromeDriverNavegador.driver;
             driverNavegadorChrome.Manage().Window.Maximize();
             //driverNavegadorChrome.Manage().Timeouts().ImplicitWait = new TimeSpan(0, 0, 3);
-            tela = new ElementsAccountLogon { Driver = driverNavegadorChrome };
+            tela = new ElementsAbrirNavegador { Driver = driverNavegadorChrome };
         }
 
         internal void MensagemLoginInvalido()
@@ -37,7 +37,7 @@ namespace QACoreBusiness.Util
 
         internal void TelaDeLogin()
         {
-            driverNavegadorChrome.Navigate().GoToUrl(ElementsAccountLogon.URL);
+            driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.URL);
             WaitForLoad(driverNavegadorChrome, 5);
             WaitLoading(driverNavegadorChrome, 5);
         }
@@ -58,7 +58,7 @@ namespace QACoreBusiness.Util
         public void PaginaInicialCoreBusiness()
         {
             String URL = driverNavegadorChrome.Url;
-            Assert.Equal<String>( ElementsAccountLogon.URL + "/Home/MosaicoV2", URL);
+            Assert.Equal<String>( ElementsAbrirNavegador.URL + "/Home/MosaicoV2", URL);
           
         }
 
