@@ -88,13 +88,13 @@ testRunner.And("que eu tenha um pedido em situaçao de avaliçao", ((string)(nul
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Avaliar pedido e prosseguir")]
+        [Xunit.FactAttribute(DisplayName="Avaliar pedido")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
-        [Xunit.TraitAttribute("Description", "Avaliar pedido e prosseguir")]
+        [Xunit.TraitAttribute("Description", "Avaliar pedido")]
         [Xunit.TraitAttribute("Category", "avaliar_pedido")]
-        public virtual void AvaliarPedidoEProsseguir()
+        public virtual void AvaliarPedido()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Avaliar pedido e prosseguir", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Avaliar pedido", null, new string[] {
                         "avaliar_pedido"});
 #line 11
 this.ScenarioInitialize(scenarioInfo);
@@ -108,67 +108,11 @@ testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechT
 #line 14
 testRunner.And("seja redirecionado para tela de avaliar pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.When("eu clicar no botao Liberar e Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("eu clicar no botao Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
-testRunner.Then("serei redirecionado para tela WMS Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute(DisplayName="Bloquear pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
-        [Xunit.TraitAttribute("Description", "Bloquear pedido")]
-        [Xunit.TraitAttribute("Category", "bloquear_pedido")]
-        public virtual void BloquearPedido()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bloquear pedido", null, new string[] {
-                        "bloquear_pedido"});
-#line 19
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line 20
-testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 21
-testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
-testRunner.And("seja redirecionado para tela de avaliar pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
-testRunner.When("eu clicar no botao Bloquear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
-testRunner.Then("serei redirecionado para index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
-testRunner.And("a situaçao do pedido deve ser Não Liberado / Recusado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute(DisplayName="Cancelar e retornar pedido para ediçao")]
-        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
-        [Xunit.TraitAttribute("Description", "Cancelar e retornar pedido para ediçao")]
-        [Xunit.TraitAttribute("Category", "cancelar_retornar_pedido_para_ediçao")]
-        public virtual void CancelarERetornarPedidoParaEdicao()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancelar e retornar pedido para ediçao", null, new string[] {
-                        "cancelar_retornar_pedido_para_ediçao"});
-#line 28
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line 29
-testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
-testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
-testRunner.And("seja redirecionado para tela de avaliar pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
-testRunner.When("eu clicar no botao Cancelar e Retornar Pedido para Edição", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
-testRunner.Then("serei redirecionado para index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 34
-testRunner.And("a situaçao do pedido deve ser Lançamento / Ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+testRunner.And("a situação do meu pedido deve ser {Separação}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

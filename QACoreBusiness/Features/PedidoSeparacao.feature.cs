@@ -118,7 +118,9 @@ testRunner.And("ser redicionado para a tela COM Finalizar Separaçao", ((string)
 #line 19
 testRunner.And("clicar no botao Finalizao Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
-testRunner.Then("ser redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+testRunner.And("a situaçao do meu pedido deve ser alterada para {Conferência}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

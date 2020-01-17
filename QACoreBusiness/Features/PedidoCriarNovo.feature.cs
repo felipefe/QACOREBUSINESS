@@ -102,11 +102,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 10
-testRunner.When("o usuario clicar no botao Criar Novo Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços" +
+                    "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
-testRunner.Then("um novo pedido deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
-testRunner.And("ser redirecionado para tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("deve ser redirecionado para tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

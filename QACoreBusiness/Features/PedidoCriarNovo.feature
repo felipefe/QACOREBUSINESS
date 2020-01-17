@@ -7,8 +7,7 @@ And acesse o contexto Meus Pedidos
 
 @criar_pedido
 Scenario: Criar novo pedido
-When o usuario clicar no botao Criar Novo Pedido
-Then um novo pedido deve ser criado
-And ser redirecionado para tela de ediçao do pedido
+When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
+Then deve ser redirecionado para tela de ediçao do pedido
 
 

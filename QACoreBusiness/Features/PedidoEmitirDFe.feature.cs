@@ -79,7 +79,7 @@ testRunner.Given("que usuario esteja logado", ((string)(null)), ((TechTalk.SpecF
 #line 9
 testRunner.And("acesse o contexto de meus pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-testRunner.And("que eu tenha um pedido em situaçao de emissao de documentos fiscais", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("que eu tenha um pedido em situaçao de {Conferido}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
 testRunner.And("o serviço coreservice esteja rodando", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
