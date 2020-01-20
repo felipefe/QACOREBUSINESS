@@ -75,9 +75,15 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 4
-testRunner.Given("que eu tenha um pedido criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
-testRunner.And("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+testRunner.And("tenha um pedido criado na situaçao {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+testRunner.And("clique para editar este pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -94,19 +100,19 @@ testRunner.And("que eu esteja na tela de ediçao do pedido", ((string)(null)), (
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir o cliente por CP no pedido com sucesso", null, new string[] {
                         "inserir_cp_cliente_valido_pedido"});
-#line 8
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 9
-testRunner.When("eu pesquisar no editText o cliente por CP {348.166.709-47}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
-testRunner.And("eu clicar no cliente listado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
-testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
+testRunner.When("eu pesquisar no editText o cliente por CP {34816670947}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
 testRunner.Then("uma mensagem de pessoa adicionada ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+testRunner.And("a situaçao do cliente deve ser {Normal}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -119,18 +125,16 @@ testRunner.Then("uma mensagem de pessoa adicionada ao pedido deve aparecer", ((s
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir o cliente por nome no pedido com sucesso", null, new string[] {
                         "inserir_nome_cliente_valido_pedido"});
-#line 15
+#line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 16
-testRunner.When("eu pesquisar no editText o cliente por nome {Valentina La Ferrugem}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
-testRunner.And("eu clicar no cliente listado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
-testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
+testRunner.When("eu pesquisar no editText o cliente por nome {\'Valentina La Ferrugem\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
+testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
 testRunner.Then("uma mensagem de pessoa adicionada ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -144,20 +148,18 @@ testRunner.Then("uma mensagem de pessoa adicionada ao pedido deve aparecer", ((s
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir cliente com restriçao ao pedido", null, new string[] {
                         "inserir_cliente_restrito_pedido"});
-#line 22
+#line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 23
-testRunner.When("eu pesquisar no editText o cliente por nome {Luiz Inacio da Silva - Restrição}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
-testRunner.And("eu clicar no cliente listado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
-testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("eu pesquisar no editText o cliente por nome {\'Luiz Inacio da Silva - Restrição\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
-testRunner.Then("uma mensagem de pessoa adicionada ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
+testRunner.Then("uma mensagem de pessoa adicionada ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
 testRunner.And("um alerta referente a situaçao é exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

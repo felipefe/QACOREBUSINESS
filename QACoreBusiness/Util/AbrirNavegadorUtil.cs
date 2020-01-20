@@ -5,6 +5,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit;
+using SeleniumExtras.WaitHelpers;
 
 namespace QACoreBusiness.Util
 {
@@ -26,20 +27,19 @@ namespace QACoreBusiness.Util
 
         internal void MensagemLoginInvalido()
         {
-            IWebElement msgLoginInvalido = driverNavegadorChrome.FindElement(By.XPath("//span[@class='card-title']"));
-            Assert.Equal<String>("Erro ao efetuar login", msgLoginInvalido.Text);
+            Assert.Equal<String>("Erro ao efetuar login", tela.MensagemLoginInvalido.Text);
         }
 
-        internal void CliqueEntrarSistema()
+        public void CliqueEntrarSistema()
         {
-            tela.BotaoEfetuarLogin.Click();
+            IWebElement element = WaitForElementXpath(driverNavegadorChrome, "//button[@type='submit'][@name='action']");
+            element.Click();
         }
 
         internal void TelaDeLogin()
         {
             driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.URL);
             WaitForLoad(driverNavegadorChrome, 5);
-            WaitLoading(driverNavegadorChrome, 5);
         }
 
         internal void InsereDados()
@@ -60,6 +60,20 @@ namespace QACoreBusiness.Util
             String URL = driverNavegadorChrome.Url;
             Assert.Equal<String>( ElementsAbrirNavegador.URL + "/Home/MosaicoV2", URL);
           
+        }
+
+        //wait
+        public IWebElement WaitForElementXpath(IWebDriver driver, String xpath)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
+            return wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(xpath)));
+        }
+
+        //wait
+        public IWebElement WaitForElementToBeClickable(IWebDriver driver, IWebElement element)
+        {         
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
+            return wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
         //wait
