@@ -53,14 +53,8 @@ namespace QACoreBusiness.Util
 
         public void CliqueSelecionarClientePedido()
         {
-            try
-            {
                 IWebElement element = open.WaitForElementXpath(driver, "//div[@class='ui column right aligned six wide']//button[@class='ui large button']");
                 element.Click();
-            }catch(ElementClickInterceptedException e)
-            {
-                pedido.EditTextCPClientePedido.SendKeys(Keys.Enter);
-            }
         }
 
         public void PesquisarNomeCliente(string nomeCliente)
@@ -69,6 +63,7 @@ namespace QACoreBusiness.Util
             element.SendKeys(nomeCliente.ToString());
         }
 
+        //esse metodo ta errado tem que validar com a mensagem de sucesso
         public void MensagemPessoaAddPedido()
         {
             IWebElement element = open.WaitForElementXpath(driver, "//strong[@class='iziToast-title slideIn']");

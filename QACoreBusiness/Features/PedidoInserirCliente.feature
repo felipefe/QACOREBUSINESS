@@ -19,6 +19,7 @@ Scenario: Inserir o cliente por nome no pedido com sucesso
 When eu pesquisar no editText o cliente por nome {'Valentina La Ferrugem'}
 And em seguida no botao selecionar
 Then uma mensagem de pessoa adicionada ao pedido deve aparecer
+And a situaçao do cliente deve ser {Normal}
 
 @inserir_cliente_restrito_pedido
 Scenario: Inserir cliente com restriçao ao pedido

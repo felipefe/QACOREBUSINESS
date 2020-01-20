@@ -58,7 +58,6 @@ namespace QACoreBusiness.StepDefinitions
             pic.PesquisarNomeCliente(nomeCliente);
         }
         
-        
         [Then(@"uma mensagem de pessoa adicionada ao pedido deve aparecer")]
         public void ThenUmaMensagemDePessoaAdicionadaAoPedidoDeveAparecer()
         {
@@ -70,7 +69,7 @@ namespace QACoreBusiness.StepDefinitions
         {
             pic.ClienteSituacaoNormal();
         }
-
+        
         [Then(@"um alerta referente a situaçao é exibido")]
         public void ThenUmAlertaReferenteASituacaoEExibido()
         {
