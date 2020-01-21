@@ -75,10 +75,16 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 4
-testRunner.Given("que eu tenha um pedido criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
-testRunner.And("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
+testRunner.And("tenha um pedido criado na situaçao {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+testRunner.And("clique para editar este pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
 testRunner.And("já tenha informado o cliente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -96,26 +102,26 @@ testRunner.And("já tenha informado o cliente", ((string)(null)), ((TechTalk.Spe
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar entrega pedido", null, new string[] {
                         "criar_entrega_pedido"});
-#line 9
+#line 12
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 10
-testRunner.Given("que eu cliquei na sessao de Entregas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 11
-testRunner.When("clicar no botao Definir Entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
-testRunner.And("informar a transportadora {Braspress}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-testRunner.And("informar o tipo da entrega como {Entrega}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu cliquei na sessao de Entregas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
-testRunner.And("inserir uma data prevista {data atual + 1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("clicar no botao Definir Entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
-testRunner.And("inserir o valor do frete {50 R$}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informar a transportadora {\'Transportadora ACME\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
-testRunner.And("clicar em salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informar o tipo da entrega como {Entrega}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
+testRunner.And("inserir uma data prevista em dias {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+testRunner.And("inserir o valor do frete {50,00}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+testRunner.And("clicar em salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
 testRunner.Then("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -129,26 +135,26 @@ testRunner.Then("uma mensagem de dados atualizado deve aparecer", ((string)(null
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar entrega futura pedido", null, new string[] {
                         "criar_entrega_futura_pedido"});
-#line 20
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 21
-testRunner.Given("que eu cliquei na sessao de Entregas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
-testRunner.When("clicar no botao Definir Entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
-testRunner.And("informar a transportadora {Braspress}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.And("informar o tipo da entrega como {Entrega Futura}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu cliquei na sessao de Entregas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 25
-testRunner.And("inserir uma data prevista {data atual + 15}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("clicar no botao Definir Entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 26
-testRunner.And("inserir o valor do frete {50 R$}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informar a transportadora {\'Transportadora ACME\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
-testRunner.And("clicar em salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informar o tipo da entrega como {Entrega Futura}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
+testRunner.And("inserir uma data prevista em dias {15}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+testRunner.And("inserir o valor do frete {50,00}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+testRunner.And("clicar em salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
 testRunner.Then("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

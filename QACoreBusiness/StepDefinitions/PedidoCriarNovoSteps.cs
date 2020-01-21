@@ -10,8 +10,8 @@ namespace QACoreBusiness.StepDefinitions
         AbrirNavegadorUtil realizarLogin = new AbrirNavegadorUtil();
         PedidoCriarNovoUtil pedido = new PedidoCriarNovoUtil();
 
-        [Given(@"que usuário esteja logado")]
-        public void GivenQueUsuarioEstejaLogado()
+        [Given(@"que eu esteja logado no sistema")]
+        public void GivenQueEuEstejaLogadoNoSistema()
         {
             realizarLogin.RealizarLogon();
         }
@@ -22,8 +22,8 @@ namespace QACoreBusiness.StepDefinitions
             realizarLogin.PaginaInicialCoreBusiness();
         }
         
-        [Given(@"acesse o contexto Meus Pedidos")]
-        public void GivenAcesseOContextoMeusPedidos()
+        [Given(@"acesse a index de pedido")]
+        public void GivenAcesseAIndexDePedido()
         {
             pedido.AcessarIndexPedidos();
         }
@@ -34,8 +34,8 @@ namespace QACoreBusiness.StepDefinitions
             pedido.CriarNovoPedido();
         }
         
-        [Then(@"deve ser redirecionado para tela de ediçao do pedido")]
-        public void ThenDeveSerRedirecionadoParaTelaDeEdicaoDoPedido()
+        [Then(@"seja redirecionado para tela de ediçao")]
+        public void ThenSejaRedirecionadoParaTelaDeEdicao()
         {
             pedido.UrlEditPedido();
         }

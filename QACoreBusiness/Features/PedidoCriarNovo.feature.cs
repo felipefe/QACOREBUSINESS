@@ -75,11 +75,11 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 4
-testRunner.Given("que usuário esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
 testRunner.And("que esteja no hub principal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
-testRunner.And("acesse o contexto Meus Pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -105,7 +105,7 @@ this.FeatureBackground();
 testRunner.When("o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços" +
                     "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
-testRunner.Then("deve ser redirecionado para tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

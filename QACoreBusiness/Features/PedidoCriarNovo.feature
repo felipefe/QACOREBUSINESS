@@ -1,13 +1,13 @@
 ﻿Feature: PedidoCriarNovo
 
 Background: Estar logado no Corebusiness
-Given que usuário esteja logado
+Given que eu esteja logado no sistema
 And que esteja no hub principal
-And acesse o contexto Meus Pedidos
+And acesse a index de pedido
 
 @criar_pedido
 Scenario: Criar novo pedido
 When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
-Then deve ser redirecionado para tela de ediçao do pedido
+Then seja redirecionado para tela de ediçao
 
 

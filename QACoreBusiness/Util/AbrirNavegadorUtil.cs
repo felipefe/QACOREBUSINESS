@@ -32,14 +32,14 @@ namespace QACoreBusiness.Util
 
         public void CliqueEntrarSistema()
         {
-            IWebElement element = WaitForElementXpath(driverNavegadorChrome, "//button[@type='submit'][@name='action']");
+            IWebElement element = ElementWait.WaitForElementXpath(driverNavegadorChrome, "//button[@type='submit'][@name='action']");
             element.Click();
         }
 
         internal void TelaDeLogin()
         {
             driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.URL);
-            WaitForLoad(driverNavegadorChrome, 5);
+            ElementWait.WaitForLoad(driverNavegadorChrome, 5);
         }
 
         internal void InsereDados()
@@ -60,34 +60,6 @@ namespace QACoreBusiness.Util
             String URL = driverNavegadorChrome.Url;
             Assert.Equal<String>( ElementsAbrirNavegador.URL + "/Home/MosaicoV2", URL);
           
-        }
-
-        //wait
-        public IWebElement WaitForElementXpath(IWebDriver driver, String xpath)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
-            return wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(xpath)));
-        }
-
-        //wait
-        public IWebElement WaitForElementToBeClickable(IWebDriver driver, IWebElement element)
-        {         
-            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
-            return wait.Until(ExpectedConditions.ElementToBeClickable(element));
-        }
-
-        //wait
-        public void WaitForLoad(IWebDriver driver, int timeoutSec)
-        {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, timeoutSec));
-            wait.Until(wd => js.ExecuteScript("return document.readyState").ToString().Equals("complete"));
-        }
-
-        //wait
-        public void WaitLoading(IWebDriver driver, int timeoutSec)
-        {
-            new WebDriverWait(driver, new TimeSpan(0, 0, timeoutSec)).Until(webDriver => ((IJavaScriptExecutor)webDriver).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
 
