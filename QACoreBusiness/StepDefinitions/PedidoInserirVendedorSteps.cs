@@ -1,6 +1,6 @@
-﻿using System;
+﻿using QACoreBusiness.Util;
+using System;
 using TechTalk.SpecFlow;
-using QACoreBusiness.Util;
 
 namespace QACoreBusiness.StepDefinitions
 {
@@ -14,19 +14,19 @@ namespace QACoreBusiness.StepDefinitions
         {
             piv.CliqueTrocarVendedor();
         }
-
-        [Given(@"que o pedido ja tenha como vendedor \{'(.*)'}")]
-        public void GivenQueOPedidoJaTenhaComoVendedor(string vendedor)
-        {
-            piv.VendedorJaInformado(vendedor);
-        }
-
+        
         [Given(@"for redirecionado para tela de trocar vendedor pedido")]
         public void GivenForRedirecionadoParaTelaDeTrocarVendedorPedido()
         {
             piv.UrlTrocarVendedorPedido();
         }
-
+        
+        [Given(@"que o pedido ja tenha como vendedor \{'(.*)'}")]
+        public void GivenQueOPedidoJaTenhaComoVendedor(string vendedor)
+        {
+            piv.VendedorJaInformado(vendedor);
+        }
+        
         [When(@"informar o vendedor \{'(.*)'}")]
         public void WhenInformarOVendedor(string nomeVendedor)
         {
