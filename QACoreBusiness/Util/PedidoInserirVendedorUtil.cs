@@ -12,12 +12,13 @@ namespace QACoreBusiness.Util
         ElementsPedido elemento;
         public PedidoInserirVendedorUtil()
         {
-            elemento = new ElementsPedido();
+            elemento = new ElementsPedido { Driver = driver };
         }
 
         public void CliqueTrocarVendedor()
         {
             elemento.ActionTrocarVendedor.Click();
+
         }
 
         public void UrlTrocarVendedorPedido()

@@ -15,13 +15,13 @@ namespace QACoreBusiness.Util
         ElementsAbrirNavegador tela;
         IWebDriver driverNavegadorChrome;
 
-      
+     
         public void IniciarNavegador()
         {
 
             driverNavegadorChrome = ChromeDriverNavegador.driver;
             driverNavegadorChrome.Manage().Window.Maximize();
-            //driverNavegadorChrome.Manage().Timeouts().ImplicitWait = new TimeSpan(0, 0, 3);
+
             tela = new ElementsAbrirNavegador { Driver = driverNavegadorChrome };
         }
 
@@ -32,18 +32,19 @@ namespace QACoreBusiness.Util
 
         public void CliqueEntrarSistema()
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driverNavegadorChrome, "//button[@type='submit'][@name='action']");
+            IWebElement element = ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='grey lighten-5 card z-depth-4 animated zoomInDown']//button[@type='submit'][@name='action']");
             element.Click();
         }
 
         internal void TelaDeLogin()
         {
             driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.URL);
-            ElementWait.WaitForLoad(driverNavegadorChrome, 5);
+            //ElementWait.WaitForLoad(driverNavegadorChrome, 5);
         }
 
         internal void InsereDados()
         {
+            ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='container']//div[@class='row'][2]//div[@class='col s12 m6 offset-m3']//form");
             tela.Usuario.SendKeys("DeltaconUser");
             tela.Senha.SendKeys("Delt@12345");
            
