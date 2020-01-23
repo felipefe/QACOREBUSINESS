@@ -33,8 +33,8 @@ namespace QACoreBusiness.Util
 
         public void CliqueEntrarSistema()
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='grey lighten-5 card z-depth-4 animated zoomInDown']//button[@type='submit'][@name='action']");
-            element.Click();
+            tela.BotaoEfetuarLogin.Click();
+            
         }
 
         internal void TelaDeLogin()
