@@ -8,7 +8,7 @@ namespace QACoreBusiness.Util
 {
     class ChromeDriverNavegador
     {
-        public static IWebDriver driver = new ChromeDriver(@"C:\Users\felipe\Source\Repos\felipefe\QACOREBUSINESS\webdriver\");
+        public static IWebDriver driver = new ChromeDriver(@"C:\ProjectQA\QACOREBUSINESS\webdriver");
 
     }
 }

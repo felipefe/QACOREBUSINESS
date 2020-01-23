@@ -27,6 +27,7 @@ namespace QACoreBusiness.Util
 
         internal void MensagemLoginInvalido()
         {
+            ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='red card z-depth-4']//div[@class='card-content white-text']");
             Assert.Equal<String>("Erro ao efetuar login", tela.MensagemLoginInvalido.Text);
         }
 

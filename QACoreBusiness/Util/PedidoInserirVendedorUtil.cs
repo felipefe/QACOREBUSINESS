@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using Xunit;
 
 namespace QACoreBusiness.Util
@@ -10,13 +11,10 @@ namespace QACoreBusiness.Util
     {
         IWebDriver driver = ChromeDriverNavegador.driver;
         ElementsPedido elemento;
-        public PedidoInserirVendedorUtil()
-        {
-            elemento = new ElementsPedido { Driver = driver };
-        }
 
         public void CliqueTrocarVendedor()
         {
+            elemento = new ElementsPedido { Driver = driver };
             elemento.ActionTrocarVendedor.Click();
 
         }
@@ -28,7 +26,7 @@ namespace QACoreBusiness.Util
 
         public void VendedorJaInformado(String vendedor)
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@id='Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']//select[@id='Pedido_Vendedor']//option");
+            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@id='Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']//select[@id='Pedido_Vendedor']//option[@selected]");
             Assert.Equal(vendedor, element.Text);
 
         }
@@ -38,14 +36,15 @@ namespace QACoreBusiness.Util
             ElementWait.WaitForElementXpath(driver, "//div[@id = 'Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']").Click();
 
             IWebElement element = ElementWait.WaitForElementXpath(driver,"//span[@class='select2-container select2-container--default select2-container--open']//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field'][@type='search']");
-            element.SendKeys(nomeVendedor);
+            element.SendKeys(nomeVendedor); 
+            Thread.Sleep(2000);
             element.SendKeys(Keys.Enter);
-
+            
         }
 
         public void BotaoTrocarVendedor()
         {
-            elemento.BotaoTrocarVendedor.Click();
+            ElementWait.WaitForElementXpath(driver, "//div[@class='actions']//input[@class='ui large button'][@type='submit'][@value='Trocar']").Click();
         }
 
         public void UrlEdicaoPedido()
@@ -56,7 +55,7 @@ namespace QACoreBusiness.Util
         public void MensagemAposInserirVendedor()
         {
             IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
-            Assert.Equal("Os dados do pedido foram atualizados com sucesso", element.Text);
+            Assert.Equal("Os dados do pedido foram carregados com sucesso.", element.Text);
         }
 
         public void MensagemVendedorJaInserido()

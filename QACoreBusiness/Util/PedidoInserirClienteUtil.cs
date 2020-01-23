@@ -19,14 +19,9 @@ namespace QACoreBusiness.Util
             pedido = new ElementsPedido { Driver = driver };
         }
 
-        public void PedidoStatusLançamentoEdiçao()
-        {
-            Assert.Equal("Lançamento / Edição", pedido.SituacaoPedido.Text );
-        }
-
         public void CliqueEditPedido()
-        {
-            pedido.BotaoEditPedido.Click();
+        {      
+            ElementWait.WaitForElementXpath(driver, "//table//tbody//tr[1]//td[11][@class=' hidden-mobile']/a[@data-content='Editar']").Click();
         }
 
         public void UrlEditPedido()
@@ -35,8 +30,16 @@ namespace QACoreBusiness.Util
         }
 
         public void AcessarIndexPedido()
-        {
+        {   
             driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
+        }
+
+        public void PedidoStatusLançamentoEdiçao()
+        {
+
+            IWebElement element = ElementWait.WaitForElementXpath(driver, "//table//tbody//tr[1]//td[9][@class='left aligned'][@data-field='Status']");
+            Assert.Equal("Lançamento / Edição", element.Text);
+
         }
 
         public void AcessarUrlEditPedido()

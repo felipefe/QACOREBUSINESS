@@ -14,8 +14,8 @@ namespace QACoreBusiness.Util
         public IWebElement BotaoCriarNovo => Driver.FindElement(By.XPath("//a[@class='popup-link'][@href='/COREBusiness/COM/Pedido/Create']"));
 
         //Inserir Cliente
-        public IWebElement SituacaoPedido => Driver.FindElement(By.XPath("//table/tbody/tr[1]/td[9][@class='left aligned'][@data-field='Status']"));
-        public IWebElement BotaoEditPedido => Driver.FindElement(By.XPath("//table/tbody/tr[1]/td[11][@class=' hidden-mobile']/a[@data-content='Editar']"));
+       // public IWebElement SituacaoPedido => Driver.FindElement(By.XPath("//table//tbody//tr[1]//td[9][@class='left aligned'][@data-field='Status']"));
+        //public IWebElement BotaoEditPedido => Driver.FindElement(By.XPath("//table//tbody//tr[1]//td[11][@class=' hidden-mobile']/a[@data-content='Editar']"));
         //public IWebElement EditTextCPClientePedido => Driver.FindElement(By.CssSelector("#pedido-pessoa-wrapper > form > div.large.two.fields > div.five.wide.field > div > input[type=text]"));
         public IWebElement EditTextCPClientePedido => Driver.FindElement(By.XPath("//div[@class='ui large input']/input[@type='text'][@name='cp'][@placeholder='CPF/CNPJ']"));
         public IWebElement BotaoSelecionarClientePedido => Driver.FindElement(By.XPath("//div[@class='ui column right aligned six wide']//button[@class='ui large button']"));
@@ -40,6 +40,5 @@ namespace QACoreBusiness.Util
         //trocar vendedor    
         public IWebElement ActionTrocarVendedor => Driver.FindElement(By.XPath("//div[@class='actions']//a[@class='popup-link'][@data-content='Trocar Vendedor']"));
         public String UrlTrocarVendedor = "http://dcbtestserver/COREBusiness/COM/Pedido/TrocarVendedor?idPedido=";
-        public IWebElement BotaoTrocarVendedor => Driver.FindElement(By.XPath("//div[@class='actions']//input[@id='396387460785426765614'][@type='submit'][@value='Trocar']"));
     }
 }
