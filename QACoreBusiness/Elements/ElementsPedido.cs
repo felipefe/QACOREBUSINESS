@@ -18,24 +18,23 @@ namespace QACoreBusiness.Util
         public IWebElement BotaoEditPedido => ElementWait.WaitForElementXpath(Driver, "//table//tbody//tr[1]//td[11][@class=' hidden-mobile']/a[@data-content='Editar']");
         public IWebElement EditTextCPClientePedido => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui large input']/input[@type='text'][@name='cp'][@placeholder='CPF/CNPJ']");
         public IWebElement EditTextNomeCliente => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui large input']/input[@type='text'][@name='nome'][@placeholder='Nome']");
-        public IWebElement MensagemPessoaAddPedido => ElementWait.WaitForElementXpath(Driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
+        public IWebElement AlertaMensagemPedidoAtualizado => ElementWait.WaitForElementXpath(Driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
         public IWebElement SituacaoNormal => ElementWait.WaitForElementXpath(Driver, "//h4[@class='ui header']//div[@class='ui column right aligned']//div[@class='ui label']");
         public IWebElement SituacaoRestrito => ElementWait.WaitForElementXpath(Driver, "//h4[@class='ui header']//div[@class='ui column right aligned']//div[@class='ui label red']");
         public IWebElement BotaoSelecionarCliente => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui column right aligned six wide']//button[@class='ui large button']");
 
         //Inserir Entrega
-        //public IWebElement ClientePedido => Driver.FindElement(By.XPath(""));
-        //public IWebElement ClientePedido => Driver.FindElement(By.XPath("//div[@id='pedido-pessoa-wrapper']//div[@class='collapse toggle']//h4[@class='ui header']//div[@class='ui column right aligned']"));
-        // public IWebElement SessaoEntregas => ElementWait.WaitForElementToBeClickable(Driver, Driver.FindElement(By.XPath("//div[@class='ui green segment']//div[@class='collapse toggle']//h4[@class='ui header']//i[@class='icon truck']")));
-        //public IWebElement BotaoDefinirEntrega => Driver.FindElement(By.XPath(""));
-        //public IWebElement SelectTransportadora => Driver.FindElement(By.XPath("//span[@class='select2 select2-container select2-container--default select2-container--below']//span[@class='select2-selection select2-selection--single'][@role='combobox']"));
-        //public IWebElement SearchTransportadora => Driver.FindElement(By.XPath("//span[@class='select2-container select2-container--default select2-container--open']//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field'][@type='search']"));
-        //public IWebElement SelectEntrega => Driver.FindElement(By.XPath(""));
-        //public IWebElement TipoEntrega => Driver.FindElement(By.XPath("//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']//option[@value='Entrega']"));
-        //public IWebElement TipoEntregaFutura => Driver.FindElement(By.XPath("//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']//option[@value='EntregaFutura']"));
-        //public IWebElement DataPrevista => Driver.FindElement(By.XPath("//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_DataPrevista'][@name='DataPrevista']"));
-        //public IWebElement ValorEntrega => Driver.FindElement(By.XPath("//div[@id='PedidoEntrega_Frete_auto_wrapper']//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_Frete'][@name='Frete']"));
-        // public IWebElement BotaoSalvarEntrega => Driver.FindElement(By.XPath("//div[@class='actions']//input[@class='ui large button'][@id='submit'][@value='Salvar']"));
+        public IWebElement ClientePedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-pessoa-wrapper']//div[@class='collapse toggle']//h4[@class='ui header']//div[@class='ui column']");
+        public IWebElement SessaoEntregas => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//div[@class='collapse toggle']//h4[@class='ui header']//i[@class='icon truck']");
+        public IWebElement BotaoDefinirEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//div[@class='ui placeholder segment']//div[@class='ui large primary button']");
+        public IWebElement SelectTransportadora => ElementWait.WaitForElementXpath(Driver, "//div[@class='two fields']//div[@id='IDTransportadora_auto_wrapper']//div[@class='ui select2 fluid']");
+        public IWebElement SearchTransportadora => ElementWait.WaitForElementXpath(Driver, "//span[@class='select2-container select2-container--default select2-container--open']//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field'][@type='search']");
+        public IWebElement SelectTipoEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']");
+        public IWebElement TipoEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']//option[@value='Entrega']");
+        public IWebElement TipoEntregaFutura => ElementWait.WaitForElementXpath(Driver, "//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']//option[@value='EntregaFutura']");
+        public IWebElement DataPrevista => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_DataPrevista'][@name='DataPrevista']");
+        public IWebElement ValorEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@id='PedidoEntrega_Frete_auto_wrapper']//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_Frete'][@name='Frete']");
+        public IWebElement BotaoSalvarEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='actions']//input[@class='ui large button'][@id='submit'][@value='Salvar']");
 
 
         //trocar vendedor    
