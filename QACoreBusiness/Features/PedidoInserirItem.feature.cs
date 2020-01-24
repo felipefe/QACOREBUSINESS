@@ -116,7 +116,7 @@ testRunner.And("em seguida clicar no botao adicionar", ((string)(null)), ((TechT
 #line 16
 testRunner.Then("uma mensagem de item adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
-testRunner.And("sua tag de reserva estoque deve ser {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("sua tag de reserva estoque deve ser {Normal}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -145,7 +145,7 @@ testRunner.And("em seguida clicar no botao adicionar", ((string)(null)), ((TechT
 #line 25
 testRunner.Then("uma mensagem de item adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
-testRunner.And("sua tag de reserva estoque deve ser {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("sua tag de reserva estoque deve ser {Normal}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -174,7 +174,7 @@ testRunner.And("em seguida clicar no botao adicionar", ((string)(null)), ((TechT
 #line 34
 testRunner.Then("uma mensagem de item adicionado ao pedido deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
-testRunner.And("sua tag de reserva estoque deve ser {\'Sem reserva\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("sua tag de reserva estoque deve ser {Sem reserva}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

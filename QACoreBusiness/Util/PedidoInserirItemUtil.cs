@@ -36,10 +36,16 @@ namespace QACoreBusiness.Util
             ElementWait.WaitForElementXpath(driver, "//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui fields']//div[@class='ui large input']//input[@name='nome']").SendKeys(nome);
         }
 
-        public void TagDeReservaEstoque(string reserva)
+        public void TagDeReservaEstoqueNormal()
         {
             IWebElement element = ElementWait.WaitForElementXpath(driver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular grey label sui-tooltip']");
-            Assert.Equal(reserva, element.Text);
+            Assert.Equal("Normal", element.Text);
+        }
+
+        public void TagDeReservaEstoqueSemReserva()
+        {
+            IWebElement element = ElementWait.WaitForElementXpath(driver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular violet label sui-tooltip']");
+            Assert.Equal("Sem reserva", element.Text);
         }
 
         public void MensagemItemAdicionadoSucesso()

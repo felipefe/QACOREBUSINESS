@@ -14,7 +14,7 @@ When eu pesquisar no editText o produto por SKU {'TST0001'}
 And informar a quantidade no editText
 And em seguida clicar no botao adicionar  
 Then uma mensagem de item adicionado ao pedido deve aparecer
-And sua tag de reserva estoque deve ser {'Normal'}
+And sua tag de reserva estoque deve ser {Normal}
 
 @inserir_item_pedido_por_nome 
 Scenario: Inserir item com reserva ao pedido por nome
@@ -23,7 +23,7 @@ When eu pesquisar no editText o produto por nome {'Boné Oakley'}
 And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
 Then uma mensagem de item adicionado ao pedido deve aparecer
-And sua tag de reserva estoque deve ser {'Normal'}
+And sua tag de reserva estoque deve ser {Normal}
 
 @inserir_item_sem_reserva_pedido 
 Scenario: Inserir item ao pedido sem reserva
@@ -32,7 +32,7 @@ When eu pesquisar no editText o produto por SKU {'TST0003'}
 And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
 Then uma mensagem de item adicionado ao pedido deve aparecer
-And sua tag de reserva estoque deve ser {'Sem reserva'}
+And sua tag de reserva estoque deve ser {Sem reserva}
 
 @inserir_item_invalido_pedido
 Scenario: Item nao inserido ao pedido 

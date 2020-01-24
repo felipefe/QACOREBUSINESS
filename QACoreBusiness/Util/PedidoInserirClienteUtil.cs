@@ -21,7 +21,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueEditPedido()
         {      
-            ElementWait.WaitForElementXpath(driver, "//table//tbody//tr[1]//td[11][@class=' hidden-mobile']/a[@data-content='Editar']").Click();
+            pedido.BotaoEditPedido.Click();
         }
 
         public void UrlEditPedido()
@@ -37,58 +37,49 @@ namespace QACoreBusiness.Util
         public void PedidoStatusLançamentoEdiçao()
         {
 
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//table//tbody//tr[1]//td[9][@class='left aligned'][@data-field='Status']");
-            Assert.Equal("Lançamento / Edição", element.Text);
+            Assert.Equal("Lançamento / Edição", pedido.SituacaoPedido.Text);
 
         }
 
+        //sleep aqui evita que o selenium execute mto rapido e capture a primeira mensagem ao editar o pedido
+        //queremos a segunda mensagem de pessoa adicionada com sucesso que ocorrera mais adiante
         public void AcessarUrlEditPedido()
         {
             Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
-            Thread.Sleep(4000); 
-            //esse sleep evita que o selenium execute mto rapido e capture a primeira mensagem ao editar o pedido
-            //queremos a segunda mensagem de pessoa adicionada com sucesso que ocorrera mais adiante
+            Thread.Sleep(4000);      
         }
 
         public void PesquisarCPCliente(decimal CP)
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@class='ui large input']/input[@type='text'][@name='cp'][@placeholder='CPF/CNPJ']");
-            element.SendKeys(CP.ToString());
+            pedido.EditTextCPClientePedido.SendKeys(CP.ToString());
         }
 
         public void CliqueSelecionarClientePedido()
         {
-                IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@class='ui column right aligned six wide']//button[@class='ui large button']");
-                element.Click();
+                pedido.BotaoSelecionarCliente.Click();
         }
 
         public void PesquisarNomeCliente(string nomeCliente)
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@class='ui large input']/input[@type='text'][@name='nome'][@placeholder='Nome']");
-            element.SendKeys(nomeCliente.ToString());
+            pedido.EditTextNomeCliente.SendKeys(nomeCliente.ToString());
         }
 
-        //esse metodo ta errado tem que validar com a mensagem de sucesso
         public void MensagemPessoaAddPedido()
         {
             //bool achou = ElementWait.WaitTextToBePresentInElement(driver, ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']"), "A pessoa do pedido foi alterada com sucesso.");
             //Assert.True(achou);
-
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
-            Assert.Equal("A pessoa do pedido foi alterada com sucesso.", element.Text);
+            Assert.Equal("A pessoa do pedido foi alterada com sucesso.", pedido.MensagemPessoaAddPedido.Text);
 
         }
 
         public void ClienteSituacaoNormal()
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//h4[@class='ui header']//div[@class='ui column right aligned']//div[@class='ui label']");
-            Assert.Equal("Normal", element.Text);
+            Assert.Equal("Normal", pedido.SituacaoNormal.Text);
         }
 
         public void ClienteSituacaoRestrito()
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//h4[@class='ui header']//div[@class='ui column right aligned']//div[@class='ui label red']");
-            Assert.Equal("Restrito", element.Text);
+            Assert.Equal("Restrito", pedido.SituacaoRestrito.Text);
         }
     }
 }

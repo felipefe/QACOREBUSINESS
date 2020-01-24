@@ -6,6 +6,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit;
 using SeleniumExtras.WaitHelpers;
+using System.Threading;
 
 namespace QACoreBusiness.Util
 {
@@ -40,7 +41,7 @@ namespace QACoreBusiness.Util
         internal void TelaDeLogin()
         {
             driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.URL);
-            //ElementWait.WaitForLoad(driverNavegadorChrome, 5);
+            Thread.Sleep(1000);
         }
 
         internal void InsereDados()
@@ -53,6 +54,7 @@ namespace QACoreBusiness.Util
 
         public void InsereDadosInvalidos()
         {
+            ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='container']//div[@class='row'][2]//div[@class='col s12 m6 offset-m3']//form");
             tela.Usuario.SendKeys("goku");
             tela.Senha.SendKeys("cacaroto");
         }
@@ -60,8 +62,7 @@ namespace QACoreBusiness.Util
         public void PaginaInicialCoreBusiness()
         {
             String URL = driverNavegadorChrome.Url;
-            Assert.Equal<String>( ElementsAbrirNavegador.URL + "/Home/MosaicoV2", URL);
-          
+            Assert.Equal<String>(ElementsAbrirNavegador.URL + "/Home/MosaicoV2", URL);
         }
 
 

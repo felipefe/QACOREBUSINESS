@@ -45,12 +45,18 @@ namespace QACoreBusiness.StepDefinitions
             pii.MensagemItemAdicionadoSucesso();
         }
         
-        [Then(@"sua tag de reserva estoque deve ser \{'(.*)'}")]
-        public void ThenSuaTagDeReservaEstoqueDeveSer(string reserva)
+        [Then(@"sua tag de reserva estoque deve ser \{Normal}")]
+        public void ThenSuaTagDeReservaEstoqueDeveSerNormal()
         {
-            pii.TagDeReservaEstoque(reserva);
+            pii.TagDeReservaEstoqueNormal();
         }
-        
+
+        [Then(@"sua tag de reserva estoque deve ser \{Sem reserva}")]
+        public void ThenSuaTagDeReservaEstoqueDeveSerSemReserva()
+        {
+            pii.TagDeReservaEstoqueSemReserva();
+        }
+
         [Then(@"uma mensagem de item nao adicionado ao pedido deve aparecer")]
         public void ThenUmaMensagemDeItemNaoAdicionadoAoPedidoDeveAparecer()
         {
