@@ -18,7 +18,7 @@ And uma mensagem de dados atualizados deve aparecer
 
 @trocar_vendedor_pedido_falha
 Scenario: Inserir vendedor já selecionado ao pedido
-Given que o pedido ja tenha como vendedor {'Vendedor Pablo Escobar'}
+Given que o pedido ja tenha um vendedor informado
 When informar o vendedor {'Vendedor Pablo Escobar'}
 And clicar no botao trocar vendedor
 Then o sistema nao redireciona para ediçao do pedido

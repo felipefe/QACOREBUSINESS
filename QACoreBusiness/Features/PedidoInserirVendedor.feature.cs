@@ -135,7 +135,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 21
-testRunner.Given("que o pedido ja tenha como vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que o pedido ja tenha um vendedor informado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
 testRunner.When("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23

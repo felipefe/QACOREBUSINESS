@@ -60,5 +60,15 @@ namespace QACoreBusiness.Util
         {
             pedido.BotaoAddItemPedido.Click();
         }
+
+        public void MensagemMotivoItemNaoAdicionado()
+        {
+            Assert.Equal("Atenção", pedido.MensagemMotivoItemNaoAdd.Text);
+        }
+
+        public void MensagemItemNaoAdicionado()
+        {
+            Assert.Equal("Itens não adicionados", pedido.MensagemItemNaoAdd.Text);
+        }
     }
 }

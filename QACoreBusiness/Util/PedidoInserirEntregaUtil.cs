@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using Xunit;
 
 namespace QACoreBusiness.Util
@@ -40,7 +41,9 @@ namespace QACoreBusiness.Util
             pedido.SelectTransportadora.Click();
             //search transportadora
             pedido.SearchTransportadora.SendKeys(transportadora);
+            Thread.Sleep(2000);
             pedido.SearchTransportadora.SendKeys(Keys.Enter);
+            ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-capsule']//button[@type='button'][@class='iziToast-close']").Click();
         }
 
         public void MensagemEntregaAtualizada()

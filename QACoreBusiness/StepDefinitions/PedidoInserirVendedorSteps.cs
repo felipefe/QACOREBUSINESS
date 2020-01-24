@@ -21,10 +21,10 @@ namespace QACoreBusiness.StepDefinitions
             piv.UrlTrocarVendedorPedido();
         }
         
-        [Given(@"que o pedido ja tenha como vendedor \{'(.*)'}")]
-        public void GivenQueOPedidoJaTenhaComoVendedor(string vendedor)
+        [Given(@"que o pedido ja tenha um vendedor informado")]
+        public void GivenQueOPedidoJaTenhaComoVendedor()
         {
-            piv.VendedorJaInformado(vendedor);
+            piv.VendedorJaInformado();
         }
         
         [When(@"informar o vendedor \{'(.*)'}")]

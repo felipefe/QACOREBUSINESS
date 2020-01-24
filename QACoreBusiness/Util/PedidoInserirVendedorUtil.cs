@@ -28,9 +28,9 @@ namespace QACoreBusiness.Util
             Assert.Contains( pedido.UrlTrocarVendedor , driver.Url);
         }
 
-        public void VendedorJaInformado(String vendedor)
+        public void VendedorJaInformado()
         {
-            Assert.Equal(vendedor, pedido.SelectVendedorInformado.Text);
+            Assert.NotEqual("Vendedor" ,pedido.SelectVendedorInformado.Text);
 
         }
 
@@ -61,7 +61,7 @@ namespace QACoreBusiness.Util
 
         public void MensagemVendedorJaInserido()
         {
-            Assert.Equal(" Favor indicar um vendedor diferente do vendedor atual.", pedido.AlertaVendedorJaInserido.Text);
+            Assert.Equal("Favor indicar um vendedor diferente do vendedor atual.", pedido.AlertaVendedorJaInserido.Text);
         }
     }
 }

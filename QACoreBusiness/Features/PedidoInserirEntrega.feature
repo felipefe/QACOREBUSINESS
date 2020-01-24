@@ -15,7 +15,7 @@ When clicar no botao Definir Entrega
 And informar a transportadora {'Transportadora ACME'}
 And informar o tipo da entrega como {Entrega}
 And inserir uma data prevista em dias {1}
-And inserir o valor do frete {50,00}
+And inserir o valor do frete {50.0}
 And clicar em salvar
 Then uma mensagem de dados atualizado deve aparecer
 
@@ -26,6 +26,6 @@ When clicar no botao Definir Entrega
 And informar a transportadora {'Transportadora ACME'}
 And informar o tipo da entrega como {Entrega Futura}
 And inserir uma data prevista em dias {15}
-And inserir o valor do frete {50,00}
+And inserir o valor do frete {50.0}
 And clicar em salvar
 Then uma mensagem de dados atualizado deve aparecer

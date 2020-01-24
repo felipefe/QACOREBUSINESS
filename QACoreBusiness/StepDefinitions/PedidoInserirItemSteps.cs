@@ -60,13 +60,13 @@ namespace QACoreBusiness.StepDefinitions
         [Then(@"uma mensagem de item nao adicionado ao pedido deve aparecer")]
         public void ThenUmaMensagemDeItemNaoAdicionadoAoPedidoDeveAparecer()
         {
-            ScenarioContext.Current.Pending();
+            pii.MensagemItemNaoAdicionado();
         }
         
         [Then(@"uma outra mensagem com os detalhes deve aparecer")]
         public void ThenUmaOutraMensagemComOsDetalhesDeveAparecer()
         {
-            ScenarioContext.Current.Pending();
+            pii.MensagemMotivoItemNaoAdicionado();
         }
     }
 }
