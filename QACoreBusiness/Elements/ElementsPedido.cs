@@ -36,9 +36,23 @@ namespace QACoreBusiness.Util
         public IWebElement ValorEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@id='PedidoEntrega_Frete_auto_wrapper']//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_Frete'][@name='Frete']");
         public IWebElement BotaoSalvarEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='actions']//input[@class='ui large button'][@id='submit'][@value='Salvar']");
 
+        //item pedido
+        public IWebElement SessaoProdutos => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-itens-wrapper']//div[@class='collapse toggle']//h4[@class='ui header']//div[@class='ui column']");
+        public IWebElement EditTextSKUProduto => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui fields']//div[@class='four wide field']//div[@class='ui large input']//input[@name='sku']");
+        public IWebElement EditTextNomeProduto => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui fields']//div[@class='ui large input']//input[@name='nome']");
+        public IWebElement EditTextQuantidadeItemPedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui stackable row three column grid']//div[@class='sixteen wide field']//div[@class='ui large action input']//input[@name='quantidade']");
+        public IWebElement TagReservaEstoqueNormal => ElementWait.WaitForElementXpath(Driver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular grey label sui-tooltip']");
+        public IWebElement TagReservaEstoqueSemReserva => ElementWait.WaitForElementXpath(Driver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular violet label sui-tooltip']");
+        public IWebElement BotaoAddItemPedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui stackable row three column grid']//div[@class='sixteen wide field']//div[@class='ui large action input']//button[@class='ui right labeled icon button']");
 
         //trocar vendedor    
         public IWebElement ActionTrocarVendedor => Driver.FindElement(By.XPath("//div[@class='actions']//a[@class='popup-link'][@data-content='Trocar Vendedor']"));
         public String UrlTrocarVendedor = "http://dcbtestserver/COREBusiness/COM/Pedido/TrocarVendedor?idPedido=";
+        public IWebElement SelectVendedorInformado => ElementWait.WaitForElementXpath(Driver, "//div[@id='Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']//select[@id='Pedido_Vendedor']//option[@selected]");
+        public IWebElement SelectVendedor => ElementWait.WaitForElementXpath(Driver, "//div[@id = 'Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']");
+        public IWebElement SearchInformarVendedor => ElementWait.WaitForElementXpath(Driver, "//span[@class='select2-container select2-container--default select2-container--open']//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field'][@type='search']");
+        public IWebElement BotaoTrocarVendedor => ElementWait.WaitForElementXpath(Driver, "//div[@class='actions']//input[@class='ui large button'][@type='submit'][@value='Trocar']");
+        public IWebElement AlertaVendedorJaInserido => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui negative message validation-summary-errors']//ul[@class='list']//li");
+
     }
 }

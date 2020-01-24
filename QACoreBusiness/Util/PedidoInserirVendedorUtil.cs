@@ -10,57 +10,58 @@ namespace QACoreBusiness.Util
     class PedidoInserirVendedorUtil
     {
         IWebDriver driver = ChromeDriverNavegador.driver;
-        ElementsPedido elemento;
+        ElementsPedido pedido;
+
+        public PedidoInserirVendedorUtil()
+        {
+            pedido = new ElementsPedido { Driver = driver };
+        }
 
         public void CliqueTrocarVendedor()
         {
-            elemento = new ElementsPedido { Driver = driver };
-            elemento.ActionTrocarVendedor.Click();
+            pedido.ActionTrocarVendedor.Click();
 
         }
 
         public void UrlTrocarVendedorPedido()
         {
-            Assert.Contains( elemento.UrlTrocarVendedor , driver.Url);
+            Assert.Contains( pedido.UrlTrocarVendedor , driver.Url);
         }
 
         public void VendedorJaInformado(String vendedor)
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@id='Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']//select[@id='Pedido_Vendedor']//option[@selected]");
-            Assert.Equal(vendedor, element.Text);
+            Assert.Equal(vendedor, pedido.SelectVendedorInformado.Text);
 
         }
 
         public void SelecionarVendedor(String nomeVendedor)
         {
-            ElementWait.WaitForElementXpath(driver, "//div[@id = 'Pedido_Vendedor_auto_wrapper']//div[@class='ui select2 fluid']").Click();
+            pedido.SelectVendedor.Click();
 
-            IWebElement element = ElementWait.WaitForElementXpath(driver,"//span[@class='select2-container select2-container--default select2-container--open']//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field'][@type='search']");
-            element.SendKeys(nomeVendedor); 
+            pedido.SearchInformarVendedor.SendKeys(nomeVendedor); 
             Thread.Sleep(2000);
-            element.SendKeys(Keys.Enter);
+            pedido.SearchInformarVendedor.SendKeys(Keys.Enter);
             
         }
 
         public void BotaoTrocarVendedor()
         {
-            ElementWait.WaitForElementXpath(driver, "//div[@class='actions']//input[@class='ui large button'][@type='submit'][@value='Trocar']").Click();
+            pedido.BotaoTrocarVendedor.Click();
         }
 
         public void UrlEdicaoPedido()
         {
-            Assert.Contains(elemento.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
         }
 
         public void MensagemAposInserirVendedor()
         {
-            IWebElement element = ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
-            Assert.Equal("Os dados do pedido foram carregados com sucesso.", element.Text);
+            Assert.Equal("Os dados do pedido foram carregados com sucesso.", pedido.AlertaMensagemPedidoAtualizado.Text);
         }
 
         public void MensagemVendedorJaInserido()
         {
-            Assert.Equal(" Favor indicar um vendedor diferente do vendedor atual.", ElementWait.WaitForElementXpath(driver, "//div[@class='ui negative message validation-summary-errors']//ul[@class='list']//li").Text);
+            Assert.Equal(" Favor indicar um vendedor diferente do vendedor atual.", pedido.AlertaVendedorJaInserido.Text);
         }
     }
 }
