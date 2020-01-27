@@ -17,17 +17,17 @@ namespace QACoreBusiness.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PedidoInserirVendedorFeature : Xunit.IClassFixture<PedidoInserirVendedorFeature.FixtureData>, System.IDisposable
+    public partial class PedidoRemoverItemFeature : Xunit.IClassFixture<PedidoRemoverItemFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "PedidoInserirVendedor.feature"
+#line 1 "PedidoRemoverItem.feature"
 #line hidden
         
-        public PedidoInserirVendedorFeature(PedidoInserirVendedorFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PedidoRemoverItemFeature(PedidoRemoverItemFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoInserirVendedor", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoRemoverItem", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,10 +84,6 @@ testRunner.And("tenha um pedido criado na situaçao {Lançamento/Ediçao}", ((st
 testRunner.And("clique para editar este pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
 testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
-testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -96,54 +92,27 @@ testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Inserir ou trocar vendedor ao pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "PedidoInserirVendedor")]
-        [Xunit.TraitAttribute("Description", "Inserir ou trocar vendedor ao pedido")]
-        [Xunit.TraitAttribute("Category", "trocar_vendedor_pedido_sucesso")]
-        public virtual void InserirOuTrocarVendedorAoPedido()
+        [Xunit.FactAttribute(DisplayName="Remover item de pedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoRemoverItem")]
+        [Xunit.TraitAttribute("Description", "Remover item de pedido")]
+        public virtual void RemoverItemDePedido()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir ou trocar vendedor ao pedido", null, new string[] {
-                        "trocar_vendedor_pedido_sucesso"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remover item de pedido", null, ((string[])(null)));
+#line 10
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 11
+testRunner.Given("que o pedido tenha itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+testRunner.And("que eu cliquei nas action do item do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 3
-this.FeatureBackground();
+testRunner.When("clicar no botao remover item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
-testRunner.When("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Then("o item deve ser removido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
-testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
-testRunner.Then("o sistema redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 17
-testRunner.And("uma mensagem de dados carregados deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute(DisplayName="Inserir vendedor já selecionado ao pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "PedidoInserirVendedor")]
-        [Xunit.TraitAttribute("Description", "Inserir vendedor já selecionado ao pedido")]
-        [Xunit.TraitAttribute("Category", "trocar_vendedor_pedido_falha")]
-        public virtual void InserirVendedorJaSelecionadoAoPedido()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir vendedor já selecionado ao pedido", null, new string[] {
-                        "trocar_vendedor_pedido_falha"});
-#line 20
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line 21
-testRunner.Given("que o pedido ja tenha um vendedor informado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
-testRunner.When("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
-testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
-testRunner.Then("o sistema nao redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 25
-testRunner.And("uma mensagem para indicar um vendedor diferente do atual deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -155,12 +124,12 @@ testRunner.And("uma mensagem para indicar um vendedor diferente do atual deve ap
             
             public FixtureData()
             {
-                PedidoInserirVendedorFeature.FeatureSetup();
+                PedidoRemoverItemFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PedidoInserirVendedorFeature.FeatureTearDown();
+                PedidoRemoverItemFeature.FeatureTearDown();
             }
         }
     }

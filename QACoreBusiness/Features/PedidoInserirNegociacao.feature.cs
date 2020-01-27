@@ -173,6 +173,8 @@ testRunner.And("selecionar a forma de pagamento {\'A vista no Dinheiro\'}", ((st
 testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
 testRunner.Then("o valor total geral da negociçao deve ser maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

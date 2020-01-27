@@ -44,13 +44,13 @@ namespace QACoreBusiness.StepDefinitions
         {
             piv.UrlEdicaoPedido();
         }
-        
-        [Then(@"uma mensagem de dados atualizados deve aparecer")]
-        public void ThenUmaMensagemDeDadosAtualizadosDeveAparecer()
+
+        [Then(@"uma mensagem de dados carregados deve aparecer")]
+        public void ThenUmaMensagemDeDadosCarregadosDeveAparecer()
         {
             piv.MensagemAposInserirVendedor();
         }
-        
+
         [Then(@"o sistema nao redireciona para ediçao do pedido")]
         public void ThenOSistemaNaoRedirecionaParaEdicaoDoPedido()
         {

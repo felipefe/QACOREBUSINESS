@@ -46,6 +46,9 @@ namespace QACoreBusiness.Util
         public IWebElement BotaoAddItemPedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui stackable row three column grid']//div[@class='sixteen wide field']//div[@class='ui large action input']//button[@class='ui right labeled icon button']");
         public IWebElement MensagemItemNaoAdd => ElementWait.WaitForElementXpath(Driver, "//div[@class='iziToast-capsule'][1]//div[@class='iziToast-body']//div[@class='iziToast-texts']//strong[@class='iziToast-title slideIn']");
         public IWebElement MensagemMotivoItemNaoAdd => ElementWait.WaitForElementXpath(Driver, "//div[@class='iziToast-capsule'][2]//div[@class='iziToast-body']//div[@class='iziToast-texts']//strong[@class='iziToast-title slideIn']");
+        public IWebElement ActionsItemPedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-itens-wrapper']//table[@id='table-itens']//tr//td[@class='center aligned collapsing']//div[@class='v-popover']//a[@class='tooltip-target b3']");
+        public IWebElement BotaoRemoverItemPedido => ElementWait.WaitForElementXpath(Driver, "//div[@class='wrapper']//div[@class='tooltip-inner popover-inner']//a[@class='popup-link'][@data-content='Remover item']");
+        public IWebElement TextViewQuantidadeItensPedido => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//div[@class='ui grid']//div[@class='left floated twelve wide column']//div[@class='ui statistic mini'][1]//div[@class='value']");
 
         //trocar vendedor    
         public IWebElement ActionTrocarVendedor => Driver.FindElement(By.XPath("//div[@class='actions']//a[@class='popup-link'][@data-content='Trocar Vendedor']"));

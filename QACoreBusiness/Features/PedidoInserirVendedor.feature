@@ -14,7 +14,7 @@ Scenario: Inserir ou trocar vendedor ao pedido
 When informar o vendedor {'Vendedor Pablo Escobar'}
 And clicar no botao trocar vendedor
 Then o sistema redireciona para ediçao do pedido
-And uma mensagem de dados atualizados deve aparecer
+And uma mensagem de dados carregados deve aparecer
 
 @trocar_vendedor_pedido_falha
 Scenario: Inserir vendedor já selecionado ao pedido
