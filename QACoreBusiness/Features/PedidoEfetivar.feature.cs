@@ -75,9 +75,15 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 4
-testRunner.Given("que eu tenha um pedido criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
-testRunner.And("que eu esteja na tela de ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
+testRunner.And("tenha um pedido criado na situaçao {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+testRunner.And("clique para editar este pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -94,25 +100,27 @@ testRunner.And("que eu esteja na tela de ediçao do pedido", ((string)(null)), (
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Efetivar pedido", null, new string[] {
                         "efetivar_pedido_sucesso"});
-#line 8
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 9
-testRunner.Given("tenha inserido o cliente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
-testRunner.And("tenha definido entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
-testRunner.And("tenha adicionado itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
-testRunner.And("tenha adicionado negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("tenha inserido o cliente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
-testRunner.And("tenha adicionado vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("tenha definido entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
-testRunner.When("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("tenha adicionado itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
+testRunner.And("tenha adicionado negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+testRunner.And("tenha adicionado vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+testRunner.When("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
 testRunner.Then("o sistema redireciona para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+testRunner.And("a situaçao do pedido nao deve estar em {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -125,17 +133,17 @@ testRunner.Then("o sistema redireciona para index de pedidos", ((string)(null)),
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Falha efetivar pedido", null, new string[] {
                         "efetivar_pedido_falha"});
-#line 18
+#line 22
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 19
+#line 23
 testRunner.When("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
-testRunner.Then("o sistema não redireciona para tela de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
-testRunner.And("uma alerta com as pendencias é exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+testRunner.Then("o sistema nao redireciona para tela de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+testRunner.And("uma alerta com as pendencias deve ser exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

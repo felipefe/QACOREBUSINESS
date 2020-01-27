@@ -24,6 +24,7 @@ namespace QACoreBusiness.Util
         public IWebElement BotaoSelecionarCliente => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui column right aligned six wide']//button[@class='ui large button']");
 
         //Inserir Entrega
+        public IWebElement PedidoComEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui form container']//div[@class='components']//div[@class='ui green segment'][2]//div[@class='collapse toggle']//h4[@class='ui header']");
         public IWebElement ClientePedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-pessoa-wrapper']//div[@class='collapse toggle']//h4[@class='ui header']//div[@class='ui column']");
         public IWebElement SessaoEntregas => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//div[@class='collapse toggle']//h4[@class='ui header']//i[@class='icon truck']");
         public IWebElement BotaoDefinirEntrega => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//div[@class='ui placeholder segment']//div[@class='ui large primary button']");
@@ -62,7 +63,7 @@ namespace QACoreBusiness.Util
 
         //negociação
         public IWebElement ClienteSemPedido => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-pessoa-wrapper']//form[@class='ui form']//h4[@class='ui header']");
-        public IWebElement SessaoPagamento => ElementWait.WaitForElementXpath(Driver, "//div[@class='pusher page']//section[@id='main']//div[@id='pageMain']//div[@id='pageContent']//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@class='ui green segment'][3]//div[@class='collapse toggle']//h4[@class='ui header']");
+        public IWebElement SessaoPagamento => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@class='ui green segment'][3]//div[@class='collapse toggle']//h4[@class='ui header']");
         public IWebElement PedidoSemItens => ElementWait.WaitForElementXpath(Driver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green placeholder segment']//div[@class='ui icon header']");
         public IWebElement ValorPedido => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui grid']//div[@class='right floated right aligned four wide column']//div[@class='ui statistic small']//div[@class='value']");
         public IWebElement BotaoCriarNegociacao => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//div[@class='ui placeholder segment']//div[@class='ui large primary button']");
@@ -74,5 +75,10 @@ namespace QACoreBusiness.Util
         public IWebElement SearchFormaPagamento => ElementWait.WaitForElementXpath(Driver, "//span[@class='select2-dropdown select2-dropdown--below']//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field'][@type='search']");
         public IWebElement ValorTotalGeralLiquidoNegociacao => ElementWait.WaitForElementXpath(Driver, "//div[@class='ui green segment']//table[@class='ui stackable celled structured table']//tfoot//tr//th[@class='right aligned'][2]");
 
+        //efetivar
+        public IWebElement ActionEfetivarPedido => Driver.FindElement(By.XPath("//div[@class='actions']//a[@class='popup-link'][@data-content='Efetivar Pedido']"));
+        public IWebElement PedidoComCliente => Driver.FindElement(By.XPath("//div[@id='pedido-pessoa-wrapper']//h4[@class='ui header']//div[@class='ui stackable row two column grid']//div[@class='ui column']"));
+        public IWebElement PendenciasPedido => Driver.FindElement(By.XPath("//div[@class='notify error notify-without-icon notify-top-right']//div[@class='notify-text']//h3"));
+        
     }
 }
