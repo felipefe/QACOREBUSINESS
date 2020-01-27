@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +10,7 @@ namespace QACoreBusiness.Util
 {
     class PedidoInserirVendedorUtil
     {
-        IWebDriver driver = ChromeDriverNavegador.driver;
+        IWebDriver driver = ElementsBase.chromeDriver;
         ElementsPedido pedido;
 
         public PedidoInserirVendedorUtil()
@@ -19,7 +20,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueTrocarVendedor()
         {
-            pedido.ActionTrocarVendedor.Click();
+            pedido.ActionsTrocarVendedor.Click();
 
         }
 

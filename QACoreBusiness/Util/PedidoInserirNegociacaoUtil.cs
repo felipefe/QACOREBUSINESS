@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,7 @@ namespace QACoreBusiness.Util
     class PedidoInserirNegociacaoUtil
     {
         ElementsPedido pedido;
-        IWebDriver driver = ChromeDriverNavegador.driver;
+        IWebDriver driver = ElementsBase.chromeDriver;
 
         public PedidoInserirNegociacaoUtil()
         {

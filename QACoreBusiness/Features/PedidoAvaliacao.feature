@@ -3,18 +3,19 @@
 Background: Estar logado no Corebusiness 
 			e estar na tela de pedidos
 			e ter um pedido em avaliaçao
-Given que usuário esteja logado
-And acesse o contexto de meus pedidos
-And que eu tenha um pedido em situaçao de avaliçao
+Given que eu esteja logado no sistema
+And acesse a index de pedido
+And tenha um pedido criado na situaçao {Avaliaçao}
+
 
 @avaliar_pedido
 Scenario: Avaliar pedido
 Given que eu acesse as actions do pedido
 And clique no botao Avaliaçao do Pedido
-And seja redirecionado para tela de avaliar pedido
+And seja redirecionado para tela CRM Avaliar Pedido
 When eu clicar no botao Prosseguir
 Then serei redirecionado para index de pedidos
-And a situação do meu pedido deve ser {Separação}
+And a situaçao do meu pedido deve ser {Separação}
 
 #@bloquear_pedido
 #Scenario: Bloquear pedido

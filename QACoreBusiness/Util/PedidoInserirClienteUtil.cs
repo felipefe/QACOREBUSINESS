@@ -6,12 +6,13 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using System.Threading;
+using QACoreBusiness.Elements;
 
 namespace QACoreBusiness.Util
 {
     class PedidoInserirClienteUtil
     {
-        IWebDriver driver = ChromeDriverNavegador.driver;
+        IWebDriver driver = ElementsBase.chromeDriver;
         ElementsPedido pedido;
 
         public PedidoInserirClienteUtil()

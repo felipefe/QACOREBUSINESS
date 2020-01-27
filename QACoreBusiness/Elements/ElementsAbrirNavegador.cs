@@ -1,14 +1,14 @@
 ﻿using OpenQA.Selenium;
+using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace QACoreBusiness.Util
 {
-    class ElementsAbrirNavegador
+    class ElementsAbrirNavegador : ElementsBase
     {
-        public static string URL => "http://dcbtestserver/COREBusiness";
-
+        
         public IWebDriver Driver;
         public IWebElement Usuario => ElementWait.WaitForElementXpath(Driver, "//div[@class='card-content']//div[@class='input-field'][1]//input[@id='UserName']");
         public IWebElement Senha => ElementWait.WaitForElementXpath(Driver, "//div[@class='card-content']//div[@class='input-field'][2]//input[@id='Password']");

@@ -7,6 +7,7 @@ using OpenQA.Selenium.Support.UI;
 using Xunit;
 using SeleniumExtras.WaitHelpers;
 using System.Threading;
+using QACoreBusiness.Elements;
 
 namespace QACoreBusiness.Util
 {
@@ -20,7 +21,7 @@ namespace QACoreBusiness.Util
         public void IniciarNavegador()
         {
 
-            driverNavegadorChrome = ChromeDriverNavegador.driver;
+            driverNavegadorChrome = ElementsBase.chromeDriver;
             driverNavegadorChrome.Manage().Window.Maximize();
 
             tela = new ElementsAbrirNavegador { Driver = driverNavegadorChrome };
@@ -40,7 +41,7 @@ namespace QACoreBusiness.Util
 
         internal void TelaDeLogin()
         {
-            driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.URL);
+            driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.UrlCoreBusiness);
             Thread.Sleep(1000);
         }
 
@@ -62,7 +63,7 @@ namespace QACoreBusiness.Util
         public void PaginaInicialCoreBusiness()
         {
             String URL = driverNavegadorChrome.Url;
-            Assert.Equal<String>(ElementsAbrirNavegador.URL + "/Home/MosaicoV2", URL);
+            Assert.Equal<String>(ElementsAbrirNavegador.UrlCoreBusiness + "/Home/MosaicoV2", URL);
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace QACoreBusiness.Util
 {
     class PedidoEfetivarUtil
     {
-        IWebDriver driver = ChromeDriverNavegador.driver;
+        IWebDriver driver = ElementsBase.chromeDriver;
         ElementsPedido pedido;
 
         public PedidoEfetivarUtil()
@@ -38,14 +39,14 @@ namespace QACoreBusiness.Util
 
         public void PedidoComVendedor()
         {
-            pedido.ActionTrocarVendedor.Click();
+            pedido.ActionsTrocarVendedor.Click();
             Assert.NotEqual("Vendedor", pedido.SelectVendedorInformado.Text);
             driver.Navigate().Back();
         }
 
         public void CliqueEfetivarPedido()
         {
-            pedido.ActionEfetivarPedido.Click();
+            pedido.ActionsEfetivarPedido.Click();
         }
 
         public void RedirecionaIndexPedidos()
