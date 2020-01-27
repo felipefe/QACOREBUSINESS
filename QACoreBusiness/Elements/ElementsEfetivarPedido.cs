@@ -6,7 +6,7 @@ using System.Text;
 
 namespace QACoreBusiness.Util
 {
-    class ElementsPedido : ElementsBase
+    class ElementsEfetivarPedido : ElementsBase
     {
         //Criar Pedido
         public IWebDriver Driver;
