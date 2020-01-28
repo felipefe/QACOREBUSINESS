@@ -75,11 +75,11 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 8
-testRunner.Given("que usuario esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-testRunner.And("acesse o contexto de meus pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-testRunner.And("que eu tenha um pedido em situaçao de {Conferido}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("tenha um pedido criado na situaçao {Conferido}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
 testRunner.And("o serviço coreservice esteja rodando", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12

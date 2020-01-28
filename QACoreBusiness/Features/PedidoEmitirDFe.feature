@@ -2,12 +2,12 @@
 
 Background: Estar logado no Corebusiness 
 			e estar na tela de pedidos
-			e ter um pedido em emissao de documentos fiscais
+			e ter um pedido conferido
 			e o serviço do coreservice esteja rodando
 			e esteja em ambiente de homologação
-Given que usuario esteja logado
-And acesse o contexto de meus pedidos
-And que eu tenha um pedido em situaçao de {Conferido}
+Given que eu esteja logado no sistema
+And acesse a index de pedido
+And tenha um pedido criado na situaçao {Conferido}
 And o serviço coreservice esteja rodando
 And esteja em ambiente de homologacao
 #verificar situacao para coreservice e ambiente de homologaçao
