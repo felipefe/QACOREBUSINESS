@@ -6,7 +6,7 @@ using System.Text;
 
 namespace QACoreBusiness.Util
 {
-    class ElementsEfetivarPedido : ElementsBasePedido
+    class ElementsMontarPedido : ElementsBasePedido
     {
 
 

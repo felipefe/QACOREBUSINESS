@@ -10,12 +10,12 @@ namespace QACoreBusiness.Util
     class PedidoCriarNovoUtil
     {
         IWebDriver driver = Base.chromeDriver;
-        ElementsEfetivarPedido pedido;
+        ElementsMontarPedido pedido;
 
 
         public void AcessarIndexPedidos()
         {
-            pedido = new ElementsEfetivarPedido();
+            pedido = new ElementsMontarPedido();
             driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
         }
 

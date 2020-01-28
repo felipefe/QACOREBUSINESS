@@ -75,11 +75,11 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 6
-testRunner.Given("que o usuario esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
-testRunner.And("acesse o contexto de meus pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
-testRunner.And("tenha um pedido em situaçao de Conferência", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("tenha um pedido criado na situaçao {Conferência}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -96,41 +96,43 @@ testRunner.And("tenha um pedido em situaçao de Conferência", ((string)(null)),
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferir item pedido", null, new string[] {
                         "conferir_item_pedido"});
-#line 12
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 13
+#line 12
 testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
+#line 13
 testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
+#line 14
 testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 15
 testRunner.And("o SKU seja copiado da coluna Código", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
+#line 16
 testRunner.And("seja colado no editText Código do Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
+#line 17
 testRunner.And("a quantidade seja copiada da coluna Qtd. Total", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 18
 testRunner.And("seja colada no editText Quantidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+testRunner.And("eu clicar Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
-testRunner.When("eu clicar Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
 testRunner.Then("uma mensagem de conferido com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Conferencia de pedido quantidade errada")]
+        [Xunit.FactAttribute(DisplayName="Conferir quantidade errada")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoConferencia")]
-        [Xunit.TraitAttribute("Description", "Conferencia de pedido quantidade errada")]
-        [Xunit.TraitAttribute("Category", "conferencia_pedido_quantidade_errada")]
-        public virtual void ConferenciaDePedidoQuantidadeErrada()
+        [Xunit.TraitAttribute("Description", "Conferir quantidade errada")]
+        [Xunit.TraitAttribute("Category", "conferir_quantidade_errada")]
+        public virtual void ConferirQuantidadeErrada()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferencia de pedido quantidade errada", null, new string[] {
-                        "conferencia_pedido_quantidade_errada"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferir quantidade errada", null, new string[] {
+                        "conferir_quantidade_errada"});
 #line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -158,14 +160,14 @@ testRunner.Then("a quantidade da coluna Qtd. Conferida deve ser diferente da col
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Conferencia de pedido codigo errado")]
+        [Xunit.FactAttribute(DisplayName="Conferir codigo errado")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoConferencia")]
-        [Xunit.TraitAttribute("Description", "Conferencia de pedido codigo errado")]
-        [Xunit.TraitAttribute("Category", "conferencia_pedido_codigo_errado")]
-        public virtual void ConferenciaDePedidoCodigoErrado()
+        [Xunit.TraitAttribute("Description", "Conferir codigo errado")]
+        [Xunit.TraitAttribute("Category", "conferir_codigo_errado")]
+        public virtual void ConferirCodigoErrado()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferencia de pedido codigo errado", null, new string[] {
-                        "conferencia_pedido_codigo_errado"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferir codigo errado", null, new string[] {
+                        "conferir_codigo_errado"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -193,14 +195,14 @@ testRunner.Then("uma mensagem de Codigo Invalido é exibida", ((string)(null)), 
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Reiniciar processo conferencia pedido")]
+        [Xunit.FactAttribute(DisplayName="Conferir e reiniciar processo")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoConferencia")]
-        [Xunit.TraitAttribute("Description", "Reiniciar processo conferencia pedido")]
-        [Xunit.TraitAttribute("Category", "reiniciar_processo_conferencia")]
-        public virtual void ReiniciarProcessoConferenciaPedido()
+        [Xunit.TraitAttribute("Description", "Conferir e reiniciar processo")]
+        [Xunit.TraitAttribute("Category", "conferir_e_reiniciar_processo")]
+        public virtual void ConferirEReiniciarProcesso()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reiniciar processo conferencia pedido", null, new string[] {
-                        "reiniciar_processo_conferencia"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferir e reiniciar processo", null, new string[] {
+                        "conferir_e_reiniciar_processo"});
 #line 51
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -213,77 +215,128 @@ testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecF
 #line 54
 testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
-testRunner.When("eu clicar no botao Reiniciar Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("o SKU seja copiado da coluna Código", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
-testRunner.And("confirmar clicando no botao OK do alerta exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja colado no editText Código do Produto um código diferente do copiado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
-testRunner.Then("uma mensagem de reiniciado com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("eu clicar Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
+testRunner.When("eu clicar no botao Reiniciar Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+testRunner.And("confirmar clicando no botao OK do alerta exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+testRunner.Then("uma mensagem de reiniciado com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
 testRunner.And("a coluna Qtd. Conferida deve ser zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Concluir o processo de conferencia do pedido")]
+        [Xunit.FactAttribute(DisplayName="Reiniciar conferencia finalizada")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoConferencia")]
-        [Xunit.TraitAttribute("Description", "Concluir o processo de conferencia do pedido")]
-        [Xunit.TraitAttribute("Category", "concluir_processo_conferencia_pedido")]
-        public virtual void ConcluirOProcessoDeConferenciaDoPedido()
+        [Xunit.TraitAttribute("Description", "Reiniciar conferencia finalizada")]
+        [Xunit.TraitAttribute("Category", "reiniciar_conferencia_finalizada")]
+        public virtual void ReiniciarConferenciaFinalizada()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Concluir o processo de conferencia do pedido", null, new string[] {
-                        "concluir_processo_conferencia_pedido"});
-#line 62
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reiniciar conferencia finalizada", null, new string[] {
+                        "reiniciar_conferencia_finalizada"});
+#line 64
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 63
-testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 64
-testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
-testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 66
-testRunner.And("tenha conferido corretamente os itens do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 67
-testRunner.When("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
-testRunner.Then("uma mensagem de Conferência Finalizada deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("uma mensagem de Conferência Finalizada deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+testRunner.When("eu clicar no botao Reiniciar Processo Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 70
+testRunner.And("confirmar clicando no botao OK do alerta exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+testRunner.Then("uma mensagem de reiniciado com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 72
+testRunner.And("a coluna Qtd. Conferida deve ser zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Finalizar o processo de conferencia do pedido")]
+        [Xunit.FactAttribute(DisplayName="Concluir conferencia finalizada")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoConferencia")]
-        [Xunit.TraitAttribute("Description", "Finalizar o processo de conferencia do pedido")]
-        [Xunit.TraitAttribute("Category", "finalizar_processo_conferencia_pedido")]
-        public virtual void FinalizarOProcessoDeConferenciaDoPedido()
+        [Xunit.TraitAttribute("Description", "Concluir conferencia finalizada")]
+        [Xunit.TraitAttribute("Category", "concluir_conferencia_finalizada")]
+        public virtual void ConcluirConferenciaFinalizada()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Finalizar o processo de conferencia do pedido", null, new string[] {
-                        "finalizar_processo_conferencia_pedido"});
-#line 72
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Concluir conferencia finalizada", null, new string[] {
+                        "concluir_conferencia_finalizada"});
+#line 75
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 73
-testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 74
-testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
-testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 76
-testRunner.And("tenha conferido corretamente os itens do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 77
-testRunner.And("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
-testRunner.When("clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
-testRunner.And("ser redirecionado para tela de COM Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("uma mensagem de Conferência Finalizada deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
-testRunner.And("clicar em Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
-testRunner.Then("o sistema deverá redirecionar para tela Entrega e Remessas do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("ser redirecionado para tela de COM Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+testRunner.And("clicar em Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+testRunner.Then("o sistema deve redirecionar para tela Entrega e Remessas do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Conferir e concluir todo processo de conferencia")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoConferencia")]
+        [Xunit.TraitAttribute("Description", "Conferir e concluir todo processo de conferencia")]
+        [Xunit.TraitAttribute("Category", "conferir_e_concluir_todo_processo_conferencia")]
+        public virtual void ConferirEConcluirTodoProcessoDeConferencia()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferir e concluir todo processo de conferencia", null, new string[] {
+                        "conferir_e_concluir_todo_processo_conferencia"});
+#line 87
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 88
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 89
+testRunner.And("clique no botao Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+testRunner.And("o SKU seja copiado da coluna Código", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+testRunner.And("seja colado no editText Código do Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+testRunner.And("a quantidade seja copiada da coluna Qtd. Total", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+testRunner.And("seja colada no editText Quantidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+testRunner.And("eu clicar Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+testRunner.And("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+testRunner.When("clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 98
+testRunner.And("ser redirecionado para tela de COM Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+testRunner.And("clicar em Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+testRunner.Then("o sistema deve redirecionar para tela Entrega e Remessas do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
