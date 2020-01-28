@@ -11,12 +11,12 @@ namespace QACoreBusiness.Util
     class PedidoInserirItemUtil
     {
 
-        IWebDriver driver = ElementsBase.chromeDriver;
+        IWebDriver driver = Base.chromeDriver;
         ElementsEfetivarPedido pedido;
 
         public PedidoInserirItemUtil()
         {
-            pedido = new ElementsEfetivarPedido { Driver = driver };
+            pedido = new ElementsEfetivarPedido ();
         }
 
         public void CliqueSessaoProdutos()

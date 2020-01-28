@@ -21,16 +21,16 @@ namespace QACoreBusiness.Util
         public void IniciarNavegador()
         {
 
-            driverNavegadorChrome = ElementsBase.chromeDriver;
+            driverNavegadorChrome = Base.chromeDriver;
             driverNavegadorChrome.Manage().Window.Maximize();
 
-            tela = new ElementsAbrirNavegador { Driver = driverNavegadorChrome };
+            tela = new ElementsAbrirNavegador ();
         }
 
         internal void MensagemLoginInvalido()
         {
             ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='red card z-depth-4']//div[@class='card-content white-text']");
-            Assert.Equal<String>("Erro ao efetuar login", tela.MensagemLoginInvalido.Text);
+            Assert.Equal("Erro ao efetuar login", tela.MensagemLoginInvalido.Text);
         }
 
         public void CliqueEntrarSistema()
@@ -63,7 +63,7 @@ namespace QACoreBusiness.Util
         public void PaginaInicialCoreBusiness()
         {
             String URL = driverNavegadorChrome.Url;
-            Assert.Equal<String>(ElementsAbrirNavegador.UrlCoreBusiness + "/Home/MosaicoV2", URL);
+            Assert.Equal(ElementsAbrirNavegador.UrlCoreBusiness + "/Home/MosaicoV2", URL);
         }
 
 

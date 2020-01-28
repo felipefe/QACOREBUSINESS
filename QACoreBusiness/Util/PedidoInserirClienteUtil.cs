@@ -12,12 +12,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoInserirClienteUtil
     {
-        IWebDriver driver = ElementsBase.chromeDriver;
+        IWebDriver driver = Base.chromeDriver;
         ElementsEfetivarPedido pedido;
 
         public PedidoInserirClienteUtil()
         {
-            pedido = new ElementsEfetivarPedido { Driver = driver };
+            pedido = new ElementsEfetivarPedido();
         }
 
         public void CliqueEditPedido()
@@ -27,7 +27,7 @@ namespace QACoreBusiness.Util
 
         public void UrlEditPedido()
         {
-            Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(pedido.UrlEditPedido, driver.Url);
         }
 
         public void AcessarIndexPedido()
@@ -46,7 +46,7 @@ namespace QACoreBusiness.Util
         //queremos a segunda mensagem de pessoa adicionada com sucesso que ocorrera mais adiante
         public void AcessarUrlEditPedido()
         {
-            Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(pedido.UrlEditPedido, driver.Url);
             Thread.Sleep(4000);      
         }
 

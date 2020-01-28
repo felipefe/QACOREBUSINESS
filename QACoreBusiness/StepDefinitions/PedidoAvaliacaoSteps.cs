@@ -1,51 +1,54 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using QACoreBusiness.Util;
 
 namespace QACoreBusiness.StepDefinitions
 {
     [Binding]
     public class PedidoAvaliacaoSteps
     {
+        PedidoAvaliacaoUtil pau = new PedidoAvaliacaoUtil();
+
         [Given(@"tenha um pedido criado na situaçao \{Avaliaçao}")]
         public void GivenTenhaUmPedidoCriadoNaSituacaoAvaliacao()
         {
-            ScenarioContext.Current.Pending();
+            pau.PedidoEmStatusAvaliacao();
         }
         
         [Given(@"que eu acesse as actions do pedido")]
         public void GivenQueEuAcesseAsActionsDoPedido()
         {
-            ScenarioContext.Current.Pending();
+            pau.ActionsDoPedido();
         }
         
         [Given(@"clique no botao Avaliaçao do Pedido")]
         public void GivenCliqueNoBotaoAvaliacaoDoPedido()
         {
-            ScenarioContext.Current.Pending();
+            pau.CliqueAvaliacaoPedido();
         }
         
         [Given(@"seja redirecionado para tela CRM Avaliar Pedido")]
         public void GivenSejaRedirecionadoParaTelaCRMAvaliarPedido()
         {
-            ScenarioContext.Current.Pending();
+            pau.IndexAvaliarPedido();
         }
         
         [When(@"eu clicar no botao Prosseguir")]
         public void WhenEuClicarNoBotaoProsseguir()
         {
-            ScenarioContext.Current.Pending();
+            pau.ProsseguirAvaliacao();
         }
         
         [Then(@"serei redirecionado para index de pedidos")]
         public void ThenSereiRedirecionadoParaIndexDePedidos()
         {
-            ScenarioContext.Current.Pending();
+            pau.IndexPedidos();
         }
         
         [Then(@"a situaçao do meu pedido deve ser \{Separação}")]
         public void ThenASituacaoDoMeuPedidoDeveSerSeparacao()
         {
-            ScenarioContext.Current.Pending();
+            pau.PedidoEmStatusSeparacao();
         }
     }
 }

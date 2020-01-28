@@ -10,12 +10,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoInserirVendedorUtil
     {
-        IWebDriver driver = ElementsBase.chromeDriver;
+        IWebDriver driver = Base.chromeDriver;
         ElementsEfetivarPedido pedido;
 
         public PedidoInserirVendedorUtil()
         {
-            pedido = new ElementsEfetivarPedido { Driver = driver };
+            pedido = new ElementsEfetivarPedido();
         }
 
         public void CliqueTrocarVendedor()
@@ -52,7 +52,7 @@ namespace QACoreBusiness.Util
 
         public void UrlEdicaoPedido()
         {
-            Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(pedido.UrlEditPedido, driver.Url);
         }
 
         public void MensagemAposInserirVendedor()

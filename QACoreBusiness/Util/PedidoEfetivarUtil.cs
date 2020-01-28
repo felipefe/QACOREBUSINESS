@@ -9,12 +9,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoEfetivarUtil
     {
-        IWebDriver driver = ElementsBase.chromeDriver;
+        IWebDriver driver = Base.chromeDriver;
         ElementsEfetivarPedido pedido;
 
         public PedidoEfetivarUtil()
         {
-            pedido = new ElementsEfetivarPedido { Driver = driver };
+            pedido = new ElementsEfetivarPedido();
         }
 
         public void PedidoComCliente()
@@ -61,7 +61,7 @@ namespace QACoreBusiness.Util
 
         public void NaoRedirecionaIndexPEdidos()
         {
-            Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(pedido.UrlEditPedido, driver.Url);
         }
 
         public void AlertaPendenciasPedido()

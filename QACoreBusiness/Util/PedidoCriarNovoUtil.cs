@@ -9,13 +9,13 @@ namespace QACoreBusiness.Util
 {
     class PedidoCriarNovoUtil
     {
-        IWebDriver driver = ElementsBase.chromeDriver;
+        IWebDriver driver = Base.chromeDriver;
         ElementsEfetivarPedido pedido;
 
 
         public void AcessarIndexPedidos()
         {
-            pedido = new ElementsEfetivarPedido { Driver = driver };
+            pedido = new ElementsEfetivarPedido();
             driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
         }
 
@@ -26,7 +26,7 @@ namespace QACoreBusiness.Util
 
         public void UrlEditPedido()
         {
-            Assert.Contains(pedido.UrlContainsEditPedido, driver.Url);
+            Assert.Contains(pedido.UrlEditPedido, driver.Url);
         }
     }
 }
