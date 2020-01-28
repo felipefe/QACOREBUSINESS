@@ -44,7 +44,7 @@ namespace QACoreBusiness.Util
             pedido.SearchTransportadora.SendKeys(transportadora);
             Thread.Sleep(2000);
             pedido.SearchTransportadora.SendKeys(Keys.Enter);
-            ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-capsule']//button[@type='button'][@class='iziToast-close']").Click();
+            pedido.CloseAlertaPedidoAtualizado.Click();
         }
 
         public void MensagemEntregaAtualizada()

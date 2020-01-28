@@ -75,11 +75,11 @@ namespace QACoreBusiness.Features
         {
 #line 3
 #line 6
-testRunner.Given("que o usuario esteja logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
-testRunner.And("acesse o contexto de meus pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
-testRunner.And("tenha um pedido em situaçao de Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("tenha um pedido criado na situaçao {Separaçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -110,16 +110,22 @@ testRunner.And("seja redirecionado para tela WMS Separaçao", ((string)(null)), 
 #line 15
 testRunner.And("clique no botao Definir todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
-testRunner.And("depois clicar no botao Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("uma mensagem de sucesso aparecera {\'Modificado o responsável de todos os itens.\'}" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
-testRunner.When("eu clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("depois clicar no botao Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
-testRunner.And("ser redicionado para a tela COM Finalizar Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("uma mensagem de sucesso deve aparecer {\'Os itens foram marcados como separados.\'}" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
-testRunner.And("clicar no botao Finalizao Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("eu clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
-testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("ser redicionado para a tela COM Finalizar Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
+testRunner.And("clicar no botao Finalizar Separaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
 testRunner.And("a situaçao do meu pedido deve ser alterada para {Conferência}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

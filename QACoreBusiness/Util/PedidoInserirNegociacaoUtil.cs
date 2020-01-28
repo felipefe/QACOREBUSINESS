@@ -75,5 +75,10 @@ namespace QACoreBusiness.Util
         {
             Assert.Contains("R$",pedido.ValorTotalGeralLiquidoNegociacao.Text);
         }
+
+        public void NegociacaoSemFormaPagamento(string mensagem)
+        {
+            Assert.Equal(mensagem, pedido.NegociacaoSemFormaPagamento.Text);
+        }
     }
 }

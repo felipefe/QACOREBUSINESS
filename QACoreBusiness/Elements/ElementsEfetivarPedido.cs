@@ -23,7 +23,6 @@ namespace QACoreBusiness.Util
         public IWebElement BotaoEditPedido => ElementWait.WaitForElementXpath(chromeDriver, "//table//tbody//tr[1]//td[11][@class=' hidden-mobile']/a[@data-content='Editar']");
         public IWebElement EditTextCPClientePedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large input']/input[@type='text'][@name='cp'][@placeholder='CPF/CNPJ']");
         public IWebElement EditTextNomeCliente => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large input']/input[@type='text'][@name='nome'][@placeholder='Nome']");
-        public IWebElement AlertaMensagemPedidoAtualizado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
         public IWebElement SituacaoNormal => ElementWait.WaitForElementXpath(chromeDriver, "//h4[@class='ui header']//div[@class='ui column right aligned']//div[@class='ui label']");
         public IWebElement SituacaoRestrito => ElementWait.WaitForElementXpath(chromeDriver, "//h4[@class='ui header']//div[@class='ui column right aligned']//div[@class='ui label red']");
         public IWebElement BotaoSelecionarCliente => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui column right aligned six wide']//button[@class='ui large button']");
@@ -82,6 +81,7 @@ namespace QACoreBusiness.Util
         public IWebElement SelectFormaPagamento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='NegociacaoParte_FormaPagamento_auto_wrapper']//div[@class='ui select2 fluid']");
         public IWebElement SearchFormaPagamento => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-dropdown select2-dropdown--below']//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field'][@type='search']");
         public IWebElement ValorTotalGeralLiquidoNegociacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui green segment']//table[@class='ui stackable celled structured table']//tfoot//tr//th[@class='right aligned'][2]");
+        public IWebElement NegociacaoSemFormaPagamento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui negative message validation-summary-errors']//ul[@class='list']//li");
         #endregion
 
         #region Efetivar Pedido

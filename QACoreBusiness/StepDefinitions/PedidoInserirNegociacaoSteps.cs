@@ -74,5 +74,12 @@ namespace QACoreBusiness.StepDefinitions
         {
             pin.TotalGeralLiquidoNegociacao();
         }
+
+        [Then(@"uma mensagem de campo obrigatorio deve aparecer \{'(.*)'}")]
+        public void ThenUmaMensagemDeCampoObrigatorioDeveAparecer(string mensagem)
+        {
+            pin.NegociacaoSemFormaPagamento(mensagem);
+        }
+
     }
 }

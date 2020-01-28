@@ -179,6 +179,37 @@ testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Inserir negociçao ao pedido sem inserir forma de pagamento")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoInserirNegociacao")]
+        [Xunit.TraitAttribute("Description", "Inserir negociçao ao pedido sem inserir forma de pagamento")]
+        [Xunit.TraitAttribute("Category", "inserir_negociacao_pedido_sem_informar_fp")]
+        public virtual void InserirNegocicaoAoPedidoSemInserirFormaDePagamento()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir negociçao ao pedido sem inserir forma de pagamento", null, new string[] {
+                        "inserir_negociacao_pedido_sem_informar_fp"});
+#line 40
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 41
+testRunner.Given("já tenha informado o cliente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+testRunner.And("valor do pedido seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+testRunner.And("que eu cliquei na sessao de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+testRunner.When("eu clicar no botao Criar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+testRunner.And("inserir uma descriçao no editText {\'primeira negociacao\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+testRunner.Then("uma mensagem de campo obrigatorio deve aparecer {\'This field is required.\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
