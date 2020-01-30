@@ -8,6 +8,7 @@ And seja redirecionado para url {/IDFe/Empresa/}
 And clique no botao dos Parametros da Empresa
 And seja redirecionado para url dos parametros {/Parametro/ParametrosEmpresa/}
 
+
 @habilitar_ambiente_homologaçao
 Scenario: Habilitar ambiente de homologacao
 Given que eu clique para editar o parametro Configurações de Emissão de NF-e
