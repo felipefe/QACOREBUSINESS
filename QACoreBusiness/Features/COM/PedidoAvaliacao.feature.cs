@@ -10,24 +10,24 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace QACoreBusiness.Features
+namespace QACoreBusiness.Features.COM
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PedidoRemoverItemFeature : Xunit.IClassFixture<PedidoRemoverItemFeature.FixtureData>, System.IDisposable
+    public partial class PedidoAvaliacaoFeature : Xunit.IClassFixture<PedidoAvaliacaoFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "PedidoRemoverItem.feature"
+#line 1 "PedidoAvaliacao.feature"
 #line hidden
         
-        public PedidoRemoverItemFeature(PedidoRemoverItemFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PedidoAvaliacaoFeature(PedidoAvaliacaoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoRemoverItem", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoAvaliacao", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,16 +74,12 @@ namespace QACoreBusiness.Features
         public virtual void FeatureBackground()
         {
 #line 3
-#line 4
-testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 5
-testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
-testRunner.And("tenha um pedido criado na situaçao {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
-testRunner.And("clique para editar este pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
-testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("tenha um pedido criado na situaçao {Avaliaçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -92,27 +88,31 @@ testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((Te
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Remover item de pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "PedidoRemoverItem")]
-        [Xunit.TraitAttribute("Description", "Remover item de pedido")]
-        public virtual void RemoverItemDePedido()
+        [Xunit.FactAttribute(DisplayName="Avaliar pedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
+        [Xunit.TraitAttribute("Description", "Avaliar pedido")]
+        [Xunit.TraitAttribute("Category", "avaliar_pedido")]
+        public virtual void AvaliarPedido()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remover item de pedido", null, ((string[])(null)));
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Avaliar pedido", null, new string[] {
+                        "avaliar_pedido"});
+#line 12
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 11
-testRunner.Given("que o pedido tenha itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
-testRunner.And("que eu cliquei nas action do item do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-testRunner.When("clicar no botao remover item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
-testRunner.Then("o item deve ser removido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja redirecionado para tela CRM Avaliar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+testRunner.When("eu clicar no botao Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+testRunner.And("a situaçao do meu pedido deve ser {Separação}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -124,12 +124,12 @@ testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)
             
             public FixtureData()
             {
-                PedidoRemoverItemFeature.FeatureSetup();
+                PedidoAvaliacaoFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PedidoRemoverItemFeature.FeatureTearDown();
+                PedidoAvaliacaoFeature.FeatureTearDown();
             }
         }
     }

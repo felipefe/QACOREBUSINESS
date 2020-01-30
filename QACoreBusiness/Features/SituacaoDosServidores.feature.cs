@@ -138,6 +138,35 @@ testRunner.Then("a situacao deve ser alterada para {\'Running\'}", ((string)(nul
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Limpar mensagens COREService")]
+        [Xunit.TraitAttribute("FeatureTitle", "SituacaoDosServidores")]
+        [Xunit.TraitAttribute("Description", "Limpar mensagens COREService")]
+        [Xunit.TraitAttribute("Category", "limpar_mensagens_coreservice")]
+        public virtual void LimparMensagensCOREService()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Limpar mensagens COREService", null, new string[] {
+                        "limpar_mensagens_coreservice"});
+#line 25
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 26
+testRunner.When("clicar no botao Limpar Mensagens do COREService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+testRunner.And("confirme clicando sim na modal aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+testRunner.And("seja redirecionado para tela UserTask", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+testRunner.And("aguarde ate progresso de limpar hisporico seja concluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+testRunner.Then("clique no botao voltar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
+testRunner.And("seja redirecionado para URL de situacao dos servidores", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

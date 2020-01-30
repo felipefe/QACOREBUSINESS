@@ -21,11 +21,12 @@ And a situacao ser alterada para {'Stopped'}
 When eu clicar para Iniciar o Serviço
 Then a situacao deve ser alterada para {'Running'}
 
-
-#And eu clique no botao Limpar Mensagens do COREService
-#And confirme clicando sim na popup aberta
-#And seja redirecionado para tela UserTask
-#And o progresso de limpar hisporico seja 100%
-#And clique no botao voltar
-#And seja redirecionado para URL de situacao dos servidores
+@limpar_mensagens_coreservice
+Scenario: Limpar mensagens COREService
+When clicar no botao Limpar Mensagens do COREService
+And confirme clicando sim na modal aberta
+And seja redirecionado para tela UserTask
+And aguarde ate progresso de limpar hisporico seja concluido
+Then clique no botao voltar
+And seja redirecionado para URL de situacao dos servidores
 

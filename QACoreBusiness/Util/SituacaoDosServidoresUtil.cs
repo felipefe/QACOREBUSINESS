@@ -41,5 +41,30 @@ namespace QACoreBusiness.Util
         {
             Assert.Equal(novaSituacao, servidor.ColunaSituacaoServidores.Text);
         }
+
+        public void CliqueBotaoLimpar()
+        {
+            servidor.BotaoLimparCoreService.Click();
+        }
+
+        public void CliqueConfirmaçaoModal()
+        {
+            servidor.BotaoSimModalConfirmarLimpeza.Click();
+        }
+
+        public void ValidarUrlUserTask()
+        {
+            Assert.Contains(servidor.UrlLimparMensagensCoreService, driver.Url);
+        }
+
+        public void ProgressoLimparCoreService()
+        {
+            Assert.Equal("100%", servidor.ProgressoLimpeza.Text);
+        }
+
+        public void CliqueBotaoVoltar()
+        {
+            servidor.BotaoVoltarPagina.Click();
+        }
     }
 }

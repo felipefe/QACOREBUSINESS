@@ -10,24 +10,24 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace QACoreBusiness.Features
+namespace QACoreBusiness.Features.COM
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class PedidoAvaliacaoFeature : Xunit.IClassFixture<PedidoAvaliacaoFeature.FixtureData>, System.IDisposable
+    public partial class PedidoCriarNovoFeature : Xunit.IClassFixture<PedidoCriarNovoFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "PedidoAvaliacao.feature"
+#line 1 "PedidoCriarNovo.feature"
 #line hidden
         
-        public PedidoAvaliacaoFeature(PedidoAvaliacaoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public PedidoCriarNovoFeature(PedidoCriarNovoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoAvaliacao", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PedidoCriarNovo", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +74,12 @@ namespace QACoreBusiness.Features
         public virtual void FeatureBackground()
         {
 #line 3
-#line 6
+#line 4
 testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
+#line 5
+testRunner.And("que esteja no hub principal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 6
 testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
-testRunner.And("tenha um pedido criado na situaçao {Avaliaçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -88,31 +88,24 @@ testRunner.And("tenha um pedido criado na situaçao {Avaliaçao}", ((string)(nul
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Avaliar pedido")]
-        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
-        [Xunit.TraitAttribute("Description", "Avaliar pedido")]
-        [Xunit.TraitAttribute("Category", "avaliar_pedido")]
-        public virtual void AvaliarPedido()
+        [Xunit.FactAttribute(DisplayName="Criar novo pedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoCriarNovo")]
+        [Xunit.TraitAttribute("Description", "Criar novo pedido")]
+        [Xunit.TraitAttribute("Category", "criar_pedido")]
+        public virtual void CriarNovoPedido()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Avaliar pedido", null, new string[] {
-                        "avaliar_pedido"});
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar novo pedido", null, new string[] {
+                        "criar_pedido"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 13
-testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 14
-testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
-testRunner.And("seja redirecionado para tela CRM Avaliar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
-testRunner.When("eu clicar no botao Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
-testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
-testRunner.And("a situaçao do meu pedido deve ser {Separação}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+testRunner.When("o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços" +
+                    "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+testRunner.Then("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -124,12 +117,12 @@ testRunner.And("a situaçao do meu pedido deve ser {Separação}", ((string)(nul
             
             public FixtureData()
             {
-                PedidoAvaliacaoFeature.FeatureSetup();
+                PedidoCriarNovoFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                PedidoAvaliacaoFeature.FeatureTearDown();
+                PedidoCriarNovoFeature.FeatureTearDown();
             }
         }
     }

@@ -32,7 +32,6 @@ namespace QACoreBusiness.StepDefinitions
         public void GivenASituacaoSerAlteradaPara(string novaSituacao)
         {
             ssu.NovaSitualCoreService(novaSituacao);
-            Thread.Sleep(1000);
         }
 
 
@@ -47,7 +46,43 @@ namespace QACoreBusiness.StepDefinitions
         {
             ssu.CliqueIniciarOuPararCoreService();
         }
-        
+
+        [When(@"clicar no botao Limpar Mensagens do COREService")]
+        public void WhenClicarNoBotaoLimparMensagensDoCOREService()
+        {
+            ssu.CliqueBotaoLimpar();
+        }
+
+        [When(@"confirme clicando sim na modal aberta")]
+        public void WhenConfirmeClicandoSimNaPopupAberta()
+        {
+            ssu.CliqueConfirmaçaoModal();
+        }
+
+        [When(@"seja redirecionado para tela UserTask")]
+        public void WhenSejaRedirecionadoParaTelaUserTask()
+        {
+            ssu.ValidarUrlUserTask();
+        }
+
+        [When(@"aguarde ate progresso de limpar hisporico seja concluido")]
+        public void WhenAguardeAteProgressoDeLimparHisporicoSeja()
+        {
+            ssu.ProgressoLimparCoreService();
+        }
+
+        [Then(@"clique no botao voltar")]
+        public void ThenCliqueNoBotaoVoltar()
+        {
+            ssu.CliqueBotaoVoltar();
+        }
+
+        [Then(@"seja redirecionado para URL de situacao dos servidores")]
+        public void ThenSejaRedirecionadoParaURLDeSituacaoDosServidores()
+        {
+            ssu.ValidarURLServiceStatus();
+        }
+
         [Then(@"a situacao deve ser alterada para \{'(.*)'}")]
         public void ThenASituacaoDeveSerAlteradaPara(string novaSituacao)
         {

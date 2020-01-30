@@ -79,11 +79,11 @@ testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk
 #line 6
 testRunner.And("acesse o contexto de Empresa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
-testRunner.And("seja redirecionado para url {\'/IDFe/Empresa/\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja redirecionado para url {/IDFe/Empresa/}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
 testRunner.And("clique no botao dos Parametros da Empresa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-testRunner.And("seja redirecionado para url dos parametros {\'/Parametro/ParametrosEmpresa/\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja redirecionado para url dos parametros {/Parametro/ParametrosEmpresa/}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -110,11 +110,11 @@ testRunner.Given("que eu clique para editar o parametro Configurações de Emiss
 #line 14
 testRunner.And("esteja na tela de ediçao do parametro {\'Config. NF-e\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.When("selecionar Ambiente de Testes ou Homologaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("selecionar {\'Ambiente de Testes ou Homologação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
 testRunner.And("clicar no botao salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
-testRunner.Then("serei redirecionado para url dos parametros {\'/Parametro/ParametrosEmpresa/\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("serei redirecionado para url dos parametros {/Parametro/ParametrosEmpresa/}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
 testRunner.And("a coluna valor do parametro Config. NF-e deve ser Ambiente de Testes ou Homologaç" +
                     "ao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
