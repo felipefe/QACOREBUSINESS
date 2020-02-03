@@ -50,6 +50,12 @@ namespace QACoreBusiness.Elements
         public IWebElement MensagemConferenciaFinalizada => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large positive icon message']//div[@class='content']//div[@class='header']");
         #endregion
 
+        #region Emitir DFe
+        public IWebElement ActionsEmitirDFePedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@class='popup-link tool-item gradient'][@data-content='Emitir Documentos Fiscais']");
+        public IWebElement ColunaValorPedido => ElementWait.WaitForElementXpath(chromeDriver, "//table//tbody//tr[1]//td[10][@class='left aligned'][@data-field='ValorNegociado']");
+        #endregion
+
+
 
     }
 }

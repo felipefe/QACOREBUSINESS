@@ -38,7 +38,17 @@ namespace QACoreBusiness.Util
             Assert.Contains(parametro.UrlParametroEmpresa, driver.Url);
         }
 
-        public void CliqueEditarParametro()
+        public void isHomologacao()
+        {
+            driver.Navigate().GoToUrl(parametro.UrlIndexEmpresa);
+            ValidaUrlContextoEmpresa();
+            CliqueAcessoParametrosEmpresa();
+            CliqueEditarParametroNFE();
+            AmbienteHomologacaoSelecionado();
+            driver.Navigate().GoToUrl(Base.UrlCoreBusiness);
+        }
+
+        public void CliqueEditarParametroNFE()
         {
             parametro.EditParametroConfigNFE.Click();
         }

@@ -66,5 +66,12 @@ namespace QACoreBusiness.Util
         {
             servidor.BotaoVoltarPagina.Click();
         }
+
+        public void isHabilitadoCoreService()
+        {
+            driver.Navigate().GoToUrl(servidor.UrlSituacaoServidores);
+            SituacaoAtualCoreService("Running");
+            driver.Navigate().GoToUrl(Base.UrlCoreBusiness);
+        }
     }
 }

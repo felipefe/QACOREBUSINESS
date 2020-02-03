@@ -36,7 +36,7 @@ namespace QACoreBusiness.StepDefinitions
         [Given(@"que eu clique para editar o parametro Configurações de Emissão de NF-e")]
         public void GivenQueEuCliqueParaEditarOParametroConfiguracoesDeEmissaoDeNF_E()
         {
-            peu.CliqueEditarParametro();
+            peu.CliqueEditarParametroNFE();
         }
 
         [Given(@"esteja na tela de ediçao do parametro \{'(.*)'}")]
@@ -61,7 +61,7 @@ namespace QACoreBusiness.StepDefinitions
         [When(@"que eu clique para editar o parametro Configurações de Emissão de NF-e")]
         public void WhenQueEuCliqueParaEditarOParametroConfiguracoesDeEmissaoDeNF_E()
         {
-            peu.CliqueEditarParametro();
+            peu.CliqueEditarParametroNFE();
         }
         
         [When(@"esteja na tela de ediçao do parametro \{'(.*)'}")]

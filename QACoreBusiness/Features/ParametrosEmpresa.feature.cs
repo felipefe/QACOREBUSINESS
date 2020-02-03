@@ -100,22 +100,22 @@ testRunner.And("seja redirecionado para url dos parametros {/Parametro/Parametro
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Habilitar ambiente de homologacao", null, new string[] {
                         "habilitar_ambiente_homologaçao"});
-#line 12
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 13
-testRunner.Given("que eu clique para editar o parametro Configurações de Emissão de NF-e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
-testRunner.And("esteja na tela de ediçao do parametro {\'Config. NF-e\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que eu clique para editar o parametro Configurações de Emissão de NF-e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
-testRunner.When("selecionar {\'Ambiente de Testes ou Homologação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("esteja na tela de ediçao do parametro {\'Config. NF-e\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
-testRunner.And("clicar no botao salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("selecionar {\'Ambiente de Testes ou Homologação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
-testRunner.Then("serei redirecionado para url dos parametros {/Parametro/ParametrosEmpresa/}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("clicar no botao salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+testRunner.Then("serei redirecionado para url dos parametros {/Parametro/ParametrosEmpresa/}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
 testRunner.And("a coluna valor do parametro Config. NF-e deve ser Ambiente de Testes ou Homologaç" +
                     "ao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -130,16 +130,16 @@ testRunner.And("a coluna valor do parametro Config. NF-e deve ser Ambiente de Te
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ambiente de homologacao ja habilitado", null, new string[] {
                         "ambiente_homologacao_ja_habilitado"});
-#line 22
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 23
-testRunner.When("que eu clique para editar o parametro Configurações de Emissão de NF-e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
-testRunner.And("esteja na tela de ediçao do parametro {\'Config. NF-e\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("que eu clique para editar o parametro Configurações de Emissão de NF-e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
+testRunner.And("esteja na tela de ediçao do parametro {\'Config. NF-e\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
 testRunner.Then("Ambiente de Testes ou Homologacao deve estar selecionado no select Ambiente de Em" +
                     "issao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
