@@ -126,7 +126,7 @@ namespace QACoreBusiness.Util.COM
 
         public void StatusItemIsEscriturado(string isEscriturado)
         {
-            Assert.Equal("Não", recepcao.ColunaItemIsEscriturado.Text);
+            Assert.Equal(isEscriturado, recepcao.ColunaItemIsEscriturado.Text);
         }
 
         public void CliqueActionsEscriturarItensLoteFiscal()

@@ -72,13 +72,4 @@ Scenario: Finalizar lancamento de itens escriturados
 	And marcar Eu concluí o lançamento de todos os itens
 	And clicar no botao Confirmar
 	Then o sistema redirecionada para index de recepçao
-	And o status da recepcao deve ser {'Conferência Física'}
-
-
-
-##conferencia fisica WMS
-
-
-
-
-
+	And o status da recepcao deve ser {'Aguardando Finalização'}
