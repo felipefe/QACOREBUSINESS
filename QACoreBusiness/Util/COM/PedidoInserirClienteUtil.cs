@@ -52,7 +52,7 @@ namespace QACoreBusiness.Util
 
         public void PesquisarCPCliente(decimal CP)
         {
-            pedido.EditTextCPClientePedido.SendKeys(CP.ToString());
+            pedido.InputCPClientePedido.SendKeys(CP.ToString());
         }
 
         public void CliqueSelecionarClientePedido()
@@ -62,7 +62,7 @@ namespace QACoreBusiness.Util
 
         public void PesquisarNomeCliente(string nomeCliente)
         {
-            pedido.EditTextNomeCliente.SendKeys(nomeCliente.ToString());
+            pedido.InputNomeCliente.SendKeys(nomeCliente.ToString());
         }
 
         public void MensagemPessoaAddPedido()

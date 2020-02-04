@@ -26,19 +26,19 @@ namespace QACoreBusiness.Util
 
         public void PesquisarProdutoSKU(string sku)
         {
-            pedido.EditTextSKUProduto.SendKeys(sku);
+            pedido.InputSKUProduto.SendKeys(sku);
         }
 
         public void InformarQuantidadeItem()
         {
             Thread.Sleep(3000); //espera carregar os dados do item [estoque / preço]
-            pedido.EditTextQuantidadeItemPedido.Clear();
-            pedido.EditTextQuantidadeItemPedido.SendKeys("2,00");
+            pedido.InputQuantidadeItemPedido.Clear();
+            pedido.InputQuantidadeItemPedido.SendKeys("2,00");
         }
 
         public void PesquisarProdutoNome(string nome)
         {
-            pedido.EditTextNomeProduto.SendKeys(nome);
+            pedido.InputNomeProduto.SendKeys(nome);
         }
 
         public void TagDeReservaEstoqueNormal()

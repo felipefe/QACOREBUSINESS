@@ -64,7 +64,7 @@ namespace QACoreBusiness.Util
         public void InserirDataPrevista(int dias)
         {
             DateTime date =  DateTime.Now.AddDays(dias) ;
-            pedido.DataPrevista.SendKeys(date.ToString("dd/MM/yyyy hh:mm"));
+            pedido.InputDataPrevista.SendKeys(date.ToString("dd/MM/yyyy hh:mm"));
         }
 
         public void BotaoSalvarEntrega()
@@ -74,7 +74,7 @@ namespace QACoreBusiness.Util
 
         public void InserirValorFrete(decimal valor)
         {
-            pedido.ValorEntrega.SendKeys(valor.ToString());
+            pedido.InputValorEntrega.SendKeys(valor.ToString());
         }
 
         internal void SelectTipoEntregaFutura()

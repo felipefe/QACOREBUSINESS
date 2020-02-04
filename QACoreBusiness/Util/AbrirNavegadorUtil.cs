@@ -64,6 +64,7 @@ namespace QACoreBusiness.Util
         {
             String URL = driverNavegadorChrome.Url;
             Assert.Equal(ElementsAbrirNavegador.UrlCoreBusiness + "/Home/MosaicoV2", URL);
+            Thread.Sleep(500);
         }
 
 

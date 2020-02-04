@@ -55,7 +55,7 @@ namespace QACoreBusiness.Util
 
         public void DescricaoNegociacaoPedido(String descricao)
         {
-            pedido.EditTextDescricaoNegociacao.SendKeys(descricao);
+            pedido.InputDescricaoNegociacao.SendKeys(descricao);
         }
 
         public void SelecionarFormaPagamento(String formaPagamento)
