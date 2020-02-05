@@ -12,10 +12,13 @@ namespace QACoreBusiness.Elements
         public string UrlCreateRecepcaoMercadoria = UrlCoreBusiness + "/COM/LoteFiscal/Create";
         public string UrlCreateLoteFiscalItem = UrlCoreBusiness + "/COM/LoteFiscalItem/Create?idLote=";
         public string UrlEscriturarItens = UrlCoreBusiness + "/COM/LoteFiscal/Escriturar/";
+        public string UrlFinalizarRecepcao = UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
+        public string UrlConferenciaFisicaLF = UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
+
         #endregion
 
         #region Criar Recepcao de Mercadoria
-         public IWebElement SelectOperacaoFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OPFSICAL_auto_wrapper']//div[@class='ui select2 fluid']");    
+        public IWebElement SelectOperacaoFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OPFSICAL_auto_wrapper']//div[@class='ui select2 fluid']");    
         public IWebElement SearchOperacaoFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field']");
         public IWebElement SelectFornecedor => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscal_Fornecedor_auto_wrapper']//div[@class='ui select2 fluid']");
         public IWebElement SearchFornecedor => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field']");
@@ -68,7 +71,17 @@ namespace QACoreBusiness.Elements
         public IWebElement HeaderBotaoFinalizarLancamento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Finalizar Lançamento de Itens']");
         public IWebElement FlagConfirmarLançamentoTodosItens => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='chkIfinish_auto_wrapper']//label[@for='chkIfinish']");
         public IWebElement BotaoConfirmarLancamentoTodosItens => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@class='ui large button'][@value='Confirmar']");
+        #endregion
 
+
+        #region Conferencia Fisica
+        public IWebElement ActionsConferenciaFisicaRecebimento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Conferência Física de Recebimento']");
+        public IWebElement BotaoConcluirConferenciaRecepcao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Concluir']");
+        #endregion
+
+        #region Finalizar Recepcao
+        public IWebElement ActionsFinalizarRecebimento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Finalizar Recebimento']");
+        public IWebElement BotaoFinalizarRecepcao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Finalizar Recepção']");
         #endregion
     }
 }

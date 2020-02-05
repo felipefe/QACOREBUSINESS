@@ -13,7 +13,6 @@ namespace QACoreBusiness.Util.COM
         ElementsWorkflowRecepcaoMercadoria recepcao;
         IWebDriver driver = Base.chromeDriver;
         string auxSKUItemLF;
-        decimal auxQtdItemLF;
 
         public RecepcaoMercadoriaNovoLancamentoManualUtil()
         {
@@ -22,8 +21,8 @@ namespace QACoreBusiness.Util.COM
 
         public void AcesseIndexRecepcao()
         {
-            Thread.Sleep(500);
             recepcao.ContextoRecepcaoMercadoria.Click();
+            Thread.Sleep(1000);
         }
 
         public void CliqueNovoLancamentoManual()
@@ -129,9 +128,26 @@ namespace QACoreBusiness.Util.COM
             Assert.Equal(isEscriturado, recepcao.ColunaItemIsEscriturado.Text);
         }
 
+        public void CliqueActionsConferenciaFisicaRecebimento()
+        {
+            recepcao.ActionsRecepcao.Click();
+            recepcao.ActionsConferenciaFisicaRecebimento.Click();
+        }
+
+        public void CliqueActionsFinalizarRecebimento()
+        {
+            recepcao.ActionsRecepcao.Click();
+            recepcao.ActionsFinalizarRecebimento.Click();
+        }
+
         public void CliqueActionsEscriturarItensLoteFiscal()
         {
             recepcao.ActionsEscriturarItens.Click();
+        }
+
+        public void ValidaUrlFinalizarRecepcao()
+        {
+            Assert.Contains(recepcao.UrlFinalizarRecepcao, driver.Url);
         }
 
         public void ValidaUrlEscriturarItemLoteFiscal()
@@ -148,10 +164,10 @@ namespace QACoreBusiness.Util.COM
             auxSKUItemLF = sku;
         }
 
-        public void SelecionarCFOPItemLF(int cfop)
+        public void SelecionarCFOPItemLF(string cfop)
         {
             recepcao.SelectCFOPItemLF.Click();
-            recepcao.SearchCFOPItemLF.SendKeys(cfop.ToString());
+            recepcao.SearchCFOPItemLF.SendKeys(cfop);
             Thread.Sleep(1300);
             recepcao.SearchCFOPItemLF.SendKeys(Keys.Enter);
         }
@@ -190,7 +206,6 @@ namespace QACoreBusiness.Util.COM
 
         public void InformarQuantidadeItemLoteFiscal(decimal qtd)
         {
-            auxQtdItemLF = qtd;
             recepcao.InputQuantidade.SendKeys(qtd.ToString());
         }
 
@@ -270,6 +285,22 @@ namespace QACoreBusiness.Util.COM
         public void CliqueProsseguirEscrituracao()
         {
             recepcao.BotaoProsseguirEscrituracao.Click();
+        }
+
+        public void ValidaUrlConferenciaFisicaLoteFiscalItem()
+        {
+            Thread.Sleep(1000);
+            Assert.Contains(recepcao.UrlConferenciaFisicaLF, driver.Url);
+        }
+
+        public void CliqueBotaoConcluirConferenciaRecepcao()
+        {
+            recepcao.BotaoConcluirConferenciaRecepcao.Click();
+        }
+
+        public void CliqueBotaoFinalizarRecepcao()
+        {
+            recepcao.BotaoFinalizarRecepcao.Click();
         }
     }
 }

@@ -6,7 +6,7 @@ And acesse a index de recepcao de mercadoria
 
 
 @recepcao_mercadoria_novo_lancamento_manual
-Scenario: Lancar manualmente nova recepcao de mercadoria
+Scenario: Lancar nova recepcao manual de mercadoria
 	Given que seja clicado no botao Novo Lancamento Manual
 	And seja redirecionado para tela de criar recepcao	
 	And seja informado a operação fiscal {'Recepção de Mercadoria'}
@@ -35,7 +35,7 @@ Scenario: Lancar itens recepcao manual
 	And informar no editText a data de fabricacao
 	And informar no editText a data de validade
 	And clicar na aba de Impostos Conforme Documento de Entrada
-	And informar o CFOP {1102} - Compra para comercializacao
+	And informar o CFOP 1102 - {'Compra para comercialização'}
 	And informar a origem da Mercadoria {'Nacional - exceto as indicadas nos códigos 3 a 5'}
 	And informar o codigo da ST {'Tributada integralmente'}
 	And informar no editText o percentual da Aliquota {1,000}
@@ -72,4 +72,38 @@ Scenario: Finalizar lancamento de itens escriturados
 	And marcar Eu concluí o lançamento de todos os itens
 	And clicar no botao Confirmar
 	Then o sistema redirecionada para index de recepçao
-	And o status da recepcao deve ser {'Aguardando Finalização'}
+	And o status da recepcao deve ser {'Conferência Física'}
+
+@conferir_item_recepcao
+Scenario: Conferir item recepcao 
+	Given que tenha uma recepcao no status {'Conferência Física'}
+	And seja clicado no botao Conferencia Fisica de Recebimento nas actions
+	And seja redirecionado para tela de WMS Conferencia
+	And o SKU seja copiado da coluna Código
+	And seja colado no editText Código do Produto
+	And a quantidade seja copiada da coluna Qtd. Total 
+	And seja colada no editText Quantidade
+	And eu clicar Enter
+	When clicar no botao Concluir Processo
+	Then  uma mensagem de conferido com sucesso deve aparecer
+
+
+@concluir_conferencia_finalizada
+Scenario: Concluir conferencia recepcao
+	Given que tenha uma recepcao no status {'Conferência Física'}
+	And seja clicado no botao Conferencia Fisica de Recebimento nas actions
+	And seja redirecionado para tela de WMS Conferencia
+	And uma mensagem de Conferência Finalizada deve aparecer
+	When clicar no botao Finalizar 
+	And ser redirecionado para tela de COM Conferencia Fisica da Recepcao
+	And clicar no botao Concluir
+	Then o sistema redirecionada para index de recepçao
+	And o status da recepcao deve ser {'Aguardando Finalização'} 
+
+@finalizar_recepcao_mercadoria
+Scenario: Finalizar recepcao de mercadoria
+	Given que tenha uma recepcao no status {'Aguardando Finalização'}
+	And seja clicado no botao Finalizar Recebimento nas actions
+	And seja redirecionado para tela de Finalizar recepcao
+	When clicar no botao Finalizar Recepcao
+	Then o sistema redirecionada para index de recepçao

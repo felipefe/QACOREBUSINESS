@@ -1,8 +1,8 @@
-﻿using System;
+﻿using QACoreBusiness.Util.COM;
+using System;
 using TechTalk.SpecFlow;
-using QACoreBusiness.Util.COM;
 
-namespace QACoreBusiness.StepDefinitions
+namespace QACoreBusiness.StepDefinitions.COM
 {
     [Binding]
     public class RecepcaoMercadoriaNovoLancamentoManualSteps
@@ -58,7 +58,7 @@ namespace QACoreBusiness.StepDefinitions
         }
         
         [Given(@"seja informado no editText a data de emissao")]
-        public void GivenSejaInformadoNoEditTextADataDeEmissaoDataAtual_Dias()
+        public void GivenSejaInformadoNoEditTextADataDeEmissao()
         {
             rmlm.InformarDataEmissao();
         }
@@ -104,65 +104,45 @@ namespace QACoreBusiness.StepDefinitions
         {
             rmlm.StatusItemIsEscriturado(isEscriturado);
         }
-        
-        [Given(@"clique nas actions para Escriturar")]
-        public void GivenCliqueNasActionsParaEscriturar()
+
+        [Given(@"seja clicado no botao Conferencia Fisica de Recebimento nas actions")]
+        public void GivenSejaClicadoNoBotaoConferenciaFisicaDeRecebimentoNasActions()
         {
-            rmlm.CliqueActionsEscriturarItensLoteFiscal();
+            rmlm.CliqueActionsConferenciaFisicaRecebimento();
         }
-        
-     
+
+        [Given(@"seja clicado no botao Finalizar Recebimento nas actions")]
+        public void GivenSejaClicadoNoBotaoFinalizarRecebimentoNasActions()
+        {
+            rmlm.CliqueActionsFinalizarRecebimento();
+        }
+
+        [Given(@"seja redirecionado para tela de Finalizar recepcao")]
+        public void GivenSejaRedirecionadoParaTelaDeFinalizarRecepcao()
+        {
+            rmlm.ValidaUrlFinalizarRecepcao();
+        }
+
         [When(@"clicar no botao Salvar")]
         public void WhenClicarNoBotaoSalvar()
         {
             rmlm.ClicarBotaoSalvarRecepcao();
         }
-
+        
         [When(@"informar o produto SKU \{'(.*)'}")]
         public void WhenInformarOProdutoSKU(string sku)
         {
             rmlm.SelecionarItemLoteFiscal(sku);
         }
-
-        [When(@"informar o CFOP \{(.*)} - Compra para comercializacao")]
-        public void WhenInformarOCFOP_CompraParaComercializacao(int cfop)
-        {
-            rmlm.SelecionarCFOPItemLF(cfop);
-        }
-
-        [When(@"informar a origem da Mercadoria \{'(.*)'}")]
-        public void WhenInformarAOrigemDaMercadoria_(string origemFiscal)
-        {
-            rmlm.SelecionarOrigemMercadoria(origemFiscal);
-        }
-
-        [When(@"informar o codigo da ST \{'(.*)'}")]
-        public void WhenInformarOCodigoDaST_(string codigoST)
-        {
-            rmlm.SelecionarSTItemLF(codigoST);
-        }
-
-        [When(@"informar no editText o percentual da Aliquota \{(.*)}")]
-        public void WhenInformarNoEditTextOPercentualDaAliquota(decimal aliquota)
-        {
-            rmlm.InformarAliquota(aliquota);
-        }
-
-        [When(@"clicar no botao de Salvar itens")]
-        public void WhenClicarNoBotaoDeSalvarItens()
-        {
-            rmlm.CliqueSalvarItensLF();
-        }
-
-
+        
         [When(@"informar no editText o valor unitario \{(.*)}")]
-        public void WhenInformarNoEditTextOValorUnitario(decimal valor)
+        public void WhenInformarNoEditTextOValorUnitario(Decimal valor)
         {
             rmlm.InformarValorUnitarioItemLoteFiscal(valor);
         }
         
         [When(@"informar no editText a quantidade \{(.*)}")]
-        public void WhenInformarNoEditTextAQuantidade(decimal qtd)
+        public void WhenInformarNoEditTextAQuantidade(Decimal qtd)
         {
             rmlm.InformarQuantidadeItemLoteFiscal(qtd);
         }
@@ -191,6 +171,69 @@ namespace QACoreBusiness.StepDefinitions
             rmlm.CliqueAbaImpostosLoteFiscalItem();
         }
         
+
+        [When(@"informar o CFOP (.*) - \{'(.*)'}")]
+        public void WhenInformarOCFOP_(int cfop, string nomeCFOP)
+        {
+            rmlm.SelecionarCFOPItemLF(nomeCFOP);
+        }
+
+
+        [When(@"informar a origem da Mercadoria \{'(.*)'}")]
+        public void WhenInformarAOrigemDaMercadoria(string origemFiscal)
+        {
+            rmlm.SelecionarOrigemMercadoria(origemFiscal);
+        }
+        
+        [When(@"informar o codigo da ST \{'(.*)'}")]
+        public void WhenInformarOCodigoDaST(string codigoST)
+        {
+            rmlm.SelecionarSTItemLF(codigoST);
+        }
+        
+        [When(@"informar no editText o percentual da Aliquota \{(.*)}")]
+        public void WhenInformarNoEditTextOPercentualDaAliquota(Decimal aliquota)
+        {
+            rmlm.InformarAliquota(aliquota);
+        }
+        
+        [When(@"clicar no botao de Salvar itens")]
+        public void WhenClicarNoBotaoDeSalvarItens()
+        {
+            rmlm.CliqueSalvarItensLF();
+        }
+        
+        [When(@"clicar no botao da header Escriturar todos os itens automaticamente")]
+        public void WhenClicarNoBotaoDaHeaderEscriturarTodosOsItensAutomaticamente()
+        {
+            rmlm.ClicarEscriturarTodosItensAutomaticamente();
+        }
+        
+        [When(@"seja redirecionado para index de escriturar lote fiscal")]
+        public void WhenSejaRedirecionadoParaIndexDeEscriturarLoteFiscal()
+        {
+            rmlm.ValidaUrlEscriturarTodosItens();
+        }
+        
+        [When(@"clicar na aba Configuração")]
+        public void WhenClicarNaAbaConfiguracao()
+        {
+            rmlm.CliqueAbaConfiguracoesEscrituracao();
+        }
+        
+        [When(@"selecione o CFOP \{(.*)} Compra para Comercialização")]
+        public void WhenSelecioneOCFOPCompraParaComercializacao(int cfop)
+        {
+            rmlm.SelecionarCfopEscriturarItem(cfop);
+        }
+        
+
+        [When(@"clicar no botao Calcular")]
+        public void WhenClicarNoBotaoCalcular()
+        {
+            rmlm.CliqueBotaoCalcularEscrituracao();
+        }
+        
         [When(@"clicar no botao Finalizar Lançamento de Itens")]
         public void WhenClicarNoBotaoFinalizarLancamentoDeItens()
         {
@@ -209,47 +252,23 @@ namespace QACoreBusiness.StepDefinitions
             rmlm.CliqueBotaoConfirmarLancamentoTodosItens();
         }
 
-
-        [When(@"clicar no botao da header Escriturar todos os itens automaticamente")]
-        public void WhenClicarNoBotaoDaHeaderEscriturarTodosOsItensAutomaticamente()
+        [When(@"ser redirecionado para tela de COM Conferencia Fisica da Recepcao")]
+        public void WhenSerRedirecionadoParaTelaDeCOMConferenciaFisicaDaRecepcao()
         {
-            rmlm.ClicarEscriturarTodosItensAutomaticamente();
+            rmlm.ValidaUrlConferenciaFisicaLoteFiscalItem();
         }
 
-        [When(@"seja redirecionado para index de escriturar lote fiscal")]
-        public void WhenSejaRedirecionadoParaIndexDeEscriturarLoteFiscal()
+        [When(@"clicar no botao Concluir")]
+        public void WhenClicarNoBotaoConcluir()
         {
-            rmlm.ValidaUrlEscriturarTodosItens();
+            rmlm.CliqueBotaoConcluirConferenciaRecepcao();
         }
 
-        [When(@"clicar na aba Configuração")]
-        public void WhenClicarNaAbaConfiguracao()
-        {
-            rmlm.CliqueAbaConfiguracoesEscrituracao();
-        }
 
-        [When(@"selecione o CFOP \{(.*)} Compra para Comercialização")]
-        public void WhenSelecioneOCFOPCompraParaComercializacao(int cfop)
+        [When(@"clicar no botao Finalizar Recepcao")]
+        public void WhenClicarNoBotaoFinalizarRecepcao()
         {
-            rmlm.SelecionarCfopEscriturarItem(cfop);
-        }
-
-        [When(@"clicar no botao Calcular")]
-        public void WhenClicarNoBotaoCalcular()
-        {
-            rmlm.CliqueBotaoCalcularEscrituracao();
-        }
-
-        [Then(@"o status do item deve mudar para \{'(.*)'}")]
-        public void ThenOStatusDoItemDeveMudarPara(string statusEscriturado)
-        {
-            rmlm.ValidaItemEscrituradoSucesso(statusEscriturado);
-        }
-
-        [Then(@"quando clicar no botao Prosseguir")]
-        public void ThenQuandoClicarNoBotaoProsseguir()
-        {
-            rmlm.CliqueProsseguirEscrituracao();
+            rmlm.CliqueBotaoFinalizarRecepcao();
         }
 
         [Then(@"o sistema redirecionada para index de recepçao")]
@@ -275,7 +294,17 @@ namespace QACoreBusiness.StepDefinitions
         {
             rmlm.ValidaSKUItemRecepcao();
         }
-       
-       
+        
+        [Then(@"o status do item deve mudar para \{'(.*)'}")]
+        public void ThenOStatusDoItemDeveMudarPara(string statusEscriturado)
+        {
+            rmlm.ValidaItemEscrituradoSucesso(statusEscriturado);
+        }
+        
+        [Then(@"quando clicar no botao Prosseguir")]
+        public void ThenQuandoClicarNoBotaoProsseguir()
+        {
+            rmlm.CliqueProsseguirEscrituracao();
+        }
     }
 }

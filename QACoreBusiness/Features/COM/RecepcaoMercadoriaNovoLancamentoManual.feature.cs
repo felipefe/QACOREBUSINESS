@@ -86,13 +86,13 @@ testRunner.And("acesse a index de recepcao de mercadoria", ((string)(null)), ((T
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Lancar manualmente nova recepcao de mercadoria")]
+        [Xunit.FactAttribute(DisplayName="Lancar nova recepcao manual de mercadoria")]
         [Xunit.TraitAttribute("FeatureTitle", "RecepcaoMercadoriaNovoLancamentoManual")]
-        [Xunit.TraitAttribute("Description", "Lancar manualmente nova recepcao de mercadoria")]
+        [Xunit.TraitAttribute("Description", "Lancar nova recepcao manual de mercadoria")]
         [Xunit.TraitAttribute("Category", "recepcao_mercadoria_novo_lancamento_manual")]
-        public virtual void LancarManualmenteNovaRecepcaoDeMercadoria()
+        public virtual void LancarNovaRecepcaoManualDeMercadoria()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lancar manualmente nova recepcao de mercadoria", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lancar nova recepcao manual de mercadoria", null, new string[] {
                         "recepcao_mercadoria_novo_lancamento_manual"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -165,7 +165,7 @@ this.FeatureBackground();
 #line 37
  testRunner.And("clicar na aba de Impostos Conforme Documento de Entrada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("informar o CFOP {1102} - Compra para comercializacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("informar o CFOP 1102 - {\'Compra para comercialização\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
  testRunner.And("informar a origem da Mercadoria {\'Nacional - exceto as indicadas nos códigos 3 a " +
                     "5\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -254,7 +254,106 @@ this.FeatureBackground();
 #line 74
  testRunner.Then("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 75
+ testRunner.And("o status da recepcao deve ser {\'Conferência Física\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Conferir item recepcao")]
+        [Xunit.TraitAttribute("FeatureTitle", "RecepcaoMercadoriaNovoLancamentoManual")]
+        [Xunit.TraitAttribute("Description", "Conferir item recepcao")]
+        [Xunit.TraitAttribute("Category", "conferir_item_recepcao")]
+        public virtual void ConferirItemRecepcao()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Conferir item recepcao", null, new string[] {
+                        "conferir_item_recepcao"});
+#line 78
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 79
+ testRunner.Given("que tenha uma recepcao no status {\'Conferência Física\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 80
+ testRunner.And("seja clicado no botao Conferencia Fisica de Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("o SKU seja copiado da coluna Código", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("seja colado no editText Código do Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And("a quantidade seja copiada da coluna Qtd. Total", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("seja colada no editText Quantidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And("eu clicar Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.When("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.Then("uma mensagem de conferido com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Concluir conferencia recepcao")]
+        [Xunit.TraitAttribute("FeatureTitle", "RecepcaoMercadoriaNovoLancamentoManual")]
+        [Xunit.TraitAttribute("Description", "Concluir conferencia recepcao")]
+        [Xunit.TraitAttribute("Category", "concluir_conferencia_finalizada")]
+        public virtual void ConcluirConferenciaRecepcao()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Concluir conferencia recepcao", null, new string[] {
+                        "concluir_conferencia_finalizada"});
+#line 92
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 93
+ testRunner.Given("que tenha uma recepcao no status {\'Conferência Física\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 94
+ testRunner.And("seja clicado no botao Conferencia Fisica de Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.And("uma mensagem de Conferência Finalizada deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.When("clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 98
+ testRunner.And("ser redirecionado para tela de COM Conferencia Fisica da Recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("clicar no botao Concluir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.Then("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 101
  testRunner.And("o status da recepcao deve ser {\'Aguardando Finalização\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Finalizar recepcao de mercadoria")]
+        [Xunit.TraitAttribute("FeatureTitle", "RecepcaoMercadoriaNovoLancamentoManual")]
+        [Xunit.TraitAttribute("Description", "Finalizar recepcao de mercadoria")]
+        [Xunit.TraitAttribute("Category", "finalizar_recepcao_mercadoria")]
+        public virtual void FinalizarRecepcaoDeMercadoria()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Finalizar recepcao de mercadoria", null, new string[] {
+                        "finalizar_recepcao_mercadoria"});
+#line 104
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 105
+ testRunner.Given("que tenha uma recepcao no status {\'Aguardando Finalização\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 106
+ testRunner.And("seja clicado no botao Finalizar Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("seja redirecionado para tela de Finalizar recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.When("clicar no botao Finalizar Recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 109
+ testRunner.Then("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
