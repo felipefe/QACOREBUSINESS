@@ -7,304 +7,304 @@ namespace QACoreBusiness.StepDefinitions.COM
     [Binding]
     public class RecepcaoMercadoriaNovoLancamentoManualSteps
     {
-        RecepcaoMercadoriaNovoLancamentoManualUtil rmlm = new RecepcaoMercadoriaNovoLancamentoManualUtil();
+        RecepcaoMercadoriaNovoLancamentoManualUtil rmmanual = new RecepcaoMercadoriaNovoLancamentoManualUtil();
 
         [Given(@"acesse a index de recepcao de mercadoria")]
         public void GivenAcesseAIndexDeRecepcaoDeMercadoria()
         {
-            rmlm.AcesseIndexRecepcao();
+            rmmanual.AcesseIndexRecepcao();
         }
         
         [Given(@"que seja clicado no botao Novo Lancamento Manual")]
         public void GivenQueSejaClicadoNoBotaoNovoLancamentoManual()
         {
-            rmlm.CliqueNovoLancamentoManual();
+            rmmanual.CliqueNovoLancamentoManual();
         }
         
         [Given(@"seja redirecionado para tela de criar recepcao")]
         public void GivenSejaRedirecionadoParaTelaDeCriarRecepcao()
         {
-            rmlm.ValidaUrlCreateRecepcao();
+            rmmanual.ValidaUrlCreateRecepcao();
         }
         
         [Given(@"seja informado a operação fiscal \{'(.*)'}")]
         public void GivenSejaInformadoAOperacaoFiscal(string opf)
         {
-            rmlm.SelecionarOpFiscal(opf);
+            rmmanual.SelecionarOpFiscal(opf);
         }
         
         [Given(@"seja informado no editText o fornecedor \{'(.*)'}")]
         public void GivenSejaInformadoNoEditTextOFornecedor(string fornecedor)
         {
-            rmlm.SelecionarFornecedor(fornecedor);
+            rmmanual.SelecionarFornecedor(fornecedor);
         }
         
         [Given(@"seja informado no editText a data de recebimento \[data atual]")]
         public void GivenSejaInformadoNoEditTextADataDeRecebimentoDataAtual()
         {
-            rmlm.InformarDataRecebimento();
+            rmmanual.InformarDataRecebimento();
         }
         
         [Given(@"seja informado no editText o Numero do documento")]
         public void GivenSejaInformadoNoEditTextONumeroDoDocumento()
         {
-            rmlm.InformarNumDocumento();
+            rmmanual.InformarNumDocumento();
         }
         
         [Given(@"seja informado no editText a Serie do documento \{(.*)}")]
         public void GivenSejaInformadoNoEditTextASerieDoDocumento(int serie)
         {
-            rmlm.InformarSerieDocumento(serie);
+            rmmanual.InformarSerieDocumento(serie);
         }
         
         [Given(@"seja informado no editText a data de emissao")]
         public void GivenSejaInformadoNoEditTextADataDeEmissao()
         {
-            rmlm.InformarDataEmissao();
+            rmmanual.InformarDataEmissao();
         }
         
         [Given(@"seja informado o modelo de documento \{'(.*)'}")]
         public void GivenSejaInformadoOModeloDeDocumento(string modeloDocumento)
         {
-            rmlm.SelecionarModeloDocumento(modeloDocumento);
+            rmmanual.SelecionarModeloDocumento(modeloDocumento);
         }
         
         [Given(@"que tenha uma recepcao no status \{'(.*)'}")]
         public void GivenQueTenhaUmaRecepcaoNoStatus(string status)
         {
-            rmlm.StatusRecepcaoMercadoria(status);
+            rmmanual.StatusRecepcaoMercadoria(status);
         }
         
         [Given(@"seja clicado no botao Mercadoria nas actions")]
         public void GivenSejaClicadoNoBotaoMercadoriaNasActions()
         {
-            rmlm.CliqueActionsMercadorias();
+            rmmanual.CliqueActionsMercadorias();
         }
         
         [Given(@"seja redirecionado para tela de Mercadorias da recepcao")]
         public void GivenSejaRedirecionadoParaTelaDeMercadoriasDaRecepcao()
         {
-            rmlm.ValidaUrlLoteFiscalItem();
+            rmmanual.ValidaUrlLoteFiscalItem();
         }
         
         [Given(@"seja clicado no botao Nova Mercadoria Recebida")]
         public void GivenSejaClicadoNoBotaoNovaMercadoriaRecebida()
         {
-            rmlm.CliqueBotaoNovaMercadoriaRecebida();
+            rmmanual.CliqueBotaoNovaMercadoriaRecebida();
         }
         
         [Given(@"seja redirecionado para criar item da recepcao")]
         public void GivenSejaRedirecionadoParaCriarItemDaRecepcao()
         {
-            rmlm.ValidaUrlCreateLoteFiscalItem();
+            rmmanual.ValidaUrlCreateLoteFiscalItem();
         }
         
         [Given(@"tenha na coluna Escriturado do item o valor \{'(.*)'}")]
         public void GivenTenhaNaColunaEscrituradoDoItemOValor(string isEscriturado)
         {
-            rmlm.StatusItemIsEscriturado(isEscriturado);
+            rmmanual.StatusItemIsEscriturado(isEscriturado);
         }
 
         [Given(@"seja clicado no botao Conferencia Fisica de Recebimento nas actions")]
         public void GivenSejaClicadoNoBotaoConferenciaFisicaDeRecebimentoNasActions()
         {
-            rmlm.CliqueActionsConferenciaFisicaRecebimento();
+            rmmanual.CliqueActionsConferenciaFisicaRecebimento();
         }
 
         [Given(@"seja clicado no botao Finalizar Recebimento nas actions")]
         public void GivenSejaClicadoNoBotaoFinalizarRecebimentoNasActions()
         {
-            rmlm.CliqueActionsFinalizarRecebimento();
+            rmmanual.CliqueActionsFinalizarRecebimento();
         }
 
         [Given(@"seja redirecionado para tela de Finalizar recepcao")]
         public void GivenSejaRedirecionadoParaTelaDeFinalizarRecepcao()
         {
-            rmlm.ValidaUrlFinalizarRecepcao();
+            rmmanual.ValidaUrlFinalizarRecepcao();
         }
 
         [When(@"clicar no botao Salvar")]
         public void WhenClicarNoBotaoSalvar()
         {
-            rmlm.ClicarBotaoSalvarRecepcao();
+            rmmanual.ClicarBotaoSalvarRecepcao();
         }
         
         [When(@"informar o produto SKU \{'(.*)'}")]
         public void WhenInformarOProdutoSKU(string sku)
         {
-            rmlm.SelecionarItemLoteFiscal(sku);
+            rmmanual.SelecionarItemLoteFiscal(sku);
         }
         
         [When(@"informar no editText o valor unitario \{(.*)}")]
         public void WhenInformarNoEditTextOValorUnitario(Decimal valor)
         {
-            rmlm.InformarValorUnitarioItemLoteFiscal(valor);
+            rmmanual.InformarValorUnitarioItemLoteFiscal(valor);
         }
         
         [When(@"informar no editText a quantidade \{(.*)}")]
         public void WhenInformarNoEditTextAQuantidade(Decimal qtd)
         {
-            rmlm.InformarQuantidadeItemLoteFiscal(qtd);
+            rmmanual.InformarQuantidadeItemLoteFiscal(qtd);
         }
         
         [When(@"informar no editText o numero do lote")]
         public void WhenInformarNoEditTextONumeroDoLote()
         {
-            rmlm.InformarNumLoteFiscal();
+            rmmanual.InformarNumLoteFiscal();
         }
         
         [When(@"informar no editText a data de fabricacao")]
         public void WhenInformarNoEditTextADataDeFabricacao()
         {
-            rmlm.InformarDataFabricacaoLF();
+            rmmanual.InformarDataFabricacaoLF();
         }
         
         [When(@"informar no editText a data de validade")]
         public void WhenInformarNoEditTextADataDeValidade()
         {
-            rmlm.InformarDataValidadeLF();
+            rmmanual.InformarDataValidadeLF();
         }
         
         [When(@"clicar na aba de Impostos Conforme Documento de Entrada")]
         public void WhenClicarNaAbaDeImpostosConformeDocumentoDeEntrada()
         {
-            rmlm.CliqueAbaImpostosLoteFiscalItem();
+            rmmanual.CliqueAbaImpostosLoteFiscalItem();
         }
         
 
         [When(@"informar o CFOP (.*) - \{'(.*)'}")]
         public void WhenInformarOCFOP_(int cfop, string nomeCFOP)
         {
-            rmlm.SelecionarCFOPItemLF(nomeCFOP);
+            rmmanual.SelecionarCFOPItemLF(nomeCFOP);
         }
 
 
         [When(@"informar a origem da Mercadoria \{'(.*)'}")]
         public void WhenInformarAOrigemDaMercadoria(string origemFiscal)
         {
-            rmlm.SelecionarOrigemMercadoria(origemFiscal);
+            rmmanual.SelecionarOrigemMercadoria(origemFiscal);
         }
         
         [When(@"informar o codigo da ST \{'(.*)'}")]
         public void WhenInformarOCodigoDaST(string codigoST)
         {
-            rmlm.SelecionarSTItemLF(codigoST);
+            rmmanual.SelecionarSTItemLF(codigoST);
         }
         
         [When(@"informar no editText o percentual da Aliquota \{(.*)}")]
         public void WhenInformarNoEditTextOPercentualDaAliquota(Decimal aliquota)
         {
-            rmlm.InformarAliquota(aliquota);
+            rmmanual.InformarAliquota(aliquota);
         }
         
         [When(@"clicar no botao de Salvar itens")]
         public void WhenClicarNoBotaoDeSalvarItens()
         {
-            rmlm.CliqueSalvarItensLF();
+            rmmanual.CliqueSalvarItensLF();
         }
         
         [When(@"clicar no botao da header Escriturar todos os itens automaticamente")]
         public void WhenClicarNoBotaoDaHeaderEscriturarTodosOsItensAutomaticamente()
         {
-            rmlm.ClicarEscriturarTodosItensAutomaticamente();
+            rmmanual.ClicarEscriturarTodosItensAutomaticamente();
         }
         
         [When(@"seja redirecionado para index de escriturar lote fiscal")]
         public void WhenSejaRedirecionadoParaIndexDeEscriturarLoteFiscal()
         {
-            rmlm.ValidaUrlEscriturarTodosItens();
+            rmmanual.ValidaUrlEscriturarTodosItens();
         }
         
         [When(@"clicar na aba Configuração")]
         public void WhenClicarNaAbaConfiguracao()
         {
-            rmlm.CliqueAbaConfiguracoesEscrituracao();
+            rmmanual.CliqueAbaConfiguracoesEscrituracao();
         }
         
         [When(@"selecione o CFOP \{(.*)} Compra para Comercialização")]
         public void WhenSelecioneOCFOPCompraParaComercializacao(int cfop)
         {
-            rmlm.SelecionarCfopEscriturarItem(cfop);
+            rmmanual.SelecionarCfopEscriturarItem(cfop);
         }
         
 
         [When(@"clicar no botao Calcular")]
         public void WhenClicarNoBotaoCalcular()
         {
-            rmlm.CliqueBotaoCalcularEscrituracao();
+            rmmanual.CliqueBotaoCalcularEscrituracao();
         }
         
         [When(@"clicar no botao Finalizar Lançamento de Itens")]
         public void WhenClicarNoBotaoFinalizarLancamentoDeItens()
         {
-            rmlm.CliqueBotaoFinalizarLancamentoItens();
+            rmmanual.CliqueBotaoFinalizarLancamentoItens();
         }
         
         [When(@"marcar Eu concluí o lançamento de todos os itens")]
         public void WhenMarcarEuConcluiOLancamentoDeTodosOsItens()
         {
-            rmlm.EuConcluiLancamentoTodosItens();
+            rmmanual.EuConcluiLancamentoTodosItens();
         }
         
         [When(@"clicar no botao Confirmar")]
         public void WhenClicarNoBotaoConfirmar()
         {
-            rmlm.CliqueBotaoConfirmarLancamentoTodosItens();
+            rmmanual.CliqueBotaoConfirmarLancamentoTodosItens();
         }
 
         [When(@"ser redirecionado para tela de COM Conferencia Fisica da Recepcao")]
         public void WhenSerRedirecionadoParaTelaDeCOMConferenciaFisicaDaRecepcao()
         {
-            rmlm.ValidaUrlConferenciaFisicaLoteFiscalItem();
+            rmmanual.ValidaUrlConferenciaFisicaLoteFiscalItem();
         }
 
         [When(@"clicar no botao Concluir")]
         public void WhenClicarNoBotaoConcluir()
         {
-            rmlm.CliqueBotaoConcluirConferenciaRecepcao();
+            rmmanual.CliqueBotaoConcluirConferenciaRecepcao();
         }
 
 
         [When(@"clicar no botao Finalizar Recepcao")]
         public void WhenClicarNoBotaoFinalizarRecepcao()
         {
-            rmlm.CliqueBotaoFinalizarRecepcao();
+            rmmanual.CliqueBotaoFinalizarRecepcao();
         }
 
         [Then(@"o sistema redirecionada para index de recepçao")]
         public void ThenOSistemaRedirecionadaParaIndexDeRecepcao()
         {
-            rmlm.ValidaUrlIndexRecepcaoMercadoria();
+            rmmanual.ValidaUrlIndexRecepcaoMercadoria();
         }
         
         [Then(@"o status da recepcao deve ser \{'(.*)'}")]
         public void ThenOStatusDaRecepcaoDeveSer(string status)
         {
-            rmlm.ValidaStatusRecepcao(status);
+            rmmanual.ValidaStatusRecepcao(status);
         }
         
         [Then(@"seja redirecionado para tela de Mercadorias da recepcao")]
         public void ThenSejaRedirecionadoParaTelaDeMercadoriasDaRecepcao()
         {
-            rmlm.ValidaUrlLoteFiscalItem();
+            rmmanual.ValidaUrlLoteFiscalItem();
         }
         
         [Then(@"o SKU do item da recepcao informado deve aparecer na tabela")]
         public void ThenOSKUDoItemDaRecepcaoInformadoDeveAparecerNaTabela()
         {
-            rmlm.ValidaSKUItemRecepcao();
+            rmmanual.ValidaSKUItemRecepcao();
         }
         
         [Then(@"o status do item deve mudar para \{'(.*)'}")]
         public void ThenOStatusDoItemDeveMudarPara(string statusEscriturado)
         {
-            rmlm.ValidaItemEscrituradoSucesso(statusEscriturado);
+            rmmanual.ValidaItemEscrituradoSucesso(statusEscriturado);
         }
         
         [Then(@"quando clicar no botao Prosseguir")]
         public void ThenQuandoClicarNoBotaoProsseguir()
         {
-            rmlm.CliqueProsseguirEscrituracao();
+            rmmanual.CliqueProsseguirEscrituracao();
         }
     }
 }

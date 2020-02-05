@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using OpenQA.Selenium;
 using QACoreBusiness.Util;
@@ -14,6 +16,7 @@ namespace QACoreBusiness.Elements
         public string UrlEscriturarItens = UrlCoreBusiness + "/COM/LoteFiscal/Escriturar/";
         public string UrlFinalizarRecepcao = UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
         public string UrlConferenciaFisicaLF = UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
+        public string ArquivoUploadXmlRecepcao = Path.GetDirectoryName(Uri.UnescapeDataString((new UriBuilder(Assembly.GetExecutingAssembly().CodeBase)).Path)) +  "\\extras\\recepcao.exe";
 
         #endregion
 
@@ -83,5 +86,16 @@ namespace QACoreBusiness.Elements
         public IWebElement ActionsFinalizarRecebimento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Finalizar Recebimento']");
         public IWebElement BotaoFinalizarRecepcao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Finalizar Recepção']");
         #endregion
+        
+
+        #region
+        public IWebElement HeaderBotaoNovoViaNfe => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Novo via NF-e']");
+        public IWebElement FileUpload => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large action input']//label[@class='ui basic large icon button']");
+        public IWebElement SearchOpFiscalImportXml => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
+        public IWebElement SelectOpFiscalImportXml => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OPFSICAL_auto_wrapper']//div[@class='ui select2 fluid']");
+        public IWebElement BotaoIniciarImportacaoNFe => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Iniciar importação da NF-e']");
+        #endregion
+
+
     }
 }
