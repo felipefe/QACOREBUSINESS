@@ -16,7 +16,7 @@ namespace QACoreBusiness.Elements
         public string UrlEscriturarItens = UrlCoreBusiness + "/COM/LoteFiscal/Escriturar/";
         public string UrlFinalizarRecepcao = UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
         public string UrlConferenciaFisicaLF = UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
-        public string ArquivoUploadXmlRecepcao = Path.GetDirectoryName(Uri.UnescapeDataString((new UriBuilder(Assembly.GetExecutingAssembly().CodeBase)).Path)) +  "\\extras\\recepcao.exe";
+        public string ArquivoUploadXmlRecepcao = PathLocalProject +  "\\extras\\recepcao.exe";
 
         #endregion
 

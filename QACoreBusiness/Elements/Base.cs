@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using QACoreBusiness.Util;
+using System.IO;
+using System.Reflection;
 
 namespace QACoreBusiness.Elements
 {
@@ -11,11 +13,9 @@ namespace QACoreBusiness.Elements
     {
         public static string UrlCoreBusiness => "http://dcbtestserver/COREBusiness";
 
-        public static IWebDriver chromeDriver = new ChromeDriver(@"C:\ProjectQA\QACOREBUSINESS\webdriver");
+        public static string PathLocalProject = Path.GetDirectoryName(Uri.UnescapeDataString((new UriBuilder(Assembly.GetExecutingAssembly().CodeBase)).Path));
 
-
-       // public IWebElement ActionsPedido => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table selectable striped coregrid']//tr//td[@class=' hidden-mobile']//div//div//a[@class='fsm-ignore']");
-
+        public static IWebDriver chromeDriver = new ChromeDriver(PathLocalProject + @"\webdriver");
 
 
     }
