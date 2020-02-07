@@ -12,11 +12,8 @@ Scenario: Conferir item pedido
 Given que eu acesse as actions do pedido
 And clique no botao Conferencia
 And seja redirecionado para tela de WMS Conferencia
-And o SKU seja copiado da coluna Código
-And seja colado no editText Código do Produto
-And a quantidade seja copiada da coluna Qtd. Total 
-And seja colada no editText Quantidade
-And eu clicar Enter
+And o codigo sku e qtd. total sejam copidos de suas colunas
+And seja feita a conferencia desses produtos
 When clicar no botao Concluir Processo
 Then  uma mensagem de conferido com sucesso deve aparecer
 
@@ -88,11 +85,8 @@ Scenario:  Conferir e concluir todo processo de conferencia
 Given que eu acesse as actions do pedido
 And clique no botao Conferencia
 And seja redirecionado para tela de WMS Conferencia
-And o SKU seja copiado da coluna Código
-And seja colado no editText Código do Produto
-And a quantidade seja copiada da coluna Qtd. Total 
-And seja colada no editText Quantidade
-And eu clicar Enter
+And o codigo sku e qtd. total sejam copidos de suas colunas
+And seja feita a conferencia desses produtos
 And clicar no botao Concluir Processo
 When clicar no botao Finalizar 
 And ser redirecionado para tela de COM Finalizar Conferencia

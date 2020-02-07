@@ -2,6 +2,7 @@
 using QACoreBusiness.Util;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace QACoreBusiness.Elements
@@ -48,6 +49,8 @@ namespace QACoreBusiness.Elements
         public IWebElement MensagemConferidoErrado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large bottom attached message negative']//div[@class='content']//span");
         public IWebElement AlertProcessosConferencia => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='notify success notify-without-icon notify-bottom-right']//div[@class='notify-text']//p");
         public IWebElement MensagemConferenciaFinalizada => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large positive icon message']//div[@class='content']//div[@class='header']");
+        public List<IWebElement> LinhasTabelaHtmlConferencia => chromeDriver.FindElements(By.XPath("//tbody//tr[@class='negative']")).ToList();
+
         #endregion
 
         #region Emitir DFe

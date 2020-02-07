@@ -62,7 +62,7 @@ Scenario: Escriturar itens da recepcao
 
 
 
-@finalizar_lancamento_itens_escriturados_recepcao
+@finalizar_lancamento_itens_escriturados
 Scenario: Finalizar lancamento de itens escriturados
 	Given que tenha uma recepcao no status {'Lançamento'}
 	And seja clicado no botao Mercadoria nas actions
@@ -73,6 +73,7 @@ Scenario: Finalizar lancamento de itens escriturados
 	And clicar no botao Confirmar
 	Then o sistema redirecionada para index de recepçao
 	And o status da recepcao deve ser {'Conferência Física'}
+
 
 @conferir_item_recepcao
 Scenario: Conferir item recepcao 
@@ -100,6 +101,7 @@ Scenario: Concluir conferencia recepcao
 	Then o sistema redirecionada para index de recepçao
 	And o status da recepcao deve ser {'Aguardando Finalização'} 
 
+
 @finalizar_recepcao_mercadoria
 Scenario: Finalizar recepcao de mercadoria
 	Given que tenha uma recepcao no status {'Aguardando Finalização'}
@@ -107,3 +109,17 @@ Scenario: Finalizar recepcao de mercadoria
 	And seja redirecionado para tela de Finalizar recepcao
 	When clicar no botao Finalizar Recepcao
 	Then o sistema redirecionada para index de recepçao
+
+
+@excluir_recepcao_mercadoria
+Scenario: Excluir recepcao mercadoria
+Given que eu clique no botao da header Gerenciar recepcoes
+	And seja redirecionado para index de gerenciar recepcoes
+	And que tenha uma recepcao no status {'Finalizado'}
+	And memorizo o numero dessa recepcao
+	When clicar no botao da action para Excluir recepcao
+	And clicar no botao Excluir da modal
+	Then o sistema redirecionada para index de recepçao
+	And acessamos gerenciar recepcoes novamente
+	And valido o numero memorizado dessa recepcao
+	And o status da recepcao deve ser {'Cancelado'} 

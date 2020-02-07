@@ -14,6 +14,8 @@ namespace QACoreBusiness.Util
         ElementsWorkflowPedido conferencia;
         private string auxSKU;
         private string auxQtd;
+        List<string> conferenciasSKUProduto = new List<string>();
+        List<string> conferenciasQTDProduto = new List<string>();
 
         public PedidoConferenciaUtil()
         {
@@ -99,9 +101,32 @@ namespace QACoreBusiness.Util
         {
             conferencia.BotaoReiniciarProcesso.Click();
         }
-        internal void CliqueBotaoReiniciarConferenciaFinalizada()
+        public void CliqueBotaoReiniciarConferenciaFinalizada()
         {
             conferencia.BotaoReiniciarConferenciaFinalizada.Click();
+        }
+
+        public void CopiarCodigoSkuEQtdEmMassa()
+        {
+            Thread.Sleep(1000);
+            foreach (IWebElement linha in conferencia.LinhasTabelaHtmlConferencia)
+            {
+                conferenciasSKUProduto.Add(linha.FindElement(By.CssSelector("td:nth-child(2)")).Text);
+                conferenciasQTDProduto.Add(linha.FindElement(By.CssSelector("td:nth-child(5)")).Text);
+            }
+        }
+
+        public void ColarCodigoSkuEQtdEmMassa()
+        {
+            for (int i=0; i<conferenciasSKUProduto.Count; i++)
+            {
+                conferencia.EditTextCodigoProduto.Clear();
+                conferencia.EditTextCodigoProduto.SendKeys(conferenciasSKUProduto[i]);
+                conferencia.EditTextQuantidadeProduto.Clear();
+                conferencia.EditTextQuantidadeProduto.SendKeys(conferenciasQTDProduto[i]);
+                conferencia.EditTextQuantidadeProduto.SendKeys(Keys.Enter);  
+            }
+           
         }
 
         public void ConfirmarReiniciarConferencia()
@@ -165,7 +190,7 @@ namespace QACoreBusiness.Util
             Assert.Equal("Conferência Finalizada", conferencia.MensagemConferenciaFinalizada.Text);
         }
 
-        internal void UrlEntregasRemessasPedidoConferido()
+        public void UrlEntregasRemessasPedidoConferido()
         {
             Thread.Sleep(1000);
             Assert.Contains(conferencia.UrlEntregasRemessasPedidoConferido, driver.Url);

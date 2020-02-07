@@ -17,6 +17,7 @@ namespace QACoreBusiness.Elements
         public IWebElement ActionsRecepcao => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table selectable striped coregrid']//tbody//tr[1]//td[@class=' hidden-mobile']//div//a");
         public IWebElement BotaoNovoLancamentoManual => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Novo lançamento manual']");
         public IWebElement ColunaStatusRecepcaoMercadoria => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table selectable striped coregrid']//tbody//tr//td[@data-field='Status']");
+        public IWebElement ColunaNumeroRecepcaoMercadoria => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table selectable striped coregrid']//tbody//tr//td[@data-field='NumeroDoc']");
 
 
     }

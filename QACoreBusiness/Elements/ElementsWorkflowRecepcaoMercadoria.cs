@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using OpenQA.Selenium;
@@ -17,7 +18,9 @@ namespace QACoreBusiness.Elements
         public string UrlFinalizarRecepcao = UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
         public string UrlConferenciaFisicaLF = UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
         public string ArquivoUploadXmlRecepcao = PathLocalProject +  "\\extras\\recepcao.exe";
-
+        public string UrlIdfeNfeImpDestinadasNativo = UrlCoreBusiness + "/IDFe/NFe/ImpDestinadasNativo";
+        public string UrlGerenciarRecepcoes = UrlCoreBusiness + "/COM/LoteFiscal/GerenciarRecepcoes";
+        
         #endregion
 
         #region Criar Recepcao de Mercadoria
@@ -88,14 +91,24 @@ namespace QACoreBusiness.Elements
         #endregion
         
 
-        #region
+        #region Novo via NFe
         public IWebElement HeaderBotaoNovoViaNfe => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Novo via NF-e']");
         public IWebElement FileUpload => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large action input']//label[@class='ui basic large icon button']");
         public IWebElement SearchOpFiscalImportXml => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement SelectOpFiscalImportXml => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OPFSICAL_auto_wrapper']//div[@class='ui select2 fluid']");
         public IWebElement BotaoIniciarImportacaoNFe => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Iniciar importação da NF-e']");
+        public IWebElement SelectProtocoloIcmsEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='EscritProtDest_auto_wrapper']//div[@class='ui select2 fluid']");
+        public IWebElement SearchProtocoloIcmsEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
+        public IWebElement SelectImpostoFederalEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='EscritCF_auto_wrapper']//div[@class='ui select2 fluid']");
+        public IWebElement SearchImpostoFederalEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
+        public IWebElement TextViewLoteFiscalJaRecepcionado => ElementWait.WaitForElementXpath(chromeDriver, "//form[@action='/COREBusiness/IDFe/NFe/ImpDestinadasNativo']//div[@class='ui negative message validation-summary-errors']//ul");
         #endregion
 
+        #region Excluir Recepcao
+        public IWebElement ActionsExcluirRecepcao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Excluir']");
+        public IWebElement HeaderBotaoGerenciarRecepcoes => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Gerenciar Recepções ...']");
+        public IWebElement BotaoExcluirRecepcaoModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Excluir']");
+        #endregion
 
     }
 }

@@ -81,6 +81,18 @@ namespace QACoreBusiness.StepDefinitions
             pcu.MensagemConferenciaFinalizada();
         }
 
+        [Given(@"o codigo sku e qtd\. total sejam copidos de suas colunas")]
+        public void GivenOCodigoSkuEQtd_TotalSejamCopidosDeSuasColunas()
+        {
+            pcu.CopiarCodigoSkuEQtdEmMassa();
+        }
+
+        [Given(@"seja feita a conferencia desses produtos")]
+        public void GivenSejaFeitaAConferenciaDessesProdutos()
+        {
+            pcu.ColarCodigoSkuEQtdEmMassa();
+        }
+
 
         [When(@"eu clicar Enter")]
         public void WhenEuClicarEnter()

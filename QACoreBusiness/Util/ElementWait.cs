@@ -29,7 +29,7 @@ namespace QACoreBusiness.Util
             WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 10));
             return wait.Until(ExpectedConditions.TextToBePresentInElement(element, texto));
         }
-
+        
         //wait
         public static void WaitForLoad(IWebDriver driver, int timeoutSec)
         {
