@@ -117,6 +117,39 @@ testRunner.And("a situaçao do meu pedido deve ser {Separação}", ((string)(nul
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Bloquear pedido")]
+        [Xunit.TraitAttribute("FeatureTitle", "PedidoAvaliacao")]
+        [Xunit.TraitAttribute("Description", "Bloquear pedido")]
+        [Xunit.TraitAttribute("Category", "bloquear_pedido")]
+        public virtual void BloquearPedido()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bloquear pedido", null, new string[] {
+                        "bloquear_pedido"});
+#line 21
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 22
+testRunner.Given("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+testRunner.And("seja redirecionado para tela CRM Avaliar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+testRunner.And("um dos motivos seja {\'Pedido possui parte da negociação a prazo\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+testRunner.And("outro motivo seja {\'Cliente com situação restrita para vendas à prazo\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+testRunner.When("eu clicar no botao Bloquear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+testRunner.Then("serei redirecionado para index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
+testRunner.And("a situaçao do pedido deve ser {\'Não Liberado / Recusado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

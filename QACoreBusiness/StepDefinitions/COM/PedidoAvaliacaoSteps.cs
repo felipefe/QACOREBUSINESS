@@ -32,13 +32,31 @@ namespace QACoreBusiness.StepDefinitions
         {
             pau.IndexAvaliarPedido();
         }
-        
+
+        [Given(@"um dos motivos seja \{'(.*)'}")]
+        public void GivenUmDosMotivosSeja(string motivoUm)
+        {
+            pau.MotivoUm(motivoUm);
+        }
+
+        [Given(@"outro motivo seja \{'(.*)'}")]
+        public void GivenOutroMotivoSeja(string motivoDois)
+        {
+            pau.MotivoDois(motivoDois);
+        }
+
         [When(@"eu clicar no botao Prosseguir")]
         public void WhenEuClicarNoBotaoProsseguir()
         {
             pau.ProsseguirAvaliacao();
         }
-        
+
+        [When(@"eu clicar no botao Bloquear")]
+        public void WhenEuClicarNoBotaoBloquear()
+        {
+            pau.CliqueBotaoBloquear();
+        }
+
         [Then(@"serei redirecionado para index de pedidos")]
         public void ThenSereiRedirecionadoParaIndexDePedidos()
         {
@@ -49,6 +67,18 @@ namespace QACoreBusiness.StepDefinitions
         public void ThenASituacaoDoMeuPedidoDeveSerSeparacao()
         {
             pau.PedidoEmStatusSeparacao();
+        }
+
+        [Then(@"serei redirecionado para index de pedido")]
+        public void ThenSereiRedirecionadoParaIndexDePedido()
+        {
+            pau.ValidaUrlIndexPedido();
+        }
+
+        [Then(@"a situaçao do pedido deve ser \{'(.*)'}")]
+        public void ThenASituacaoDoPedidoDeveSer(string status)
+        {
+            pau.SituacaoPedido(status);
         }
     }
 }

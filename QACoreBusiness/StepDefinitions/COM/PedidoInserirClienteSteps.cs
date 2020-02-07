@@ -30,7 +30,7 @@ namespace QACoreBusiness.StepDefinitions
         }
 
         [When(@"eu pesquisar no editText o cliente por CP \{(.*)}")]
-        public void WhenEuPesquisarNoEditTextOClientePorCP(Decimal cp)
+       public void WhenEuPesquisarNoEditTextOClientePorCP(Decimal cp)
         {
             pic.PesquisarCPCliente(cp);
         }

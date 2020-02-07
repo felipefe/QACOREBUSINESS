@@ -22,6 +22,10 @@ namespace QACoreBusiness.Elements
         #region Avaliar Pedido
         public IWebElement ActionsAvaliarPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@class='popup-link tool-item gradient'][@data-content='Avaliação do Pedido']");
         public IWebElement BotaoProsseguir => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@class='ui large button'][@value='Prosseguir']");
+        public IWebElement AvaliacaoMotivoUm => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='pedidos']//tbody//tr[1]//td[2]");
+        public IWebElement AvaliacaoMotivoDois => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='pedidos']//tbody//tr[2]//td[2]");
+        public IWebElement BotaoBloquear => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//div[@class='ui large red button']");
+
         #endregion
 
         #region Separar Pedido
