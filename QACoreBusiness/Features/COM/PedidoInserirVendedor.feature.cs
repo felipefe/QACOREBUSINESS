@@ -99,11 +99,11 @@ testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string
         [Xunit.FactAttribute(DisplayName="Inserir ou trocar vendedor ao pedido")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoInserirVendedor")]
         [Xunit.TraitAttribute("Description", "Inserir ou trocar vendedor ao pedido")]
-        [Xunit.TraitAttribute("Category", "trocar_vendedor_pedido_sucesso")]
+        [Xunit.TraitAttribute("Category", "inserir_vendedor_pedido_sucesso")]
         public virtual void InserirOuTrocarVendedorAoPedido()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir ou trocar vendedor ao pedido", null, new string[] {
-                        "trocar_vendedor_pedido_sucesso"});
+                        "inserir_vendedor_pedido_sucesso"});
 #line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

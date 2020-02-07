@@ -63,6 +63,7 @@ namespace QACoreBusiness.Util
             pedido.SelectFormaPagamento.Click();
             Thread.Sleep(2000);
             pedido.SearchFormaPagamento.SendKeys(formaPagamento);
+            Thread.Sleep(1000);
             pedido.SearchFormaPagamento.SendKeys(Keys.Enter);
         }
 

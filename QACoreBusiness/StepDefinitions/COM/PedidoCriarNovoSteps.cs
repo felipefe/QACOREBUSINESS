@@ -33,7 +33,32 @@ namespace QACoreBusiness.StepDefinitions
         {
             pedido.CriarNovoPedido();
         }
-        
+
+        [When(@"que eu cliquei na sessao de Entregas")]
+        public void WhenQueEuCliqueiNaSessaoDeEntregas()
+        {
+            pedido.CliqueSessaoEntregas();
+        }
+
+        [When(@"que eu clique na sessao de Produtos")]
+        public void WhenQueEuCliqueNaSessaoDeProdutos()
+        {
+            pedido.CliqueSessaoProdutos();
+        }
+
+        [When(@"que eu cliquei na sessao de Pagamento")]
+        public void WhenQueEuCliqueiNaSessaoDePagamento()
+        {
+            pedido.CliqueSessaoPagamento();
+        }
+
+        [When(@"clicar no botao da action Trocar Vendedor")]
+        public void WhenClicarNoBotaoDaActionTrocarVendedor()
+        {
+            pedido.CliqueTrocarVendedor();
+        }
+
+
         [Then(@"seja redirecionado para tela de ediçao")]
         public void ThenSejaRedirecionadoParaTelaDeEdicao()
         {

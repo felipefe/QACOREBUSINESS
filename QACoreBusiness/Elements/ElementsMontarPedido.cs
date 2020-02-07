@@ -39,7 +39,7 @@ namespace QACoreBusiness.Util
         public IWebElement SelectTipoEntrega => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']");
         public IWebElement TipoEntrega => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']//option[@value='Entrega']");
         public IWebElement TipoEntregaFutura => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='three fields']//div[@class='ui field']//select[@id='PedidoEntrega_Tipo'][@name='Tipo']//option[@value='EntregaFutura']");
-        public IWebElement InputDataPrevista => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_DataPrevista'][@name='InputDataPrevista']");
+        public IWebElement InputDataPrevista => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_DataPrevista']");
         public IWebElement InputValorEntrega => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='PedidoEntrega_Frete_auto_wrapper']//div[@class='ui large fluid input']//div[@class='floatlabel-wrapper']//input[@id='PedidoEntrega_Frete'][@name='Frete']");
         public IWebElement BotaoSalvarEntrega => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@class='ui large button'][@id='submit'][@value='Salvar']");
         #endregion

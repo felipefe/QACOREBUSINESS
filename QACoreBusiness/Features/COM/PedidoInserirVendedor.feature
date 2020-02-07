@@ -9,7 +9,7 @@ And seja redirecionado para tela de ediçao
 And clicar no botao da action Trocar Vendedor
 And for redirecionado para tela de trocar vendedor pedido
 
-@trocar_vendedor_pedido_sucesso
+@inserir_vendedor_pedido_sucesso
 Scenario: Inserir ou trocar vendedor ao pedido
 When informar o vendedor {'Vendedor Pablo Escobar'}
 And clicar no botao trocar vendedor
