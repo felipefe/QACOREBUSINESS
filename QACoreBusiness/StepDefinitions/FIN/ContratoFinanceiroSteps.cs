@@ -185,13 +185,6 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.AddVencimentoNovaParcela(vencimento);
         }
 
-        //[When(@"inserir no input Valor Original R\$\{(.*)} da nova parcela")]
-        //public void WhenInserirNoInputValorOriginalRDaNovaParcela(Decimal valor)
-        //{
-        //    cfu.InserirValorNovaParcela(valor);
-        //}
-
-
         [Then(@"o sistema redireciona para index de contratos")]
         public void ThenOSistemaRedirecionaParaIndexDeContratos()
         {

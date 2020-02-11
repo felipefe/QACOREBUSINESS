@@ -75,7 +75,6 @@ namespace QACoreBusiness.Elements
         public IWebElement TabelaContratoNovaParcela => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table webgrid']//tbody");
         public IWebElement InputDataVencimentoNovaParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ContratoParcela_Vencimento_auto_wrapper']//input[@id='ContratoParcela_Vencimento']");
         public IWebElement InputValorOriginalNovaParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ContratoParcela_Valor_auto_wrapper']//input[@id='ContratoParcela_Valor']");
-        //public IWebElement ValorNovaParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "");
         #endregion
 
         #region Excluir/Cancelar Contrato

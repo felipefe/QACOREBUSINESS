@@ -206,12 +206,6 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(1000);
         }
 
-        //public void InserirValorNovaParcela(decimal valor)
-        //{
-        //    fin.InputValorOriginalNovaParcela.SendKeys(valor.ToString());
-        //    Thread.Sleep(1000);
-        //}
-
         public void CliqueBotaoAddParcelasManual()
         {
             fin.BotaoAddParcelasCriadas.Click();
