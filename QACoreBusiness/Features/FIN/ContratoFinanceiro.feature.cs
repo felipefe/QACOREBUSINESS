@@ -110,7 +110,7 @@ this.FeatureBackground();
 #line 14
  testRunner.And("selecionar a empresa do contrato {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("selecionar o plano de contas {\'Comercial - vendas\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
  testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
@@ -154,7 +154,7 @@ this.FeatureBackground();
 #line 31
  testRunner.And("selecionar a empresa do contrato {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And("selecionar o plano de contas {\'Comercial - vendas\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
  testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
@@ -212,7 +212,7 @@ this.FeatureBackground();
 #line 55
  testRunner.And("selecionar a empresa do contrato {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.And("selecionar o plano de contas {\'Comercial - vendas\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
  testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
@@ -304,27 +304,70 @@ testRunner.Then("o contrato nao deve ser excluido motivo {\'Não foi possível a
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adicionar parcela em contrato criado", null, new string[] {
                         "add_parcela_contrato_criado"});
-#line 89
+#line 92
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 90
-testRunner.Given("que o status do contrato seja {\'Incompleto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 91
-testRunner.And("clique nas actions Parcelas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
-testRunner.And("seja redirecionado para a index de Contrato/Parcelas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
-testRunner.When("clicar no botao Nova Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("que o status do contrato seja {\'Incompleto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 94
-testRunner.And("inserir no input Valor Original R${85.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique nas actions Parcelas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95
-testRunner.And("inserir no input Data de Vencimento com horas para {15} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja redirecionado para a index de Contrato/Parcelas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 96
-testRunner.And("clicar no botao salvar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("clicar no botao Nova Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 97
+testRunner.And("inserir no input Valor Original R${85.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+testRunner.And("inserir no input Data de Vencimento com horas para {15} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+testRunner.And("clicar no botao salvar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
 testRunner.Then("a parcela deve ser criadas validando valor e vencimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Lançar contrato pagto antecipado")]
+        [Xunit.TraitAttribute("FeatureTitle", "ContratoFinanceiro")]
+        [Xunit.TraitAttribute("Description", "Lançar contrato pagto antecipado")]
+        [Xunit.TraitAttribute("Category", "lancar_pagamento_antecipado")]
+        public virtual void LancarContratoPagtoAntecipado()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar contrato pagto antecipado", null, new string[] {
+                        "lancar_pagamento_antecipado"});
+#line 104
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 105
+testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 106
+testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+testRunner.When("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
+testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+testRunner.And("informar no input o Valor a pagar {250.00}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 114
+testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

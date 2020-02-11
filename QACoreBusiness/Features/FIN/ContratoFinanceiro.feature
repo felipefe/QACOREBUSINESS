@@ -12,7 +12,7 @@ Scenario: Criar contrato FIN sem parcelas
 	When inserir no input numero do documento 
 	And selecionar a pessoa do contrato {'Laura La Caronita'}
 	And selecionar a empresa do contrato {'Deltacon Informática'}
-	And selecionar o plano de contas {'Comercial - vendas'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
 	And selecionar o centro de custo {'Contratos Financeiros'}
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
@@ -29,7 +29,7 @@ Scenario: Criar contrato FIN + parcelas AUTO
 	When inserir no input numero do documento 
 	And selecionar a pessoa do contrato {'Laura La Caronita'}
 	And selecionar a empresa do contrato {'Deltacon Informática'}
-	And selecionar o plano de contas {'Comercial - vendas'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
 	And selecionar o centro de custo {'Contratos Financeiros'}
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
@@ -53,7 +53,7 @@ Scenario: Criar contrato FIN + parcelas MANUAL
 	When inserir no input numero do documento 
 	And selecionar a pessoa do contrato {'Laura La Caronita'}
 	And selecionar a empresa do contrato {'Deltacon Informática'}
-	And selecionar o plano de contas {'Comercial - vendas'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
 	And selecionar o centro de custo {'Contratos Financeiros'}
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
@@ -76,6 +76,7 @@ When clicar nas actions Excluir / Cancelar
 And confirmar clicando no botao Excluir da modal
 Then o contrato deve ser excluido
 
+
 @excluir_contrato_restricao
 Scenario: Excluir contrato Aberto
 Given que o status do contrato seja {'Aberto'}
@@ -83,7 +84,6 @@ And memorize o N doc do contrato a ser excluido
 When clicar nas actions Excluir / Cancelar 
 And confirmar clicando no botao Excluir da modal
 Then o contrato nao deve ser excluido motivo {'Não foi possível apagar o contrato!'}
-
 
 
 #{'Incompleto'} contrato sem parcela
@@ -98,3 +98,20 @@ And inserir no input Valor Original R${85.0}
 And inserir no input Data de Vencimento com horas para {15} dias futuros
 And clicar no botao salvar parcela
 Then a parcela deve ser criadas validando valor e vencimento
+
+
+@lancar_pagamento_antecipado
+Scenario: Lançar contrato pagto antecipado 
+Given seja clicado no botao da Header Lançar Pagamento Antecipado
+And seja redirecionado para index de Pagto Antecipado
+When selecionar a pessoa do contrato {'Laura La Caronita'}
+And selecionar o plano de contas {'Contratos Financeiros'}
+And selecionar o centro de custo {'Contratos Financeiros'}
+And selecionar o meio de pagamento {'Dinheiro'}
+And informar no input o Valor a pagar {250.00}
+And clicar no botao Salvar pagto antecipado
+Then o sistema redireciona para index de contratos
+And um contrato de pagamento Num Doc {'PGA'} deve ser criado
+And com status {'Quitado'} na primeira linha da tabela de contratos
+And um contrato de credito Num Doc {'CREPGA'} deve ser criado
+And com status {'Aberto'} na segunda linha da tabela contratos

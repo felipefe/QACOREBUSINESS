@@ -52,6 +52,37 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaUrlContratoParcelas();
         }
 
+        [Given(@"seja clicado no botao da Header Lançar Pagamento Antecipado")]
+        public void GivenSejaClicadoNoBotaoDaHeaderLancarPagamentoAntecipado()
+        {
+            cfu.CliqueLancarPagtoAntecipado();
+        }
+
+        [Given(@"seja redirecionado para index de Pagto Antecipado")]
+        public void GivenSejaRedirecionadoParaIndexDePagtoAntecipado()
+        {
+            cfu.ValidaUrlContratoPagtoAntecipado();
+        }
+
+        [When(@"selecionar o meio de pagamento \{'(.*)'}")]
+        public void WhenSelecionarOMeioDePagamento(string meioPagamento)
+        {
+            cfu.SelecionarMeioPagto(meioPagamento);
+        }
+
+        [When(@"informar no input o Valor a pagar \{(.*)}")]
+        public void WhenInformarNoInputOValorAPagar(Decimal valor)
+        {
+            cfu.InserirValorPagtoAntecipado(valor);
+        }
+
+        [When(@"clicar no botao Salvar pagto antecipado")]
+        public void WhenClicarNoBotaoSalvarPagtoAntecipado()
+        {
+            cfu.CliqueSalvarPagtoAntecipado();
+        }
+
+
         [When(@"inserir no input numero do documento")]
         public void WhenInserirNoInputNumeroDoDocumento()
         {
@@ -239,6 +270,29 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaNovaParcelaContrato();
         }
 
+        [Then(@"um contrato de pagamento Num Doc \{'(.*)'} deve ser criado")]
+        public void ThenUmContratoDePagamentoNumDocDeveSerCriado(string numDocPGA)
+        {
+            cfu.ValidaNumDocContratoPGA(numDocPGA);
+        }
+
+        [Then(@"com status \{'(.*)'} na primeira linha da tabela de contratos")]
+        public void ThenComStatusNaPrimeiraLinhaDaTabelaDeContratos(string statusPGA)
+        {
+            cfu.ValidaStatusContratoPGA(statusPGA);
+        }
+
+        [Then(@"um contrato de credito Num Doc \{'(.*)'} deve ser criado")]
+        public void ThenUmContratoDeCreditoNumDocDeveSerCriado(string numDocCREPGA)
+        {
+            cfu.ValidaNumDocContratoCREPGA(numDocCREPGA);
+        }
+
+        [Then(@"com status \{'(.*)'} na segunda linha da tabela contratos")]
+        public void ThenComStatusNaSegundaLinhaDaTabelaContratos(string statusCREPGA)
+        {
+            cfu.ValidaStatusContratoCREPGA(statusCREPGA);
+        }
 
     }
 }

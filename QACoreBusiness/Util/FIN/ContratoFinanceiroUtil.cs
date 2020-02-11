@@ -71,6 +71,37 @@ namespace QACoreBusiness.Util.FIN
         }
 
 
+
+        public void CliqueLancarPagtoAntecipado()
+        {
+            fin.HeaderLancarPagtoAntecipado.Click();
+        }
+
+        public void ValidaUrlContratoPagtoAntecipado()
+        {
+            Assert.Equal(fin.UrlContratoPagtoAntecipado, driver.Url);
+        }
+
+        public void SelecionarMeioPagto(string meioPagamento)
+        {
+            fin.SelectMeioPagamentoPagtoAntecipado.Click();
+            fin.SearchMeioPagamentoPagtoAntecipado.SendKeys(meioPagamento);
+            Thread.Sleep(1000);
+            fin.SearchMeioPagamentoPagtoAntecipado.SendKeys(Keys.Enter);
+        }
+
+        public void InserirValorPagtoAntecipado(decimal valor)
+        {
+            fin.InputValorContratoPagtoAntecipado.SendKeys(valor.ToString());
+            Thread.Sleep(500);
+        }
+
+
+        public void CliqueSalvarPagtoAntecipado()
+        {
+            fin.BotaoSalvarContratoPagtoAntecipado.Click();
+        }
+
         public void CliqueActionsContratoParcelas()
         {
             fin.ActionsContrato.Click();
@@ -258,9 +289,29 @@ namespace QACoreBusiness.Util.FIN
             Assert.Equal(auxValorOriginal.ToString("N2"), linhas[lastIndex].FindElement(By.CssSelector("td:nth-child(4)")).Text.Replace(',', '.'));
         }
 
+        public void ValidaNumDocContratoPGA(string numDocPGA)
+        {
+            Assert.Contains(numDocPGA, fin.LinhasTabelaContratosFinanceiro[0].FindElement(By.CssSelector("td:nth-child(1)")).Text);
+        }
+
+        public void ValidaStatusContratoPGA(string statusPGA)
+        {
+            Assert.Equal(statusPGA, fin.LinhasTabelaContratosFinanceiro[0].FindElement(By.CssSelector("td:nth-child(6)")).Text);
+        }
+
+        public void ValidaNumDocContratoCREPGA(string numDocCREPGA)
+        {
+            Assert.Contains(numDocCREPGA, fin.LinhasTabelaContratosFinanceiro[1].FindElement(By.CssSelector("td:nth-child(1)")).Text);
+        }
+
         public void ValidaColunaValor(decimal colunaValor)
         {
             Assert.Equal(colunaValor.ToString("N2") , fin.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(7)")).Text.Replace(',','.'));
+        }
+
+        public void ValidaStatusContratoCREPGA(string statusCREPGA)
+        {
+            Assert.Equal(statusCREPGA, fin.LinhasTabelaContratosFinanceiro[1].FindElement(By.CssSelector("td:nth-child(6)")).Text);
         }
 
         public void ValidaContratoExcluido()
