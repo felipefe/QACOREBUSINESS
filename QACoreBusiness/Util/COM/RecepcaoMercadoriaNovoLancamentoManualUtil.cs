@@ -168,7 +168,7 @@ namespace QACoreBusiness.Util.COM
         {
             recepcao.SelectCFOPItemLF.Click();
             recepcao.SearchCFOPItemLF.SendKeys(cfop);
-            Thread.Sleep(1300);
+            Thread.Sleep(2000);
             recepcao.SearchCFOPItemLF.SendKeys(Keys.Enter);
         }
 
