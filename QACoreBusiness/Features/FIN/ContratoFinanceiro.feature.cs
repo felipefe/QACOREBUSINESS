@@ -277,20 +277,20 @@ testRunner.Then("o contrato deve ser excluido", ((string)(null)), ((TechTalk.Spe
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Excluir contrato Aberto", null, new string[] {
                         "excluir_contrato_restricao"});
-#line 80
+#line 81
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 81
-testRunner.Given("que o status do contrato seja {\'Aberto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 82
-testRunner.And("memorize o N doc do contrato a ser excluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que o status do contrato seja {\'Aberto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 83
-testRunner.When("clicar nas actions Excluir / Cancelar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("memorize o N doc do contrato a ser excluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
-testRunner.And("confirmar clicando no botao Excluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("clicar nas actions Excluir / Cancelar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 85
+testRunner.And("confirmar clicando no botao Excluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
 testRunner.Then("o contrato nao deve ser excluido motivo {\'Não foi possível apagar o contrato!\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -329,13 +329,13 @@ testRunner.Then("a parcela deve ser criadas validando valor e vencimento", ((str
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Lançar contrato pagto antecipado")]
+        [Xunit.FactAttribute(DisplayName="Lançar Pagto Antecipado")]
         [Xunit.TraitAttribute("FeatureTitle", "ContratoFinanceiro")]
-        [Xunit.TraitAttribute("Description", "Lançar contrato pagto antecipado")]
+        [Xunit.TraitAttribute("Description", "Lançar Pagto Antecipado")]
         [Xunit.TraitAttribute("Category", "lancar_pagamento_antecipado")]
-        public virtual void LancarContratoPagtoAntecipado()
+        public virtual void LancarPagtoAntecipado()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar contrato pagto antecipado", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar Pagto Antecipado", null, new string[] {
                         "lancar_pagamento_antecipado"});
 #line 104
 this.ScenarioInitialize(scenarioInfo);
@@ -368,6 +368,92 @@ testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contrato
 testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
 testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Lançar Despesa")]
+        [Xunit.TraitAttribute("FeatureTitle", "ContratoFinanceiro")]
+        [Xunit.TraitAttribute("Description", "Lançar Despesa")]
+        [Xunit.TraitAttribute("Category", "lancar_despesa_contrato")]
+        public virtual void LancarDespesa()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar Despesa", null, new string[] {
+                        "lancar_despesa_contrato"});
+#line 120
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 121
+ testRunner.Given("que seja clicado no botao Lançar Despesa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 122
+ testRunner.And("seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=D", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 124
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("inserir no input Valor Original R${420.00}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("informar no textArea um historico  {\'Contrato receita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And("clicar no botao salvar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 132
+ testRunner.And("o status do contrato deve ser {\'Quitado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And("a coluna referente ao valor original {\'420.00\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Lançar Receita")]
+        [Xunit.TraitAttribute("FeatureTitle", "ContratoFinanceiro")]
+        [Xunit.TraitAttribute("Description", "Lançar Receita")]
+        [Xunit.TraitAttribute("Category", "lancar_receita_contrato")]
+        public virtual void LancarReceita()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar Receita", null, new string[] {
+                        "lancar_receita_contrato"});
+#line 136
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 137
+ testRunner.Given("que seja clicado no botao Lançar Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 138
+ testRunner.And("seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=C", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 140
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And("inserir no input Valor Original R${420.00}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("informar no textArea um historico  {\'Contrato receita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+ testRunner.And("clicar no botao salvar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 148
+ testRunner.And("o status do contrato deve ser {\'Quitado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("a coluna referente ao valor original {\'420.00\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

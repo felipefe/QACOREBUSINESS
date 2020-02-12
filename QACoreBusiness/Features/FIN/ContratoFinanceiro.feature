@@ -101,7 +101,7 @@ Then a parcela deve ser criadas validando valor e vencimento
 
 
 @lancar_pagamento_antecipado
-Scenario: Lançar contrato pagto antecipado 
+Scenario: Lançar Pagto Antecipado 
 Given seja clicado no botao da Header Lançar Pagamento Antecipado
 And seja redirecionado para index de Pagto Antecipado
 When selecionar a pessoa do contrato {'Laura La Caronita'}
@@ -115,3 +115,35 @@ And um contrato de pagamento Num Doc {'PGA'} deve ser criado
 And com status {'Quitado'} na primeira linha da tabela de contratos
 And um contrato de credito Num Doc {'CREPGA'} deve ser criado
 And com status {'Aberto'} na segunda linha da tabela contratos
+
+@lancar_despesa_contrato
+Scenario: Lançar Despesa
+	Given que seja clicado no botao Lançar Despesa
+	And seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=D
+	When inserir no input numero do documento 
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And inserir no input Valor Original R${420.00}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And informar no textArea um historico  {'Contrato receita'}
+	And clicar no botao salvar contrato
+	Then o sistema redireciona para index de contratos
+	And o status do contrato deve ser {'Quitado'}
+	And a coluna referente ao valor original {'420.00'}
+
+@lancar_receita_contrato
+Scenario: Lançar Receita
+	Given que seja clicado no botao Lançar Receita
+	And seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=C
+	When inserir no input numero do documento 
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And inserir no input Valor Original R${420.00}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And informar no textArea um historico  {'Contrato receita'}
+	And clicar no botao salvar contrato
+	Then o sistema redireciona para index de contratos
+	And o status do contrato deve ser {'Quitado'}
+	And a coluna referente ao valor original {'420.00'}

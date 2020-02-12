@@ -70,7 +70,23 @@ namespace QACoreBusiness.Util.FIN
 
         }
 
+        public void CliqueLancarDespesas()
+        {
+            fin.HeaderLancarDespesa.Click();
+            Thread.Sleep(1000);
+        }
 
+        public void ValidaUrlLancarDespesaContrato()
+        {
+            driver.Navigate().Refresh();
+            Thread.Sleep(3000);
+            Assert.Equal(fin.UrlLancarDespesa, driver.Url);
+        }
+
+        public void ValidaUrlLancarReceitaContrato()
+        {
+            Assert.Equal(fin.UrlLancarReceita, driver.Url);
+        }
 
         public void CliqueLancarPagtoAntecipado()
         {
@@ -343,7 +359,10 @@ namespace QACoreBusiness.Util.FIN
             Assert.Contains(motivo, fin.AlertaExcluirImpossivel.Text);
         }
 
-
+        public void CliqueBotaoLancarReceita()
+        {
+            fin.HeaderLancarReceita.Click();
+        }
 
     }
 }

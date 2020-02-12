@@ -17,6 +17,8 @@ namespace QACoreBusiness.Elements
         public string UrlCreateContrato => UrlContextoContrato + "/Create";
         public string UrlParcelasContrato => UrlContextoContrato + "/Parcelas?idContrato=";
         public string UrlContratoPagtoAntecipado = UrlCoreBusiness + "/FIN/PagamentoAntecipado/Create";
+        public string UrlLancarReceita = UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=C";
+        public string UrlLancarDespesa = UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=D";
         #endregion
 
 
@@ -92,7 +94,16 @@ namespace QACoreBusiness.Elements
         public IWebElement SearchMeioPagamentoPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement InputValorContratoPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_ValorPagar']");
         public IWebElement HeaderLancarPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Lançar Pagamento Antecipado']");
-
         #endregion
+
+
+        #region Contrato Lançar Receita
+        public IWebElement HeaderLancarReceita => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Lançar Receitas']");
+        #endregion
+
+        #region Contrato Lançar Despesa
+        public IWebElement HeaderLancarDespesa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Lançar Despesas']");
+        #endregion
+
     }
 }

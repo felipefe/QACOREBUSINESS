@@ -64,6 +64,33 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaUrlContratoPagtoAntecipado();
         }
 
+        [Given(@"que seja clicado no botao Lançar Receita")]
+        public void GivenQueSejaClicadoNoBotaoLancarReceita()
+        {
+            cfu.CliqueBotaoLancarReceita();
+        }
+
+
+        [Given(@"que seja clicado no botao Lançar Despesa")]
+        public void GivenQueSejaClicadoNoBotaoLancarDespesa()
+        {
+            cfu.CliqueLancarDespesas();
+        }
+
+        [Given(@"seja redirecionado para /FIN/DespesaReceita/Create\?tipoPC=D")]
+        public void GivenSejaRedirecionadoParaFINDespesaReceitaCreateTipoPCD()
+        {
+            cfu.ValidaUrlLancarDespesaContrato();
+        }
+
+        [Given(@"seja redirecionado para /FIN/DespesaReceita/Create\?tipoPC=C")]
+        public void GivenSejaRedirecionadoParaFINDespesaReceitaCreateTipoPCC()
+        {
+            cfu.ValidaUrlLancarReceitaContrato();
+        }
+
+
+
         [When(@"selecionar o meio de pagamento \{'(.*)'}")]
         public void WhenSelecionarOMeioDePagamento(string meioPagamento)
         {
