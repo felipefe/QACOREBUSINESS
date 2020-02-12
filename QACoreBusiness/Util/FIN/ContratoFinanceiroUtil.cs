@@ -11,7 +11,7 @@ namespace QACoreBusiness.Util.FIN
 {
     class ContratoFinanceiroUtil
     {
-        ElementsBaseFinanceiro fin;
+        ElementsFINContratos contr;
         IWebDriver driver = Base.chromeDriver;
         IWebElement linhaEncontradaTabela;
         private int auxQtdParcelas;
@@ -20,14 +20,14 @@ namespace QACoreBusiness.Util.FIN
 
         public ContratoFinanceiroUtil()
         {
-            fin = new ElementsBaseFinanceiro();
+            contr = new ElementsFINContratos();
         }
 
         //encontra a linha que contem o numero do status
         private IWebElement FindLinhaInTabelaByStatus(string status)
         {
             String linhaStatus;
-            foreach (IWebElement linha in fin.LinhasTabelaContratosFinanceiro)
+            foreach (IWebElement linha in contr.LinhasTabelaContratosFinanceiro)
             {
                 linhaStatus = linha.FindElement(By.CssSelector("td:nth-child(6)")).Text;
                 if (status.Equals(linhaStatus))
@@ -44,7 +44,7 @@ namespace QACoreBusiness.Util.FIN
         private IWebElement FindLinhaInTabelaByNumDoc(string NumDoc)
         {
             String linhaNumDoc;
-            foreach (IWebElement linha in fin.LinhasTabelaContratosFinanceiro)
+            foreach (IWebElement linha in contr.LinhasTabelaContratosFinanceiro)
             {
                 linhaNumDoc = linha.FindElement(By.CssSelector("td:nth-child(1)")).Text;
                 if (NumDoc.Equals(linhaNumDoc))
@@ -72,96 +72,97 @@ namespace QACoreBusiness.Util.FIN
 
         public void CliqueLancarDespesas()
         {
-            fin.HeaderLancarDespesa.Click();
-            Thread.Sleep(1000);
+            contr.HeaderLancarDespesa.Click();
         }
 
         public void ValidaUrlLancarDespesaContrato()
-        {
-            driver.Navigate().Refresh();
-            Thread.Sleep(3000);
-            Assert.Equal(fin.UrlLancarDespesa, driver.Url);
+        {//aqui ele troca o driver pra nova janela aberta
+            int index = driver.WindowHandles.ToList().Count -1;
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[index]);
+            Assert.Equal(contr.UrlLancarDespesa, driver.Url);
         }
 
         public void ValidaUrlLancarReceitaContrato()
-        {
-            Assert.Equal(fin.UrlLancarReceita, driver.Url);
+        {//aqui ele troca o driver pra nova janela aberta
+            int index = driver.WindowHandles.ToList().Count - 1;
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[index]);
+            Assert.Equal(contr.UrlLancarReceita, driver.Url);
         }
 
         public void CliqueLancarPagtoAntecipado()
         {
-            fin.HeaderLancarPagtoAntecipado.Click();
+            contr.HeaderLancarPagtoAntecipado.Click();
         }
 
         public void ValidaUrlContratoPagtoAntecipado()
         {
-            Assert.Equal(fin.UrlContratoPagtoAntecipado, driver.Url);
+            Assert.Equal(contr.UrlContratoPagtoAntecipado, driver.Url);
         }
 
         public void SelecionarMeioPagto(string meioPagamento)
         {
-            fin.SelectMeioPagamentoPagtoAntecipado.Click();
-            fin.SearchMeioPagamentoPagtoAntecipado.SendKeys(meioPagamento);
-            Thread.Sleep(1000);
-            fin.SearchMeioPagamentoPagtoAntecipado.SendKeys(Keys.Enter);
+            contr.SelectMeioPagamentoPagtoAntecipado.Click();
+            contr.SearchMeioPagamentoPagtoAntecipado.SendKeys(meioPagamento);
+            Thread.Sleep(1500);
+            contr.SearchMeioPagamentoPagtoAntecipado.SendKeys(Keys.Enter);
         }
 
         public void InserirValorPagtoAntecipado(decimal valor)
         {
-            fin.InputValorContratoPagtoAntecipado.SendKeys(valor.ToString());
+            contr.InputValorContratoPagtoAntecipado.SendKeys(valor.ToString());
             Thread.Sleep(500);
         }
 
 
         public void CliqueSalvarPagtoAntecipado()
         {
-            fin.BotaoSalvarContratoPagtoAntecipado.Click();
+            contr.BotaoSalvarContrato.Click();
         }
 
         public void CliqueActionsContratoParcelas()
         {
-            fin.ActionsContrato.Click();
-            fin.ActionsParcelasContrato.Click();
+            contr.ActionsContrato.Click();
+            contr.ActionsParcelasContrato.Click();
         }
 
 
         public void ValidaUrlContratoParcelas()
         {
             Thread.Sleep(1000);
-            Assert.Contains(fin.UrlParcelasContrato, driver.Url);
+            Assert.Contains(contr.UrlParcelasContrato, driver.Url);
         }
 
         public void AcesseIndexContrato()
         {
-            fin.ContextoContrato.Click();
+            contr.ContextoContrato.Click();
         }
 
         public void CliqueCriarContrato()
         {
-            fin.HeaderCriarContrato.Click();
+            contr.HeaderCriarContrato.Click();
         }
 
         public void ValidaUrlContratoCreate()
         {
-            Assert.Equal(fin.UrlCreateContrato, driver.Url);
+            Assert.Equal(contr.UrlCreateContrato, driver.Url);
         }
 
         public void InserirNumeroContrato()
         {
-            fin.InputNumeroContrato.SendKeys((new Random().Next(100000, 999999).ToString()));
+            contr.InputNumeroContrato.SendKeys((new Random().Next(100000, 999999).ToString()));
         }
 
         public void SelecionarPessoaContrato(string pessoa)
         {
-            fin.SelectPessoaContrato.Click();
-            fin.SearchPessoaContrato.SendKeys(pessoa);
+            contr.SelectPessoaContrato.Click();
+            contr.SearchPessoaContrato.SendKeys(pessoa);
             Thread.Sleep(1000);
-            fin.SearchPessoaContrato.SendKeys(Keys.Enter);
+            contr.SearchPessoaContrato.SendKeys(Keys.Enter);
         }
 
         public void MemorizarNumeroContrato()
         {
-            auxNumDocContrato = fin.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(1)")).Text;
+            auxNumDocContrato = contr.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(1)")).Text;
         }
 
         public void ValidaSituacaoContrato(string status)
@@ -171,163 +172,175 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarEmpresaContrato(string empresa)
         {
-            fin.SelectEmpresaContrato.Click();
-            fin.SearchEmpresaContrato.SendKeys(empresa);
+            contr.SelectEmpresaContrato.Click();
+            contr.SearchEmpresaContrato.SendKeys(empresa);
             Thread.Sleep(1000);
-            fin.SearchEmpresaContrato.SendKeys(Keys.Enter);
+            contr.SearchEmpresaContrato.SendKeys(Keys.Enter);
         }
 
         public void SelecionarCentroCusto(string cc)
         {
-            fin.SelectCentroCusto.Click();
-            fin.SearchCentroCusto.SendKeys(cc);
+            contr.SelectCentroCusto.Click();
+            contr.SearchCentroCusto.SendKeys(cc);
             Thread.Sleep(1000);
-            fin.SearchCentroCusto.SendKeys(Keys.Enter);
+            contr.SearchCentroCusto.SendKeys(Keys.Enter);
         }
 
         public void SelecionarPlanoContas(string pc)
         {
-            fin.SelectPlanoContas.Click();
-            fin.SearchPlanoContas.SendKeys(pc);
+            contr.SelectPlanoContas.Click();
+            contr.SearchPlanoContas.SendKeys(pc);
             Thread.Sleep(1000);
-            fin.SearchPlanoContas.SendKeys(Keys.Enter);
+            contr.SearchPlanoContas.SendKeys(Keys.Enter);
         }
 
         public void InformarHistorico(string historico)
         {
-            fin.InputHistoricoContrato.SendKeys(historico);
+            contr.InputHistoricoContrato.SendKeys(historico);
         }
 
         public void SelecionarContaPrevista(string contaPrevista)
         {
-            fin.SelectContaPrevistaPagto.Click();
-            fin.SearchContaPrevistaPagto.SendKeys(contaPrevista);
+            contr.SelectContaPrevistaPagto.Click();
+            contr.SearchContaPrevistaPagto.SendKeys(contaPrevista);
             Thread.Sleep(2000);
-            fin.SearchContaPrevistaPagto.SendKeys(Keys.Enter);
+            contr.SearchContaPrevistaPagto.SendKeys(Keys.Enter);
         }
 
         public void CliqueAddParcelasManualmente()
         {
-            fin.BotaoAddParcelasManualmente.Click();
+            contr.BotaoAddParcelasManualmente.Click();
             Thread.Sleep(500);
         }
 
         public void CliqueSalvarContrato()
         {
-            fin.BotaoSalvarContrato.Click();
+            contr.BotaoSalvarContrato.Click();
         }
 
         public void InserirValorParcelaManualmente(decimal valor)
         {
             auxValorOriginal = valor;
-            fin.InputValorOriginalManualmente.SendKeys(valor.ToString());
+            contr.InputValorOriginalManualmente.SendKeys(valor.ToString());
             Thread.Sleep(1000);
         }
 
         public void CliqueAddParcelasAutomaticamente()
         {
-            fin.BotaoAddParcelasAutomaticamente.Click();
+            contr.BotaoAddParcelasAutomaticamente.Click();
         }
 
         public void InserirDataVencimentoManual(int dias)
         {
-            fin.InputDataVencimentoManualmente.SendKeys(DateTime.Now.AddDays(dias).ToString("dd/MM/yyyy"));
+            contr.InputDataVencimentoManualmente.SendKeys(DateTime.Now.AddDays(dias).ToString("dd/MM/yyyy"));
             Thread.Sleep(1000);
         }
 
         public void CliqueNovaParcelaContrato()
         {
-            fin.BotaoHeaderContratoNovaParcela.Click();
+            contr.BotaoHeaderContratoNovaParcela.Click();
             Thread.Sleep(500);
         }
 
         public void InformarValorOriginalParcela(decimal valor)
         {
-            fin.InputValorOriginalParcelaContrato.SendKeys(valor.ToString());
-            Thread.Sleep(500);
+            contr.InputValorOriginalParcelaContrato.SendKeys(valor.ToString());
+            Thread.Sleep(1000);
         }
 
         public void AddVencimentoNovaParcela(int vencimento)
         {
-            fin.InputDataVencimentoNovaParcela.SendKeys(DateTime.Now.AddDays(vencimento).ToString("dd/MM/yyyy hh:mm"));
+            contr.InputDataVencimentoNovaParcela.SendKeys(DateTime.Now.AddDays(vencimento).ToString("dd/MM/yyyy hh:mm"));
+            Thread.Sleep(1000);
+        }
+
+        public void InserirValorPagoContratoDespesaReceita(decimal valorPago)
+        {
+            contr.InputValorPagoContrato.Clear();
+            contr.InputValorPagoContrato.SendKeys(valorPago.ToString());
             Thread.Sleep(1000);
         }
 
         public void CliqueBotaoAddParcelasManual()
         {
-            fin.BotaoAddParcelasCriadas.Click();
+            contr.BotaoAddParcelasCriadas.Click();
+        }
+
+        public void CliqueBotaoCriarSalvarContrato()
+        {
+            contr.BotaoCriarSalvarContrato.Click();
         }
 
         public void InformarQuantidadeParcelas(int parcelas)
         {
             auxQtdParcelas = parcelas;
-            fin.InputQntidadeParcelaContrato.SendKeys(parcelas.ToString());
+            contr.InputQntidadeParcelaContrato.SendKeys(parcelas.ToString());
             Thread.Sleep(500);
         }
 
         public void InformarIntervaloEntreParcelas(int intervalo)
         {
-            fin.InputIntervaloDiasParcelaContrato.SendKeys(intervalo.ToString());
+            contr.InputIntervaloDiasParcelaContrato.SendKeys(intervalo.ToString());
         }
 
         public void InserirVencimentoPrimeiraParcela(int primeiroVencimento)
         {
-            fin.InputVencimentoPrimeiraParcelaContrato.SendKeys(DateTime.Now.AddDays(primeiroVencimento).ToString("dd/MM/yyyy"));
+            contr.InputVencimentoPrimeiraParcelaContrato.SendKeys(DateTime.Now.AddDays(primeiroVencimento).ToString("dd/MM/yyyy"));
             Thread.Sleep(500);
         }
 
         public void CliqueSalvarParcelas()
         {
-            fin.BotaoSalvarParcelas.Click();
+            contr.BotaoSalvarParcelas.Click();
             Thread.Sleep(500);
         }
 
         public void ValidaUrlContrato()
         {
             Thread.Sleep(500);
-            Assert.Equal( fin.UrlContextoContrato, driver.Url);
+            Assert.Equal( contr.UrlContextoContrato, driver.Url);
         }
 
         public void StatusContrato(string status)
         {
-            Assert.Equal(status, fin.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(6)")).Text);
+            Assert.Equal(status, contr.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(6)")).Text);
         }
 
         public void ValidaParcelaCriadaManualmente()
         {
-            Assert.Equal(auxValorOriginal.ToString("N2"), fin.ValorParcelaManual.GetAttribute("value").Replace(',', '.'));
+            Assert.Equal(auxValorOriginal.ToString("N2"), contr.ValorParcelaManual.GetAttribute("value").Replace(',', '.'));
         }
 
         public void ValidaNovaParcelaContrato()
         {
-            List<IWebElement> linhas = fin.TabelaContratoNovaParcela.FindElements(By.TagName("tr")).ToList();
+            List<IWebElement> linhas = contr.TabelaContratoNovaParcela.FindElements(By.TagName("tr")).ToList();
             int lastIndex = linhas.Count - 1;
             Assert.Equal(auxValorOriginal.ToString("N2"), linhas[lastIndex].FindElement(By.CssSelector("td:nth-child(4)")).Text.Replace(',', '.'));
         }
 
         public void ValidaNumDocContratoPGA(string numDocPGA)
         {
-            Assert.Contains(numDocPGA, fin.LinhasTabelaContratosFinanceiro[0].FindElement(By.CssSelector("td:nth-child(1)")).Text);
+            Assert.Contains(numDocPGA, contr.LinhasTabelaContratosFinanceiro[0].FindElement(By.CssSelector("td:nth-child(1)")).Text);
         }
 
         public void ValidaStatusContratoPGA(string statusPGA)
         {
-            Assert.Equal(statusPGA, fin.LinhasTabelaContratosFinanceiro[0].FindElement(By.CssSelector("td:nth-child(6)")).Text);
+            Assert.Equal(statusPGA, contr.LinhasTabelaContratosFinanceiro[0].FindElement(By.CssSelector("td:nth-child(6)")).Text);
         }
 
         public void ValidaNumDocContratoCREPGA(string numDocCREPGA)
         {
-            Assert.Contains(numDocCREPGA, fin.LinhasTabelaContratosFinanceiro[1].FindElement(By.CssSelector("td:nth-child(1)")).Text);
+            Assert.Contains(numDocCREPGA, contr.LinhasTabelaContratosFinanceiro[1].FindElement(By.CssSelector("td:nth-child(1)")).Text);
         }
 
         public void ValidaColunaValor(decimal colunaValor)
         {
-            Assert.Equal(colunaValor.ToString("N2") , fin.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(7)")).Text.Replace(',','.'));
+            Assert.Equal(colunaValor.ToString("N2") , contr.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(7)")).Text.Replace(',','.'));
         }
 
         public void ValidaStatusContratoCREPGA(string statusCREPGA)
         {
-            Assert.Equal(statusCREPGA, fin.LinhasTabelaContratosFinanceiro[1].FindElement(By.CssSelector("td:nth-child(6)")).Text);
+            Assert.Equal(statusCREPGA, contr.LinhasTabelaContratosFinanceiro[1].FindElement(By.CssSelector("td:nth-child(6)")).Text);
         }
 
         public void ValidaContratoExcluido()
@@ -338,30 +351,30 @@ namespace QACoreBusiness.Util.FIN
         public void CliqueExcluirContratoModal()
         {
             Thread.Sleep(1000);
-            fin.BotaoExcluirContratoModal.Click();
+            contr.BotaoExcluirContratoModal.Click();
         }
 
         public void CliqueExcluirContrato()
         {
-            fin.ActionsContrato.Click();
-            fin.ActionsExcluirContrato.Click();
+            contr.ActionsContrato.Click();
+            contr.ActionsExcluirContrato.Click();
         }
 
         public void ValidaQuantidadeParcelasCriadas()
         {
             Thread.Sleep(1000);
-            Assert.Equal(auxQtdParcelas, fin.TabelaParcelas.FindElements(By.TagName("tr")).ToList().Count);
+            Assert.Equal(auxQtdParcelas, contr.TabelaParcelas.FindElements(By.TagName("tr")).ToList().Count);
         }
 
         public void ContratoNPodeSerDeletado(string motivo)
         {
             Thread.Sleep(500);
-            Assert.Contains(motivo, fin.AlertaExcluirImpossivel.Text);
+            Assert.Contains(motivo, contr.AlertaExcluirImpossivel.Text);
         }
 
         public void CliqueBotaoLancarReceita()
         {
-            fin.HeaderLancarReceita.Click();
+            contr.HeaderLancarReceita.Click();
         }
 
     }

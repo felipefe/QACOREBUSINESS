@@ -10,7 +10,7 @@ namespace QACoreBusiness.Util.COM
 {
     class PedidoEmitirDFeUtil
     {
-        public ElementsWorkflowPedido pedido;
+        public ElementsCOMPedidoWorkflow pedido;
         public ElementsNotasFiscaisEletronicasEmitidas nfee;
         public ParametrosEmpresaUtil parametro;
         public SituacaoDosServidoresUtil servidor;
@@ -19,7 +19,7 @@ namespace QACoreBusiness.Util.COM
 
         public PedidoEmitirDFeUtil()
         {
-            pedido = new ElementsWorkflowPedido();
+            pedido = new ElementsCOMPedidoWorkflow();
             nfee = new ElementsNotasFiscaisEletronicasEmitidas();
             servidor = new SituacaoDosServidoresUtil();
             parametro = new ParametrosEmpresaUtil();

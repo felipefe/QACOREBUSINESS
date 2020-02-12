@@ -9,7 +9,7 @@ using QACoreBusiness.Util;
 
 namespace QACoreBusiness.Elements
 {
-    class ElementsWorkflowRecepcaoMercadoria : ElementsBaseRecepcaoMercadoria
+    class ElementsCOMRecepcaoMercadoriaWorkflow : ElementsCOMRecepcaoMercadoria
     {
         #region Urls de Acesso
         public string UrlCreateRecepcaoMercadoria = UrlCoreBusiness + "/COM/LoteFiscal/Create";

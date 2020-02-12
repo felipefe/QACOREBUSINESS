@@ -11,11 +11,11 @@ namespace QACoreBusiness.Util
     class PedidoSeparacaoUtil 
     {
         IWebDriver driver = Base.chromeDriver;
-        ElementsWorkflowPedido separacao;
+        ElementsCOMPedidoWorkflow separacao;
 
         public PedidoSeparacaoUtil()
         {
-            separacao = new ElementsWorkflowPedido();
+            separacao = new ElementsCOMPedidoWorkflow();
         }
 
         public void SituacaoPedido()

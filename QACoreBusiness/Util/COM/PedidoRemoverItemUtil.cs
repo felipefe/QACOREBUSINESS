@@ -11,12 +11,12 @@ namespace QACoreBusiness.Util
     class PedidoRemoverItemUtil
     {
         IWebDriver driver = Base.chromeDriver;
-        ElementsMontarPedido pedido;
+        ElementsCOMPedido pedido;
         int qtdItensInicial;
 
         public PedidoRemoverItemUtil()
         {
-            pedido = new ElementsMontarPedido();
+            pedido = new ElementsCOMPedido();
             qtdItensInicial = ItensInPedido();
         }
 

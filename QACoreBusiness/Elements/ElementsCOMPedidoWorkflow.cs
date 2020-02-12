@@ -7,7 +7,7 @@ using System.Text;
 
 namespace QACoreBusiness.Elements
 {
-    class ElementsWorkflowPedido : ElementsBasePedido
+    class ElementsCOMPedidoWorkflow : ElementsBasePedido
     {
 
         #region URLs de Acesso

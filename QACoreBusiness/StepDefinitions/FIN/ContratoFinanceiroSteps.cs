@@ -243,6 +243,25 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.AddVencimentoNovaParcela(vencimento);
         }
 
+        [When(@"inserir no input Valor Pago R\$\{(.*)}")]
+        public void WhenInserirNoInputValorPagoR(Decimal valorPago)
+        {
+            cfu.InserirValorPagoContratoDespesaReceita(valorPago);
+        }
+
+        [When(@"clicar no botao salvar/criar contrato")]
+        public void WhenClicarNoBotaoSalvarCriarContrato()
+        {
+            cfu.CliqueBotaoCriarSalvarContrato();
+        }
+
+        [Then(@"clicar no botao salvar/criar contrato")]
+        public void ThenClicarNoBotaoSalvarCriarContrato()
+        {
+            cfu.CliqueBotaoCriarSalvarContrato();
+        }
+
+
         [Then(@"o sistema redireciona para index de contratos")]
         public void ThenOSistemaRedirecionaParaIndexDeContratos()
         {

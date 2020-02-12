@@ -1,6 +1,6 @@
 ﻿Feature: ContratoFinanceiro
 
-Background: Ter um pedido criado
+Background: logar e acessar index contratos
 Given que eu esteja logado no sistema
 And acesse a index de contratos
 
@@ -16,7 +16,7 @@ Scenario: Criar contrato FIN sem parcelas
 	And selecionar o centro de custo {'Contratos Financeiros'}
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
-	And clicar no botao salvar contrato
+	And clicar no botao salvar/criar contrato
 	Then o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Incompleto'}
 	And a coluna referente ao valor original {'0.00'}
@@ -40,7 +40,7 @@ Scenario: Criar contrato FIN + parcelas AUTO
 	And inserir o vencimento da primeira parcela para {15} dias futuros
 	And clicar no botao salvar parcela
 	Then as parcelas devem ser criadas conforme a qntdade informada
-	And clicar no botao salvar contrato
+	And clicar no botao salvar/criar contrato
 	And o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Aberto'}
 	And a coluna referente ao valor original {'600.00'}
@@ -62,7 +62,7 @@ Scenario: Criar contrato FIN + parcelas MANUAL
 	And inserir no input Data de Vencimento {15} dias futuros
 	And clicar no botao Adicionar parcela
 	Then a parcela deve ser criadas conforme valor informado
-	And clicar no botao salvar contrato
+	And clicar no botao salvar/criar contrato
 	And o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Aberto'}
 	And a coluna referente ao valor original {'420.0'}
@@ -122,15 +122,16 @@ Scenario: Lançar Despesa
 	And seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=D
 	When inserir no input numero do documento 
 	And selecionar a pessoa do contrato {'Laura La Caronita'}
-	And selecionar o plano de contas {'Contratos Financeiros'}
-	And inserir no input Valor Original R${420.00}
+	And selecionar o plano de contas {'Contratos - Despesa'}
+	And inserir no input Valor Original R${70.0}
+	And inserir no input Valor Pago R${70.0}
 	And selecionar o meio de pagamento {'Dinheiro'}
 	And selecionar o centro de custo {'Contratos Financeiros'}
 	And informar no textArea um historico  {'Contrato receita'}
 	And clicar no botao salvar contrato
 	Then o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Quitado'}
-	And a coluna referente ao valor original {'420.00'}
+	And a coluna referente ao valor original {'70.0'}
 
 @lancar_receita_contrato
 Scenario: Lançar Receita
@@ -139,11 +140,12 @@ Scenario: Lançar Receita
 	When inserir no input numero do documento 
 	And selecionar a pessoa do contrato {'Laura La Caronita'}
 	And selecionar o plano de contas {'Contratos Financeiros'}
-	And inserir no input Valor Original R${420.00}
+	And inserir no input Valor Original R${420.0}
+	And inserir no input Valor Pago R${420.0}
 	And selecionar o meio de pagamento {'Dinheiro'}
 	And selecionar o centro de custo {'Contratos Financeiros'}
 	And informar no textArea um historico  {'Contrato receita'}
 	And clicar no botao salvar contrato
 	Then o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Quitado'}
-	And a coluna referente ao valor original {'420.00'}
+	And a coluna referente ao valor original {'420.0'}

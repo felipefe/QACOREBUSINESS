@@ -7,7 +7,7 @@ using QACoreBusiness.Util;
 
 namespace QACoreBusiness.Elements
 {
-    class ElementsBaseRecepcaoMercadoria : Base
+    class ElementsCOMRecepcaoMercadoria : Base
     {
         public string UrlRecepcaoMercadoria = UrlCoreBusiness + "/COM/LoteFiscal";
         public string UrlLoteFiscalItem = UrlCoreBusiness + "/COM/LoteFiscalItem/Index/";

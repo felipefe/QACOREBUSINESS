@@ -7,32 +7,18 @@ using System.Linq;
 
 namespace QACoreBusiness.Elements
 {
-    class ElementsBaseFinanceiro : Base
+    class ElementsFINContratos : Base
     {
 
 
         #region URLs de Acesso
-        public string UrlContextoGestorFin = UrlCoreBusiness + "/FIN/GestorFinanceiro";
-        public string UrlContextoContrato = UrlCoreBusiness + "/FIN/Contrato";
         public string UrlCreateContrato => UrlContextoContrato + "/Create";
         public string UrlParcelasContrato => UrlContextoContrato + "/Parcelas?idContrato=";
+        public string UrlContextoContrato = UrlCoreBusiness + "/FIN/Contrato";
         public string UrlContratoPagtoAntecipado = UrlCoreBusiness + "/FIN/PagamentoAntecipado/Create";
         public string UrlLancarReceita = UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=C";
         public string UrlLancarDespesa = UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=D";
         #endregion
-
-
-        #region Gestor Financeiro
-        public IWebElement ContextoGestorFinanceiro => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tile-group count-66 cols-22']//a[@data-title='Gestor Financeiro']");
-        public IWebElement MenuAcoesDeMovimentacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='main-tab']//a[@id='tab-menu-tabAcoes']");
-        public IWebElement MenuContasAReceber => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='main-tab']//a[@id='tabMenuReceitas']");
-        public IWebElement MenuContasAPagar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='main-tab']//a[@id='tabMenuDespesas']");
-        public IWebElement IconeMovimentarParcelasSelecionadas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui one wide column']//a[@data-content='Movimentar parcelas selecionadas']");
-        public IWebElement IconeRemoverParcelasSelecionadas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='divbxmovreceita']//a[@data-content='Remover Parcelas selecionadas']");
-        public IWebElement IconeBaixarParcelasSelecionadas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='divbxmovreceita']//a[@data-content='Baixar Parcelas']");
-
-        #endregion
-
 
 
         #region Contrato
@@ -53,10 +39,9 @@ namespace QACoreBusiness.Elements
         public IWebElement FirstLinhaTabelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table selectable striped coregrid']//tbody//tr[1]");
         public IWebElement SelectContaPrevistaPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='Contrato_ContaBancaria_auto_wrapper']//div[@class='ui select2 fluid']");
         public IWebElement SearchContaPrevistaPagto => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
-        public IWebElement BotaoSalvarContrato => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Criar Contrato']");
+        public IWebElement BotaoCriarSalvarContrato => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Criar Contrato']");
         public List<IWebElement> LinhasTabelaContratosFinanceiro => chromeDriver.FindElements(By.XPath("//table[@class='ui table selectable striped coregrid']//tbody//tr")).ToList();
         #endregion
-
 
         #region Adicionar Parcelas Automaticamente Contrato
         public IWebElement BotaoSalvarParcelas=> ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
@@ -87,18 +72,17 @@ namespace QACoreBusiness.Elements
         public IWebElement AlertaExcluirImpossivel => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui warning  message']");
         #endregion
 
-
         #region Contrato Pagamento Antecipado
-        public IWebElement BotaoSalvarContratoPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
+        public IWebElement BotaoSalvarContrato => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
         public IWebElement SelectMeioPagamentoPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='MovContratoParcela_MeioPagamento_auto_wrapper']");
         public IWebElement SearchMeioPagamentoPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement InputValorContratoPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_ValorPagar']");
         public IWebElement HeaderLancarPagtoAntecipado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Lançar Pagamento Antecipado']");
         #endregion
 
-
         #region Contrato Lançar Receita
         public IWebElement HeaderLancarReceita => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Lançar Receitas']");
+        public IWebElement InputValorPagoContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_ValorPago']");
         #endregion
 
         #region Contrato Lançar Despesa

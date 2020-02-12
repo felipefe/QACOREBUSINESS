@@ -10,12 +10,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoInserirNegociacaoUtil
     {
-        ElementsMontarPedido pedido;
+        ElementsCOMPedido pedido;
         IWebDriver driver = Base.chromeDriver;
 
         public PedidoInserirNegociacaoUtil()
         {
-            pedido = new ElementsMontarPedido();
+            pedido = new ElementsCOMPedido();
         }
 
         public void PedidoSemCliente()

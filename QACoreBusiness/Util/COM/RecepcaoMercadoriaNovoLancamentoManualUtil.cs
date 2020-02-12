@@ -10,13 +10,13 @@ namespace QACoreBusiness.Util.COM
 {
     class RecepcaoMercadoriaNovoLancamentoManualUtil
     {
-        ElementsWorkflowRecepcaoMercadoria recepcao;
+        ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
         IWebDriver driver = Base.chromeDriver;
         string auxSKUItemLF;
 
         public RecepcaoMercadoriaNovoLancamentoManualUtil()
         {
-            recepcao = new ElementsWorkflowRecepcaoMercadoria();
+            recepcao = new ElementsCOMRecepcaoMercadoriaWorkflow();
         }
 
         public void AcesseIndexRecepcao()
