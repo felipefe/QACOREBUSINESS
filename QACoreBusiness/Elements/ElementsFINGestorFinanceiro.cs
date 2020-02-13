@@ -51,6 +51,8 @@ namespace QACoreBusiness.Elements
         public IWebElement SelectPlanoContasMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ConfigMovimento_PlanoConta_auto_wrapper']");
         public IWebElement SelectCentroCustoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ConfigMovimento_CentroCusto_auto_wrapper']");
         public IWebElement BotaoSalvarMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Adicionar']");
+        public IWebElement SelectContaBancaria => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='five fields']//div[@class='field']//span[@class='select2 select2-container select2-container--default select2-value-selected']");
+
         #endregion
 
         #region Abatimento

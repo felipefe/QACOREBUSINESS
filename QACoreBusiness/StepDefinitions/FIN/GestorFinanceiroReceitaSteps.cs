@@ -5,9 +5,9 @@ using QACoreBusiness.Util.FIN;
 namespace QACoreBusiness.StepDefinitions
 {
     [Binding]
-    public class GestorFinanceiroSteps
+    public class GestorFinanceiroReceitaSteps
     {
-        GestorFinanceiroUtil gfu = new GestorFinanceiroUtil();
+        GestorFinanceiroReceitaUtil gfu = new GestorFinanceiroReceitaUtil();
 
         [Given(@"acesse a index gestor financeiro")]
         public void GivenAcesseAIndexGestorFinanceiro()
@@ -111,6 +111,13 @@ namespace QACoreBusiness.StepDefinitions
         {
             gfu.FindParcelaCredito();
         }
+
+        [Given(@"selecione a conta bancaria \{'(.*)'}")]
+        public void GivenSelecioneAContaBancaria(string conta)
+        {
+            gfu.SelecionarContaBancaria(conta);
+        }
+
 
         [When(@"clicar no botao Efetuar Baixa")]
         public void WhenClicarNoBotaoEfetuarBaixa()

@@ -17,17 +17,17 @@ namespace QACoreBusiness.Features.FIN
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class GestorFinanceiroFeature : Xunit.IClassFixture<GestorFinanceiroFeature.FixtureData>, System.IDisposable
+    public partial class GestorFinanceiroReceitaFeature : Xunit.IClassFixture<GestorFinanceiroReceitaFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "GestorFinanceiro.feature"
+#line 1 "GestorFinanceiroReceita.feature"
 #line hidden
         
-        public GestorFinanceiroFeature(GestorFinanceiroFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public GestorFinanceiroReceitaFeature(GestorFinanceiroReceitaFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features.FIN
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GestorFinanceiro", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GestorFinanceiroReceita", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -86,13 +86,13 @@ testRunner.And("acesse a index gestor financeiro", ((string)(null)), ((TechTalk.
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Baixar Parcela Receita Dinheiro")]
-        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiro")]
-        [Xunit.TraitAttribute("Description", "Baixar Parcela Receita Dinheiro")]
+        [Xunit.FactAttribute(DisplayName="Baixar Parcela Dinheiro")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Parcela Dinheiro")]
         [Xunit.TraitAttribute("Category", "baixar_parcela_dinheiro")]
-        public virtual void BaixarParcelaReceitaDinheiro()
+        public virtual void BaixarParcelaDinheiro()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Receita Dinheiro", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Dinheiro", null, new string[] {
                         "baixar_parcela_dinheiro"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -131,13 +131,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Baixar Parcela Receita Abatimento")]
-        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiro")]
-        [Xunit.TraitAttribute("Description", "Baixar Parcela Receita Abatimento")]
+        [Xunit.FactAttribute(DisplayName="Baixar Parcela Abatimento")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Parcela Abatimento")]
         [Xunit.TraitAttribute("Category", "baixar_parcela_abatimento")]
-        public virtual void BaixarParcelaReceitaAbatimento()
+        public virtual void BaixarParcelaAbatimento()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Receita Abatimento", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Abatimento", null, new string[] {
                         "baixar_parcela_abatimento"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
@@ -181,13 +181,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Receita Dinheiro")]
-        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiro")]
-        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Receita Dinheiro")]
+        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Dinheiro")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Dinheiro")]
         [Xunit.TraitAttribute("Category", "baixar_multiplas_parcela_dinheiro")]
-        public virtual void BaixarMultiplasParcelasReceitaDinheiro()
+        public virtual void BaixarMultiplasParcelasDinheiro()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Receita Dinheiro", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Dinheiro", null, new string[] {
                         "baixar_multiplas_parcela_dinheiro"});
 #line 47
 this.ScenarioInitialize(scenarioInfo);
@@ -236,13 +236,13 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Receita Abatimento")]
-        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiro")]
-        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Receita Abatimento")]
+        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Abatimento")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Abatimento")]
         [Xunit.TraitAttribute("Category", "baixar_multiplas_parcela_abatimento")]
-        public virtual void BaixarMultiplasParcelasReceitaAbatimento()
+        public virtual void BaixarMultiplasParcelasAbatimento()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Receita Abatimento", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Abatimento", null, new string[] {
                         "baixar_multiplas_parcela_abatimento"});
 #line 70
 this.ScenarioInitialize(scenarioInfo);
@@ -305,6 +305,53 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Baixar Parcela Op. Bancária")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Parcela Op. Bancária")]
+        [Xunit.TraitAttribute("Category", "baixar_parcela_operacao_bancaria")]
+        public virtual void BaixarParcelaOp_Bancaria()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Op. Bancária", null, new string[] {
+                        "baixar_parcela_operacao_bancaria"});
+#line 99
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 100
+ testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 101
+ testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.And("selecione o meio de pagamento {\'Operação Bancária\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+ testRunner.And("selecione a conta bancaria {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+ testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 114
+ testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
@@ -312,12 +359,12 @@ this.FeatureBackground();
             
             public FixtureData()
             {
-                GestorFinanceiroFeature.FeatureSetup();
+                GestorFinanceiroReceitaFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                GestorFinanceiroFeature.FeatureTearDown();
+                GestorFinanceiroReceitaFeature.FeatureTearDown();
             }
         }
     }

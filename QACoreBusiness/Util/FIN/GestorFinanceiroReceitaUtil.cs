@@ -9,14 +9,14 @@ using Xunit;
 
 namespace QACoreBusiness.Util.FIN
 {
-    class GestorFinanceiroUtil
+    class GestorFinanceiroReceitaUtil
     {
         ElementsFINGestorFinanceiro gestor;
         IWebDriver driver = Base.chromeDriver;
         Double auxValorAbater;
         IWebElement ParcelaCreditoAbatimento = null;
 
-        public GestorFinanceiroUtil()
+        public GestorFinanceiroReceitaUtil()
         {
             gestor = new ElementsFINGestorFinanceiro();
         }
@@ -134,6 +134,14 @@ namespace QACoreBusiness.Util.FIN
             }
             //aqui falha qndo nao encontra credito para pagar
             Assert.NotNull(ParcelaCreditoAbatimento);
+        }
+
+        public void SelecionarContaBancaria(string conta)
+        {
+            gestor.SelectContaBancaria.Click();
+            gestor.SearchGenerico.SendKeys(conta);
+            Thread.Sleep(1000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 
         public void CliqueBotaoEfetuarBaixa()
