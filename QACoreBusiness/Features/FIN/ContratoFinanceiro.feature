@@ -34,8 +34,8 @@ Scenario: Criar contrato FIN + parcelas AUTO
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
 	And clicar no botao adicionar parcelas automaticamente 
-	And inserir no input o valor original da parcela R${600.0}
-	And inserir no input a quantidade de {4} parcelas
+	And inserir no input o valor original da parcela R${630.5}
+	And inserir no input a quantidade de {5} parcelas
 	And inserir no input o intervalo de {15} dias entre parcelas
 	And inserir o vencimento da primeira parcela para {15} dias futuros
 	And clicar no botao salvar parcela
@@ -43,7 +43,7 @@ Scenario: Criar contrato FIN + parcelas AUTO
 	And clicar no botao salvar/criar contrato
 	And o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Aberto'}
-	And a coluna referente ao valor original {'600.00'}
+	And a coluna referente ao valor original {'630.5'}
 
 
 @create_contrato_com_parcelas_manual
@@ -108,7 +108,7 @@ When selecionar a pessoa do contrato {'Laura La Caronita'}
 And selecionar o plano de contas {'Contratos Financeiros'}
 And selecionar o centro de custo {'Contratos Financeiros'}
 And selecionar o meio de pagamento {'Dinheiro'}
-And informar no input o Valor a pagar {250.00}
+And informar no input o Valor a pagar {1250.00}
 And clicar no botao Salvar pagto antecipado
 Then o sistema redireciona para index de contratos
 And um contrato de pagamento Num Doc {'PGA'} deve ser criado
@@ -149,3 +149,5 @@ Scenario: Lançar Receita
 	Then o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Quitado'}
 	And a coluna referente ao valor original {'420.0'}
+
+
