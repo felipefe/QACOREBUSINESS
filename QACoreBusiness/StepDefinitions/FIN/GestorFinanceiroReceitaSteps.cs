@@ -112,6 +112,12 @@ namespace QACoreBusiness.StepDefinitions
             gfu.SelecionarContaBancaria(conta);
         }
 
+        [Given(@"o vencimento da parcela seja retroativo a data atual")]
+        public void GivenOVencimentoDaParcelaSejaRetroativoADataAtual()
+        {
+            gfu.ValidaVencimentoParcelaRetroativoDataAtual();
+        }
+
         [When(@"clique no botao Adicionar Multiplos Meios de Pagamento")]
         public void WhenCliqueNoBotaoAdicionarMultiplosMeiosDePagamento()
         {
@@ -251,10 +257,88 @@ namespace QACoreBusiness.StepDefinitions
             gfu.SelecionarContaBancariaSegundoMeio(contaBancaria);
         }
 
+        [When(@"clicar no botao Editar Valor / Data Movimento")]
+        public void WhenClicarNoBotaoEditarValorDataMovimento()
+        {
+            gfu.CliqueBotaoEditarJurosMulta();
+        }
+
+        [When(@"memorizar o valor do juros/multa")]
+        public void WhenMemorizarOValorDoJurosMulta()
+        {
+            gfu.MemorizarValorJurosMulta();
+        }
+
+        [When(@"memorizar o valor original da parcela")]
+        public void WhenMemorizarOValorOriginalDaParcela()
+        {
+            gfu.MemorizarValorOriginalParcela();
+        }
+
+        [When(@"validar que o valor liquido a pagar seja maior que o valor original da parcela")]
+        public void WhenValidarQueOValorLiquidoAPagarSejaMaiorQueOValorOriginalDaParcela()
+        {
+            gfu.ValidaValorLiquidoMaiorQueValorOriginal();
+        }
+
+        [When(@"alterar o valor a pagar para o valor original")]
+        public void WhenAlterarOValorAPagarParaOValorOriginal()
+        {
+            gfu.EditarValorPagarParcelaJurosMulta();
+        }
+
+        [When(@"desabilitar a flag de baixa parcial")]
+        public void WhenDesabilitarAFlagDeBaixaParcial()
+        {
+            gfu.DesabilitarFlagBaixaParcial();
+        }
+
+        [When(@"clicar no botao Gravar")]
+        public void WhenClicarNoBotaoGravar()
+        {
+            gfu.ClicarGravarDescontoJurosMulta();
+        }
+
+        [When(@"clicar no botao Alterar dados da baixa \(todas as parcelas\)")]
+        public void WhenClicarNoBotaoAlterarDadosDaBaixaTodasAsParcelas()
+        {
+            gfu.CliqueAlterarDadosBaixaParcela();
+        }
+
+        [When(@"marcar a flag Alterar Data de Pagamento para Data de vencimento")]
+        public void WhenMarcarAFlagAlterarDataDePagamentoParaDataDeVencimento()
+        {
+            gfu.MarcarFlagAlterarDataMovimento();
+        }
+
+        [When(@"clicar no botao Alterar dados baixa")]
+        public void WhenClicarNoBotaoAlterarDadosBaixa()
+        {
+            gfu.CliqueAlterarDadosBaixaModificados();
+        }
+
         [Then(@"o sistema redireciona para imprimir movimentacao")]
         public void ThenOSistemaRedirecionaParaImprimirMovimentacao()
         {
             gfu.ValidaUrlImprimirMovimentacao();
+        }
+
+        [Then(@"o valor a pagar deve ser o mesmo que valor original")]
+        public void ThenOValorAPagarDeveSerOMesmoQueValorOriginal()
+        {
+            gfu.ValorPagarIgualValorOriginal();
+        }
+
+        [Then(@"o valor do desconto deve ser o mesmo memorizado anteriormente")]
+        public void ThenOValorDoDescontoDeveSerOMesmoMemorizadoAnteriormente()
+        {
+            gfu.ValidaValorDesconto();
+        }
+
+        [Then(@"clicar no botao Efetuar Baixa")]
+        public void ThenClicarNoBotaoEfetuarBaixa()
+        {
+            gfu.CliqueBotaoEfetuarBaixa();
         }
     }
 }

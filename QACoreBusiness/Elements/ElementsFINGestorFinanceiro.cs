@@ -87,5 +87,18 @@ namespace QACoreBusiness.Elements
         public List<IWebElement> ParcelasCreditoParaAbatimentoUnico => chromeDriver.FindElements(By.XPath("//span[@class='select2-results']//ul[@class='select2-results__options']//li//div[@class='clearfix']")).ToList();
         public IWebElement SelectParcelaAbatimento => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='parcelasBaixa']//tbody//tr//td//div//div//div[@class='field']//div[@class='ui select2 fluid']//span[@class='select2 select2-container select2-container--default']");
         #endregion
+
+        #region Juros/Multa/Desconto
+        public IWebElement ParcelaABaixar => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='parcelasBaixa']//tbody//tr[1]");
+        public IWebElement ValorOriginalParcelaModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui stackable four column row grid'][1]//div[@class='ui column displayFor'][4]");
+        public IWebElement JurosMultaParcelaModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui stackable four column row grid'][2]//div[@class='ui column displayFor'][2]");
+        public IWebElement ValorLiquidoPagarParcelaModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui stackable four column row grid'][2]//div[@class='ui column displayFor'][4]");
+        public IWebElement InputValorPagarDescontoJurosParcela => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_ValorPagar']");
+        public IWebElement FlagBaixaParcial => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ContratoParcela_BaixaParcial_auto_wrapper']//div[@class='ui toggle checkbox']//label");
+        public IWebElement BotaoGravarJurosMulta => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Gravar']");
+        public IWebElement BotaoEditarDadosBaixaParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Alterar Dados da Baixa(todas as parcelas)']");
+        public IWebElement FlagAlterarDataPagamentoParaMovimento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ContratoViewModel_SetDateVencimento_auto_wrapper']//div[@class='ui toggle checkbox']");
+        public IWebElement BotaoAlterarDadosBaixa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Alterar']");
+        #endregion
     }
 }

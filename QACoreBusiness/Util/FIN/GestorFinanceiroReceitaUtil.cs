@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -16,6 +17,8 @@ namespace QACoreBusiness.Util.FIN
         Double auxValorAbater;
         IWebElement ParcelaCreditoAbatimento = null;
         Double rateioValorMultiplosMeio;
+        Double auxJurosMulta;
+        Double auxValorOriginal;
 
         public GestorFinanceiroReceitaUtil()
         {
@@ -133,8 +136,17 @@ namespace QACoreBusiness.Util.FIN
                     ParcelaCreditoAbatimento = parcela;
                 }
             }
-            //aqui falha qndo nao encontra credito para pagar
+            //falha qndo nao encontra credito para pagar
             Assert.NotNull(ParcelaCreditoAbatimento);
+        }
+
+        public void ValidaVencimentoParcelaRetroativoDataAtual()
+        { //nao consegui fazer como eu queria com formato pt-BR
+            String texto = gestor.LinhasTabelaParcelasGestor[0].FindElement(By.CssSelector("td:nth-child(2)")).Text;
+            DateTime dataVen = DateTime.ParseExact( texto, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dataAtu = DateTime.Now ;
+            //falha qndo data vencimento maior q data atual
+            Assert.True(DateTime.Compare( dataAtu , dataVen ) > 0);
         }
 
         public void SelecionarSegundoMeioPagamentoMultiplosMeios(string segundoMeio)
@@ -248,6 +260,76 @@ namespace QACoreBusiness.Util.FIN
         public void ValidaValorAddMultiplosMeio()
         {
             Assert.Equal(rateioValorMultiplosMeio, Double.Parse(gestor.TextViewValorAddFirstMultiplosMeios.Text.Replace(".", "").Replace(",", ".")));
+        }
+
+        public void CliqueBotaoEditarJurosMulta()
+        {
+            gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(11)")).FindElement(By.TagName("a[title='Editar valor / Data Movimento']")).Click();
+        }
+
+        public void MemorizarValorOriginalParcela()
+        {
+            auxValorOriginal = Double.Parse(gestor.ValorOriginalParcelaModal.Text.Replace("Valor Original", "").Replace(".","").Replace(",","."));
+        }
+
+        public void ValidaValorLiquidoMaiorQueValorOriginal()
+        {
+            Double auxValorLiquido = Double.Parse(gestor.ValorLiquidoPagarParcelaModal.Text.Replace("Valor Liquido Pagar", "").Replace("R$ ", "").Replace(".", "").Replace(",", "."));
+            Assert.True(auxValorLiquido > auxValorOriginal);
+        }
+
+        public void EditarValorPagarParcelaJurosMulta()
+        {
+            gestor.InputValorPagarDescontoJurosParcela.Clear();
+            Thread.Sleep(1000);
+            gestor.InputValorPagarDescontoJurosParcela.SendKeys(Keys.ArrowRight + auxValorOriginal.ToString("N2"));
+            gestor.InputValorPagarDescontoJurosParcela.SendKeys(Keys.Tab);
+            Thread.Sleep(1000);
+        }
+
+        public void CliqueAlterarDadosBaixaParcela()
+        {
+            gestor.BotaoEditarDadosBaixaParcela.Click();
+            Thread.Sleep(500);
+        }
+
+        public void MarcarFlagAlterarDataMovimento()
+        {
+            gestor.FlagAlterarDataPagamentoParaMovimento.Click();
+        }
+
+        public void CliqueAlterarDadosBaixaModificados()
+        {
+            gestor.BotaoAlterarDadosBaixa.Click();
+        }
+
+        public void ClicarGravarDescontoJurosMulta()
+        {
+            gestor.BotaoGravarJurosMulta.Click();
+        }
+
+        public void DesabilitarFlagBaixaParcial()
+        {
+            gestor.FlagBaixaParcial.Click();
+            Thread.Sleep(500);
+        }
+
+        public void ValorPagarIgualValorOriginal()
+        {
+            Double valorOriginal = Double.Parse(gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(4)")).Text.Replace("R$ ", "").Replace(".", "").Replace(",", "."));
+            Double valorPagar = Double.Parse(gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(8)")).Text.Replace("R$ ", "").Replace(".", "").Replace(",", "."));
+            Assert.Equal(valorOriginal, valorPagar);
+        }
+
+        public void ValidaValorDesconto()
+        {
+            Double desconto = Double.Parse(gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(6)")).Text.Replace("R$ ", "").Replace(".", "").Replace(",", "."));
+            Assert.Equal(auxJurosMulta, desconto);
+        }
+
+        public void MemorizarValorJurosMulta()
+        {
+            auxJurosMulta = Double.Parse(gestor.JurosMultaParcelaModal.Text.Replace("Juros / Multa", "").Replace(".","").Replace(",","."));
         }
 
         public void SelecionarContaBancariaSegundoMeio(string contaBancaria)

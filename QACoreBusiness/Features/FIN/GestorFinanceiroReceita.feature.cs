@@ -480,6 +480,130 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Baixar Parcela Vencida C/ Desconto")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Parcela Vencida C/ Desconto")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_parcela_vencida_desconto")]
+        public virtual void BaixarParcelaVencidaCDesconto()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Vencida C/ Desconto", null, new string[] {
+                        "receita_baixar_parcela_vencida_desconto"});
+#line 176
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 177
+ testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 178
+ testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 179
+ testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 180
+ testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 181
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 182
+ testRunner.And("o vencimento da parcela seja retroativo a data atual", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 183
+ testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 184
+ testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 185
+ testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 186
+ testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And("selecione o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.When("clicar no botao Editar Valor / Data Movimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 191
+ testRunner.And("memorizar o valor do juros/multa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 192
+ testRunner.And("memorizar o valor original da parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 193
+ testRunner.And("validar que o valor liquido a pagar seja maior que o valor original da parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.And("alterar o valor a pagar para o valor original", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+ testRunner.And("desabilitar a flag de baixa parcial", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And("clicar no botao Gravar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 197
+ testRunner.Then("o valor a pagar deve ser o mesmo que valor original", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 198
+ testRunner.And("o valor do desconto deve ser o mesmo memorizado anteriormente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 199
+ testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 200
+ testRunner.And("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Baixar Parcela Vencida Alterando Movimento")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Parcela Vencida Alterando Movimento")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_parcela_vencida_alterar_movimento")]
+        public virtual void BaixarParcelaVencidaAlterandoMovimento()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Vencida Alterando Movimento", null, new string[] {
+                        "receita_baixar_parcela_vencida_alterar_movimento"});
+#line 206
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 207
+ testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 208
+ testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 209
+ testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 210
+ testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 211
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.And("o vencimento da parcela seja retroativo a data atual", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+ testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
+ testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 218
+ testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 219
+ testRunner.And("selecione o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 220
+ testRunner.When("clicar no botao Alterar dados da baixa (todas as parcelas)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 221
+ testRunner.And("marcar a flag Alterar Data de Pagamento para Data de vencimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 222
+ testRunner.And("clicar no botao Alterar dados baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 223
+ testRunner.Then("o valor a pagar deve ser o mesmo que valor original", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 224
+ testRunner.And("data de vencimento e data movimento devem ser iguais", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 225
+ testRunner.And("os juros devem ser zerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 226
+ testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 227
+ testRunner.And("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
