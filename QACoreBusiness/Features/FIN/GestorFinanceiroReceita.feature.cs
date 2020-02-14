@@ -89,11 +89,11 @@ testRunner.And("acesse a index gestor financeiro", ((string)(null)), ((TechTalk.
         [Xunit.FactAttribute(DisplayName="Baixar Parcela Dinheiro")]
         [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
         [Xunit.TraitAttribute("Description", "Baixar Parcela Dinheiro")]
-        [Xunit.TraitAttribute("Category", "baixar_parcela_dinheiro")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_parcela_dinheiro")]
         public virtual void BaixarParcelaDinheiro()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Dinheiro", null, new string[] {
-                        "baixar_parcela_dinheiro"});
+                        "receita_baixar_parcela_dinheiro"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -134,11 +134,11 @@ this.FeatureBackground();
         [Xunit.FactAttribute(DisplayName="Baixar Parcela Abatimento")]
         [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
         [Xunit.TraitAttribute("Description", "Baixar Parcela Abatimento")]
-        [Xunit.TraitAttribute("Category", "baixar_parcela_abatimento")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_parcela_abatimento")]
         public virtual void BaixarParcelaAbatimento()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Abatimento", null, new string[] {
-                        "baixar_parcela_abatimento"});
+                        "receita_baixar_parcela_abatimento"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -181,14 +181,14 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Dinheiro")]
+        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Dinheiro + Abatimento")]
         [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
-        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Dinheiro")]
-        [Xunit.TraitAttribute("Category", "baixar_multiplas_parcela_dinheiro")]
-        public virtual void BaixarMultiplasParcelasDinheiro()
+        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Dinheiro + Abatimento")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_multiplas_parcela_dinheiro_abatimento")]
+        public virtual void BaixarMultiplasParcelasDinheiroAbatimento()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Dinheiro", null, new string[] {
-                        "baixar_multiplas_parcela_dinheiro"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Dinheiro + Abatimento", null, new string[] {
+                        "receita_baixar_multiplas_parcela_dinheiro_abatimento"});
 #line 47
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -203,23 +203,23 @@ this.FeatureBackground();
 #line 51
  testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And("o numero de parcelas filtradas seja maior que {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
  testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
- testRunner.And("selecione a segunda parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
  testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 55
  testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 56
  testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 57
  testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.When("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 59
- testRunner.And("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecione o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
- testRunner.When("selecione o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("ratear o valor exibido no input por {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
  testRunner.And("informar o planos de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
@@ -229,124 +229,252 @@ this.FeatureBackground();
 #line 64
  testRunner.And("clicar no botao Adicionar para multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("seja validado o valor do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Abatimento")]
-        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
-        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Abatimento")]
-        [Xunit.TraitAttribute("Category", "baixar_multiplas_parcela_abatimento")]
-        public virtual void BaixarMultiplasParcelasAbatimento()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Abatimento", null, new string[] {
-                        "baixar_multiplas_parcela_abatimento"});
-#line 70
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line 71
- testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 72
- testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And("o numero de parcelas filtradas seja maior que {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And("selecione a segunda parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
- testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
- testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
  testRunner.And("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
- testRunner.When("selecione o meio de pagamento {\'Abatimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
- testRunner.And("informar o planos de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.And("informar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
- testRunner.And("informar no input o historico {\'Multiplos meios de pagamento  - ÉusGuri\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("clicar no botao Adicionar para multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 67
+ testRunner.And("selecione o segundo meio de pagamento {\'Abatimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("valide que o resto do rateio seja inserido no input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("informar o planos de contas do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And("informar o centro de custo do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("informar no input o historico do segundo meio {\'Multiplos meios de pagamento  - É" +
+                    "usGuriDeNovoPae\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("clicar no botao Adicionar para segundo multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("seja validado o resto do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
  testRunner.And("clicar no botao Vincular Parcelas de Crédito/Abatimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 75
  testRunner.And("memorizar o valor a quitar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 76
  testRunner.And("validar que os créditos disponíveis são maiores que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 77
  testRunner.And("validar que o valor total dos creditos disponiveis sao maiores que o valor a quit" +
                     "ar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 78
  testRunner.And("selecionar os creditos até o valor total selecionado ser igual ou maior que o val" +
                     "or a quitar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 79
  testRunner.And("clicar no botao Vincular creditos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 80
  testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 81
  testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Baixar Parcela Op. Bancária")]
+        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Cheque + Abatimento")]
         [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
-        [Xunit.TraitAttribute("Description", "Baixar Parcela Op. Bancária")]
-        [Xunit.TraitAttribute("Category", "baixar_parcela_operacao_bancaria")]
-        public virtual void BaixarParcelaOp_Bancaria()
+        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Cheque + Abatimento")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_multiplas_parcela_cheque_abatimento")]
+        public virtual void BaixarMultiplasParcelasChequeAbatimento()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Op. Bancária", null, new string[] {
-                        "baixar_parcela_operacao_bancaria"});
-#line 99
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Cheque + Abatimento", null, new string[] {
+                        "receita_baixar_multiplas_parcela_cheque_abatimento"});
+#line 85
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 100
+#line 86
  testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 101
+#line 87
  testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 88
  testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 89
  testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 90
  testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 91
  testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 92
  testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 93
  testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 94
  testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 95
  testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+ testRunner.When("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 97
+ testRunner.And("selecione o meio de pagamento {\'Cheque\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.And("ratear o valor exibido no input por {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.And("informar o planos de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And("informar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And("informar no input o historico {\'Multiplos meios de pagamento  - ÉusGuri\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And("clicar no botao Adicionar para multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+ testRunner.And("seja validado o valor do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+ testRunner.And("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+ testRunner.And("selecione o segundo meio de pagamento {\'Abatimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("valide que o resto do rateio seja inserido no input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("informar o planos de contas do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("informar o centro de custo do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And("informar no input o historico do segundo meio {\'Multiplos meios de pagamento  - É" +
+                    "usGuriDeNovoPae\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 110
- testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("clicar no botao Adicionar para segundo multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
- testRunner.And("selecione o meio de pagamento {\'Operação Bancária\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("seja validado o resto do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
- testRunner.And("selecione a conta bancaria {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("clicar no botao Vincular Parcelas de Crédito/Abatimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
- testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("memorizar o valor a quitar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
+ testRunner.And("validar que os créditos disponíveis são maiores que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("validar que o valor total dos creditos disponiveis sao maiores que o valor a quit" +
+                    "ar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("selecionar os creditos até o valor total selecionado ser igual ou maior que o val" +
+                    "or a quitar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("clicar no botao Vincular creditos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Baixar Multiplas Parcelas Cheque + Transferência")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Multiplas Parcelas Cheque + Transferência")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_multiplas_parcela__cheque_transferencia")]
+        public virtual void BaixarMultiplasParcelasChequeTransferencia()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Cheque + Transferência", null, new string[] {
+                        "receita_baixar_multiplas_parcela__cheque_transferencia"});
+#line 122
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 123
+ testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 124
+ testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
+ testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+ testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+ testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.When("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 134
+ testRunner.And("selecione o meio de pagamento {\'Cheque\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("ratear o valor exibido no input por {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("informar o planos de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("informar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("informar no input o historico {\'Multiplos meios de pagamento  - ÉusGuri\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("clicar no botao Adicionar para multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.And("seja validado o valor do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.And("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And("selecione o segundo meio de pagamento {\'Transferência\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.And("valide que o resto do rateio seja inserido no input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("selecione a conta bancaria do segundo meio de pagamento {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("informar o planos de contas do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
+ testRunner.And("informar o centro de custo do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And("informar no input o historico do segundo meio {\'Multiplos meios de pagamento  - É" +
+                    "usGuriDeNovoPae\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 148
+ testRunner.And("clicar no botao Adicionar para segundo multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+ testRunner.And("seja validado o resto do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 150
+ testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 151
+ testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Baixar Parcela Transferência Bancária")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Baixar Parcela Transferência Bancária")]
+        [Xunit.TraitAttribute("Category", "receita_baixar_parcela_operacao_bancaria")]
+        public virtual void BaixarParcelaTransferenciaBancaria()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Transferência Bancária", null, new string[] {
+                        "receita_baixar_parcela_operacao_bancaria"});
+#line 154
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 155
+ testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 156
+ testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 157
+ testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
+ testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 159
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 160
+ testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 161
+ testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
+ testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 163
+ testRunner.And("clique no icone Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 164
+ testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 165
+ testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 166
+ testRunner.And("selecione o meio de pagamento {\'Transferência\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And("selecione a conta bancaria {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 169
  testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

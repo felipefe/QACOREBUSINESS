@@ -32,12 +32,22 @@ namespace QACoreBusiness.Elements
         #endregion
 
         #region Contas a Pagar
+        public IWebElement PesquisaDespesaGestorFinanceiro => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='infoDespesas']//a[@data-content='Pesquisa']");
+        public IWebElement LimparFiltroReceitas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='item']//a[@data-content='Limpar Filtro']");
+        public IWebElement BotaoFiltrarReceitas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='item']//div[contains(text(),'Filtrar Receita')]");
+        public IWebElement TextViewParcelasFiltradasDespesa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='divqtddespesasfilter']//span[@id='spanCountCD']");
+        public IWebElement TabelaParcelasDespesa => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='tableDespesas']//tbody");
+        public List<IWebElement> LinhasTabelaDespesas => TabelaParcelasDespesa.FindElements(By.TagName("tr")).ToList();
+        public IWebElement IconeMovimentarDespesasSelecionadas => ElementWait.WaitForElementXpath(chromeDriver, "//form[@id='frmDespesas']//div[@class='ui one wide column']//a[@data-content='Movimentar parcelas selecionadas']");
+        public IWebElement TextViewValorParcelasMovimentarDespesa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='divbxmovdespesa']//span[@id='spanSumMovD']");
+        public IWebElement IconeBaixarParcelasDespesasSelecionadas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='divbxmovdespesa']//a[@data-content='Baixar Parcelas selecionadas']");
+        public IWebElement SelectContaBancariaDespesa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='five fields']//div[@class='field']//span[@class='select2 select2-container select2-container--default']");
         #endregion
 
         #region Contas a Receber
         public IWebElement PesquisaReceitaGestorFinanceiro => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='searchReceita']//a[@data-content='Pesquisa']");
-        public IWebElement LimparFiltroReceitas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='item']//a[@data-content='Limpar Filtro']");
-        public IWebElement BotaoFiltrarReceitas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='item']//div[contains(text(),'Filtrar Receita')]");
+        public IWebElement LimparFiltroDespesas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area-despesa']//div[@class='item']//a[@data-content='Limpar Filtro']");
+        public IWebElement BotaoFiltrarDespesa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='item']//div[contains(text(),'Filtrar Despesa')]");
         #endregion
 
         #region Lista Parcelas Baixa / Multiplos Meios
@@ -47,10 +57,20 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoEfetuarBaixa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Efetuar Baixa']");
         public IWebElement BotaoAddMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div//a[@data-content='Adicionar Múltiplos Meios de Pagamento']");
         public IWebElement InputHistoricoMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ConfigMovimento_Historico']");
-        public IWebElement SelectMeioPagamentoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ConfigMovimento_MeioPagamento_auto_wrapper']");
-        public IWebElement SelectPlanoContasMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ConfigMovimento_PlanoConta_auto_wrapper']");
-        public IWebElement SelectCentroCustoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ConfigMovimento_CentroCusto_auto_wrapper']");
-        public IWebElement BotaoSalvarMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Adicionar']");
+        public IWebElement InputSegundoHistoricoMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//input[@id='ConfigMovimento_Historico']");
+        public IWebElement InputValorMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][1]//input[@id='ConfigMovimento_Valor']");
+        public IWebElement InputSegundoValorMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//input[@id='ConfigMovimento_Valor']");
+        public IWebElement TextViewValorAddFirstMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='active content'][1]//div[@class='ui grid']//div[@class='ui two wide column'][4]//div[@class='ui column displayFor']");
+        public IWebElement TextViewValorAddSecondMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='active content'][2]//div[@class='ui grid']//div[@class='ui two wide column'][4]//div[@class='ui column displayFor']");
+        public IWebElement SelectMeioPagamentoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][1]//div[@id='ConfigMovimento_MeioPagamento_auto_wrapper']");
+        public IWebElement SelectSegundoMeioPagamentoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//div[@id='ConfigMovimento_MeioPagamento_auto_wrapper']");
+        public IWebElement SelectContaBancariaSegundoMeio => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//div[@id='ConfigMovimento_ContaBancaria_auto_wrapper']");
+        public IWebElement SelectPlanoContasMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][1]//div[@id='ConfigMovimento_PlanoConta_auto_wrapper']");
+        public IWebElement SelectSegundoPlanoContasMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//div[@id='ConfigMovimento_PlanoConta_auto_wrapper']");
+        public IWebElement SelectCentroCustoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][1]//div[@id='ConfigMovimento_CentroCusto_auto_wrapper']");
+        public IWebElement SelectSegundoCentroCustoMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//div[@id='ConfigMovimento_CentroCusto_auto_wrapper']");
+        public IWebElement BotaoSalvarMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][1]//div[@class='actions']//input[@value='Adicionar']");
+        public IWebElement BotaoSalvarSegundoMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='area_adicionar'][2]//div[@class='actions']//input[@value='Adicionar']");
         public IWebElement SelectContaBancaria => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='five fields']//div[@class='field']//span[@class='select2 select2-container select2-container--default select2-value-selected']");
 
         #endregion

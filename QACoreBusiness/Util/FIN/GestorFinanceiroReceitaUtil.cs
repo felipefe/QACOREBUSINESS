@@ -15,6 +15,7 @@ namespace QACoreBusiness.Util.FIN
         IWebDriver driver = Base.chromeDriver;
         Double auxValorAbater;
         IWebElement ParcelaCreditoAbatimento = null;
+        Double rateioValorMultiplosMeio;
 
         public GestorFinanceiroReceitaUtil()
         {
@@ -136,6 +137,14 @@ namespace QACoreBusiness.Util.FIN
             Assert.NotNull(ParcelaCreditoAbatimento);
         }
 
+        public void SelecionarSegundoMeioPagamentoMultiplosMeios(string segundoMeio)
+        {
+            gestor.SelectSegundoMeioPagamentoMultiplosMeios.Click();
+            gestor.SearchGenerico.SendKeys(segundoMeio);
+            Thread.Sleep(1000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
         public void SelecionarContaBancaria(string conta)
         {
             gestor.SelectContaBancaria.Click();
@@ -198,6 +207,65 @@ namespace QACoreBusiness.Util.FIN
         {
             string valorTotalCreditos = gestor.ValorTotalParcelasCredito.Text.Replace("Total : R$ ", "").Replace(".", "").Replace(",", ".");
             Assert.True(Double.Parse(valorTotalCreditos) >= auxValorAbater);
+        }
+
+        public void RatearValorParcela(int rateio)
+        {
+            Double valorRateio = Double.Parse(gestor.InputValorMultiplosMeiosPagto.GetAttribute("value").Replace(".", "").Replace(",", "."));
+            rateioValorMultiplosMeio = valorRateio / rateio;
+            gestor.InputValorMultiplosMeiosPagto.Clear();
+            Thread.Sleep(1000);
+            gestor.InputValorMultiplosMeiosPagto.SendKeys(Keys.ArrowRight + rateioValorMultiplosMeio.ToString("N2"));
+            //arrowRight clica pra inserir os digitos antes da virgula no input, por padrao insere depois e caga o valor
+        }
+
+        public void SelectSegundoPlanoContasMeioPagamento(string pc)
+        {
+            gestor.SelectSegundoPlanoContasMultiplosMeios.Click();
+            gestor.SearchGenerico.SendKeys(pc);
+            Thread.Sleep(1000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelectSegundoCentroCusto(string cc)
+        {
+            gestor.SelectSegundoCentroCustoMultiplosMeios.Click();
+            gestor.SearchGenerico.SendKeys(cc);
+            Thread.Sleep(1000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformarSegundoHistoricoMultiplosMeios(string historico)
+        {
+            gestor.InputSegundoHistoricoMultiplosMeiosPagto.SendKeys(historico);
+        }
+
+        public void CliqueSalvarSegundoMeioPagamento()
+        {
+            gestor.BotaoSalvarSegundoMultiplosMeiosPagto.Click();
+        }
+
+        public void ValidaValorAddMultiplosMeio()
+        {
+            Assert.Equal(rateioValorMultiplosMeio, Double.Parse(gestor.TextViewValorAddFirstMultiplosMeios.Text.Replace(".", "").Replace(",", ".")));
+        }
+
+        public void SelecionarContaBancariaSegundoMeio(string contaBancaria)
+        {
+            gestor.SelectContaBancariaSegundoMeio.Click();
+            gestor.SearchGenerico.SendKeys(contaBancaria);
+            Thread.Sleep(1000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void ValidaRestoRateioSegundoMeio()
+        {
+            Assert.Equal(rateioValorMultiplosMeio, Double.Parse(gestor.TextViewValorAddSecondMultiplosMeios.Text.Replace(".", "").Replace(",", ".")));
+        }
+
+        public void ValidaValorRateioInseridoInput()
+        {
+            Assert.Equal(rateioValorMultiplosMeio, Double.Parse(gestor.InputSegundoValorMultiplosMeiosPagto.GetAttribute("value").Replace(".", "").Replace(",", ".")));
         }
 
         public void SelecionarParcelasDeAbatimento()

@@ -94,12 +94,6 @@ namespace QACoreBusiness.StepDefinitions
             gfu.SelecionarSegundaParcelaListada();
         }
 
-        [Given(@"clique no botao Adicionar Multiplos Meios de Pagamento")]
-        public void GivenCliqueNoBotaoAdicionarMultiplosMeiosDePagamento()
-        {
-            gfu.CliqueBotaoAdicionarMultiplosMeiosPagamento();
-        }
-
         [Given(@"selecione a parcela de crédito/abatimento")]
         public void GivenSelecioneAParcelaDeCreditoAbatimentoQueSejaMaiorQueOValorAQuitar()
         {
@@ -118,6 +112,11 @@ namespace QACoreBusiness.StepDefinitions
             gfu.SelecionarContaBancaria(conta);
         }
 
+        [When(@"clique no botao Adicionar Multiplos Meios de Pagamento")]
+        public void WhenCliqueNoBotaoAdicionarMultiplosMeiosDePagamento()
+        {
+            gfu.CliqueBotaoAdicionarMultiplosMeiosPagamento();
+        }
 
         [When(@"clicar no botao Efetuar Baixa")]
         public void WhenClicarNoBotaoEfetuarBaixa()
@@ -130,6 +129,13 @@ namespace QACoreBusiness.StepDefinitions
         {
             gfu.SelecionarMeioPagamentoMultiplosMeios(meioPagamento);
         }
+
+        [When(@"selecione o segundo meio de pagamento \{'(.*)'}")]
+        public void WhenSelecioneOSegundoMeioDePagamento(string segundoMeio)
+        {
+            gfu.SelecionarSegundoMeioPagamentoMultiplosMeios(segundoMeio);
+        }
+
 
         [When(@"informar o planos de contas \{'(.*)'}")]
         public void WhenInformarOPlanosDeContas(string PC)
@@ -191,6 +197,59 @@ namespace QACoreBusiness.StepDefinitions
             gfu.CliqueSalvarCreditosSelecionados();
         }
 
+        [When(@"ratear o valor exibido no input por \{(.*)}")]
+        public void WhenRatearOValorExibidoNoInputPor(int rateio)
+        {
+            gfu.RatearValorParcela(rateio);
+        }
+
+        [When(@"seja validado o valor do rateio")]
+        public void WhenSejaValidadoOValorDoRateio()
+        {
+            gfu.ValidaValorAddMultiplosMeio();
+        }
+
+        [When(@"valide que o resto do rateio seja inserido no input")]
+        public void WhenValideQueORestoDoRateioSejaInseridoNoInput()
+        {
+            gfu.ValidaValorRateioInseridoInput();
+        }
+
+        [When(@"seja validado o resto do rateio")]
+        public void WhenSejaValidadoORestoDoRateio()
+        {
+            gfu.ValidaRestoRateioSegundoMeio();
+        }
+
+        [When(@"informar o planos de contas do segundo meio \{'(.*)'}")]
+        public void WhenInformarOPlanosDeContasDoSegundoMeio(string pc)
+        {
+            gfu.SelectSegundoPlanoContasMeioPagamento(pc);
+        }
+
+        [When(@"informar o centro de custo do segundo meio \{'(.*)'}")]
+        public void WhenInformarOCentroDeCustoDoSegundoMeio(string cc)
+        {
+            gfu.SelectSegundoCentroCusto(cc);
+        }
+
+        [When(@"informar no input o historico do segundo meio \{'(.*)'}")]
+        public void WhenInformarNoInputOHistoricoDoSegundoMeio(string historico)
+        {
+            gfu.InformarSegundoHistoricoMultiplosMeios(historico);
+        }
+
+        [When(@"clicar no botao Adicionar para segundo multiplos meios de pagamento")]
+        public void WhenClicarNoBotaoAdicionarParaSegundoMultiplosMeiosDePagamento()
+        {
+            gfu.CliqueSalvarSegundoMeioPagamento();
+        }
+
+        [When(@"selecione a conta bancaria do segundo meio de pagamento \{'(.*)'}")]
+        public void WhenSelecioneAContaBancariaDoSegundoMeioDePagamento(string contaBancaria)
+        {
+            gfu.SelecionarContaBancariaSegundoMeio(contaBancaria);
+        }
 
         [Then(@"o sistema redireciona para imprimir movimentacao")]
         public void ThenOSistemaRedirecionaParaImprimirMovimentacao()
