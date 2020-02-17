@@ -340,5 +340,18 @@ namespace QACoreBusiness.StepDefinitions
         {
             gfu.CliqueBotaoEfetuarBaixa();
         }
+
+        [Then(@"data de vencimento e data movimento devem ser iguais")]
+        public void ThenDataDeVencimentoEDataMovimentoDevemSerIguais()
+        {
+            gfu.ValidaDataVencimentoEMovimento();
+        }
+
+        [Then(@"os juros devem ser zerados")]
+        public void ThenOsJurosDevemSerZerados()
+        {
+            gfu.ValidaJurosZerados();
+        }
+
     }
 }

@@ -327,6 +327,18 @@ namespace QACoreBusiness.Util.FIN
             Assert.Equal(auxJurosMulta, desconto);
         }
 
+        public void ValidaDataVencimentoEMovimento()
+        {
+            string vencimento = gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(3)")).Text;
+            string movimento = gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(9)")).Text;
+            Assert.Equal(vencimento, movimento);
+        }
+
+        public void ValidaJurosZerados()
+        {
+            Assert.Equal("R$ 0,00", gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(5)")).Text);
+        }
+
         public void MemorizarValorJurosMulta()
         {
             auxJurosMulta = Double.Parse(gestor.JurosMultaParcelaModal.Text.Replace("Juros / Multa", "").Replace(".","").Replace(",","."));
