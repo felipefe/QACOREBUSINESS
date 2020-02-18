@@ -60,6 +60,26 @@ namespace QACoreBusiness.Elements
         public IWebElement SelectSTItemLF => ElementWait.WaitForElementXpath(chromeDriver, "//form[@id='frmLoteItem']//div[@id='LoteFiscalItemICMS_CST_auto_wrapper']");
         public IWebElement SearchSTItemLF => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement InputAliquotaItemLF => ElementWait.WaitForElementXpath(chromeDriver, "//form[@id='frmLoteItem']//input[@id='LoteFiscalItemICMS_Percentual']");
+        public IWebElement SelectMetodoCalculo => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscalItemICMS_ModoCalculo_auto_wrapper']//div[@class='ui selec2 fluid']//span[@class='select2 select2-container select2-container--default select2-value-selected']");
+        public IWebElement SearchGenerico => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
+        public IWebElement InputValorBruto => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='LoteFiscalItem_ValorBruto']");
+        public IWebElement InputValorLiquido => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='LoteFiscalItem_ValorLiquido']");
+        public IWebElement InputBCICMS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='BC']");
+        public IWebElement InputValorICMS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Valor']");
+        public IWebElement AbaPIS => ElementWait.WaitForElementXpath(chromeDriver, "//form[@id='frmLoteItem']//div[@id='sui-tabcontext-EditProduto']//div//a[@id='tab-menu-tabPIS']");
+        public IWebElement AbaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//form[@id='frmLoteItem']//div[@id='sui-tabcontext-EditProduto']//a[@id='tab-menu-tabCOFINS']");
+        public IWebElement SelectStPis => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='PIS_CST_auto_wrapper']//span[@class='select2 select2-container select2-container--default']");
+        public IWebElement SelectTipoAliquotaPIS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='PIS_TipoAliquota_auto_wrapper']//div//span[@class='select2-selection select2-selection--single']");
+        public IWebElement InputAliquotaPIS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='PIS_Aliquota']");
+        public IWebElement InputBcPIS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='PIS_BC']");
+        public IWebElement InputValorPIS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='PIS_Valor']");
+        public IWebElement SelectStCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='COFINS_CST_auto_wrapper']//div//span[@class='select2-selection select2-selection--single']");
+        public IWebElement SelectTipoAliquotaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='COFINS_TipoAliquota_auto_wrapper']//span[@class='select2 select2-container select2-container--default']");
+        public IWebElement InputAliquotaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_Aliquota']");
+        public IWebElement InputBcCofins => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_BC']");
+        public IWebElement InputValorCofins => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_Valor']");
+
+
         #endregion
 
 

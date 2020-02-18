@@ -11,8 +11,13 @@ namespace QACoreBusiness.Util.COM
     class RecepcaoMercadoriaNovoLancamentoManualUtil
     {
         ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         string auxSKUItemLF;
+        Double auxValorUnitario;
+        int auxQuantidadeItem;
+        double auxAliquotaICMS;
+        double auxAliquotaPIS;
+        double auxAliquotaCOFINS;
 
         public RecepcaoMercadoriaNovoLancamentoManualUtil()
         {
@@ -191,22 +196,25 @@ namespace QACoreBusiness.Util.COM
         public void CliqueSalvarItensLF()
         {
             recepcao.BotaoSalvarMercadoriaItem.Click();
-            recepcao.BotaoSalvarMercadoriaItem.Click();
         }
 
         public void InformarAliquota(decimal aliquota)
         {
-            recepcao.InputAliquotaItemLF.SendKeys(aliquota.ToString());
+            auxAliquotaICMS = decimal.ToDouble(aliquota);
+            recepcao.InputAliquotaItemLF.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+            Thread.Sleep(500);
         }
 
         public void InformarValorUnitarioItemLoteFiscal(decimal valor)
-        {
-            recepcao.InputValorUnitario.SendKeys(valor.ToString());
+        {//esse vezes mil é pelo numero de casas decimais configurados no input
+            auxValorUnitario = decimal.ToDouble(valor);
+            recepcao.InputValorUnitario.SendKeys(InsereInput4CasasDecimais(valor).ToString());
         }
 
         public void InformarQuantidadeItemLoteFiscal(decimal qtd)
         {
-            recepcao.InputQuantidade.SendKeys(qtd.ToString());
+            auxQuantidadeItem = decimal.ToInt32(qtd);
+            recepcao.InputQuantidade.SendKeys(InsereInput4CasasDecimais(qtd).ToString());
         }
 
         public void InformarNumLoteFiscal()
@@ -222,10 +230,12 @@ namespace QACoreBusiness.Util.COM
         public void InformarDataValidadeLF()
         {
             recepcao.InputDtValidade.SendKeys(DateTime.Now.AddYears(5).ToString("dd/MM/yyyy")); //5 anos de validade
+            Thread.Sleep(1000);
         }
 
         public void CliqueAbaImpostosLoteFiscalItem()
         {
+            Thread.Sleep(1000);
             recepcao.AbaImpostosLFI.Click();
         }
 
@@ -301,6 +311,143 @@ namespace QACoreBusiness.Util.COM
         public void CliqueBotaoFinalizarRecepcao()
         {
             recepcao.BotaoFinalizarRecepcao.Click();
+        }
+
+        public void SelectMetodoCalculo(string metodoCalculo)
+        {
+            recepcao.SelectMetodoCalculo.Click();
+            recepcao.SearchGenerico.SendKeys(metodoCalculo);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformarValorBrutoRecepcao()
+        {
+            Double bruto = auxValorUnitario * auxQuantidadeItem;
+            recepcao.InputValorBruto.SendKeys(InsereInput4CasasDecimais(bruto).ToString());
+            Thread.Sleep(500);
+        }
+
+        public void InformarValorLiquidoRecepcao()
+        {
+            Double liquido = auxValorUnitario * auxQuantidadeItem;
+            recepcao.InputValorLiquido.SendKeys(InsereInput4CasasDecimais(liquido).ToString());
+            Thread.Sleep(500);
+        }
+
+        public void InformarBcICMS()
+        {
+            Double bc = auxValorUnitario * auxQuantidadeItem;
+            recepcao.InputBCICMS.SendKeys(InsereInput2CasasDecimais(bc).ToString());
+            Thread.Sleep(500);
+        }
+
+        public void CliqueAbaPis()
+        {
+            recepcao.AbaPIS.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void SelectStPIS(string stPIS)
+        {
+            recepcao.SelectStPis.Click();
+            recepcao.SearchGenerico.SendKeys(stPIS);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelectTipoAliquotaPIS(string tipoAliquotaPIS)
+        {
+            recepcao.SelectTipoAliquotaPIS.Click();
+            recepcao.SearchGenerico.SendKeys(tipoAliquotaPIS);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void BaseCalculoPIS()
+        {
+            Double bc = auxValorUnitario * auxQuantidadeItem;
+            recepcao.InputBcPIS.SendKeys(InsereInput4CasasDecimais(bc).ToString());
+        }
+
+        public void InformarValorPIS()
+        {
+            Double valor = auxValorUnitario * auxQuantidadeItem;
+            Double aliquota = auxAliquotaPIS / 100;
+            Double calculo = valor * aliquota;
+            recepcao.InputValorPIS.SendKeys(InsereInput4CasasDecimais(calculo).ToString());
+        }
+
+        public void CliqueAbaCofins()
+        {
+            recepcao.AbaCOFINS.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void SelectStCofins(string stCofins)
+        {
+            recepcao.SelectStCOFINS.Click();
+            recepcao.SearchGenerico.SendKeys(stCofins);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelectTipoAliquotaCofins(string tipoAliquotaCofins)
+        {
+            recepcao.SelectTipoAliquotaCOFINS.Click();
+            recepcao.SearchGenerico.SendKeys(tipoAliquotaCofins);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformarBcCofins()
+        {
+            Double bc = auxValorUnitario * auxQuantidadeItem;
+            recepcao.InputBcCofins.SendKeys(InsereInput4CasasDecimais(bc).ToString());
+        }
+
+        public void InformarValorCofins()
+        {
+            Double total = auxValorUnitario * auxQuantidadeItem;
+            Double aliquota = auxAliquotaCOFINS / 100;
+            Double valor = total * aliquota;
+            recepcao.InputValorCofins.SendKeys(InsereInput4CasasDecimais(valor).ToString());
+        }
+
+        public void InformarAliquotaCofins(decimal aliquotaCofins)
+        {
+            auxAliquotaCOFINS = decimal.ToDouble(aliquotaCofins);
+            recepcao.InputAliquotaCOFINS.SendKeys(InsereInput4CasasDecimais(aliquotaCofins).ToString());
+        }
+
+        public void InformarAliquotaPIS(decimal aliquota)
+        {
+            auxAliquotaPIS = decimal.ToDouble(aliquota);
+            recepcao.InputAliquotaPIS.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+        }
+
+        public void InformarValorCalculoICMS()
+        {
+            Double valor = auxValorUnitario * auxQuantidadeItem;
+            Double aliquota = auxAliquotaICMS / 100;
+            Double calculoICMS = valor * aliquota;
+            calculoICMS = calculoICMS * 1.0;
+            recepcao.InputValorICMS.SendKeys(calculoICMS.ToString());
+        }
+
+        public Double InsereInput2CasasDecimais(double valor)
+        {
+            return valor * 10;
+        }
+
+        public Double InsereInput4CasasDecimais(double valor)
+        {
+            return valor * 1000;
+        }
+
+        public Double InsereInput4CasasDecimais(decimal valor)
+        {
+            return decimal.ToDouble(valor * 1000);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace QACoreBusiness.Util
 {
     class ParametrosEmpresaUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         ElementsParametrosEmpresa parametro;
 
         public ParametrosEmpresaUtil()

@@ -12,7 +12,7 @@ namespace QACoreBusiness.Util.FIN
     class ContratoFinanceiroUtil
     {
         ElementsFINContratos contr;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         IWebElement linhaEncontradaTabela;
         private int auxQtdParcelas;
         private decimal auxValorOriginal;

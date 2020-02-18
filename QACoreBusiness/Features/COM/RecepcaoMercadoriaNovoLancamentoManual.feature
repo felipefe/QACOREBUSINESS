@@ -22,15 +22,15 @@ Scenario: Lancar nova recepcao manual de mercadoria
 
 
 @lancar_itens_recepcao_manual
-Scenario: Lancar itens recepcao manual
+Scenario: Lancar itens recepcao manual (Semi-automatico)
 	Given que tenha uma recepcao no status {'Lançamento'}
 	And seja clicado no botao Mercadoria nas actions
 	And seja redirecionado para tela de Mercadorias da recepcao
 	And seja clicado no botao Nova Mercadoria Recebida
 	And seja redirecionado para criar item da recepcao
 	When informar o produto SKU {'TST0002'}
-	And informar no editText o valor unitario {65,000}
-	And informar no editText a quantidade {10,000}
+	And informar no editText o valor unitario {65}
+	And informar no editText a quantidade {10}
 	And informar no editText o numero do lote
 	And informar no editText a data de fabricacao
 	And informar no editText a data de validade
@@ -38,7 +38,7 @@ Scenario: Lancar itens recepcao manual
 	And informar o CFOP 1102 - {'Compra para comercialização'}
 	And informar a origem da Mercadoria {'Nacional - exceto as indicadas nos códigos 3 a 5'}
 	And informar o codigo da ST {'Tributada integralmente'}
-	And informar no editText o percentual da Aliquota {1,000}
+	And informar no editText o percentual da Aliquota {1}
 	And clicar no botao de Salvar itens
 	Then seja redirecionado para tela de Mercadorias da recepcao
 	And o SKU do item da recepcao informado deve aparecer na tabela
@@ -123,3 +123,47 @@ Given que eu clique no botao da header Gerenciar recepcoes
 	And acessamos gerenciar recepcoes novamente
 	And valido o numero memorizado dessa recepcao
 	And o status da recepcao deve ser {'Cancelado'} 
+
+
+
+@lancar_itens_metodo_calculo_manual
+Scenario: Lancar itens metodo de calculo MANUAL
+	Given que tenha uma recepcao no status {'Lançamento'}
+	And seja clicado no botao Mercadoria nas actions
+	And seja redirecionado para tela de Mercadorias da recepcao
+	And seja clicado no botao Nova Mercadoria Recebida
+	And seja redirecionado para criar item da recepcao
+	When selecionar o metodo de calculado {'Manual'}
+	And informar o produto SKU {'TST0002'}
+	And informar no editText o valor unitario {65}
+	And informar no editText a quantidade {10}
+	And informar no input o valor bruto
+	And informar no input o valor liquido
+	And informar no editText o numero do lote
+	And informar no editText a data de fabricacao
+	And informar no editText a data de validade
+	And clicar na aba de Impostos Conforme Documento de Entrada
+	And informar o CFOP 1102 - {'Compra para comercialização'}
+	And informar a origem da Mercadoria {'Nacional - exceto as indicadas nos códigos 3 a 5'}
+	And informar o codigo da ST {'Tributada integralmente'}
+	And informar no editText o percentual da Aliquota {1}
+	And informar o valor de ICMS calculado
+	And informar no input a base de calculo
+	And clique na aba PIS
+	And informar o codigo de ST do PIS {'Operação Tributável com Alíquota Básica'}
+	And informar o tipo de Alíquota PIS {'Alíquota em Percentual'}
+	And informar a % da Alíquota {1} PIS
+	And informar a base de calculo do PIS
+	And informar o valor calculado do PIS
+	And clique na aba COFINS
+	And informar o codigo de ST do COFINS {'Operação Tributável com Alíquota Básica'}
+	And informar o tipo de Alíquota COFINS {'Alíquota em Percentual'}
+	And informar a % da Alíquota {1} COFINS
+	And informar a base de calculo do COFINS
+	And informar o valor calculado do COFINS
+	And clicar no botao de Salvar itens
+	Then seja redirecionado para tela de Mercadorias da recepcao
+	And o SKU do item da recepcao informado deve aparecer na tabela
+
+
+

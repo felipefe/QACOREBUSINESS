@@ -13,7 +13,7 @@ namespace QACoreBusiness.Util.FIN
     class GestorFinanceiroReceitaUtil
     {
         ElementsFINGestorFinanceiro gestor;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         Double auxValorAbater;
         IWebElement ParcelaCreditoAbatimento = null;
         Double rateioValorMultiplosMeio;
@@ -85,14 +85,14 @@ namespace QACoreBusiness.Util.FIN
             gestor.IconeBaixarParcelasSelecionadas.Click();
         }
 
-        //aqui o codigo fica loko
+        //aqui o codigo fica loko - passo gerenciar a nova janela aberta do navegador
         public void ValidaRedirecionamentoListarParcelasBaixa()
         {
             //String z = driver.CurrentWindowHandle.ToString(); //obtem a janela anterior
             //List<String> tte = driver.WindowHandles.ToList(); //obtem uma lista com as janelas abertas
             //IWebDriver novo = driver.SwitchTo().Window(driver.WindowHandles.ToList()[driver.WindowHandles.ToList().Count-1]) ;
-            int index = driver.WindowHandles.ToList().Count-1; //obtem a quantidade de janelas abertas -1 (ou seja a ultima janela aberta)
-            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[index]);
+            int lastIndex = driver.WindowHandles.ToList().Count-1; //obtem a quantidade de janelas abertas -1 (ou seja a ultima janela aberta)
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[lastIndex]);
             Assert.Contains(gestor.UrlListaParcelasBaixa, driver.Url);
         }
 
@@ -348,7 +348,7 @@ namespace QACoreBusiness.Util.FIN
         {
             gestor.SelectContaBancariaSegundoMeio.Click();
             gestor.SearchGenerico.SendKeys(contaBancaria);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 
@@ -369,12 +369,10 @@ namespace QACoreBusiness.Util.FIN
             do
             {
                 gestor.LinhasTabelaCreditosAbatimento[index++].FindElement(By.CssSelector("td:nth-child(1)")).FindElement(By.TagName("input[type='checkbox']")).Click();
-                string valorTotalSelecionado = gestor.ValorTotalCreditosSelecionado.Text.Replace("Total Selecionado : R$ ", "").Replace(".", "").Replace(",", ".");
-                valTotalSelecionado = Double.Parse(valorTotalSelecionado);
+                valTotalSelecionado = Double.Parse(gestor.ValorTotalCreditosSelecionado.Text.Replace("Total Selecionado : R$ ", "").Replace(".", "").Replace(",", "."));
             } while (valTotalSelecionado < auxValorAbater);
             Thread.Sleep(1000);
             Assert.True(valTotalSelecionado >= auxValorAbater);
-
         }
 
         public void ValidaQuantidadeCreditos(int qntidade)
