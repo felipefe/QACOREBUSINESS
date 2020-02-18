@@ -14,13 +14,13 @@ namespace QACoreBusiness.Util.COM
 {
     class RecepcaoMercadoriaNovoViaNFeUtil
     {
-        ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
-        IWebDriver driver = Base.chromeDriver;
+        ElementsCOMRecepcaoMercadoria recepcao;
+        IWebDriver driver = Base.GetChromeDriver();
         string auxNumRecepcao;
 
         public RecepcaoMercadoriaNovoViaNFeUtil()
         {
-            recepcao = new ElementsCOMRecepcaoMercadoriaWorkflow();
+            recepcao = new ElementsCOMRecepcaoMercadoria { chromeDriver = driver };
         }
 
 

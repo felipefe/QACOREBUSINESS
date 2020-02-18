@@ -15,9 +15,9 @@ namespace QACoreBusiness.Elements
 
         public static string PathLocalProject = Path.GetDirectoryName(Uri.UnescapeDataString((new UriBuilder(Assembly.GetExecutingAssembly().CodeBase)).Path));
 
-        public static IWebDriver chromeDriver = new ChromeDriver(PathLocalProject + @"\webdriver");
+       // public static IWebDriver chromeDriver = new ChromeDriver(PathLocalProject + @"\webdriver");
 
-      //  public static IWebDriver GetChromeDriver = new ChromeDriver(PathLocalProject + @"\webdriver");
+        public static IWebDriver GetChromeDriver() => new ChromeDriver(PathLocalProject + @"\webdriver");
 
     }
 }

@@ -10,16 +10,16 @@ namespace QACoreBusiness.Util.COM
 {
     class PedidoEmitirDFeUtil
     {
-        public ElementsCOMPedidoWorkflow pedido;
+        public ElementsCOMPedido pedido;
         public ElementsNotasFiscaisEletronicasEmitidas nfee;
         public ParametrosEmpresaUtil parametro;
         public SituacaoDosServidoresUtil servidor;
         public string auxValorPedido;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
 
         public PedidoEmitirDFeUtil()
         {
-            pedido = new ElementsCOMPedidoWorkflow();
+            pedido = new ElementsCOMPedido { chromeDriver = driver };
             nfee = new ElementsNotasFiscaisEletronicasEmitidas();
             servidor = new SituacaoDosServidoresUtil();
             parametro = new ParametrosEmpresaUtil();

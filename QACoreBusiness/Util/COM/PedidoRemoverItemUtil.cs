@@ -10,13 +10,13 @@ namespace QACoreBusiness.Util
 {
     class PedidoRemoverItemUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         ElementsCOMPedido pedido;
         int qtdItensInicial;
 
         public PedidoRemoverItemUtil()
         {
-            pedido = new ElementsCOMPedido();
+            pedido = new ElementsCOMPedido { chromeDriver = driver };
             qtdItensInicial = ItensInPedido();
         }
 

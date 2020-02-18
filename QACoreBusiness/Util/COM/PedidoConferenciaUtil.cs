@@ -10,8 +10,8 @@ namespace QACoreBusiness.Util
 {
     class PedidoConferenciaUtil
     {
-        IWebDriver driver = Base.chromeDriver;
-        ElementsCOMPedidoWorkflow conferencia;
+        IWebDriver driver = Base.GetChromeDriver();
+        ElementsCOMPedido conferencia;
         private string auxSKU;
         private string auxQtd;
         List<string> conferenciasSKUProduto = new List<string>();
@@ -19,7 +19,7 @@ namespace QACoreBusiness.Util
 
         public PedidoConferenciaUtil()
         {
-            conferencia = new ElementsCOMPedidoWorkflow();
+            conferencia = new ElementsCOMPedido { chromeDriver = driver };
         }
 
         public void SituacaoPedidoConferencia()

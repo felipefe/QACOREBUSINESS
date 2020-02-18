@@ -12,7 +12,7 @@ namespace QACoreBusiness.Util.FIN
     class ContratoFinanceiroUtil
     {
         ElementsFINContratos contr;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         IWebElement linhaEncontradaTabela;
         private int auxQtdParcelas;
         private decimal auxValorOriginal;
@@ -20,7 +20,7 @@ namespace QACoreBusiness.Util.FIN
 
         public ContratoFinanceiroUtil()
         {
-            contr = new ElementsFINContratos();
+            contr = new ElementsFINContratos { chromeDriver = driver };
         }
 
         //encontra a linha que contem o numero do status

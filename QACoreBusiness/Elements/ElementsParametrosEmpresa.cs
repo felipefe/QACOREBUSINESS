@@ -10,6 +10,9 @@ namespace QACoreBusiness.Elements
     class ElementsParametrosEmpresa : Base
     {
 
+        public IWebDriver chromeDriver;
+
+
         #region URLs de acesso
         public string UrlIndexEmpresa = UrlCoreBusiness + "/IDFe/Empresa";
         public string UrlParametroEmpresa = UrlCoreBusiness + "/Parametro/ParametrosEmpresa/";

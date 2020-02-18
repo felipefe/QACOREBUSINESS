@@ -9,6 +9,8 @@ namespace QACoreBusiness.Elements
     class ElementsSituacaoServidores : Base
     {
 
+        public IWebDriver chromeDriver;
+
         #region URLs de Acesso
         public string UrlSituacaoServidores = UrlCoreBusiness + "/ServiceStatus/Status";
         public string UrlLimparMensagensCoreService = UrlCoreBusiness + "/UserTask/ShowStatus?taskHash=";

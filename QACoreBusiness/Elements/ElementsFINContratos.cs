@@ -9,7 +9,7 @@ namespace QACoreBusiness.Elements
 {
     class ElementsFINContratos : Base
     {
-
+        public IWebDriver chromeDriver;
 
         #region URLs de Acesso
         public string UrlCreateContrato => UrlContextoContrato + "/Create";

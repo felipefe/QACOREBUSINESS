@@ -10,8 +10,8 @@ namespace QACoreBusiness.Util.COM
 {
     class RecepcaoMercadoriaNovoLancamentoManualUtil
     {
-        ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
-        IWebDriver driver = Base.chromeDriver;
+        ElementsCOMRecepcaoMercadoria recepcao;
+        IWebDriver driver = Base.GetChromeDriver();
         string auxSKUItemLF;
         Double auxValorUnitario;
         int auxQuantidadeItem;
@@ -21,7 +21,7 @@ namespace QACoreBusiness.Util.COM
 
         public RecepcaoMercadoriaNovoLancamentoManualUtil()
         {
-            recepcao = new ElementsCOMRecepcaoMercadoriaWorkflow();
+            recepcao = new ElementsCOMRecepcaoMercadoria { chromeDriver = driver };
         }
 
         public void AcesseIndexRecepcao()

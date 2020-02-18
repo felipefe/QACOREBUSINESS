@@ -8,6 +8,8 @@ namespace QACoreBusiness.Util
 {
     class ElementsAbrirNavegador : Base
     {
+
+        public IWebDriver chromeDriver;
         
         public IWebElement Usuario => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='card-content']//div[@class='input-field'][1]//input[@id='UserName']");
         public IWebElement Senha => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='card-content']//div[@class='input-field'][2]//input[@id='Password']");

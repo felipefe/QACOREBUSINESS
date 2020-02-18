@@ -10,12 +10,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoSeparacaoUtil 
     {
-        IWebDriver driver = Base.chromeDriver;
-        ElementsCOMPedidoWorkflow separacao;
+        IWebDriver driver = Base.GetChromeDriver();
+        ElementsCOMPedido separacao;
 
         public PedidoSeparacaoUtil()
         {
-            separacao = new ElementsCOMPedidoWorkflow();
+            separacao = new ElementsCOMPedido { chromeDriver = driver };
         }
 
         public void SituacaoPedido()

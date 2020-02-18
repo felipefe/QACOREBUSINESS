@@ -9,12 +9,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoAvaliacaoUtil
     {
-        IWebDriver driver = Base.chromeDriver;
-        ElementsCOMPedidoWorkflow avaliar;
+        IWebDriver driver = Base.GetChromeDriver();
+        ElementsCOMPedido avaliar;
 
         public PedidoAvaliacaoUtil()
         {
-            avaliar = new ElementsCOMPedidoWorkflow();
+            avaliar = new ElementsCOMPedido { chromeDriver = driver };
         }
 
         public void PedidoEmStatusAvaliacao()

@@ -9,12 +9,12 @@ namespace QACoreBusiness.Util
 {
     class PedidoEfetivarUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver = Base.GetChromeDriver();
         ElementsCOMPedido pedido;
 
         public PedidoEfetivarUtil()
         {
-            pedido = new ElementsCOMPedido();
+            pedido = new ElementsCOMPedido { chromeDriver = driver };
         }
 
         public void PedidoComCliente()

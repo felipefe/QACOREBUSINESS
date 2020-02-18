@@ -9,6 +9,8 @@ namespace QACoreBusiness.Elements
 {
     class ElementsFINGestorFinanceiro : Base
     {
+        public IWebDriver chromeDriver;
+
 
         #region URLs de Acesso
         public string UrlContextoGestorFin = UrlCoreBusiness + "/FIN/GestorFinanceiro";
