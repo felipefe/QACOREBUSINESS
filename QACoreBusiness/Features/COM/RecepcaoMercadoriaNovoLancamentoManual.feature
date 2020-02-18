@@ -6,7 +6,7 @@ And acesse a index de recepcao de mercadoria
 
 
 @recepcao_mercadoria_novo_lancamento_manual
-Scenario: Lancar nova recepcao manual de mercadoria
+Scenario: Criar recepcao manual de mercadoria
 	Given que seja clicado no botao Novo Lancamento Manual
 	And seja redirecionado para tela de criar recepcao	
 	And seja informado a operação fiscal {'Recepção de Mercadoria'}
@@ -19,6 +19,7 @@ Scenario: Lancar nova recepcao manual de mercadoria
 	When clicar no botao Salvar
 	Then o sistema redirecionada para index de recepçao
 	And o status da recepcao deve ser {'Lançamento'}
+
 
 
 @lancar_itens_recepcao_manual
@@ -45,7 +46,7 @@ Scenario: Lancar itens recepcao manual (Semi-automatico)
 
 
 @escriturar_item_mercadoria_recepcao
-Scenario: Escriturar itens da recepcao
+Scenario: Escriturar itens da recepcao (Semi-automatico)
 	Given que tenha uma recepcao no status {'Lançamento'}
 	And seja clicado no botao Mercadoria nas actions
 	And seja redirecionado para tela de Mercadorias da recepcao
@@ -126,9 +127,9 @@ Given que eu clique no botao da header Gerenciar recepcoes
 
 
 
-@lancar_itens_metodo_calculo_manual
-Scenario: Lancar itens metodo de calculo MANUAL
-	Given que tenha uma recepcao no status {'Lançamento'}
+@lancar_item_calculo_manual_de_imposto
+Scenario: Lancar item calculo Manual de imposto
+Given que tenha uma recepcao no status {'Lançamento'}
 	And seja clicado no botao Mercadoria nas actions
 	And seja redirecionado para tela de Mercadorias da recepcao
 	And seja clicado no botao Nova Mercadoria Recebida
@@ -165,5 +166,39 @@ Scenario: Lancar itens metodo de calculo MANUAL
 	Then seja redirecionado para tela de Mercadorias da recepcao
 	And o SKU do item da recepcao informado deve aparecer na tabela
 
+
+
+
+
+@escriturar_item_mercadoria_recepcao_manual
+Scenario: Escriturar item da recepcao (Manual)
+	Given que tenha uma recepcao no status {'Lançamento'}
+	And seja clicado no botao Mercadoria nas actions
+	And seja redirecionado para tela de Mercadorias da recepcao
+	And tenha na coluna Escriturado do item o valor {'Não'}
+	And clique nas actions para Escriturar 
+	And seja redirecionado para tela de EscriturarProduto
+	When selecionar o metodo de calculado {'Manual'}
+	And informar o CFOP {'Compra para comercialização'}
+	And informar a origem da Mercadoria {'Nacional - exceto as indicadas nos códigos 3 a 5'} do ICMS
+	And informar o codigo da ST {'Tributada integralmente'} do ICMS
+	And informar no input o percentual da Aliquota {1} do ICMS
+	And informar no input a base de calculo do ICMS
+	And informar no input o valor ICMS
+	And clicar na aba PIS
+	And informar o codigo da ST {'Operação Tributável com Alíquota Básica'} do PIS
+	And informar o tipo de Alíquota {'Alíquota em Percentual'} do PIS
+	And informar no input o percentual da Aliquota {1} do PIS
+	And informar no input a base de calculo do PIS
+	And informar no input o valor PIS
+	And clicar na aba COFINS
+	And informar o codigo da ST {'Operação Tributável com Alíquota Básica'} do COFINS
+	And informar o tipo de Alíquota {'Alíquota em Percentual'} do COFINS
+	And informar no input o percentual da Aliquota {1} do COFINS
+	And informar no input a base de calculo do COFINS
+	And informar no input o valor COFINS
+	Then clicar no botao Gravar escrituraçao
+	And seja redirecionado para tela de Mercadorias da recepcao
+	And tenha na coluna Escriturado do item o valor {'Sim'}
 
 

@@ -145,9 +145,21 @@ namespace QACoreBusiness.Util.COM
             recepcao.ActionsFinalizarRecebimento.Click();
         }
 
+        public void CliqueActionsEscriturarItemLoteFiscal()
+        {
+            recepcao.ActionsItem.Click();
+            recepcao.ActionsEscriturarItem.Click();
+        }
+
         public void CliqueActionsEscriturarItensLoteFiscal()
         {
             recepcao.ActionsEscriturarItens.Click();
+        }
+
+        public void ValidaUrlEscriturarItemManual()
+        {
+            Thread.Sleep(1000);
+            Assert.Contains(recepcao.UrlEscriturarItemManual, driver.Url);
         }
 
         public void ValidaUrlFinalizarRecepcao()
@@ -278,7 +290,7 @@ namespace QACoreBusiness.Util.COM
         {
             recepcao.SelectCfopEscrituracao.Click();
             recepcao.SearchCfopEscrituracao.SendKeys(cfop.ToString());
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             recepcao.SearchCfopEscrituracao.SendKeys(Keys.Enter);
         }
 
@@ -390,6 +402,138 @@ namespace QACoreBusiness.Util.COM
             recepcao.SearchGenerico.SendKeys(stCofins);
             Thread.Sleep(1000);
             recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelectCfopEscrituraItem(string cfopEscrituraItem)
+        {
+            recepcao.EscriturarSelectCFOP.Click();
+            recepcao.SearchGenerico.SendKeys(cfopEscrituraItem);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelectOrigemIcmsEscrituraItem(string origem)
+        {
+            recepcao.EscriturarSelectOrigemICMS.Click();
+            recepcao.SearchGenerico.SendKeys(origem);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelecionarStEscriturarItem(string stICMS)
+        {
+            recepcao.EscriturarSelectstIcms.Click();
+            recepcao.SearchGenerico.SendKeys(stICMS);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformaBaseCalculoIcmsEscrituraItem()
+        {
+            string bc = recepcao.InfoBaseCalculoICMS.Text.Replace("Base de Cálculo", "").Replace(".", "").Replace(",",".");
+            Double val = Double.Parse(bc);
+            recepcao.EscriturarInputBcICMS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+        }
+
+        public void CliqueAbaPisEscrituracao()
+        {
+            Thread.Sleep(500);
+            recepcao.EscriturarAbaPIS.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void InformaValorIcmsEscrituraItem()
+        {
+            string c = recepcao.InfoValorICMS.Text.Replace("Valor do ICMS", "").Replace(".", "").Replace(",", ".");
+            Double val = Double.Parse(c);
+            recepcao.EscriturarInputValorBcICMS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+        }
+
+        public void SelecionarTipoAliquotaPIS(string tipoAliquotaPIS)
+        {
+            recepcao.EscriturarSelectTipoAliquotaPIS.Click();
+            recepcao.SearchGenerico.SendKeys(tipoAliquotaPIS);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformaAliquotaPisEscrituraItem(decimal aliquotaPIS)
+        {
+            recepcao.EscriturarInputAliquotaPIS.SendKeys(InsereInput4CasasDecimais(aliquotaPIS).ToString());
+        }
+
+        public void InformaBaseCalculoPisEscrituraItem()
+        {
+            string bc = recepcao.InfoBaseCalculoPIS.Text.Replace("Base de Cálculo", "").Replace(".", "").Replace(",", ".");
+            Double val = Double.Parse(bc);
+            recepcao.EscriturarInputBcPIS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+        }
+
+        public void CliqueAbaCofinsEscriturarItem()
+        {
+            Thread.Sleep(500);
+            recepcao.EscriturarAbaCOFINS.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void SelectStCofinsEscrituraItem(string st)
+        {
+            recepcao.EscriturarSelectStCOFINS.Click();
+            recepcao.SearchGenerico.SendKeys(st);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelectTipoAliquotaCofinsEscrituraItem(string tipoAliquota)
+        {
+            recepcao.EscriturarSelectTipoAliquotaCOFINS.Click();
+            recepcao.SearchGenerico.SendKeys(tipoAliquota);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformarBcCofinsEscrituraItem()
+        {
+            string bc = recepcao.InfoBaseCalculoCofins.Text.Replace("Base de Cálculo", "").Replace(".", "").Replace(",", ".");
+            Double val = Double.Parse(bc);
+            recepcao.EscriturarInputBcCOFINS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+        }
+
+        public void InformarValorCofinsEscrituraItem()
+        {
+            string c = recepcao.InfoValorCofins.Text.Replace("Valor", "").Replace(".", "").Replace(",", ".");
+            Double val = Double.Parse(c);
+            recepcao.EscriturarInputValorBcCOFINS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+        }
+
+        public void CliqueGravarEscrituracaoItem()
+        {
+            recepcao.BotaoGravarEscrituraManual.Click();
+        }
+
+        public void InformarAliquotaCofinsEscrituraItem(decimal aliquota)
+        {
+            recepcao.EscriturarInputAliquotaCOFINS.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+        }
+
+        public void InformarValorPisEscrituraItem()
+        {
+            string c = recepcao.InfoValorPIS.Text.Replace("Valor", "").Replace(".", "").Replace(",", ".");
+            Double val = Double.Parse(c);
+            recepcao.EscriturarInputValorBcPIS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+        }
+
+        public void SelecionarStPisEscrituraItem(string stPIS)
+        {
+            recepcao.EscriturarSelectStPIS.Click();
+            recepcao.SearchGenerico.SendKeys(stPIS);
+            Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformarAliquotaIcmsEscrituraItem(decimal aliquota)
+        {
+            recepcao.EscriturarInputAliquotaICMS.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
         }
 
         public void SelectTipoAliquotaCofins(string tipoAliquotaCofins)

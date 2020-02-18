@@ -15,16 +15,17 @@ namespace QACoreBusiness.Elements
         public string UrlCreateRecepcaoMercadoria = UrlCoreBusiness + "/COM/LoteFiscal/Create";
         public string UrlCreateLoteFiscalItem = UrlCoreBusiness + "/COM/LoteFiscalItem/Create?idLote=";
         public string UrlEscriturarItens = UrlCoreBusiness + "/COM/LoteFiscal/Escriturar/";
+        public string UrlEscriturarItemManual = UrlCoreBusiness + "/COM/LoteFiscalItem/EscriturarProduto/";
         public string UrlFinalizarRecepcao = UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
         public string UrlConferenciaFisicaLF = UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
-        public string ArquivoUploadXmlRecepcao = PathLocalProject +  "\\extras\\recepcao.exe";
+        public string ArquivoUploadXmlRecepcao = PathLocalProject + "\\extras\\recepcao.exe";
         public string UrlIdfeNfeImpDestinadasNativo = UrlCoreBusiness + "/IDFe/NFe/ImpDestinadasNativo";
         public string UrlGerenciarRecepcoes = UrlCoreBusiness + "/COM/LoteFiscal/GerenciarRecepcoes";
-        
+
         #endregion
 
         #region Criar Recepcao de Mercadoria
-        public IWebElement SelectOperacaoFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OPFSICAL_auto_wrapper']//div[@class='ui select2 fluid']");    
+        public IWebElement SelectOperacaoFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OPFSICAL_auto_wrapper']//div[@class='ui select2 fluid']");
         public IWebElement SearchOperacaoFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field']");
         public IWebElement SelectFornecedor => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscal_Fornecedor_auto_wrapper']//div[@class='ui select2 fluid']");
         public IWebElement SearchFornecedor => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-dropdown select2-dropdown--below']//input[@class='select2-search__field']");
@@ -78,8 +79,13 @@ namespace QACoreBusiness.Elements
         public IWebElement InputAliquotaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_Aliquota']");
         public IWebElement InputBcCofins => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_BC']");
         public IWebElement InputValorCofins => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_Valor']");
-
-
+        public IWebElement InfoBaseCalculoICMS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscICMS']//div[@class='ui stackable three column row grid'][1]//div[@class='ui column displayFor'][2]");
+        public IWebElement InfoValorICMS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscICMS']//div[@class='ui stackable three column row grid'][1]//div[@class='ui column displayFor'][3]");
+        public IWebElement InfoBaseCalculoPIS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscPIS']//div[@class='ui stackable three column row grid']//div[@class='ui column displayFor'][2]");
+        public IWebElement InfoValorPIS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscPIS']//div[@class='ui stackable three column row grid']//div[@class='ui column displayFor'][3]");
+        public IWebElement InfoBaseCalculoCofins => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscCOFINS']//div[@class='ui stackable three column row grid']//div[@class='ui column displayFor'][2]");
+        public IWebElement InfoValorCofins => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscCOFINS']//div[@class='ui stackable three column row grid']//div[@class='ui column displayFor'][3]");
+        public IWebElement BotaoGravarEscrituraManual => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Gravar']");
         #endregion
 
 
@@ -91,6 +97,27 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoCalcularEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//div[@class='ui large button']");
         public IWebElement BotaoProsseguirEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Prosseguir']");
         public IWebElement StatusEscrituracao => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='loteFiscal']//tbody//tr[@class='positive collapsed']//td[6]//p");
+        public IWebElement EscriturarSelectCFOP => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ItemProduto_CFOPConfig_auto_wrapper']//span[@class='select2 select2-container select2-container--default']");
+        public IWebElement EscriturarSelectOrigemICMS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ItemProduto_Origem_auto_wrapper']//span[@class='select2-selection select2-selection--single']");
+        public IWebElement EscriturarSelectstIcms => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ItemProduto_CST_auto_wrapper']//span[@class='select2 select2-container select2-container--default']");
+        public IWebElement EscriturarInputAliquotaICMS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ItemProduto_Percentual']");
+        public IWebElement EscriturarInputBcICMS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ItemProduto_BC']");
+        public IWebElement EscriturarInputValorBcICMS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ItemProduto_Valor']");
+        public IWebElement EscriturarInputAliquotaPIS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='PIS_Aliquota']");
+        public IWebElement EscriturarInputBcPIS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='PIS_BC']");
+        public IWebElement EscriturarInputValorBcPIS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='PIS_Valor']");
+        public IWebElement EscriturarInputAliquotaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_Aliquota']");
+        public IWebElement EscriturarInputBcCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_BC']");
+        public IWebElement EscriturarInputValorBcCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='COFINS_Valor']");
+        public IWebElement EscriturarAbaPIS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='sui-tabcontext-Escrituração']//a[@id='tab-menu-tabEscPIS']");
+        public IWebElement EscriturarAbaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='sui-tabcontext-Escrituração']//a[@id='tab-menu-tabEscCOFINS']");
+        public IWebElement EscriturarSelectStPIS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='PIS_CST_auto_wrapper']//span[@class='select2-selection select2-selection--single']");
+        public IWebElement EscriturarSelectTipoAliquotaPIS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='PIS_TipoAliquota_auto_wrapper']//span[@class='select2 select2-container select2-container--default']");
+        public IWebElement EscriturarSelectStCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='COFINS_CST_auto_wrapper']//span[@class='select2-selection select2-selection--single']");
+        public IWebElement EscriturarSelectTipoAliquotaCOFINS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='COFINS_TipoAliquota_auto_wrapper']//span[@class='select2-selection select2-selection--single']");
+        public IWebElement ActionsEscriturarItem => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Escriturar']");
+        public IWebElement ActionsItem => ElementWait.WaitForElementXpath(chromeDriver, "//tbody//tr//td//a//img[@alt='Opções']");
+
         #endregion
 
         #region Finalizar Lançamento Itens
@@ -109,7 +136,7 @@ namespace QACoreBusiness.Elements
         public IWebElement ActionsFinalizarRecebimento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Finalizar Recebimento']");
         public IWebElement BotaoFinalizarRecepcao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Finalizar Recepção']");
         #endregion
-        
+
 
         #region Novo via NFe
         public IWebElement HeaderBotaoNovoViaNfe => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Novo via NF-e']");

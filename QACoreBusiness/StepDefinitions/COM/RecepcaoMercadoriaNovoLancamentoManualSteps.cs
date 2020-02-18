@@ -123,6 +123,18 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.ValidaUrlFinalizarRecepcao();
         }
 
+        [Given(@"clique nas actions para Escriturar")]
+        public void GivenCliqueNasActionsParaEscriturar()
+        {
+            rmmanual.CliqueActionsEscriturarItemLoteFiscal();
+        }
+
+        [Given(@"seja redirecionado para tela de EscriturarProduto")]
+        public void GivenSejaRedirecionadoParaTelaDeEscriturarProduto()
+        {
+            rmmanual.ValidaUrlEscriturarItemManual();
+        }
+
         [When(@"clicar no botao Salvar")]
         public void WhenClicarNoBotaoSalvar()
         {
@@ -226,7 +238,6 @@ namespace QACoreBusiness.StepDefinitions.COM
         {
             rmmanual.SelecionarCfopEscriturarItem(cfop);
         }
-
 
         [When(@"clicar no botao Calcular")]
         public void WhenClicarNoBotaoCalcular()
@@ -373,6 +384,125 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.InformarValorCofins();
         }
 
+        [When(@"informar o CFOP \{'(.*)'}")]
+        public void WhenInformarOCFOP(string cfopEscrituraItem)
+        {
+            rmmanual.SelectCfopEscrituraItem(cfopEscrituraItem);
+        }
+
+        [When(@"informar a origem da Mercadoria \{'(.*)'} do ICMS")]
+        public void WhenInformarAOrigemDaMercadoriaDoICMS(string origem)
+        {
+            rmmanual.SelectOrigemIcmsEscrituraItem(origem);
+        }
+
+        [When(@"informar o codigo da ST \{'(.*)'} do ICMS")]
+        public void WhenInformarOCodigoDaSTDoICMS(string stICMS)
+        {
+            rmmanual.SelecionarStEscriturarItem(stICMS);
+        }
+
+        [When(@"informar no input o percentual da Aliquota \{(.*)} do ICMS")]
+        public void WhenInformarNoInputOPercentualDaAliquotaDoICMS(decimal aliquota)
+        {
+            rmmanual.InformarAliquotaIcmsEscrituraItem(aliquota);
+        }
+
+        [When(@"informar no input a base de calculo do ICMS")]
+        public void WhenInformarNoInputABaseDeCalculoDoICMS()
+        {
+            rmmanual.InformaBaseCalculoIcmsEscrituraItem();
+        }
+
+        [When(@"informar no input o valor ICMS")]
+        public void WhenInformarNoInputOValorICMS()
+        {
+            rmmanual.InformaValorIcmsEscrituraItem(); ;
+        }
+
+        [When(@"clicar na aba PIS")]
+        public void WhenClicarNaAbaPIS()
+        {
+            rmmanual.CliqueAbaPisEscrituracao();
+        }
+
+        [When(@"informar o codigo da ST \{'(.*)'} do PIS")]
+        public void WhenInformarOCodigoDaSTDoPIS(string stPIS)
+        {
+            rmmanual.SelecionarStPisEscrituraItem(stPIS);
+        }
+
+        [When(@"informar o tipo de Alíquota \{'(.*)'} do PIS")]
+        public void WhenInformarOTipoDeAliquotaDoPIS(string tipoAliquotaPIS)
+        {
+            rmmanual.SelecionarTipoAliquotaPIS(tipoAliquotaPIS);
+        }
+
+        [When(@"informar no input o percentual da Aliquota \{(.*)} do PIS")]
+        public void WhenInformarNoInputOPercentualDaAliquotaDoPIS(decimal aliquotaPIS)
+        {
+            rmmanual.InformaAliquotaPisEscrituraItem(aliquotaPIS);
+        }
+
+        [When(@"informar no input a base de calculo do PIS")]
+        public void WhenInformarNoInputABaseDeCalculoDoPIS()
+        {
+            rmmanual.InformaBaseCalculoPisEscrituraItem();
+        }
+
+        [When(@"informar no input o valor PIS")]
+        public void WhenInformarNoInputOValorPIS()
+        {
+            rmmanual.InformarValorPisEscrituraItem();
+        }
+
+        [When(@"clicar na aba COFINS")]
+        public void WhenClicarNaAbaCOFINS()
+        {
+            rmmanual.CliqueAbaCofinsEscriturarItem();
+        }
+
+        [When(@"informar o codigo da ST \{'(.*)'} do COFINS")]
+        public void WhenInformarOCodigoDaSTDoCOFINS(string st)
+        {
+            rmmanual.SelectStCofinsEscrituraItem(st);
+        }
+
+        [When(@"informar o tipo de Alíquota \{'(.*)'} do COFINS")]
+        public void WhenInformarOTipoDeAliquotaDoCOFINS(string tipoAliquota)
+        {
+            rmmanual.SelectTipoAliquotaCofinsEscrituraItem(tipoAliquota);
+        }
+
+        [When(@"informar no input o percentual da Aliquota \{(.*)} do COFINS")]
+        public void WhenInformarNoInputOPercentualDaAliquotaDoCOFINS(decimal aliquota)
+        {
+            rmmanual.InformarAliquotaCofinsEscrituraItem(aliquota);
+        }
+
+        [When(@"informar no input a base de calculo do COFINS")]
+        public void WhenInformarNoInputABaseDeCalculoDoCOFINS()
+        {
+            rmmanual.InformarBcCofinsEscrituraItem();
+        }
+
+        [When(@"informar no input o valor COFINS")]
+        public void WhenInformarNoInputOValorCOFINS()
+        {
+            rmmanual.InformarValorCofinsEscrituraItem();
+        }
+
+        [Then(@"clicar no botao Gravar escrituraçao")]
+        public void ThenClicarNoBotaoGravarEscrituracao()
+        {
+            rmmanual.CliqueGravarEscrituracaoItem();
+        }
+
+        [Then(@"tenha na coluna Escriturado do item o valor \{'(.*)'}")]
+        public void ThenTenhaNaColunaEscrituradoDoItemOValor(string isEscriturado)
+        {
+            rmmanual.StatusItemIsEscriturado(isEscriturado);
+        }
 
         [Then(@"o sistema redirecionada para index de recepçao")]
         public void ThenOSistemaRedirecionadaParaIndexDeRecepcao()
