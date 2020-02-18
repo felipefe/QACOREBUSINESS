@@ -10,7 +10,7 @@ namespace QACoreBusiness.Util.FIN
 {
     class GestorFinanceiroDespesaUtil
     {
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
         ElementsFINGestorFinanceiro gestor;
 
         public GestorFinanceiroDespesaUtil()

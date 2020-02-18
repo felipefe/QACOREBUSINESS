@@ -11,7 +11,7 @@ namespace QACoreBusiness.Util
     class PedidoInserirNegociacaoUtil
     {
         ElementsCOMPedido pedido;
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
 
         public PedidoInserirNegociacaoUtil()
         {

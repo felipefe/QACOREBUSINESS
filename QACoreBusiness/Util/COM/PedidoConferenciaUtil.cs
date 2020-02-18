@@ -10,7 +10,7 @@ namespace QACoreBusiness.Util
 {
     class PedidoConferenciaUtil
     {
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
         ElementsCOMPedidoWorkflow conferencia;
         private string auxSKU;
         private string auxQtd;

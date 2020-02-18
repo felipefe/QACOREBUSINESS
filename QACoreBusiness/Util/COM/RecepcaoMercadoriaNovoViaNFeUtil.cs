@@ -15,7 +15,7 @@ namespace QACoreBusiness.Util.COM
     class RecepcaoMercadoriaNovoViaNFeUtil
     {
         ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
         string auxNumRecepcao;
 
         public RecepcaoMercadoriaNovoViaNFeUtil()

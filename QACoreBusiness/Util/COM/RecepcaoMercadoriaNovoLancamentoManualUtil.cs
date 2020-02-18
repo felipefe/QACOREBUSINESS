@@ -11,7 +11,7 @@ namespace QACoreBusiness.Util.COM
     class RecepcaoMercadoriaNovoLancamentoManualUtil
     {
         ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
         string auxSKUItemLF;
         Double auxValorUnitario;
         int auxQuantidadeItem;

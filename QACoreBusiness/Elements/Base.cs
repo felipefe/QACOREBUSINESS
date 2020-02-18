@@ -17,7 +17,7 @@ namespace QACoreBusiness.Elements
 
         public static IWebDriver chromeDriver = new ChromeDriver(PathLocalProject + @"\webdriver");
 
-        public static IWebDriver GetChromeDriver() => new ChromeDriver(PathLocalProject + @"\webdriver");
+        public static IWebDriver GetChromeDriver = new ChromeDriver(PathLocalProject + @"\webdriver");
 
     }
 }

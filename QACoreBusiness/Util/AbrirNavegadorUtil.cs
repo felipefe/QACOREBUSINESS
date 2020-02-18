@@ -21,7 +21,7 @@ namespace QACoreBusiness.Util
         public void IniciarNavegador()
         {
 
-            driverNavegadorChrome = Base.GetChromeDriver();
+            driverNavegadorChrome = Base.chromeDriver;
             driverNavegadorChrome.Manage().Window.Maximize();
 
             tela = new ElementsAbrirNavegador ();

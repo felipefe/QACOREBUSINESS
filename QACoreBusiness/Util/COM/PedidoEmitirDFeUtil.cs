@@ -15,7 +15,7 @@ namespace QACoreBusiness.Util.COM
         public ParametrosEmpresaUtil parametro;
         public SituacaoDosServidoresUtil servidor;
         public string auxValorPedido;
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
 
         public PedidoEmitirDFeUtil()
         {

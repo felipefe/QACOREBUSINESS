@@ -9,7 +9,7 @@ namespace QACoreBusiness.Util
 {
     class SituacaoDosServidoresUtil
     {
-        IWebDriver driver = Base.GetChromeDriver();
+        IWebDriver driver = Base.chromeDriver;
         ElementsSituacaoServidores servidor;
 
         public SituacaoDosServidoresUtil()
