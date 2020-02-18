@@ -207,6 +207,8 @@ namespace QACoreBusiness.Util.COM
 
         public void CliqueSalvarItensLF()
         {
+            recepcao.InputValorBruto.Click(); //esse clique é so para realizar os calculos da base de calculo senao ha necessidade de 2 cliques no salvar
+            Thread.Sleep(500);
             recepcao.BotaoSalvarMercadoriaItem.Click();
         }
 
