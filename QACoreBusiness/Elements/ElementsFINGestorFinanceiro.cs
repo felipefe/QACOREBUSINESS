@@ -14,6 +14,8 @@ namespace QACoreBusiness.Elements
         public string UrlContextoGestorFin = UrlCoreBusiness + "/FIN/GestorFinanceiro";
         public string UrlListaParcelasBaixa = UrlCoreBusiness + "/FIN/Contrato/ListarParcelasBaixa";
         public string UrlImprimirMovimentacao = UrlCoreBusiness + "/FIN/Contrato/ImprimirMovimentacao";
+        public string UrlGerarRenegociacao = UrlCoreBusiness + "/FIN/Contrato/GerarRenegociacaoContrato";
+        public string UrlVisualizarContrato = UrlCoreBusiness + "/FIN/Contrato/Visualizar?idContrato";
         #endregion
 
 
@@ -100,5 +102,21 @@ namespace QACoreBusiness.Elements
         public IWebElement FlagAlterarDataPagamentoParaMovimento => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ContratoViewModel_SetDateVencimento_auto_wrapper']//div[@class='ui toggle checkbox']");
         public IWebElement BotaoAlterarDadosBaixa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Alterar']");
         #endregion
+
+
+        #region Renegociar Parcela
+        public IWebElement AcoesRenegociar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='sidebarMenuAcoes']//a[3]");
+        public IWebElement InputValorLiquidoRenegociar => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoRenegociacaoViewModel_ValorLiquidoRenegociar']");
+        public IWebElement BotaoMontarRenegociacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[contains(text(),'Montar Renegociação')]");
+        public IWebElement BotaoInserirParcelaManualmente => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui right aligned buttons']//div[@class='ui basic green button'][1]");
+        public IWebElement InputDtVencNovaParcelaContratoRenegociacao => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='parcelaVencimento1']");
+        public IWebElement InputValorNovaParcelaContratoRenegociacao => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='parcelaValor1']");
+        public IWebElement BotaoGerarRenegociacao => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='contrato-submit']");
+        public IWebElement LinhaNovaParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='viewcontratoParcelas']//tbody//tr[1]");
+        public IWebElement LinhaParcelaSubstituidaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='contratoParcelasSubstituidas']//table//tbody//tr");
+        public IWebElement InputDataVencimentoParcela => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_Vencimento']");
+        public IWebElement BotaoSalvarParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Adicionar']");
+        #endregion
+
     }
 }

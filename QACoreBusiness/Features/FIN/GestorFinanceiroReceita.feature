@@ -225,3 +225,30 @@ Scenario: Baixar Parcela Vencida Alterando Movimento
 	And os juros devem ser zerados
 	And clicar no botao Efetuar Baixa
 	And o sistema redireciona para imprimir movimentacao
+
+
+
+@substituir_parcela_contrato
+Scenario: Renegociar parcela contrato
+Given que clica na aba Contas a Receber
+	And clique na pesquisa 
+	And clique para limpar filtros
+	And clique no botao Filtrar Receitas
+	And o numero de parcelas filtradas seja maior que {0}
+	And selecione a primeira parcela listada
+	And clique no botao movimentar parcela
+	And o valor a ser movimentado seja maior que zero
+	And clique no botao Açoes
+	And clique no botao Renegociar
+	And seja redirecionado para tela de renegociacao
+	And memorize o valor liquido a renegociar do input
+	When clique no botao Montar Renegociacao
+	And clique para adicionar parcela manualmente
+	And insira no input data de vencimento data atual + {15} dias
+	And clique no botao Adicionar parcela
+	And valida que a parcela foi inserida na data correta
+	And valida que o valor da parcela é o mesmo memorizado
+	And clique no botao Gerar Renegociacao
+	Then o sistema redireciona para index de visualizar contrato
+	And valide o valor bruto a pagar da parcela substituida
+

@@ -149,5 +149,3 @@ Scenario: Lançar Receita
 	Then o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Quitado'}
 	And a coluna referente ao valor original {'420.0'}
-
-

@@ -118,6 +118,30 @@ namespace QACoreBusiness.StepDefinitions
             gfu.ValidaVencimentoParcelaRetroativoDataAtual();
         }
 
+        [Given(@"clique no botao Açoes")]
+        public void GivenCliqueNoBotaoAcoes()
+        {
+            gfu.CliqueMenuAcoes();
+        }
+
+        [Given(@"clique no botao Renegociar")]
+        public void GivenCliqueNoBotaoRenegociar()
+        {
+            gfu.CliqueMenuRenegociar();
+        }
+
+        [Given(@"seja redirecionado para tela de renegociacao")]
+        public void GivenSejaRedirecionadoParaTelaDeRenegociacao()
+        {
+            gfu.URLRenegociacao();
+        }
+
+        [Given(@"memorize o valor liquido a renegociar do input")]
+        public void GivenMemorizeOValorLiquidoARenegociarDoInput()
+        {
+            gfu.MemorizarValorLiquidoRenegociar();
+        }
+
         [When(@"clique no botao Adicionar Multiplos Meios de Pagamento")]
         public void WhenCliqueNoBotaoAdicionarMultiplosMeiosDePagamento()
         {
@@ -317,6 +341,48 @@ namespace QACoreBusiness.StepDefinitions
             gfu.CliqueAlterarDadosBaixaModificados();
         }
 
+        [When(@"clique no botao Montar Renegociacao")]
+        public void WhenCliqueNoBotaoMontarRenegociacao()
+        {
+            gfu.CliqueMontarRenegociacao();
+        }
+
+        [When(@"clique para adicionar parcela manualmente")]
+        public void WhenCliqueParaAdicionarParcelaManualmente()
+        {
+            gfu.CliqueAddParcelaManualRenegociacao();
+        }
+
+        [When(@"insira no input data de vencimento data atual \+ \{(.*)} dias")]
+        public void WhenInsiraNoInputDataDeVencimentoDataAtualDias(int dias)
+        {
+            gfu.InserirDataVencimentoContratoRenegocicao(dias);
+        }
+
+        [When(@"clique no botao Adicionar parcela")]
+        public void WhenCliqueNoBotaoAdicionarParcela()
+        {
+            gfu.CliqueSalvarParcela();
+        }
+
+        [When(@"valida que a parcela foi inserida na data correta")]
+        public void WhenValidaQueAParcelaFoiInseridaNaDataCorreta()
+        {
+            gfu.ValidaDataInseridaParcela();
+        }
+
+        [When(@"valida que o valor da parcela é o mesmo memorizado")]
+        public void WhenValidaQueOValorDaParcelaEOMesmoMemorizado()
+        {
+            gfu.ValidaValorInseridoParcela();
+        }
+
+        [When(@"clique no botao Gerar Renegociacao")]
+        public void WhenCliqueNoBotaoGerarRenegociacao()
+        {
+            gfu.CliqueGerarRenegociacao();
+        }
+
         [Then(@"o sistema redireciona para imprimir movimentacao")]
         public void ThenOSistemaRedirecionaParaImprimirMovimentacao()
         {
@@ -327,6 +393,18 @@ namespace QACoreBusiness.StepDefinitions
         public void ThenOValorAPagarDeveSerOMesmoQueValorOriginal()
         {
             gfu.ValorPagarIgualValorOriginal();
+        }
+
+        [Then(@"o sistema redireciona para index de visualizar contrato")]
+        public void ThenOSistemaRedirecionaParaIndexDeVisualizarContrato()
+        {
+            gfu.ValidaUrlVisualizarContrato();
+        }
+
+        [Then(@"valide o valor bruto a pagar da parcela substituida")]
+        public void ThenValideOValorBrutoAPagarDaParcelaSubstituida()
+        {
+            gfu.ValidaValorBrutoParcelaSubstituidaNoViewContrato();
         }
 
         [Then(@"o valor do desconto deve ser o mesmo memorizado anteriormente")]

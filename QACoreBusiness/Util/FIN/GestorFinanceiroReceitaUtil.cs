@@ -14,8 +14,10 @@ namespace QACoreBusiness.Util.FIN
     {
         ElementsFINGestorFinanceiro gestor;
         IWebDriver driver = Base.chromeDriver;
-        Double auxValorAbater;
         IWebElement ParcelaCreditoAbatimento = null;
+        string novoVencimento;
+        Double auxValorAbater;
+        Double auxValorRenegociar;
         Double rateioValorMultiplosMeio;
         Double auxJurosMulta;
         Double auxValorOriginal;
@@ -121,6 +123,15 @@ namespace QACoreBusiness.Util.FIN
             ParcelaCreditoAbatimento.Click();
         }
 
+        public void ValidaVencimentoParcelaRetroativoDataAtual()
+        { //nao consegui fazer como eu queria com formato pt-BR
+            String texto = gestor.LinhasTabelaParcelasGestor[0].FindElement(By.CssSelector("td:nth-child(2)")).Text;
+            DateTime dataVen = DateTime.ParseExact(texto, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime dataAtu = DateTime.Now;
+            //falha qndo data vencimento maior q data atual
+            Assert.True(DateTime.Compare(dataAtu, dataVen) > 0);
+        }
+
         public void FindParcelaCredito()
         {
             Double valorPagar = Double.Parse(gestor.ValorPagarParcelaBaixa.Text.Replace("R$ ", "").Replace(".", "").Replace(",", "."));
@@ -140,13 +151,35 @@ namespace QACoreBusiness.Util.FIN
             Assert.NotNull(ParcelaCreditoAbatimento);
         }
 
-        public void ValidaVencimentoParcelaRetroativoDataAtual()
-        { //nao consegui fazer como eu queria com formato pt-BR
-            String texto = gestor.LinhasTabelaParcelasGestor[0].FindElement(By.CssSelector("td:nth-child(2)")).Text;
-            DateTime dataVen = DateTime.ParseExact( texto, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            DateTime dataAtu = DateTime.Now ;
-            //falha qndo data vencimento maior q data atual
-            Assert.True(DateTime.Compare( dataAtu , dataVen ) > 0);
+        public void MemorizarValorLiquidoRenegociar()
+        {
+            auxValorRenegociar = Double.Parse(gestor.InputValorLiquidoRenegociar.GetAttribute("value").Replace(",", "."));
+        }
+
+        public void URLRenegociacao()
+        {
+            int lastIndex = driver.WindowHandles.ToList().Count - 1; //obtem a quantidade de janelas abertas -1 (ou seja a ultima janela aberta)
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[lastIndex]);
+            Assert.Contains(gestor.UrlGerarRenegociacao, driver.Url);
+        }
+
+        public void ValidaUrlVisualizarContrato()
+        {
+            Thread.Sleep(1500);
+            int index = driver.WindowHandles.ToList().Count - 1;
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[index]);
+            Assert.Contains(gestor.UrlVisualizarContrato, driver.Url);
+        }
+
+        public void CliqueMenuAcoes()
+        {
+            gestor.MenuAcoesDeMovimentacao.Click();
+        }
+
+        public void CliqueMenuRenegociar()
+        {
+            gestor.AcoesRenegociar.Click();
+            Thread.Sleep(1000);
         }
 
         public void SelecionarSegundoMeioPagamentoMultiplosMeios(string segundoMeio)
@@ -298,14 +331,48 @@ namespace QACoreBusiness.Util.FIN
             gestor.FlagAlterarDataPagamentoParaMovimento.Click();
         }
 
+        public void CliqueMontarRenegociacao()
+        {
+            gestor.BotaoMontarRenegociacao.Click();
+            Thread.Sleep(1000);
+        }
+
         public void CliqueAlterarDadosBaixaModificados()
         {
             gestor.BotaoAlterarDadosBaixa.Click();
         }
 
+        public void CliqueAddParcelaManualRenegociacao()
+        {
+            gestor.BotaoInserirParcelaManualmente.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void InserirDataVencimentoContratoRenegocicao(int dias)
+        {
+            novoVencimento = DateTime.Now.AddDays(dias).ToString("dd/MM/yyyy");
+            gestor.InputDataVencimentoParcela.SendKeys(novoVencimento);
+        }
+
+        public void CliqueSalvarParcela()
+        {
+            gestor.BotaoSalvarParcela.Click();
+        }
+
         public void ClicarGravarDescontoJurosMulta()
         {
             gestor.BotaoGravarJurosMulta.Click();
+        }
+
+        public void ValidaDataInseridaParcela()
+        {
+            Thread.Sleep(1000);
+            Assert.Equal(novoVencimento, gestor.InputDtVencNovaParcelaContratoRenegociacao.GetAttribute("value"));
+        }
+
+        public void ValidaValorInseridoParcela()
+        {
+            Assert.Equal(auxValorRenegociar, Double.Parse(gestor.InputValorNovaParcelaContratoRenegociacao.GetAttribute("value").Replace(",",".")));
         }
 
         public void DesabilitarFlagBaixaParcial()
@@ -319,6 +386,18 @@ namespace QACoreBusiness.Util.FIN
             Double valorOriginal = Double.Parse(gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(4)")).Text.Replace("R$ ", "").Replace(".", "").Replace(",", "."));
             Double valorPagar = Double.Parse(gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(8)")).Text.Replace("R$ ", "").Replace(".", "").Replace(",", "."));
             Assert.Equal(valorOriginal, valorPagar);
+        }
+
+        public void ValidaValorBrutoParcelaSubstituidaNoViewContrato()
+        {
+            string valorNovaParcela = gestor.LinhaNovaParcelaContrato.FindElement(By.CssSelector("td:nth-child(12)")).Text;
+            string valorParcelaSubstituida = gestor.LinhaParcelaSubstituidaContrato.FindElement(By.CssSelector("td:nth-child(10)")).Text;
+            Assert.Equal(valorNovaParcela, valorParcelaSubstituida);
+        }
+
+        public void CliqueGerarRenegociacao()
+        {
+            gestor.BotaoGerarRenegociacao.Click();
         }
 
         public void ValidaValorDesconto()

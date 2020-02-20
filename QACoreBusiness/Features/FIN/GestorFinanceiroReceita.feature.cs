@@ -604,6 +604,65 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Renegociar parcela contrato")]
+        [Xunit.TraitAttribute("FeatureTitle", "GestorFinanceiroReceita")]
+        [Xunit.TraitAttribute("Description", "Renegociar parcela contrato")]
+        [Xunit.TraitAttribute("Category", "substituir_parcela_contrato")]
+        public virtual void RenegociarParcelaContrato()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Renegociar parcela contrato", null, new string[] {
+                        "substituir_parcela_contrato"});
+#line 232
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 233
+testRunner.Given("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 234
+ testRunner.And("clique na pesquisa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 235
+ testRunner.And("clique para limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 236
+ testRunner.And("clique no botao Filtrar Receitas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 237
+ testRunner.And("o numero de parcelas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 238
+ testRunner.And("selecione a primeira parcela listada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 239
+ testRunner.And("clique no botao movimentar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 240
+ testRunner.And("o valor a ser movimentado seja maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 241
+ testRunner.And("clique no botao Açoes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 242
+ testRunner.And("clique no botao Renegociar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 243
+ testRunner.And("seja redirecionado para tela de renegociacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 244
+ testRunner.And("memorize o valor liquido a renegociar do input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 245
+ testRunner.When("clique no botao Montar Renegociacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 246
+ testRunner.And("clique para adicionar parcela manualmente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 247
+ testRunner.And("insira no input data de vencimento data atual + {15} dias", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 248
+ testRunner.And("clique no botao Adicionar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 249
+ testRunner.And("valida que a parcela foi inserida na data correta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 250
+ testRunner.And("valida que o valor da parcela é o mesmo memorizado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 251
+ testRunner.And("clique no botao Gerar Renegociacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
+ testRunner.Then("o sistema redireciona para index de visualizar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 253
+ testRunner.And("valide o valor bruto a pagar da parcela substituida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
