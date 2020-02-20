@@ -160,7 +160,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 31
- testRunner.Given("que eu tenha relatorio de nome {\'Separações\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("que eu tenha relatorio de nome {\'Comissões de Vendas por Recebimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
  testRunner.And("clique nas actions deste relatorio Editar Definiçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
@@ -199,6 +199,39 @@ this.FeatureBackground();
 #line 45
  testRunner.Then("o relatorio deve ser excluido e {\'Comissões de Vendas por Recebimento\'} nao apare" +
                     "cer na lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Executar Relatorio")]
+        [Xunit.TraitAttribute("FeatureTitle", "GerenciadorDeRelatorios")]
+        [Xunit.TraitAttribute("Description", "Executar Relatorio")]
+        [Xunit.TraitAttribute("Category", "executar_relatorio")]
+        public virtual void ExecutarRelatorio()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Executar Relatorio", null, new string[] {
+                        "executar_relatorio"});
+#line 49
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 50
+ testRunner.Given("que seja clicado no menu do usuario logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 51
+ testRunner.And("clique no botao Relatorios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("seja redirecionado para Meus Relatorios /RPT/ReportView/UserReportViews", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("que eu tenha relatorio de nome {\'Comissões de Vendas por Recebimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.When("clicar no botao executar relatorio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 55
+ testRunner.And("ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("clicar no botao Executar meu relatorio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.Then("o relatorio deve ser exibido em uma nova guia do navegador", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

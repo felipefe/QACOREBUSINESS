@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using Xunit;
@@ -104,6 +105,22 @@ namespace QACoreBusiness.Util
             Assert.NotNull(relatorioEdit);
         }
 
+        public void CliqueMenuUsuarioRelatorios()
+        {
+            rpt.MenuUsuarioLogadoRelatorio.Click();
+        }
+
+        public void CliqueMenuUsuarioLogado()
+        {
+            rpt.MenuUsuarioLogado.Click();
+            System.Threading.Thread.Sleep(500);
+        }
+
+        public void ValidaUrlMeusRelatorios()
+        {
+            Assert.Equal(rpt.UrlMeusRelatorios, driver.Url);
+        }
+
         public void ConfirmeExcluir()
         {
             System.Threading.Thread.Sleep(1000);
@@ -141,15 +158,42 @@ namespace QACoreBusiness.Util
             }
         }
 
+        public void CliqueVisualizarRelatorio()
+        {
+            rpt.BotaoExecutarMeuRpt.Click();
+        }
+
+        public void ValidaUrlParametroExecucaoMeuRelatorio()
+        {
+            int indexAbaBrowser = driver.WindowHandles.ToList().Count -1;
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[indexAbaBrowser]);
+            Assert.Contains(rpt.UrlParametrosMeuRelatorio, driver.Url);
+        }
+
+        public void ValidaExibicaoRelatorio()
+        {
+            int indexNovaAba = driver.WindowHandles.ToList().Count - 1;
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[indexNovaAba]);
+            Assert.Contains("Emitido", rpt.TitleRptEmitido.Text); ;
+        }
+
+        public void CliqueExecutarRelatorio()
+        {
+            if (relatorioEdit != null)
+            {
+                relatorioEdit.FindElement(By.TagName("a[data-content='Executar Relatório']")).Click();
+            }
+        }
+
         public void ValidaRelatorioFoiExcluido(string nome)
         {
-            int achou = 0;
+            bool achou = false;
             foreach(IWebElement report in rpt.RelatoriosImportados)
             {
                 if (nome.Equals(report.FindElement(By.CssSelector("td:nth-child(1)")).Text))
-                    achou++;
+                    achou = true;
             }
-            Assert.True(achou==0);
+            Assert.True(!achou);
         }
 
         public void CliqueActionsCriarRptApartirDestaDefinicao()

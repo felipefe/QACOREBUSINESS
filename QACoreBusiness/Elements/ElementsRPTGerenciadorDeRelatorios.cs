@@ -11,6 +11,8 @@ namespace QACoreBusiness.Elements
     {
         #region URLs de Acesso
         public string UrlIndexGerenciadorRelatorios = UrlCoreBusiness + "/RPT/ReportView";
+        public string UrlMeusRelatorios = UrlCoreBusiness + "/RPT/ReportView/UserReportViews";
+        public string UrlParametrosMeuRelatorio = UrlCoreBusiness + "/RPT/ReportView/OpenReportView/";
         public string UrlDefinicoesRelatorios = UrlCoreBusiness + "/RPT/Report";
         public string UrlCarregaDefinicaoRpt = UrlCoreBusiness + "/RPT/Report/LoadReport";
         public string UrlEditarDefinicaoRpt = UrlCoreBusiness + "/RPT/ReportView/EditBuilder/";
@@ -32,6 +34,8 @@ namespace QACoreBusiness.Elements
         public IWebElement MenuUsuarioLogadoRelatorio => ElementWait.WaitForElementXpath(chromeDriver, "//div//a[@href='/COREBusiness/RPT/ReportView/UserReportViews']");
         public IWebElement EditDefinicaoAbaColunas => ElementWait.WaitForElementXpath(chromeDriver, "//a[@id='tab-menu-tabFields']");
         public IWebElement BotaoExecutarRelatorio => ElementWait.WaitForElementXpath(chromeDriver, "//tbody//tr//td//a[@data-content='Executar Relatório']");
+        public IWebElement TitleRptEmitido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui center aligned ten wide column']//p");
+        public IWebElement BotaoExecutarMeuRpt => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Executar']");
         public List<IWebElement> RelatoriosImportados => chromeDriver.FindElements(By.XPath("//table[@class='ui table selectable striped coregrid']//tbody//tr")).ToList();
         public List<IWebElement> EditDefinicaoColunasCategoria => chromeDriver.FindElements(By.XPath("//div[@id='tabFields']//div[@class='ui fluid styled accordion']//div[@class='title']")).ToList();
         public List<IWebElement> EditDefinicaoLinhasDeColunaSelect => chromeDriver.FindElements(By.XPath("//div[@class='ui fluid styled accordion']//div[@class='content active']//table//tbody//tr")).ToList();

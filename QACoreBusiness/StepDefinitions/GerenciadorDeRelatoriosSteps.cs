@@ -86,6 +86,24 @@ namespace QACoreBusiness.StepDefinitions
             gru.ActionsExcluirRelatorio();
         }
 
+        [Given(@"que seja clicado no menu do usuario logado")]
+        public void GivenQueSejaClicadoNoMenuDoUsuarioLogado()
+        {
+            gru.CliqueMenuUsuarioLogado();
+        }
+
+        [Given(@"clique no botao Relatorios")]
+        public void GivenCliqueNoBotaoRelatorios()
+        {
+            gru.CliqueMenuUsuarioRelatorios();
+        }
+
+        [Given(@"seja redirecionado para Meus Relatorios /RPT/ReportView/UserReportViews")]
+        public void GivenSejaRedirecionadoParaMeusRelatoriosRPTReportViewUserReportViews()
+        {
+            gru.ValidaUrlMeusRelatorios();
+        }
+
         [When(@"confirmar clicando no botao Excluir")]
         public void WhenConfirmarClicandoNoBotaoExcluir()
         {
@@ -114,6 +132,30 @@ namespace QACoreBusiness.StepDefinitions
         public void WhenClicarNoBotaoSalvarRelatorio()
         {
             gru.SalvarRptApartirDestaDefinicao();
+        }
+
+        [When(@"clicar no botao executar relatorio")]
+        public void WhenClicarNoBotaoExecutarRelatorio()
+        {
+            gru.CliqueExecutarRelatorio();
+        }
+
+        [When(@"ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/")]
+        public void WhenSerRedirecionadoParaParametrosDeExecucaoRPTReportViewOpenReportView()
+        {
+            gru.ValidaUrlParametroExecucaoMeuRelatorio();
+        }
+
+        [When(@"clicar no botao Executar meu relatorio")]
+        public void WhenClicarNoBotaoExecutarMeuRelatorio()
+        {
+            gru.CliqueVisualizarRelatorio();
+        }
+
+        [Then(@"o relatorio deve ser exibido em uma nova guia do navegador")]
+        public void ThenORelatorioDeveSerExibidoEmUmaNovaGuiaDoNavegador()
+        {
+            gru.ValidaExibicaoRelatorio();
         }
 
         [Then(@"seja redirecionado para index de Gerenciador de relatorio /RPT/ReportView")]

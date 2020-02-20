@@ -28,7 +28,7 @@ Scenario: Criar definicao de relatorio
 
 @editar_definicao_relatorio
 Scenario: Editar definicao relatorio
-	Given que eu tenha relatorio de nome {'Separações'}
+	Given que eu tenha relatorio de nome {'Comissões de Vendas por Recebimento'}
 	And clique nas actions deste relatorio Editar Definiçao
 	And seja redirecionado para tela de edicao do rpt /RPT/ReportView/EditBuilder/
 	And clique na aba Colunas
@@ -43,6 +43,18 @@ Scenario: Excluir definicao relatorio
 	And clique nas actions deste relatorio Excluir
 	When confirmar clicando no botao Excluir
 	Then o relatorio deve ser excluido e {'Comissões de Vendas por Recebimento'} nao aparecer na lista
+
+
+@executar_relatorio
+Scenario: Executar Relatorio
+	Given que seja clicado no menu do usuario logado
+	And clique no botao Relatorios
+	And seja redirecionado para Meus Relatorios /RPT/ReportView/UserReportViews
+	And que eu tenha relatorio de nome {'Comissões de Vendas por Recebimento'}
+	When clicar no botao executar relatorio
+	And ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/
+	And clicar no botao Executar meu relatorio
+	Then o relatorio deve ser exibido em uma nova guia do navegador
 
 
 
