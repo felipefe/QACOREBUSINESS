@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using java.awt;
-using java.awt.@event;
+using System.Threading;
 using java.lang;
 using OpenQA.Selenium;
 using QACoreBusiness.Elements;
@@ -27,7 +26,7 @@ namespace QACoreBusiness.Util.COM
         public void CliqueBotaoNovoViaNFE()
         {
             recepcao.HeaderBotaoNovoViaNfe.Click();
-            Thread.sleep(1000);
+            System.Threading.Thread.Sleep(1000);
         }
 
         public void SelecionarArquivoXML()
@@ -35,14 +34,14 @@ namespace QACoreBusiness.Util.COM
             recepcao.FileUpload.Click();
             System.Threading.Thread.Sleep(500);
             Runtime.getRuntime().exec(recepcao.ArquivoUploadXmlRecepcao);
-            Thread.sleep(1000);
+            System.Threading.Thread.Sleep(1000);
         }
 
         public void SelecionarOperacaoFiscal(string opf)
         {
             recepcao.SelectOpFiscalImportXml.Click();
             recepcao.SearchOpFiscalImportXml.SendKeys(opf);
-            Thread.sleep(1000);
+            System.Threading.Thread.Sleep(1000);
             recepcao.SearchOpFiscalImportXml.SendKeys(Keys.Enter);
         }
 
@@ -70,7 +69,7 @@ namespace QACoreBusiness.Util.COM
         {
             recepcao.SelectProtocoloIcmsEscrituracao.Click();
             recepcao.SearchProtocoloIcmsEscrituracao.SendKeys(protocoloICMS);
-            Thread.sleep(1000);
+            System.Threading.Thread.Sleep(1000);
             recepcao.SearchProtocoloIcmsEscrituracao.SendKeys(Keys.Enter);
         }
 
@@ -99,7 +98,7 @@ namespace QACoreBusiness.Util.COM
         {
             recepcao.SelectImpostoFederalEscrituracao.Click();
             recepcao.SearchImpostoFederalEscrituracao.SendKeys(impFederal);
-            Thread.sleep(1000);
+            System.Threading.Thread.Sleep(1000);
             recepcao.SearchImpostoFederalEscrituracao.SendKeys(Keys.Enter);
         }
 
