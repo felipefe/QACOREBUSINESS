@@ -11,8 +11,8 @@ namespace QACoreBusiness.Util
 
 
         #region URLs de Acesso
-        public string UrlEditPedido = UrlCoreBusiness + "/COM/PedidoVue/Edit/";
-        public string UrlTrocarVendedor = UrlCoreBusiness + "/COM/Pedido/TrocarVendedor";
+        public string UrlEditPedido => UrlCoreBusiness + "/COM/PedidoVue/Edit/";
+        public string UrlTrocarVendedor => UrlCoreBusiness + "/COM/Pedido/TrocarVendedor";
         #endregion
 
         #region Criar Pedido

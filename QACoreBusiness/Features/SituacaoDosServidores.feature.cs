@@ -77,7 +77,7 @@ namespace QACoreBusiness.Features
 #line 5
 testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
-testRunner.And("acesse a index de Situacao dos Servidores", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicar para acessar o contexto {\'Situação dos Servidores\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
 testRunner.And("seja redirecionado para URL de situacao dos servidores", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

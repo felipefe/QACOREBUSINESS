@@ -9,8 +9,8 @@ namespace QACoreBusiness.Elements
 {
     class ElementsCOMRecepcaoMercadoria : Base
     {
-        public string UrlRecepcaoMercadoria = UrlCoreBusiness + "/COM/LoteFiscal";
-        public string UrlLoteFiscalItem = UrlCoreBusiness + "/COM/LoteFiscalItem/Index/";
+        public string UrlRecepcaoMercadoria => UrlCoreBusiness + "/COM/LoteFiscal";
+        public string UrlLoteFiscalItem => UrlCoreBusiness + "/COM/LoteFiscalItem/Index/";
 
 
         public IWebElement ContextoRecepcaoMercadoria => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tile-group count-39 cols-13']//a[@data-title='Recepção de Mercadorias e Serviços']");

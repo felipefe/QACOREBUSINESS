@@ -3,7 +3,7 @@
 Background: Estar logado no Corebusiness
 Given que eu esteja logado no sistema
 And que esteja no hub principal
-And acesse a index de pedido
+And clicar para acessar o contexto {'Meus Pedidos'}
 
 @criar_pedido
 Scenario: Criar novo pedido
@@ -37,11 +37,11 @@ And informar o vendedor {'Vendedor Pablo Escobar'}
 And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 Then o sistema redireciona para index de pedidos
-And a situaçao do pedido nao deve estar em {Lançamento/Ediçao}
+And a situaçao do pedido deve ser {'Avaliação'}
 
 
 
-@criar_e_efetivar_pedido
+@criar_e_efetivar_pedido_restricao
 Scenario: Criar e efetivar pedido restrição
 When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
 And eu pesquisar no editText o cliente por CP {55918366903}
@@ -67,4 +67,4 @@ And informar o vendedor {'Vendedor Pablo Escobar'}
 And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 Then o sistema redireciona para index de pedidos
-And a situaçao do pedido nao deve estar em {Lançamento/Ediçao}
+And a situaçao do pedido deve ser {'Avaliação'}

@@ -9,11 +9,11 @@ namespace QACoreBusiness.StepDefinitions
     {
         ParametrosEmpresaUtil peu = new ParametrosEmpresaUtil();
 
-        [Given(@"acesse o contexto de Empresa")]
-        public void GivenAcesseOContextoDeEmpresa()
-        {
-            peu.AcessarContextoEmpresa();
-        }
+        //[Given(@"acesse o contexto de Empresa")]
+        //public void GivenAcesseOContextoDeEmpresa()
+        //{
+        //    peu.AcessarContextoEmpresa();
+        //}
         
         [Given(@"seja redirecionado para url \{/IDFe/Empresa/}")]
         public void GivenSejaRedirecionadoParaUrlIDFeEmpresa()

@@ -10,11 +10,11 @@ namespace QACoreBusiness.StepDefinitions.FIN
         ContratoFinanceiroUtil cfu = new ContratoFinanceiroUtil();
         //private int auxQtdParcelas;
 
-        [Given(@"acesse a index de contratos")]
-        public void GivenAcesseAIndexDeContratos()
-        {
-            cfu.AcesseIndexContrato();
-        }
+        //[Given(@"acesse a index de contratos")]
+        //public void GivenAcesseAIndexDeContratos()
+        //{
+        //    cfu.AcesseIndexContrato();
+        //}
         
         [Given(@"que seja clicado no botao criar contrato")]
         public void GivenQueSejaClicadoNoBotaoCriarContrato()

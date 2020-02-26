@@ -11,8 +11,8 @@ namespace QACoreBusiness.Elements
     {
 
         #region URLs de acesso
-        public string UrlIndexEmpresa = UrlCoreBusiness + "/IDFe/Empresa";
-        public string UrlParametroEmpresa = UrlCoreBusiness + "/Parametro/ParametrosEmpresa/";
+        public string UrlIndexEmpresa => UrlCoreBusiness + "/IDFe/Empresa";
+        public string UrlParametroEmpresa => UrlCoreBusiness + "/Parametro/ParametrosEmpresa/";
         #endregion
 
         public IWebElement ContextoEmpresa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tile-group count-18 cols-6']//a[@data-title='Empresas']");

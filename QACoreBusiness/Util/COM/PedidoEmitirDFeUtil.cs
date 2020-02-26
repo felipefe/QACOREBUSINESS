@@ -15,21 +15,22 @@ namespace QACoreBusiness.Util.COM
         public ParametrosEmpresaUtil parametro;
         public SituacaoDosServidoresUtil servidor;
         public string auxValorPedido;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
 
         public PedidoEmitirDFeUtil()
         {
-            pedido = new ElementsCOMPedidoWorkflow();
-            nfee = new ElementsNotasFiscaisEletronicasEmitidas();
+            driver = DriveOfDriver.GetInstanceDrive();
+            pedido = new ElementsCOMPedidoWorkflow { chromeDriver = driver };
+            nfee = new ElementsNotasFiscaisEletronicasEmitidas { chromeDriver = driver };
             servidor = new SituacaoDosServidoresUtil();
             parametro = new ParametrosEmpresaUtil();
         }
 
-        public void SitucaoPedido()
-        {
-            Assert.Equal("Conferido", pedido.SituacaoPedido.Text);
-            auxValorPedido = pedido.ColunaValorPedido.Text;
-        }
+        //public void SitucaoPedido()
+        //{
+        //    Assert.Equal("Conferido", pedido.SituacaoPedido.Text);
+        //    auxValorPedido = pedido.ColunaValorPedido.Text;
+        //}
 
         public void CoreServiceHabilitado()
         {

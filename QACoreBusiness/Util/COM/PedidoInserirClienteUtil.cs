@@ -12,12 +12,15 @@ namespace QACoreBusiness.Util
 {
     class PedidoInserirClienteUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        public IWebDriver driver;
         ElementsCOMPedido pedido;
 
         public PedidoInserirClienteUtil()
         {
-            pedido = new ElementsCOMPedido();
+            // driver = Base.GetChromeDriver();
+            driver = DriveOfDriver.GetInstanceDrive();
+            pedido = new ElementsCOMPedido { chromeDriver = driver };
+  
         }
 
         public void CliqueEditPedido()
@@ -35,10 +38,10 @@ namespace QACoreBusiness.Util
             driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
         }
 
-        public void PedidoStatusLançamentoEdiçao()
+        public void PedidoStatusLançamentoEdiçao(String situacao)
         {
 
-            Assert.Equal("Lançamento / Edição", pedido.SituacaoPedido.Text);
+            Assert.Equal(situacao, pedido.SituacaoPedido.Text);
 
         }
 
@@ -69,6 +72,7 @@ namespace QACoreBusiness.Util
         {
             //bool achou = ElementWait.WaitTextToBePresentInElement(driver, ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']"), "A pessoa do pedido foi alterada com sucesso.");
             //Assert.True(achou);
+            Thread.Sleep(500);
             Assert.Equal("A pessoa do pedido foi alterada com sucesso.", pedido.AlertaMensagemPedidoAtualizado.Text);
 
         }

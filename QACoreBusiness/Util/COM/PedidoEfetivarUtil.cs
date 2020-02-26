@@ -9,12 +9,13 @@ namespace QACoreBusiness.Util
 {
     class PedidoEfetivarUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         ElementsCOMPedido pedido;
 
         public PedidoEfetivarUtil()
         {
-            pedido = new ElementsCOMPedido();
+            driver = DriveOfDriver.GetInstanceDrive();
+            pedido = new ElementsCOMPedido { chromeDriver = driver};
         }
 
         public void PedidoComCliente()
@@ -54,10 +55,10 @@ namespace QACoreBusiness.Util
             Assert.Equal( pedido.UrlIndexPedido, driver.Url);
         }
 
-        public void SituaçaoPedido()
-        {
-            Assert.DoesNotContain("Lançamento / Edição", pedido.SituacaoPedido.Text);
-        }
+        //public void SituaçaoPedido()
+        //{
+        //    Assert.DoesNotContain("Lançamento / Edição", pedido.SituacaoPedido.Text);
+        //}
 
         public void NaoRedirecionaIndexPEdidos()
         {

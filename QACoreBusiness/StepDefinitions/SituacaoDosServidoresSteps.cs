@@ -10,11 +10,11 @@ namespace QACoreBusiness.StepDefinitions
     {
         SituacaoDosServidoresUtil ssu = new SituacaoDosServidoresUtil();
 
-        [Given(@"acesse a index de Situacao dos Servidores")]
-        public void GivenAcesseAIndexDeSituacaoDosServidores()
-        {
-            ssu.IndexSituacaoServidores();
-        }
+        //[Given(@"acesse a index de Situacao dos Servidores")]
+        //public void GivenAcesseAIndexDeSituacaoDosServidores()
+        //{
+        //    ssu.IndexSituacaoServidores();
+        //}
 
         [Given(@"seja redirecionado para URL de situacao dos servidores")]
         public void GivenSejaRedirecionadoParaURLDeSituacaoDosServidores()

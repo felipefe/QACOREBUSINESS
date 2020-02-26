@@ -10,12 +10,13 @@ namespace QACoreBusiness.Util
 {
     class PedidoSeparacaoUtil 
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         ElementsCOMPedidoWorkflow separacao;
 
         public PedidoSeparacaoUtil()
         {
-            separacao = new ElementsCOMPedidoWorkflow();
+            driver = DriveOfDriver.GetInstanceDrive();
+            separacao = new ElementsCOMPedidoWorkflow { chromeDriver = driver };
         }
 
         public void SituacaoPedido()
@@ -71,9 +72,9 @@ namespace QACoreBusiness.Util
             separacao.BotaoFinalizarSeparacaoCOM.Click();
         }
 
-        public void SituacaoPedidoEmConferencia()
-        {
-            Assert.Equal("Conferência", separacao.SituacaoPedido.Text);
-        }
+        //public void SituacaoPedidoEmConferencia()
+        //{
+        //    Assert.Equal("Conferência", separacao.SituacaoPedido.Text);
+        //}
     }
 }

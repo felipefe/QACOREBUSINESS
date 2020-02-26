@@ -3,7 +3,7 @@
 
 Background: Estar logado e acessar os parametros da empresa
 Given que eu esteja logado no sistema
-And acesse o contexto de Empresa
+And clicar para acessar o contexto {'Empresas'}
 And seja redirecionado para url {/IDFe/Empresa/}
 And clique no botao dos Parametros da Empresa
 And seja redirecionado para url dos parametros {/Parametro/ParametrosEmpresa/}

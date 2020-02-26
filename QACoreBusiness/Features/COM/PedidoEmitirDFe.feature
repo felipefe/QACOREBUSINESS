@@ -8,8 +8,8 @@ Background: Estar logado no Corebusiness
 Given que eu esteja logado no sistema
 And o coreservice esteja habilitado
 And ambiente de homologaçao esteja habilitado
-And acesse a index de pedido
-And tenha um pedido criado na situaçao {Conferido}
+And clicar para acessar o contexto {'Meus Pedidos'}
+And tenha um pedido criado na situaçao {'Conferido'}
 
 
 @emitir_documentos_fiscais

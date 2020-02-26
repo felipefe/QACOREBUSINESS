@@ -14,61 +14,78 @@ namespace QACoreBusiness.Util
 
     public class AbrirNavegadorUtil
     {
-        ElementsAbrirNavegador tela;
-        IWebDriver driverNavegadorChrome;
+        private Base login;
+        public  IWebDriver driverNavegadorChrome;
 
-     
-        public void IniciarNavegador()
+        public AbrirNavegadorUtil()
         {
-
-            driverNavegadorChrome = Base.chromeDriver;
-            driverNavegadorChrome.Manage().Window.Maximize();
-
-            tela = new ElementsAbrirNavegador ();
+            driverNavegadorChrome = Base.GetChromeDriver();
+            login = new Base { chromeDriver = driverNavegadorChrome };        
         }
 
-        internal void MensagemLoginInvalido()
+        public void AcesseIndex(string contexto)
+        {
+            IWebElement index = ElementWait.WaitForElementXpath(driverNavegadorChrome, "//a[@data-title='" + contexto + "']");
+            Thread.Sleep(1000);
+            index.Click();
+        }
+
+        public void CliqueSairSistema()
+        {
+            login.MenuUsuarioLogado.Click();
+            Thread.Sleep(800);
+            login.MenuUsuarioLogadoSair.Click();
+        }
+
+        public void IniciarNavegador()
+        {
+            driverNavegadorChrome.Manage().Window.Maximize();
+        }
+
+        public void MensagemLoginInvalido()
         {
             ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='red card z-depth-4']//div[@class='card-content white-text']");
-            Assert.Equal("Erro ao efetuar login", tela.MensagemLoginInvalido.Text);
+            Assert.Equal("Erro ao efetuar login", login.MensagemLoginInvalido.Text);
         }
 
         public void CliqueEntrarSistema()
         {
-            tela.BotaoEfetuarLogin.Click();
+            login.BotaoEfetuarLogin.Click();
             
         }
 
         internal void TelaDeLogin()
         {
-            driverNavegadorChrome.Navigate().GoToUrl(ElementsAbrirNavegador.UrlCoreBusiness);
+            driverNavegadorChrome.Navigate().GoToUrl(login.UrlCoreBusiness);
             Thread.Sleep(1000);
         }
 
-        internal void InsereDados()
+        public void InsereDados()
         {
-            ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='container']//div[@class='row'][2]//div[@class='col s12 m6 offset-m3']//form");
-            tela.Usuario.SendKeys("DeltaconUser");
-            tela.Senha.SendKeys("Delt@12345");
+           login.Usuario.SendKeys("DeltaconUser");
+            login.Senha.SendKeys("Delt@12345");
            
         }
 
         public void InsereDadosInvalidos()
         {
-            ElementWait.WaitForElementXpath(driverNavegadorChrome, "//div[@class='container']//div[@class='row'][2]//div[@class='col s12 m6 offset-m3']//form");
-            tela.Usuario.SendKeys("goku");
-            tela.Senha.SendKeys("cacaroto");
+            login.Usuario.SendKeys("goku");
+            login.Senha.SendKeys("cacaroto");
         }
 
         public void PaginaInicialCoreBusiness()
         {
-            String URL = driverNavegadorChrome.Url;
-            Assert.Equal(ElementsAbrirNavegador.UrlCoreBusiness + "/Home/MosaicoV2", URL);
+            Assert.Equal(login.UrlCoreBusiness + "/Home/MosaicoV2", driverNavegadorChrome.Url);
             Thread.Sleep(500);
         }
 
+        public void UrlNotIsHub()
+        {
+            Thread.Sleep(500);
+            Assert.NotEqual(login.UrlCoreBusiness + "/Home/MosaicoV2", driverNavegadorChrome.Url); 
+        }
 
-        public void RealizarLogon()
+        public void RealizaLogon()
         {
             IniciarNavegador();
             TelaDeLogin();
@@ -76,7 +93,10 @@ namespace QACoreBusiness.Util
             CliqueEntrarSistema();
         }
 
-
+        public void ValidaUrlLoginCore()
+        {
+            Assert.Equal(login.UrlLoginCoreBusiness, driverNavegadorChrome.Url);
+        }
     }
 
 }

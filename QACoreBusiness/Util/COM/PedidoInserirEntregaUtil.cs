@@ -10,12 +10,13 @@ namespace QACoreBusiness.Util
 {
     class PedidoInserirEntregaUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         ElementsCOMPedido pedido;
 
         public PedidoInserirEntregaUtil()
         {
-            pedido = new ElementsCOMPedido();
+            driver = DriveOfDriver.GetInstanceDrive();
+            pedido = new ElementsCOMPedido { chromeDriver = driver };
         }
 
 

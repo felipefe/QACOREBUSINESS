@@ -9,11 +9,11 @@ namespace QACoreBusiness.StepDefinitions
     {
         GestorFinanceiroReceitaUtil gfu = new GestorFinanceiroReceitaUtil();
 
-        [Given(@"acesse a index gestor financeiro")]
-        public void GivenAcesseAIndexGestorFinanceiro()
-        {
-            gfu.AcesseIndexGestorFinanceiro();
-        }
+        //[Given(@"acesse a index gestor financeiro")]
+        //public void GivenAcesseAIndexGestorFinanceiro()
+        //{
+        //    gfu.AcesseIndexGestorFinanceiro();
+        //}
         
         [Given(@"que clica na aba Contas a Receber")]
         public void GivenQueClicaNaAbaContasAReceber()

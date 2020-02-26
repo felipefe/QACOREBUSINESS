@@ -2,7 +2,7 @@
 
 Background: Logar e acessar gestor financeiro
 Given que eu esteja logado no sistema
-And acesse a index gestor financeiro
+And clicar para acessar o contexto {'Gestor Financeiro'}
 
 
 @despesa_baixar_parcela_dinheiro

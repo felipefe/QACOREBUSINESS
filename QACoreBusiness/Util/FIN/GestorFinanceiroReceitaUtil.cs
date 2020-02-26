@@ -13,7 +13,7 @@ namespace QACoreBusiness.Util.FIN
     class GestorFinanceiroReceitaUtil
     {
         ElementsFINGestorFinanceiro gestor;
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         IWebElement ParcelaCreditoAbatimento = null;
         string novoVencimento;
         Double auxValorAbater;
@@ -24,13 +24,14 @@ namespace QACoreBusiness.Util.FIN
 
         public GestorFinanceiroReceitaUtil()
         {
-            gestor = new ElementsFINGestorFinanceiro();
+            driver = DriveOfDriver.GetInstanceDrive();
+            gestor = new ElementsFINGestorFinanceiro { chromeDriver = driver };
         }
 
-        public void AcesseIndexGestorFinanceiro()
-        {
-            gestor.ContextoGestorFinanceiro.Click();
-        }
+        //public void AcesseIndexGestorFinanceiro()
+        //{
+        //    gestor.ContextoGestorFinanceiro.Click();
+        //}
 
         public void CliqueAbaContasReceber()
         {

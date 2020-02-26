@@ -8,12 +8,6 @@ namespace QACoreBusiness.StepDefinitions
     public class PedidoAvaliacaoSteps
     {
         PedidoAvaliacaoUtil pau = new PedidoAvaliacaoUtil();
-
-        [Given(@"tenha um pedido criado na situaçao \{Avaliaçao}")]
-        public void GivenTenhaUmPedidoCriadoNaSituacaoAvaliacao()
-        {
-            pau.PedidoEmStatusAvaliacao();
-        }
         
         [Given(@"que eu acesse as actions do pedido")]
         public void GivenQueEuAcesseAsActionsDoPedido()

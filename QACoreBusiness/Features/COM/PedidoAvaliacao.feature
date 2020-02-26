@@ -4,8 +4,8 @@ Background: Estar logado no Corebusiness
 			e estar na tela de pedidos
 			e ter um pedido em avaliaçao
 Given que eu esteja logado no sistema
-And acesse a index de pedido
-And tenha um pedido criado na situaçao {Avaliaçao}
+And clicar para acessar o contexto {'Meus Pedidos'}
+And tenha um pedido criado na situaçao {'Avaliação'}
 
 
 @avaliar_pedido
@@ -15,7 +15,7 @@ And clique no botao Avaliaçao do Pedido
 And seja redirecionado para tela CRM Avaliar Pedido
 When eu clicar no botao Prosseguir
 Then serei redirecionado para index de pedidos
-And a situaçao do meu pedido deve ser {Separação}
+And a situaçao do pedido deve ser {'Separação'}
 
 @bloquear_pedido
 Scenario: Bloquear pedido

@@ -79,7 +79,7 @@ testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk
 #line 5
 testRunner.And("que esteja no hub principal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
-testRunner.And("acesse a index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -173,7 +173,7 @@ testRunner.And("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTal
 #line 39
 testRunner.Then("o sistema redireciona para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 40
-testRunner.And("a situaçao do pedido nao deve estar em {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a situaçao do pedido deve ser {\'Avaliação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -181,11 +181,11 @@ testRunner.And("a situaçao do pedido nao deve estar em {Lançamento/Ediçao}", 
         [Xunit.FactAttribute(DisplayName="Criar e efetivar pedido restrição")]
         [Xunit.TraitAttribute("FeatureTitle", "PedidoCriarNovo")]
         [Xunit.TraitAttribute("Description", "Criar e efetivar pedido restrição")]
-        [Xunit.TraitAttribute("Category", "criar_e_efetivar_pedido")]
+        [Xunit.TraitAttribute("Category", "criar_e_efetivar_pedido_restricao")]
         public virtual void CriarEEfetivarPedidoRestricao()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar e efetivar pedido restrição", null, new string[] {
-                        "criar_e_efetivar_pedido"});
+                        "criar_e_efetivar_pedido_restricao"});
 #line 45
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -241,7 +241,7 @@ testRunner.And("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTal
 #line 69
 testRunner.Then("o sistema redireciona para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
-testRunner.And("a situaçao do pedido nao deve estar em {Lançamento/Ediçao}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a situaçao do pedido deve ser {\'Avaliação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

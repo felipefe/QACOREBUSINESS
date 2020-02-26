@@ -2,7 +2,7 @@
 
 Background: logar e acessar index contratos
 Given que eu esteja logado no sistema
-And acesse a index de contratos
+And clicar para acessar o contexto {'Contratos'}
 
 
 @create_contrato

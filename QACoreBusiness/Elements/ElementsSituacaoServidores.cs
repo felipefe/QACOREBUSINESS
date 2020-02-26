@@ -10,8 +10,8 @@ namespace QACoreBusiness.Elements
     {
 
         #region URLs de Acesso
-        public string UrlSituacaoServidores = UrlCoreBusiness + "/ServiceStatus/Status";
-        public string UrlLimparMensagensCoreService = UrlCoreBusiness + "/UserTask/ShowStatus?taskHash=";
+        public string UrlSituacaoServidores => UrlCoreBusiness + "/ServiceStatus/Status";
+        public string UrlLimparMensagensCoreService => UrlCoreBusiness + "/UserTask/ShowStatus?taskHash=";
         #endregion
 
 

@@ -11,12 +11,12 @@ namespace QACoreBusiness.Elements
     {
 
         #region URLs de Acesso
-        public string UrlAvaliacaoPedido = UrlCoreBusiness + "/CRM/Avaliacao/Avaliar/";
-        public string UrlSeparacaoPedido = UrlCoreBusiness + "/WMS/Separacao/Execute/";
-        public string UrlCOMFinalizarSeparacao = UrlCoreBusiness + "/COM/Pedido/FinalizarPickingList/";
-        public string UrlConferenciaPedido = UrlCoreBusiness + "/WMS/Conferencia/Execute/";
-        public string UrlFinalizarConferenciaCOM = UrlCoreBusiness + "/COM/PedidoEntrega/FinalizarConferencia/";
-        public string UrlEntregasRemessasPedidoConferido = UrlCoreBusiness + "/COM/PedidoEntrega/Index/";
+        public string UrlAvaliacaoPedido => UrlCoreBusiness + "/CRM/Avaliacao/Avaliar/";
+        public string UrlSeparacaoPedido => UrlCoreBusiness + "/WMS/Separacao/Execute/";
+        public string UrlCOMFinalizarSeparacao => UrlCoreBusiness + "/COM/Pedido/FinalizarPickingList/";
+        public string UrlConferenciaPedido => UrlCoreBusiness + "/WMS/Conferencia/Execute/";
+        public string UrlFinalizarConferenciaCOM => UrlCoreBusiness + "/COM/PedidoEntrega/FinalizarConferencia/";
+        public string UrlEntregasRemessasPedidoConferido => UrlCoreBusiness + "/COM/PedidoEntrega/Index/";
         #endregion
 
         #region Avaliar Pedido
@@ -38,7 +38,7 @@ namespace QACoreBusiness.Elements
         #endregion
 
         #region Conferir Pedido
-        public IWebElement ActionsConferenciaPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@class='popup-link tool-item gradient'][@data-content='Conferência']");
+        public IWebElement ActionsConferenciaPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Conferência']");
         public IWebElement BotaoReiniciarProcesso => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui grid']//div[@class='eight wide column']//button[@class='ui red large labeled icon button']");
         public IWebElement BotaoReiniciarConferenciaFinalizada => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui two column grid']//div[@class='ui red segment']//button[@class='ui red large fluid labeled icon button']");
         public IWebElement BotaoConcluirProcesso => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui grid']//div[@class='right aligned eight wide column']//button[@class='ui orange large labeled icon button']");

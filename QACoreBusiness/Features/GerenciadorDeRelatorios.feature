@@ -2,7 +2,7 @@
 
 Background: Logar e acessar gestor financeiro
 Given que eu esteja logado no sistema
-And acesse a index gerenciador de relatorios
+And clicar para acessar o contexto {'Gerenciador de Relatórios'}
 
 
 @importar_relatorio_estoque

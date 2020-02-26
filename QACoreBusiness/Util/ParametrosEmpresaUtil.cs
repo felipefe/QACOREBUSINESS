@@ -10,18 +10,19 @@ namespace QACoreBusiness.Util
 {
     class ParametrosEmpresaUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         ElementsParametrosEmpresa parametro;
 
         public ParametrosEmpresaUtil()
         {
-            parametro = new ElementsParametrosEmpresa();
+            driver = DriveOfDriver.GetInstanceDrive();
+            parametro = new ElementsParametrosEmpresa { chromeDriver = driver };
         }
 
-        public void AcessarContextoEmpresa()
-        {
-            parametro.ContextoEmpresa.Click();
-        }
+        //public void AcessarContextoEmpresa()
+        //{
+        //    parametro.ContextoEmpresa.Click();
+        //}
 
         public void ValidaUrlContextoEmpresa()
         {
@@ -45,7 +46,7 @@ namespace QACoreBusiness.Util
             CliqueAcessoParametrosEmpresa();
             CliqueEditarParametroNFE();
             AmbienteHomologacaoSelecionado();
-            driver.Navigate().GoToUrl(Base.UrlCoreBusiness);
+            driver.Navigate().GoToUrl(parametro.UrlCoreBusiness);
         }
 
         public void CliqueEditarParametroNFE()

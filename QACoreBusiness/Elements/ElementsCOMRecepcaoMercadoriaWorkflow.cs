@@ -12,15 +12,15 @@ namespace QACoreBusiness.Elements
     class ElementsCOMRecepcaoMercadoriaWorkflow : ElementsCOMRecepcaoMercadoria
     {
         #region Urls de Acesso
-        public string UrlCreateRecepcaoMercadoria = UrlCoreBusiness + "/COM/LoteFiscal/Create";
-        public string UrlCreateLoteFiscalItem = UrlCoreBusiness + "/COM/LoteFiscalItem/Create?idLote=";
-        public string UrlEscriturarItens = UrlCoreBusiness + "/COM/LoteFiscal/Escriturar/";
-        public string UrlEscriturarItemManual = UrlCoreBusiness + "/COM/LoteFiscalItem/EscriturarProduto/";
-        public string UrlFinalizarRecepcao = UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
-        public string UrlConferenciaFisicaLF = UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
-        public string ArquivoUploadXmlRecepcao = PathLocalProject + "\\extras\\recepcao.exe";
-        public string UrlIdfeNfeImpDestinadasNativo = UrlCoreBusiness + "/IDFe/NFe/ImpDestinadasNativo";
-        public string UrlGerenciarRecepcoes = UrlCoreBusiness + "/COM/LoteFiscal/GerenciarRecepcoes";
+        public string UrlCreateRecepcaoMercadoria => UrlCoreBusiness + "/COM/LoteFiscal/Create";
+        public string UrlCreateLoteFiscalItem => UrlCoreBusiness + "/COM/LoteFiscalItem/Create?idLote=";
+        public string UrlEscriturarItens => UrlCoreBusiness + "/COM/LoteFiscal/Escriturar/";
+        public string UrlEscriturarItemManual => UrlCoreBusiness + "/COM/LoteFiscalItem/EscriturarProduto/";
+        public string UrlFinalizarRecepcao => UrlCoreBusiness + "/COM/LoteFiscal/FinalizarRecepcao/";
+        public string UrlConferenciaFisicaLF => UrlCoreBusiness + "/COM/LoteFiscal/ConferenciaFisica/";
+        public string ArquivoUploadXmlRecepcao => PathLocalProject + "\\extras\\recepcao.exe";
+        public string UrlIdfeNfeImpDestinadasNativo => UrlCoreBusiness + "/IDFe/NFe/ImpDestinadasNativo";
+        public string UrlGerenciarRecepcoes => UrlCoreBusiness + "/COM/LoteFiscal/GerenciarRecepcoes";
 
         #endregion
 

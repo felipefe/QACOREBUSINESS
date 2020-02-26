@@ -12,21 +12,22 @@ namespace QACoreBusiness.Util
 {
     class GerenciadorDeRelatoriosUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         IWebElement relatorioEdit = null;
         ElementsRPTGerenciadorDeRelatorios rpt;
         int indexContainerAction;
 
         public GerenciadorDeRelatoriosUtil()
         {
-            rpt = new ElementsRPTGerenciadorDeRelatorios();
+            driver = DriveOfDriver.GetInstanceDrive();
+            rpt = new ElementsRPTGerenciadorDeRelatorios { chromeDriver = driver };
         }
 
-        public void AcesseContextoGerenciadorRelatorio()
-        {
-            rpt.ContextoGerenciadoRelatorios.Click();
-            System.Threading.Thread.Sleep(1000);
-        }
+        //public void AcesseContextoGerenciadorRelatorio()
+        //{
+        //    rpt.ContextoGerenciadoRelatorios.Click();
+        //    System.Threading.Thread.Sleep(1000);
+        //}
 
         public void CliqueDefinicoesDeRelatorios()
         {

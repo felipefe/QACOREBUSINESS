@@ -3,7 +3,7 @@
 
 Background: Habilitar o COREService
 Given que eu esteja logado no sistema
-And acesse a index de Situacao dos Servidores
+And clicar para acessar o contexto {'Situação dos Servidores'}
 And seja redirecionado para URL de situacao dos servidores
 
 

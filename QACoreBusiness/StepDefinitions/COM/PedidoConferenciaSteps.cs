@@ -8,12 +8,6 @@ namespace QACoreBusiness.StepDefinitions
     public class PedidoConferenciaSteps
     {
         PedidoConferenciaUtil pcu = new PedidoConferenciaUtil();
-
-        [Given(@"tenha um pedido criado na situaçao \{Conferência}")]
-        public void GivenTenhaUmPedidoCriadoNaSituacaoConferencia()
-        {
-            pcu.SituacaoPedidoConferencia();
-        }
         
         [Given(@"clique no botao Conferencia")]
         public void GivenCliqueNoBotaoConferencia()

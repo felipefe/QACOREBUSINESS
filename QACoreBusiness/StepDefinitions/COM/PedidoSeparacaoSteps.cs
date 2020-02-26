@@ -70,10 +70,10 @@ namespace QACoreBusiness.StepDefinitions
             psu.CliqueFinalizarSeparacaoCOM();
         }
         
-        [Then(@"a situaçao do meu pedido deve ser alterada para \{Conferência}")]
-        public void ThenASituacaoDoMeuPedidoDeveSerAlteradaParaConferencia()
-        {
-            psu.SituacaoPedidoEmConferencia();
-        }
+        //[Then(@"a situaçao do meu pedido deve ser alterada para \{Conferência}")]
+        //public void ThenASituacaoDoMeuPedidoDeveSerAlteradaParaConferencia()
+        //{
+        //    psu.SituacaoPedidoEmConferencia();
+        //}
     }
 }

@@ -8,11 +8,11 @@ namespace QACoreBusiness.StepDefinitions
     {
         GerenciadorDeRelatoriosUtil gru = new GerenciadorDeRelatoriosUtil();
 
-        [Given(@"acesse a index gerenciador de relatorios")]
-        public void GivenAcesseAIndexGerenciadorDeRelatorios()
-        {
-            gru.AcesseContextoGerenciadorRelatorio();
-        }
+        //[Given(@"acesse a index gerenciador de relatorios")]
+        //public void GivenAcesseAIndexGerenciadorDeRelatorios()
+        //{
+        //    gru.AcesseContextoGerenciadorRelatorio();
+        //}
         
         [Given(@"que seja clicado no botao Definicoes de Relatorios")]
         public void GivenQueSejaClicadoNoBotaoDefinicoesDeRelatorios()

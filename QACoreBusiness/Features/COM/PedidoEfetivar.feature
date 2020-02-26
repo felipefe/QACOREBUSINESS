@@ -2,8 +2,8 @@
 
 Background: Ter um pedido criado
 Given que eu esteja logado no sistema
-And acesse a index de pedido
-And tenha um pedido criado na situaçao {Lançamento/Ediçao}
+And clicar para acessar o contexto {'Meus Pedidos'}
+And tenha um pedido criado na situaçao {'Lançamento / Edição'}
 And clique para editar este pedido
 And seja redirecionado para tela de ediçao
 
@@ -16,7 +16,7 @@ And tenha adicionado negociaçao
 And tenha adicionado vendedor
 When eu clicar no botao Efetivar Pedido
 Then o sistema redireciona para index de pedidos
-And a situaçao do pedido nao deve estar em {Lançamento/Ediçao}
+And a situaçao do pedido deve ser {'Avaliação'}
 
 @efetivar_pedido_falha
 Scenario: Falha efetivar pedido

@@ -4,8 +4,8 @@ Background: Estar logado no Corebusiness
 			e estar na tela de pedidos
 			e ter um pedido em conferencia
 Given que eu esteja logado no sistema
-And acesse a index de pedido
-And tenha um pedido criado na situaçao {Conferência}
+And clicar para acessar o contexto {'Meus Pedidos'}
+And tenha um pedido criado na situaçao {'Conferência'}
 
 @conferir_item_pedido
 Scenario: Conferir item pedido

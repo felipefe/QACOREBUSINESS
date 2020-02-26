@@ -4,8 +4,8 @@ Background: Estar logado no Corebusiness
 			e estar na tela de pedidos
 			e ter um pedido em separaçao
 Given que eu esteja logado no sistema
-And acesse a index de pedido
-And tenha um pedido criado na situaçao {Separaçao}
+And clicar para acessar o contexto {'Meus Pedidos'}
+And tenha um pedido criado na situaçao {'Separação'}
 
 @separar_itens_pedido
 Scenario: Separar itens pedido
@@ -20,4 +20,4 @@ When eu clicar no botao Finalizar
 And ser redicionado para a tela COM Finalizar Separaçao
 And clicar no botao Finalizar Separaçao
 Then serei redirecionado para index de pedidos
-And a situaçao do meu pedido deve ser alterada para {Conferência}
+And a situaçao do pedido deve ser {'Conferência'}

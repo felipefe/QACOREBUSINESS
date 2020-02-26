@@ -7,26 +7,24 @@ namespace QACoreBusiness.StepDefinitions
     [Binding]
     public class PedidoCriarNovoSteps
     {
-        AbrirNavegadorUtil realizarLogin = new AbrirNavegadorUtil();
         PedidoCriarNovoUtil pedido = new PedidoCriarNovoUtil();
-
-        [Given(@"que eu esteja logado no sistema")]
-        public void GivenQueEuEstejaLogadoNoSistema()
-        {
-            realizarLogin.RealizarLogon();
-        }
+        
         
         [Given(@"que esteja no hub principal")]
         public void GivenQueEstejaNoHubPrincipal()
         {
-            realizarLogin.PaginaInicialCoreBusiness();
+            pedido.PaginaInicialCoreBusiness();
+            
+            //ScenarioContext.Current
+            //ScenarioContext.Current.Set<PedidoCriarNovoUtil>( pedido  , "chave");
         }
         
-        [Given(@"acesse a index de pedido")]
-        public void GivenAcesseAIndexDePedido()
-        {
-            pedido.AcessarIndexPedidos();
-        }
+        //[Given(@"acesse a index de pedido")]
+        //public void GivenAcesseAIndexDePedido()
+        //{
+        //    pedido.AcessarIndexPedidos();
+        //   // DriveOfDriver.SetInstanceDrive(pedido.driver);
+        //}
         
         [When(@"o usuario clicar no botao Criar Novo Pedido \{Nova Venda de Mercadorias e Serviços}")]
         public void WhenOUsuarioClicarNoBotaoCriarNovoPedidoNovaVendaDeMercadoriasEServicos()
@@ -64,5 +62,8 @@ namespace QACoreBusiness.StepDefinitions
         {
             pedido.UrlEditPedido();
         }
+
+
+
     }
 }

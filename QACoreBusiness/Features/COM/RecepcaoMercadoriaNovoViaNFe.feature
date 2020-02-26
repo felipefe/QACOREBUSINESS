@@ -2,7 +2,7 @@
 	
 Background: Estar logado e na index de recepção de mercadoria
 Given que eu esteja logado no sistema
-And acesse a index de recepcao de mercadoria
+And clicar para acessar o contexto {'Recepção de Mercadorias e Serviços'}
 
 
 @recepcao_mercadoria_novo_via_nfe

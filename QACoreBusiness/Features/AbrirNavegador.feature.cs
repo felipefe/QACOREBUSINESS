@@ -126,6 +126,50 @@ testRunner.Then("uma mensagem de Erro ao efetuar login deve aparecer", ((string)
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="logado e acesse o contexto")]
+        [Xunit.TraitAttribute("FeatureTitle", "AbrirNavegadorELogar")]
+        [Xunit.TraitAttribute("Description", "logado e acesse o contexto")]
+        [Xunit.TraitAttribute("Category", "logado_acesse_contexto")]
+        public virtual void LogadoEAcesseOContexto()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("logado e acesse o contexto", null, new string[] {
+                        "logado_acesse_contexto"});
+#line 21
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 22
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+testRunner.When("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+testRunner.Then("sistema deve redirecionar a pagina", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="logado e deslogar")]
+        [Xunit.TraitAttribute("FeatureTitle", "AbrirNavegadorELogar")]
+        [Xunit.TraitAttribute("Description", "logado e deslogar")]
+        [Xunit.TraitAttribute("Category", "logado_contexto_deslogar")]
+        public virtual void LogadoEDeslogar()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("logado e deslogar", null, new string[] {
+                        "logado_contexto_deslogar"});
+#line 28
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 29
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 30
+testRunner.And("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+testRunner.When("clicar para Sair do sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+testRunner.Then("redireciona para tela de login do corebusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

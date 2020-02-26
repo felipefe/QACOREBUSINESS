@@ -2,8 +2,8 @@
 
 Background: Ter um pedido criado com cliente adicionado
 Given que eu esteja logado no sistema
-And acesse a index de pedido
-And tenha um pedido criado na situaçao {Lançamento/Ediçao}
+And clicar para acessar o contexto {'Meus Pedidos'}
+And tenha um pedido criado na situaçao {'Lançamento / Edição'}
 And clique para editar este pedido
 And seja redirecionado para tela de ediçao
 And já tenha informado o cliente

@@ -1,4 +1,5 @@
-﻿using QACoreBusiness.Util;
+﻿using OpenQA.Selenium;
+using QACoreBusiness.Util;
 using System;
 using TechTalk.SpecFlow;
 
@@ -7,8 +8,22 @@ namespace QACoreBusiness.StepDefinitions
     [Binding]
     public class PedidoInserirClienteSteps
     {
-        AbrirNavegadorUtil open = new AbrirNavegadorUtil();
+       // AbrirNavegadorUtil open = new AbrirNavegadorUtil();
         PedidoInserirClienteUtil pic = new PedidoInserirClienteUtil();
+
+        //private readonly PedidoInserirClienteUtil contexto;
+
+        //public PedidoCriarNovoSteps(ScenarioContext contexto)
+        //{
+        //    this.contexto = contexto;
+
+        //}
+        //public PedidoInserirClienteSteps()
+        //{
+        //    //var value = ScenarioContext.Current.Get<IWebDriver>("driver");
+        //    //pic.driver = DriveDoDriver.GetInstanceDrive();
+        //}
+
 
         [Given(@"seja redirecionado para tela de ediçao")]
         public void GivenSejaRedirecionadoParaTelaDeEdicao()
@@ -16,12 +31,13 @@ namespace QACoreBusiness.StepDefinitions
             pic.AcessarUrlEditPedido();
         }
 
-
-        [Given(@"tenha um pedido criado na situaçao \{Lançamento/Ediçao}")]
-        public void GivenTenhaUmPedidoCriadoNaSituacaoLancamentoEdicao()
+        [Given(@"tenha um pedido criado na situaçao \{'(.*)'}")]
+        public void GivenTenhaUmPedidoCriadoNaSituacao(string status)
         {
-            pic.PedidoStatusLançamentoEdiçao();
+            pic.PedidoStatusLançamentoEdiçao(status);
         }
+
+
 
         [Given(@"clique para editar este pedido")]
         public void GivenCliqueParaEditarEstePedido()

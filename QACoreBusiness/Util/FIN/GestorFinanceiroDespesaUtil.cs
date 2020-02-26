@@ -10,12 +10,13 @@ namespace QACoreBusiness.Util.FIN
 {
     class GestorFinanceiroDespesaUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         ElementsFINGestorFinanceiro gestor;
 
         public GestorFinanceiroDespesaUtil()
         {
-            gestor = new ElementsFINGestorFinanceiro();
+            driver = DriveOfDriver.GetInstanceDrive();
+            gestor = new ElementsFINGestorFinanceiro { chromeDriver = driver };
         }
 
         public void CliqueAbaContasPagar()
@@ -25,6 +26,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void CliquePesquisarDespesas()
         {
+            Thread.Sleep(500);
             gestor.PesquisaDespesaGestorFinanceiro.Click();
             Thread.Sleep(1500);
         }
@@ -32,7 +34,7 @@ namespace QACoreBusiness.Util.FIN
         public void CliqueLimparFiltro()
         {
             gestor.LimparFiltroDespesas.Click();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
         }
 
         public void CliqueFiltrarDespesa()

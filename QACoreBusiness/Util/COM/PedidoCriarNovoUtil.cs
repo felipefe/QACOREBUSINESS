@@ -3,20 +3,31 @@ using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using Xunit;
 
 namespace QACoreBusiness.Util
 {
     class PedidoCriarNovoUtil
     {
-        IWebDriver driver = Base.chromeDriver;
-        ElementsCOMPedido pedido;
+        public IWebDriver driver;
+        private ElementsCOMPedido pedido;
 
-
-        public void AcessarIndexPedidos()
+        public PedidoCriarNovoUtil()
         {
-            pedido = new ElementsCOMPedido();
-            driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
+            driver = DriveOfDriver.GetInstanceDrive();
+            pedido = new ElementsCOMPedido { chromeDriver = driver };
+        }
+
+        //public void AcessarIndexPedidos()
+        //{
+        //    driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
+        //}
+
+        public void PaginaInicialCoreBusiness()
+        {
+            Assert.Equal(pedido.UrlCoreBusiness + "/Home/MosaicoV2", driver.Url);
+            Thread.Sleep(500);
         }
 
         public void CriarNovoPedido()
@@ -43,13 +54,13 @@ namespace QACoreBusiness.Util
 
         public void CliqueSessaoPagamento()
         {
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             pedido.SessaoPagamento.Click();
         }
 
         public void CliqueTrocarVendedor()
         {
-            System.Threading.Thread.Sleep(2000);
+            Thread.Sleep(2000);
             pedido.ActionsTrocarVendedor.Click();
         }
     }

@@ -14,10 +14,10 @@ namespace QACoreBusiness.Elements
         #region URLs de Acesso
         public string UrlCreateContrato => UrlContextoContrato + "/Create";
         public string UrlParcelasContrato => UrlContextoContrato + "/Parcelas?idContrato=";
-        public string UrlContextoContrato = UrlCoreBusiness + "/FIN/Contrato";
-        public string UrlContratoPagtoAntecipado = UrlCoreBusiness + "/FIN/PagamentoAntecipado/Create";
-        public string UrlLancarReceita = UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=C";
-        public string UrlLancarDespesa = UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=D";
+        public string UrlContextoContrato => UrlCoreBusiness + "/FIN/Contrato";
+        public string UrlContratoPagtoAntecipado => UrlCoreBusiness + "/FIN/PagamentoAntecipado/Create";
+        public string UrlLancarReceita => UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=C";
+        public string UrlLancarDespesa => UrlCoreBusiness + "/FIN/DespesaReceita/Create?tipoPC=D";
         #endregion
 
 

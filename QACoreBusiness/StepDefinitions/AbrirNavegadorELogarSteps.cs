@@ -9,6 +9,32 @@ namespace QACoreBusiness.StepDefinitions
     {
         AbrirNavegadorUtil open = new AbrirNavegadorUtil();
 
+        [Given(@"que eu esteja logado no sistema")]
+        public void GivenQueEuEstejaLogadoNoSistema()
+        {
+            open.RealizaLogon();
+            DriveOfDriver.SetInstanceDrive(open.driverNavegadorChrome);
+        }
+
+        [Given(@"clicar para acessar o contexto \{'(.*)'}")]
+        public void GivenClicarParaAcessarOContexto(string contexto)
+        {
+            open.AcesseIndex(contexto);
+        }
+
+        [When(@"clicar para Sair do sistema")]
+        public void WhenClicarParaSairDoSistema()
+        {
+            open.CliqueSairSistema();
+        }
+
+
+        [When(@"clicar para acessar o contexto \{'(.*)'}")]
+        public void WhenClicarParaAcessarOContexto(string contexto)
+        {
+            open.AcesseIndex(contexto);
+        }
+
         [When(@"o sistema rodar")]
         public void WhenOSistemaRodar()
         {
@@ -43,6 +69,7 @@ namespace QACoreBusiness.StepDefinitions
         public void ThenAcessarAPaginaInicialDoHubDeContexto()
         {
             open.PaginaInicialCoreBusiness();
+            
         }
         
         [Then(@"uma mensagem de Erro ao efetuar login deve aparecer")]
@@ -50,5 +77,18 @@ namespace QACoreBusiness.StepDefinitions
         {
             open.MensagemLoginInvalido();
         }
+
+        [Then(@"sistema deve redirecionar a pagina")]
+        public void ThenSistemaDeveRedirecionarAPagina()
+        {
+            open.UrlNotIsHub();
+        }
+
+        [Then(@"redireciona para tela de login do corebusiness")]
+        public void ThenRedirecionaParaTelaDeLoginDoCorebusiness()
+        {
+            open.ValidaUrlLoginCore();
+        }
+
     }
 }

@@ -9,25 +9,26 @@ namespace QACoreBusiness.Util
 {
     class SituacaoDosServidoresUtil
     {
-        IWebDriver driver = Base.chromeDriver;
+        IWebDriver driver;
         ElementsSituacaoServidores servidor;
 
         public SituacaoDosServidoresUtil()
         {
-            servidor = new ElementsSituacaoServidores();
+            driver = DriveOfDriver.GetInstanceDrive();
+            servidor = new ElementsSituacaoServidores { chromeDriver = driver };
         }
 
-        public void IndexSituacaoServidores()
-        {
-            servidor.ContextoSituacaoServidores.Click();
-        }
+        //public void IndexSituacaoServidores()
+        //{
+        //    servidor.ContextoSituacaoServidores.Click();
+        //}
 
         public void SituacaoAtualCoreService(string situacao)
         {
             Assert.Equal(situacao, servidor.ColunaSituacaoServidores.Text);
         }
 
-        internal void ValidarURLServiceStatus()
+        public void ValidarURLServiceStatus()
         {
             Assert.Contains(servidor.UrlSituacaoServidores, driver.Url);
         }
@@ -71,7 +72,7 @@ namespace QACoreBusiness.Util
         {
             driver.Navigate().GoToUrl(servidor.UrlSituacaoServidores);
             SituacaoAtualCoreService("Running");
-            driver.Navigate().GoToUrl(Base.UrlCoreBusiness);
+            driver.Navigate().GoToUrl(servidor.UrlCoreBusiness);
         }
     }
 }

@@ -11,11 +11,11 @@ namespace QACoreBusiness.Elements
     {
 
         #region URLs de Acesso
-        public string UrlContextoGestorFin = UrlCoreBusiness + "/FIN/GestorFinanceiro";
-        public string UrlListaParcelasBaixa = UrlCoreBusiness + "/FIN/Contrato/ListarParcelasBaixa";
-        public string UrlImprimirMovimentacao = UrlCoreBusiness + "/FIN/Contrato/ImprimirMovimentacao";
-        public string UrlGerarRenegociacao = UrlCoreBusiness + "/FIN/Contrato/GerarRenegociacaoContrato";
-        public string UrlVisualizarContrato = UrlCoreBusiness + "/FIN/Contrato/Visualizar?idContrato";
+        public string UrlContextoGestorFin => UrlCoreBusiness + "/FIN/GestorFinanceiro";
+        public string UrlListaParcelasBaixa => UrlCoreBusiness + "/FIN/Contrato/ListarParcelasBaixa";
+        public string UrlImprimirMovimentacao => UrlCoreBusiness + "/FIN/Contrato/ImprimirMovimentacao";
+        public string UrlGerarRenegociacao => UrlCoreBusiness + "/FIN/Contrato/GerarRenegociacaoContrato";
+        public string UrlVisualizarContrato => UrlCoreBusiness + "/FIN/Contrato/Visualizar?idContrato";
         #endregion
 
 

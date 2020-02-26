@@ -9,11 +9,11 @@ namespace QACoreBusiness.StepDefinitions.COM
     {
         RecepcaoMercadoriaNovoLancamentoManualUtil rmmanual = new RecepcaoMercadoriaNovoLancamentoManualUtil();
 
-        [Given(@"acesse a index de recepcao de mercadoria")]
-        public void GivenAcesseAIndexDeRecepcaoDeMercadoria()
-        {
-            rmmanual.AcesseIndexRecepcao();
-        }
+        //[Given(@"acesse a index de recepcao de mercadoria")]
+        //public void GivenAcesseAIndexDeRecepcaoDeMercadoria()
+        //{
+        //    rmmanual.AcesseIndexRecepcao();
+        //}
 
         [Given(@"que seja clicado no botao Novo Lancamento Manual")]
         public void GivenQueSejaClicadoNoBotaoNovoLancamentoManual()
