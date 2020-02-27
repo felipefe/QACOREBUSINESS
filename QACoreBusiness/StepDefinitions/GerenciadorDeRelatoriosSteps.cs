@@ -98,6 +98,18 @@ namespace QACoreBusiness.StepDefinitions
             gru.ValidaUrlMeusRelatorios();
         }
 
+        [Given(@"memorize as colunas marcadas do Editar Definicao")]
+        public void GivenMemorizeAsColunasMarcadasDoEditarDefinicao()
+        {
+            gru.MemorizarColunasMarcadas();
+        }
+
+        [When(@"clique na aba Colunas")]
+        public void WhenCliqueNaAbaColunas()
+        {
+            gru.CliqueAbaColunasRPT();
+        }
+
         [When(@"confirmar clicando no botao Excluir")]
         public void WhenConfirmarClicandoNoBotaoExcluir()
         {
@@ -170,7 +182,11 @@ namespace QACoreBusiness.StepDefinitions
             gru.ValidaRelatorioFoiExcluido(nome);
         }
 
+        [Then(@"as colunas marcadas devem ser as mesmas do Editar Definicao")]
+        public void ThenAsColunasMarcadasDevemSerAsMesmasDoEditarDefinicao()
+        {
+            gru.ValidaColunasHabilitadas();
+        }
 
-  
     }
 }

@@ -160,7 +160,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 31
- testRunner.Given("que eu tenha relatorio de nome {\'Comissões de Vendas por Recebimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("que eu tenha relatorio de nome {\'Separações\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
  testRunner.And("clique nas actions deste relatorio Editar Definiçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
@@ -232,6 +232,49 @@ this.FeatureBackground();
  testRunner.And("clicar no botao Executar meu relatorio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
  testRunner.Then("o relatorio deve ser exibido em uma nova guia do navegador", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Validar colunas personalizadas definicao relatorio")]
+        [Xunit.TraitAttribute("FeatureTitle", "GerenciadorDeRelatorios")]
+        [Xunit.TraitAttribute("Description", "Validar colunas personalizadas definicao relatorio")]
+        [Xunit.TraitAttribute("Category", "validar_definicao_relatorio")]
+        public virtual void ValidarColunasPersonalizadasDefinicaoRelatorio()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validar colunas personalizadas definicao relatorio", null, new string[] {
+                        "validar_definicao_relatorio"});
+#line 60
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 61
+ testRunner.Given("que eu tenha relatorio de nome {\'Comissões de Vendas por Recebimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 62
+ testRunner.And("clique nas actions deste relatorio Editar Definiçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("seja redirecionado para tela de edicao do rpt /RPT/ReportView/EditBuilder/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("clique na aba Colunas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("memorize as colunas marcadas do Editar Definicao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("que seja clicado no menu do usuario logado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And("clique no botao Relatorios", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("seja redirecionado para Meus Relatorios /RPT/ReportView/UserReportViews", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("que eu tenha relatorio de nome {\'Comissões de Vendas por Recebimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.When("clicar no botao executar relatorio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.And("ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("clique na aba Colunas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.Then("as colunas marcadas devem ser as mesmas do Editar Definicao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

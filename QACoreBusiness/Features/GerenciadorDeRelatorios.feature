@@ -28,7 +28,7 @@ Scenario: Criar definicao de relatorio
 
 @editar_definicao_relatorio
 Scenario: Editar definicao relatorio
-	Given que eu tenha relatorio de nome {'Comissões de Vendas por Recebimento'}
+	Given que eu tenha relatorio de nome {'Separações'}
 	And clique nas actions deste relatorio Editar Definiçao
 	And seja redirecionado para tela de edicao do rpt /RPT/ReportView/EditBuilder/
 	And clique na aba Colunas
@@ -55,6 +55,24 @@ Scenario: Executar Relatorio
 	And ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/
 	And clicar no botao Executar meu relatorio
 	Then o relatorio deve ser exibido em uma nova guia do navegador
+
+@validar_definicao_relatorio
+Scenario: Validar colunas personalizadas definicao relatorio
+	Given que eu tenha relatorio de nome {'Comissões de Vendas por Recebimento'}
+	And clique nas actions deste relatorio Editar Definiçao
+	And seja redirecionado para tela de edicao do rpt /RPT/ReportView/EditBuilder/
+	And clique na aba Colunas
+	And memorize as colunas marcadas do Editar Definicao
+	And que seja clicado no menu do usuario logado
+	And clique no botao Relatorios
+	And seja redirecionado para Meus Relatorios /RPT/ReportView/UserReportViews
+	And que eu tenha relatorio de nome {'Comissões de Vendas por Recebimento'}
+	When clicar no botao executar relatorio
+	And ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/
+	And clique na aba Colunas
+	Then as colunas marcadas devem ser as mesmas do Editar Definicao
+
+
 
 
 

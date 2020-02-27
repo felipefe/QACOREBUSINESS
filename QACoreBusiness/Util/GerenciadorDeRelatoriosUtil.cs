@@ -16,6 +16,7 @@ namespace QACoreBusiness.Util
         IWebElement relatorioEdit = null;
         ElementsRPTGerenciadorDeRelatorios rpt;
         int indexContainerAction;
+        int qtdColunasRpt = 0;
 
         public GerenciadorDeRelatoriosUtil()
         {
@@ -111,6 +112,26 @@ namespace QACoreBusiness.Util
             System.Threading.Thread.Sleep(500);
         }
 
+        public void MemorizarColunasMarcadas()
+        {
+            foreach (IWebElement categoriaColunas in rpt.EditDefinicaoColunasCategoria)
+            {
+                categoriaColunas.Click();
+                System.Threading.Thread.Sleep(1000);
+                foreach (IWebElement coluna in rpt.EditDefinicaoLinhasDeColunaSelect)
+                {
+                    System.Threading.Thread.Sleep(500);
+                    string checkbox = coluna.FindElement(By.CssSelector("div.fitted.ui.toggle.checkbox > input")).GetAttribute("value");
+                    if (checkbox.Equals("True"))
+                    {
+                        qtdColunasRpt++;
+                    }
+                }
+                categoriaColunas.Click();
+                System.Threading.Thread.Sleep(1000);
+            }
+        }
+
         public void ValidaUrlMeusRelatorios()
         {
             Assert.Equal(rpt.UrlMeusRelatorios, driver.Url);
@@ -170,6 +191,20 @@ namespace QACoreBusiness.Util
             int indexNovaAba = driver.WindowHandles.ToList().Count - 1;
             driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[indexNovaAba]);
             Assert.Contains("Emitido", rpt.TitleRptEmitido.Text); ;
+        }
+
+        public void ValidaColunasHabilitadas()
+        {
+            int colunas = 0;
+            foreach (IWebElement categoriaColunas in rpt.EditDefinicaoColunasCategoria)
+            {
+                categoriaColunas.Click();
+                System.Threading.Thread.Sleep(1000);
+                colunas += rpt.EditDefinicaoLinhasDeColunaSelect.Count;
+                categoriaColunas.Click();
+                System.Threading.Thread.Sleep(800);
+            }
+            Assert.Equal(colunas, qtdColunasRpt);
         }
 
         public void CliqueExecutarRelatorio()
