@@ -133,11 +133,6 @@ namespace QACoreBusiness.Util.FIN
             Assert.Contains(contr.UrlParcelasContrato, driver.Url);
         }
 
-        //public void AcesseIndexContrato()
-        //{
-        //    contr.ContextoContrato.Click();
-        //}
-
         public void CliqueCriarContrato()
         {
             contr.HeaderCriarContrato.Click();

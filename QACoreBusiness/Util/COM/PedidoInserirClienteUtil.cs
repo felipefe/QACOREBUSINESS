@@ -17,7 +17,6 @@ namespace QACoreBusiness.Util
 
         public PedidoInserirClienteUtil()
         {
-            // driver = Base.GetChromeDriver();
             driver = DriveOfDriver.GetInstanceDrive();
             pedido = new ElementsCOMPedido { chromeDriver = driver };
   
@@ -70,11 +69,8 @@ namespace QACoreBusiness.Util
 
         public void MensagemPessoaAddPedido()
         {
-            //bool achou = ElementWait.WaitTextToBePresentInElement(driver, ElementWait.WaitForElementXpath(driver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']"), "A pessoa do pedido foi alterada com sucesso.");
-            //Assert.True(achou);
             Thread.Sleep(500);
             Assert.Equal("A pessoa do pedido foi alterada com sucesso.", pedido.AlertaMensagemPedidoAtualizado.Text);
-
         }
 
         public void ClienteSituacaoNormal()

@@ -50,13 +50,7 @@ namespace QACoreBusiness.StepDefinitions
         {
             peu.RedirecionaIndexPedidos();
         }
-        
-        //[Then(@"a situaçao do pedido nao deve estar em \{Lançamento/Ediçao}")]
-        //public void ThenASituacaoDoPedidoNaoDeveEstarEmLancamentoEdicao()
-        //{
-        //    peu.SituaçaoPedido();
-        //}
-        
+
         [Then(@"o sistema nao redireciona para tela de pedidos")]
         public void ThenOSistemaNaoRedirecionaParaTelaDePedidos()
         {

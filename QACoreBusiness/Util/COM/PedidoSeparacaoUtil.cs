@@ -71,10 +71,5 @@ namespace QACoreBusiness.Util
         {
             separacao.BotaoFinalizarSeparacaoCOM.Click();
         }
-
-        //public void SituacaoPedidoEmConferencia()
-        //{
-        //    Assert.Equal("Conferência", separacao.SituacaoPedido.Text);
-        //}
     }
 }

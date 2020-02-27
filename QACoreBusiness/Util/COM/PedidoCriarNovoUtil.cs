@@ -19,11 +19,6 @@ namespace QACoreBusiness.Util
             pedido = new ElementsCOMPedido { chromeDriver = driver };
         }
 
-        //public void AcessarIndexPedidos()
-        //{
-        //    driver.Navigate().GoToUrl(pedido.UrlIndexPedido);
-        //}
-
         public void PaginaInicialCoreBusiness()
         {
             Assert.Equal(pedido.UrlCoreBusiness + "/Home/MosaicoV2", driver.Url);

@@ -19,11 +19,6 @@ namespace QACoreBusiness.Util
             parametro = new ElementsParametrosEmpresa { chromeDriver = driver };
         }
 
-        //public void AcessarContextoEmpresa()
-        //{
-        //    parametro.ContextoEmpresa.Click();
-        //}
-
         public void ValidaUrlContextoEmpresa()
         {
             Assert.Contains(parametro.UrlIndexEmpresa, driver.Url);

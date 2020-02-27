@@ -18,11 +18,6 @@ namespace QACoreBusiness.Util
             servidor = new ElementsSituacaoServidores { chromeDriver = driver };
         }
 
-        //public void IndexSituacaoServidores()
-        //{
-        //    servidor.ContextoSituacaoServidores.Click();
-        //}
-
         public void SituacaoAtualCoreService(string situacao)
         {
             Assert.Equal(situacao, servidor.ColunaSituacaoServidores.Text);

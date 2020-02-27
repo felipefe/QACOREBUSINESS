@@ -18,7 +18,6 @@ namespace QACoreBusiness.Util
             avaliar = new ElementsCOMPedidoWorkflow { chromeDriver = driver };
         }
 
-
         public void ActionsDoPedido()
         {
             avaliar.ActionsPedido.Click();

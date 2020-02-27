@@ -8,12 +8,6 @@ namespace QACoreBusiness.StepDefinitions
     public class GestorFinanceiroReceitaSteps
     {
         GestorFinanceiroReceitaUtil gfu = new GestorFinanceiroReceitaUtil();
-
-        //[Given(@"acesse a index gestor financeiro")]
-        //public void GivenAcesseAIndexGestorFinanceiro()
-        //{
-        //    gfu.AcesseIndexGestorFinanceiro();
-        //}
         
         [Given(@"que clica na aba Contas a Receber")]
         public void GivenQueClicaNaAbaContasAReceber()
@@ -165,7 +159,6 @@ namespace QACoreBusiness.StepDefinitions
         {
             gfu.SelecionarSegundoMeioPagamentoMultiplosMeios(segundoMeio);
         }
-
 
         [When(@"informar o planos de contas \{'(.*)'}")]
         public void WhenInformarOPlanosDeContas(string PC)

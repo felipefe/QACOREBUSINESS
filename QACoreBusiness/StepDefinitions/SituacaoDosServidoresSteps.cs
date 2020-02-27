@@ -10,12 +10,6 @@ namespace QACoreBusiness.StepDefinitions
     {
         SituacaoDosServidoresUtil ssu = new SituacaoDosServidoresUtil();
 
-        //[Given(@"acesse a index de Situacao dos Servidores")]
-        //public void GivenAcesseAIndexDeSituacaoDosServidores()
-        //{
-        //    ssu.IndexSituacaoServidores();
-        //}
-
         [Given(@"seja redirecionado para URL de situacao dos servidores")]
         public void GivenSejaRedirecionadoParaURLDeSituacaoDosServidores()
         {
@@ -33,7 +27,6 @@ namespace QACoreBusiness.StepDefinitions
         {
             ssu.NovaSitualCoreService(novaSituacao);
         }
-
 
         [Given(@"que a situacao do coreservice seja \{'(.*)'}")]
         public void GivenQueASituacaoDoCoreserviceSeja(string situacao)

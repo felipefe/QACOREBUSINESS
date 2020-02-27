@@ -8,13 +8,6 @@ namespace QACoreBusiness.StepDefinitions.FIN
     public class ContratoFinanceiroSteps
     {
         ContratoFinanceiroUtil cfu = new ContratoFinanceiroUtil();
-        //private int auxQtdParcelas;
-
-        //[Given(@"acesse a index de contratos")]
-        //public void GivenAcesseAIndexDeContratos()
-        //{
-        //    cfu.AcesseIndexContrato();
-        //}
         
         [Given(@"que seja clicado no botao criar contrato")]
         public void GivenQueSejaClicadoNoBotaoCriarContrato()
@@ -89,8 +82,6 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaUrlLancarReceitaContrato();
         }
 
-
-
         [When(@"selecionar o meio de pagamento \{'(.*)'}")]
         public void WhenSelecionarOMeioDePagamento(string meioPagamento)
         {
@@ -108,7 +99,6 @@ namespace QACoreBusiness.StepDefinitions.FIN
         {
             cfu.CliqueSalvarPagtoAntecipado();
         }
-
 
         [When(@"inserir no input numero do documento")]
         public void WhenInserirNoInputNumeroDoDocumento()

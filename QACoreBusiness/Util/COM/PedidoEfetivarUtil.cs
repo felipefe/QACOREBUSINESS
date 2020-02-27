@@ -55,11 +55,6 @@ namespace QACoreBusiness.Util
             Assert.Equal( pedido.UrlIndexPedido, driver.Url);
         }
 
-        //public void SituaçaoPedido()
-        //{
-        //    Assert.DoesNotContain("Lançamento / Edição", pedido.SituacaoPedido.Text);
-        //}
-
         public void NaoRedirecionaIndexPEdidos()
         {
             Assert.Contains(pedido.UrlEditPedido, driver.Url);

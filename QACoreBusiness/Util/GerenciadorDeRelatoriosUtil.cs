@@ -23,12 +23,6 @@ namespace QACoreBusiness.Util
             rpt = new ElementsRPTGerenciadorDeRelatorios { chromeDriver = driver };
         }
 
-        //public void AcesseContextoGerenciadorRelatorio()
-        //{
-        //    rpt.ContextoGerenciadoRelatorios.Click();
-        //    System.Threading.Thread.Sleep(1000);
-        //}
-
         public void CliqueDefinicoesDeRelatorios()
         {
             rpt.BotaoHeaderDefinicoesDeRelatorios.Click();

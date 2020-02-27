@@ -8,12 +8,6 @@ namespace QACoreBusiness.StepDefinitions.COM
     public class PedidoEmitirDFeSteps
     {
         PedidoEmitirDFeUtil pdfeu = new PedidoEmitirDFeUtil();
-
-        //[Given(@"tenha um pedido criado na situaçao \{Conferido}")]
-        //public void GivenTenhaUmPedidoCriadoNaSituacaoConferido()
-        //{
-        //    pdfeu.SitucaoPedido();
-        //}
         
         [Given(@"o coreservice esteja habilitado")]
         public void GivenOCoreserviceEstejaHabilitado()

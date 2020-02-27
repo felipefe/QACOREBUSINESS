@@ -26,12 +26,6 @@ namespace QACoreBusiness.Util.COM
             parametro = new ParametrosEmpresaUtil();
         }
 
-        //public void SitucaoPedido()
-        //{
-        //    Assert.Equal("Conferido", pedido.SituacaoPedido.Text);
-        //    auxValorPedido = pedido.ColunaValorPedido.Text;
-        //}
-
         public void CoreServiceHabilitado()
         {
             servidor.isHabilitadoCoreService();

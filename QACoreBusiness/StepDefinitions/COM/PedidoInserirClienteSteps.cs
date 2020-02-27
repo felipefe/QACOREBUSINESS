@@ -8,22 +8,7 @@ namespace QACoreBusiness.StepDefinitions
     [Binding]
     public class PedidoInserirClienteSteps
     {
-       // AbrirNavegadorUtil open = new AbrirNavegadorUtil();
         PedidoInserirClienteUtil pic = new PedidoInserirClienteUtil();
-
-        //private readonly PedidoInserirClienteUtil contexto;
-
-        //public PedidoCriarNovoSteps(ScenarioContext contexto)
-        //{
-        //    this.contexto = contexto;
-
-        //}
-        //public PedidoInserirClienteSteps()
-        //{
-        //    //var value = ScenarioContext.Current.Get<IWebDriver>("driver");
-        //    //pic.driver = DriveDoDriver.GetInstanceDrive();
-        //}
-
 
         [Given(@"seja redirecionado para tela de ediçao")]
         public void GivenSejaRedirecionadoParaTelaDeEdicao()
@@ -36,8 +21,6 @@ namespace QACoreBusiness.StepDefinitions
         {
             pic.PedidoStatusLançamentoEdiçao(status);
         }
-
-
 
         [Given(@"clique para editar este pedido")]
         public void GivenCliqueParaEditarEstePedido()

@@ -25,12 +25,6 @@ namespace QACoreBusiness.Util.COM
             recepcao = new ElementsCOMRecepcaoMercadoriaWorkflow { chromeDriver = driver };
         }
 
-        //public void AcesseIndexRecepcao()
-        //{
-        //    recepcao.ContextoRecepcaoMercadoria.Click();
-        //    Thread.Sleep(1000);
-        //}
-
         public void CliqueNovoLancamentoManual()
         {
             recepcao.BotaoNovoLancamentoManual.Click();
@@ -216,20 +210,20 @@ namespace QACoreBusiness.Util.COM
         public void InformarAliquota(decimal aliquota)
         {
             auxAliquotaICMS = decimal.ToDouble(aliquota);
-            recepcao.InputAliquotaItemLF.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+            recepcao.InputAliquotaItemLF.SendKeys(Input4CasasDecimais(aliquota).ToString());
             Thread.Sleep(500);
         }
 
         public void InformarValorUnitarioItemLoteFiscal(decimal valor)
-        {//esse vezes mil é pelo numero de casas decimais configurados no input
+        {
             auxValorUnitario = decimal.ToDouble(valor);
-            recepcao.InputValorUnitario.SendKeys(InsereInput4CasasDecimais(valor).ToString());
+            recepcao.InputValorUnitario.SendKeys(Input4CasasDecimais(valor).ToString());
         }
 
         public void InformarQuantidadeItemLoteFiscal(decimal qtd)
         {
             auxQuantidadeItem = decimal.ToInt32(qtd);
-            recepcao.InputQuantidade.SendKeys(InsereInput4CasasDecimais(qtd).ToString());
+            recepcao.InputQuantidade.SendKeys(Input4CasasDecimais(qtd).ToString());
         }
 
         public void InformarNumLoteFiscal()
@@ -339,21 +333,21 @@ namespace QACoreBusiness.Util.COM
         public void InformarValorBrutoRecepcao()
         {
             Double bruto = auxValorUnitario * auxQuantidadeItem;
-            recepcao.InputValorBruto.SendKeys(InsereInput4CasasDecimais(bruto).ToString());
+            recepcao.InputValorBruto.SendKeys(Input4CasasDecimais(bruto).ToString());
             Thread.Sleep(500);
         }
 
         public void InformarValorLiquidoRecepcao()
         {
             Double liquido = auxValorUnitario * auxQuantidadeItem;
-            recepcao.InputValorLiquido.SendKeys(InsereInput4CasasDecimais(liquido).ToString());
+            recepcao.InputValorLiquido.SendKeys(Input4CasasDecimais(liquido).ToString());
             Thread.Sleep(500);
         }
 
         public void InformarBcICMS()
         {
             Double bc = auxValorUnitario * auxQuantidadeItem;
-            recepcao.InputBCICMS.SendKeys(InsereInput2CasasDecimais(bc).ToString());
+            recepcao.InputBCICMS.SendKeys(Input2CasasDecimais(bc).ToString());
             Thread.Sleep(500);
         }
 
@@ -382,7 +376,7 @@ namespace QACoreBusiness.Util.COM
         public void BaseCalculoPIS()
         {
             Double bc = auxValorUnitario * auxQuantidadeItem;
-            recepcao.InputBcPIS.SendKeys(InsereInput4CasasDecimais(bc).ToString());
+            recepcao.InputBcPIS.SendKeys(Input4CasasDecimais(bc).ToString());
         }
 
         public void InformarValorPIS()
@@ -390,7 +384,7 @@ namespace QACoreBusiness.Util.COM
             Double valor = auxValorUnitario * auxQuantidadeItem;
             Double aliquota = auxAliquotaPIS / 100;
             Double calculo = valor * aliquota;
-            recepcao.InputValorPIS.SendKeys(InsereInput4CasasDecimais(calculo).ToString());
+            recepcao.InputValorPIS.SendKeys(Input4CasasDecimais(calculo).ToString());
         }
 
         public void CliqueAbaCofins()
@@ -435,7 +429,7 @@ namespace QACoreBusiness.Util.COM
         {
             string bc = recepcao.InfoBaseCalculoICMS.Text.Replace("Base de Cálculo", "").Replace(".", "").Replace(",",".");
             Double val = Double.Parse(bc);
-            recepcao.EscriturarInputBcICMS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+            recepcao.EscriturarInputBcICMS.SendKeys(Input4CasasDecimais(val).ToString());
         }
 
         public void CliqueAbaPisEscrituracao()
@@ -449,7 +443,7 @@ namespace QACoreBusiness.Util.COM
         {
             string c = recepcao.InfoValorICMS.Text.Replace("Valor do ICMS", "").Replace(".", "").Replace(",", ".");
             Double val = Double.Parse(c);
-            recepcao.EscriturarInputValorBcICMS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+            recepcao.EscriturarInputValorBcICMS.SendKeys(Input4CasasDecimais(val).ToString());
         }
 
         public void SelecionarTipoAliquotaPIS(string tipoAliquotaPIS)
@@ -462,14 +456,14 @@ namespace QACoreBusiness.Util.COM
 
         public void InformaAliquotaPisEscrituraItem(decimal aliquotaPIS)
         {
-            recepcao.EscriturarInputAliquotaPIS.SendKeys(InsereInput4CasasDecimais(aliquotaPIS).ToString());
+            recepcao.EscriturarInputAliquotaPIS.SendKeys(Input4CasasDecimais(aliquotaPIS).ToString());
         }
 
         public void InformaBaseCalculoPisEscrituraItem()
         {
             string bc = recepcao.InfoBaseCalculoPIS.Text.Replace("Base de Cálculo", "").Replace(".", "").Replace(",", ".");
             Double val = Double.Parse(bc);
-            recepcao.EscriturarInputBcPIS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+            recepcao.EscriturarInputBcPIS.SendKeys(Input4CasasDecimais(val).ToString());
         }
 
         public void CliqueAbaCofinsEscriturarItem()
@@ -499,14 +493,14 @@ namespace QACoreBusiness.Util.COM
         {
             string bc = recepcao.InfoBaseCalculoCofins.Text.Replace("Base de Cálculo", "").Replace(".", "").Replace(",", ".");
             Double val = Double.Parse(bc);
-            recepcao.EscriturarInputBcCOFINS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+            recepcao.EscriturarInputBcCOFINS.SendKeys(Input4CasasDecimais(val).ToString());
         }
 
         public void InformarValorCofinsEscrituraItem()
         {
             string c = recepcao.InfoValorCofins.Text.Replace("Valor", "").Replace(".", "").Replace(",", ".");
             Double val = Double.Parse(c);
-            recepcao.EscriturarInputValorBcCOFINS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+            recepcao.EscriturarInputValorBcCOFINS.SendKeys(Input4CasasDecimais(val).ToString());
         }
 
         public void CliqueGravarEscrituracaoItem()
@@ -516,14 +510,14 @@ namespace QACoreBusiness.Util.COM
 
         public void InformarAliquotaCofinsEscrituraItem(decimal aliquota)
         {
-            recepcao.EscriturarInputAliquotaCOFINS.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+            recepcao.EscriturarInputAliquotaCOFINS.SendKeys(Input4CasasDecimais(aliquota).ToString());
         }
 
         public void InformarValorPisEscrituraItem()
         {
             string c = recepcao.InfoValorPIS.Text.Replace("Valor", "").Replace(".", "").Replace(",", ".");
             Double val = Double.Parse(c);
-            recepcao.EscriturarInputValorBcPIS.SendKeys(InsereInput4CasasDecimais(val).ToString());
+            recepcao.EscriturarInputValorBcPIS.SendKeys(Input4CasasDecimais(val).ToString());
         }
 
         public void SelecionarStPisEscrituraItem(string stPIS)
@@ -536,7 +530,7 @@ namespace QACoreBusiness.Util.COM
 
         public void InformarAliquotaIcmsEscrituraItem(decimal aliquota)
         {
-            recepcao.EscriturarInputAliquotaICMS.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+            recepcao.EscriturarInputAliquotaICMS.SendKeys(Input4CasasDecimais(aliquota).ToString());
         }
 
         public void SelectTipoAliquotaCofins(string tipoAliquotaCofins)
@@ -550,7 +544,7 @@ namespace QACoreBusiness.Util.COM
         public void InformarBcCofins()
         {
             Double bc = auxValorUnitario * auxQuantidadeItem;
-            recepcao.InputBcCofins.SendKeys(InsereInput4CasasDecimais(bc).ToString());
+            recepcao.InputBcCofins.SendKeys(Input4CasasDecimais(bc).ToString());
         }
 
         public void InformarValorCofins()
@@ -558,19 +552,19 @@ namespace QACoreBusiness.Util.COM
             Double total = auxValorUnitario * auxQuantidadeItem;
             Double aliquota = auxAliquotaCOFINS / 100;
             Double valor = total * aliquota;
-            recepcao.InputValorCofins.SendKeys(InsereInput4CasasDecimais(valor).ToString());
+            recepcao.InputValorCofins.SendKeys(Input4CasasDecimais(valor).ToString());
         }
 
         public void InformarAliquotaCofins(decimal aliquotaCofins)
         {
             auxAliquotaCOFINS = decimal.ToDouble(aliquotaCofins);
-            recepcao.InputAliquotaCOFINS.SendKeys(InsereInput4CasasDecimais(aliquotaCofins).ToString());
+            recepcao.InputAliquotaCOFINS.SendKeys(Input4CasasDecimais(aliquotaCofins).ToString());
         }
 
         public void InformarAliquotaPIS(decimal aliquota)
         {
             auxAliquotaPIS = decimal.ToDouble(aliquota);
-            recepcao.InputAliquotaPIS.SendKeys(InsereInput4CasasDecimais(aliquota).ToString());
+            recepcao.InputAliquotaPIS.SendKeys(Input4CasasDecimais(aliquota).ToString());
         }
 
         public void InformarValorCalculoICMS()
@@ -582,17 +576,17 @@ namespace QACoreBusiness.Util.COM
             recepcao.InputValorICMS.SendKeys(calculoICMS.ToString());
         }
 
-        public Double InsereInput2CasasDecimais(double valor)
+        public Double Input2CasasDecimais(double valor)
         {
             return valor * 10;
         }
 
-        public Double InsereInput4CasasDecimais(double valor)
+        public Double Input4CasasDecimais(double valor)
         {
             return valor * 1000;
         }
 
-        public Double InsereInput4CasasDecimais(decimal valor)
+        public Double Input4CasasDecimais(decimal valor)
         {
             return decimal.ToDouble(valor * 1000);
         }

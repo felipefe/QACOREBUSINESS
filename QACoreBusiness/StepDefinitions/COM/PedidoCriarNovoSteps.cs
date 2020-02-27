@@ -14,17 +14,7 @@ namespace QACoreBusiness.StepDefinitions
         public void GivenQueEstejaNoHubPrincipal()
         {
             pedido.PaginaInicialCoreBusiness();
-            
-            //ScenarioContext.Current
-            //ScenarioContext.Current.Set<PedidoCriarNovoUtil>( pedido  , "chave");
         }
-        
-        //[Given(@"acesse a index de pedido")]
-        //public void GivenAcesseAIndexDePedido()
-        //{
-        //    pedido.AcessarIndexPedidos();
-        //   // DriveOfDriver.SetInstanceDrive(pedido.driver);
-        //}
         
         [When(@"o usuario clicar no botao Criar Novo Pedido \{Nova Venda de Mercadorias e Serviços}")]
         public void WhenOUsuarioClicarNoBotaoCriarNovoPedidoNovaVendaDeMercadoriasEServicos()

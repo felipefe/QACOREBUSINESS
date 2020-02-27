@@ -28,11 +28,6 @@ namespace QACoreBusiness.Util.FIN
             gestor = new ElementsFINGestorFinanceiro { chromeDriver = driver };
         }
 
-        //public void AcesseIndexGestorFinanceiro()
-        //{
-        //    gestor.ContextoGestorFinanceiro.Click();
-        //}
-
         public void CliqueAbaContasReceber()
         {
             gestor.MenuContasAReceber.Click();
