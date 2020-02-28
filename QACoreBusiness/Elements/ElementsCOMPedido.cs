@@ -2,6 +2,7 @@
 using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace QACoreBusiness.Util
@@ -57,6 +58,7 @@ namespace QACoreBusiness.Util
         public IWebElement ActionsItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//table[@id='table-itens']//tr//td[@class='center aligned collapsing']//div[@class='v-popover']//a[@class='tooltip-target b3']");
         public IWebElement BotaoRemoverItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='wrapper']//div[@class='tooltip-inner popover-inner']//a[@class='popup-link'][@data-content='Remover item']");
         public IWebElement TextViewQuantidadeItensPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui green segment']//div[@class='ui grid']//div[@class='left floated twelve wide column']//div[@class='ui statistic mini'][1]//div[@class='value']");
+        public List<IWebElement> TabelaItensPedido => chromeDriver.FindElements(By.XPath("//table[@id='table-itens']//tbody//tr")).ToList();
         #endregion
 
         #region Vendedor Pedido  

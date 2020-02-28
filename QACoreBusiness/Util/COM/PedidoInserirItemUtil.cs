@@ -42,14 +42,12 @@ namespace QACoreBusiness.Util
             pedido.InputNomeProduto.SendKeys(nome);
         }
 
-        public void TagDeReservaEstoqueNormal()
-        {
-            Assert.Equal("Normal", pedido.TagReservaEstoqueNormal.Text);
-        }
 
-        public void TagDeReservaEstoqueSemReserva()
+        public void TagDeReservaItemPedido(string reserva)
         {
-            Assert.Equal("Sem reserva", pedido.TagReservaEstoqueSemReserva.Text);
+            Thread.Sleep(1500);
+            IWebElement item = pedido.TabelaItensPedido[pedido.TabelaItensPedido.Count - 1];
+            Assert.Equal(reserva , item.FindElement(By.CssSelector("td:nth-child(1) > div > div")).Text);
         }
 
         public void MensagemItemAdicionadoSucesso()
