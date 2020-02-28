@@ -24,8 +24,8 @@ namespace QACoreBusiness.Elements
         public IWebElement MenuUsuarioLogado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='user-menu']");
         public IWebElement MensagemLoginInvalido => chromeDriver.FindElement(By.XPath("//div[@class='red card z-depth-4']//span[@class='card-title']"));
         public IWebElement MenuUsuarioLogadoSair => ElementWait.WaitForElementXpath(chromeDriver, "//div//a[@href='/COREBusiness/Account/LogOff']");
+        public IWebElement SearchGenerico => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
 
-       
 
     }
 }

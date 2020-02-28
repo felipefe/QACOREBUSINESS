@@ -62,7 +62,6 @@ namespace QACoreBusiness.Elements
         public IWebElement SearchSTItemLF => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement InputAliquotaItemLF => ElementWait.WaitForElementXpath(chromeDriver, "//form[@id='frmLoteItem']//input[@id='LoteFiscalItemICMS_Percentual']");
         public IWebElement SelectMetodoCalculo => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscalItemICMS_ModoCalculo_auto_wrapper']//div[@class='ui selec2 fluid']//span[@class='select2 select2-container select2-container--default select2-value-selected']");
-        public IWebElement SearchGenerico => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement InputValorBruto => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='LoteFiscalItem_ValorBruto']");
         public IWebElement InputValorLiquido => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='LoteFiscalItem_ValorLiquido']");
         public IWebElement InputBCICMS => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='BC']");

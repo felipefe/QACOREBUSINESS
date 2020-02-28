@@ -55,7 +55,6 @@ namespace QACoreBusiness.Elements
         #region Lista Parcelas Baixa / Multiplos Meios
         public IWebElement CollapseParcela => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='parcelasBaixa']//tbody//tr//td//span//a");
         public IWebElement SelectMeioPagamentoPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='field'][2]");
-        public IWebElement SearchGenerico => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
         public IWebElement BotaoEfetuarBaixa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Efetuar Baixa']");
         public IWebElement BotaoAddMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//div//a[@data-content='Adicionar Múltiplos Meios de Pagamento']");
         public IWebElement InputHistoricoMultiplosMeiosPagto => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ConfigMovimento_Historico']");
