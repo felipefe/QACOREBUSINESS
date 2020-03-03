@@ -1,5 +1,7 @@
 <Playlist Version="1.0">
 <Add Test="QACoreBusiness.Features.COM.PedidoCriarNovoFeature.CriarNovoPedido" />
+<Add Test="QACoreBusiness.Features.COM.PedidoInserirVendedorFeature.InserirOuTrocarVendedorAoPedido" />
 <Add Test="QACoreBusiness.Features.COM.PedidoInserirClienteFeature.InserirOClientePorCPNoPedidoComSucesso" />
-<Add Test="QACoreBusiness.Features.COM.PedidoInserirItemFeature.InserirItemComReservaAoPedidoPorNome" />
+<Add Test="QACoreBusiness.Features.COM.PedidoInserirEntregaFeature.CriarEntregaPedido" />
+<Add Test="QACoreBusiness.Features.COM.PedidoInserirItemFeature.InserirItemComReservaAoPedidoPorSku" />
 </Playlist>

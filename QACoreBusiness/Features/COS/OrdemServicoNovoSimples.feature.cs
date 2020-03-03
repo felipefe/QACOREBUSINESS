@@ -133,13 +133,87 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 21
-testRunner.Given("que seja clicado Excluir nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
-testRunner.And("seja inserido no textarea uma justificativa {\'Cancelamento extraordinario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
-testRunner.When("clicar no botao Cancelar O.S.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("que seja clicado Excluir nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
+testRunner.And("seja inserido no textarea uma justificativa {\'Cancelamento extraordinario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+testRunner.When("clicar no botao Cancelar O.S.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
 testRunner.Then("a OS deve ser excluida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Inserir Receita OS")]
+        [Xunit.TraitAttribute("FeatureTitle", "OrdemServicoNovoSimples")]
+        [Xunit.TraitAttribute("Description", "Inserir Receita OS")]
+        [Xunit.TraitAttribute("Category", "incluir_item_os")]
+        public virtual void InserirReceitaOS()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir Receita OS", null, new string[] {
+                        "incluir_item_os"});
+#line 30
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 31
+testRunner.Given("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 32
+testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+testRunner.And("que seja clicado Editar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+testRunner.And("seja clicado no botao Novo Item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+testRunner.And("seja informado no select a receita {\'Receita Boné Hurley\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+testRunner.And("seja informado o multiplicador da receita {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+testRunner.When("clicar no botao Salvar item O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
+testRunner.Then("o sistema redireciona para /COS/OrdemServicoItem/Edit/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Manutenção de Itens - Reservar/Separar")]
+        [Xunit.TraitAttribute("FeatureTitle", "OrdemServicoNovoSimples")]
+        [Xunit.TraitAttribute("Description", "Manutenção de Itens - Reservar/Separar")]
+        [Xunit.TraitAttribute("Category", "manutenção_de_itens")]
+        public virtual void ManutencaoDeItens_ReservarSeparar()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manutenção de Itens - Reservar/Separar", null, new string[] {
+                        "manutenção_de_itens"});
+#line 42
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 43
+testRunner.Given("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 44
+testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+testRunner.And("que seja clicado Manutenção de Itens nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+testRunner.And("seja redirecionado para /COS/Agrupador/ManutencaoItensOS/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+testRunner.When("clicar no botao Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+testRunner.And("clicar no botao Reservar/Requisitar Insumos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+testRunner.And("clicar no botao Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+testRunner.And("clicar no botao Separar Insumos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+testRunner.Then("o status dos insumos devem ser {\'Separado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 52
+testRunner.And("a Qtd. Reservada igual a Qtd. Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
