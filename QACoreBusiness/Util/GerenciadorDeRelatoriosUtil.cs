@@ -164,6 +164,9 @@ namespace QACoreBusiness.Util
             {
                 categoriaColunas.Click();
                 System.Threading.Thread.Sleep(1000);
+                //essa linha de codigo antes do foreachgarante uma oposicao a todo o restante do editDefinition
+                //assim evita de desmarcar todas as colunas cajo estejam marcadas (no minimo 1 fica marcada)
+                rpt.EditDefinicaoLinhasDeColunaSelect[0].FindElement(By.CssSelector("div.fitted.ui.toggle.checkbox > label")).Click();
                 foreach (IWebElement coluna in rpt.EditDefinicaoLinhasDeColunaSelect)
                 {
                     IWebElement elemento = coluna.FindElement(By.CssSelector("div.fitted.ui.toggle.checkbox > label"));
