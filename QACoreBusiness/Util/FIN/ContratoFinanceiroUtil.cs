@@ -238,7 +238,7 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(500);
         }
 
-        public void InformarValorOriginalParcela(decimal valor)
+        public void InformarValorFuturoParcela(decimal valor)
         {
             contr.InputValorOriginalParcelaContrato.SendKeys(valor.ToString());
             Thread.Sleep(1000);

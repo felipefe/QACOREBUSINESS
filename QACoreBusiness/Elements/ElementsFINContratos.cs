@@ -45,7 +45,7 @@ namespace QACoreBusiness.Elements
 
         #region Adicionar Parcelas Automaticamente Contrato
         public IWebElement BotaoSalvarParcelas=> ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
-        public IWebElement InputValorOriginalParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_ValorOriginal']");
+        public IWebElement InputValorOriginalParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_ValorEfetivo']");
         public IWebElement InputValorPorParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoViewModel_ValorParcela']");
         public IWebElement InputQntidadeParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_QtdParcelasOriginal']");
         public IWebElement InputIntervaloDiasParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_IntervaloParcelas']");

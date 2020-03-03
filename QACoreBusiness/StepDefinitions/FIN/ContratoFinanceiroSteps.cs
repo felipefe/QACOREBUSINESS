@@ -82,6 +82,37 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaUrlLancarReceitaContrato();
         }
 
+        [When(@"o sistema redireciona para index de contratos")]
+        public void WhenOSistemaRedirecionaParaIndexDeContratos()
+        {
+            cfu.ValidaUrlContrato();
+        }
+
+        [When(@"o status do contrato deve ser \{'(.*)'}")]
+        public void WhenOStatusDoContratoDeveSer(string status)
+        {
+            cfu.StatusContrato(status);
+        }
+
+        [When(@"a coluna referente ao valor original \{'(.*)'}")]
+        public void WhenAColunaReferenteAoValorOriginal(Decimal colunaValor)
+        {
+            cfu.ValidaColunaValor(colunaValor);
+        }
+
+        [When(@"clique nas actions Parcelas")]
+        public void WhenCliqueNasActionsParcelas()
+        {
+            cfu.CliqueActionsContratoParcelas();
+        }
+
+        [When(@"seja redirecionado para a index de Contrato/Parcelas")]
+        public void WhenSejaRedirecionadoParaAIndexDeContratoParcelas()
+        {
+            cfu.ValidaUrlContratoParcelas();
+        }
+
+
         [When(@"selecionar o meio de pagamento \{'(.*)'}")]
         public void WhenSelecionarOMeioDePagamento(string meioPagamento)
         {
@@ -156,12 +187,14 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.CliqueAddParcelasAutomaticamente();
         }
         
-        [When(@"inserir no input o valor original da parcela R\$\{(.*)}")]
-        public void WhenInserirNoInputOValorOriginalDaParcelaR(Decimal valor)
+
+        [When(@"inserir no input o valor a pagar\(futuro\) da parcela R\$\{(.*)}")]
+        public void WhenInserirNoInputOValorAPagarFuturoDaParcelaR(Decimal valor)
         {
-            cfu.InformarValorOriginalParcela(valor);
+            cfu.InformarValorFuturoParcela(valor);
         }
-        
+
+
         [When(@"inserir no input a quantidade de \{(.*)} parcelas")]
         public void WhenInserirNoInputAQuantidadeDeParcelas(int parcelas)
         {

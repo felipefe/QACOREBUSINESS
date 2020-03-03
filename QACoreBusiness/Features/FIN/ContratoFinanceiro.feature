@@ -17,10 +17,16 @@ Scenario: Criar contrato FIN sem parcelas
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
 	And clicar no botao salvar/criar contrato
-	Then o sistema redireciona para index de contratos
+	And o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Incompleto'}
 	And a coluna referente ao valor original {'0.00'}
-
+	And clique nas actions Parcelas
+	And seja redirecionado para a index de Contrato/Parcelas
+	And clicar no botao Nova Parcela
+	And inserir no input Valor Original R${85.0}
+	And inserir no input Data de Vencimento com horas para {15} dias futuros
+	And clicar no botao salvar parcela
+	Then a parcela deve ser criadas validando valor e vencimento
 
 @create_contrato_com_parcelas_auto
 Scenario: Criar contrato FIN + parcelas AUTO
@@ -34,7 +40,7 @@ Scenario: Criar contrato FIN + parcelas AUTO
 	And informar no textArea um historico  {'Contrato referente venda de testes autorimatizados'}
 	And selecionar a conta prevista pagamento {'BB Fake'}
 	And clicar no botao adicionar parcelas automaticamente 
-	And inserir no input o valor original da parcela R${931.5}
+	And inserir no input o valor a pagar(futuro) da parcela R${931.5}
 	And inserir no input a quantidade de {3} parcelas
 	And inserir no input o intervalo de {15} dias entre parcelas
 	And inserir o vencimento da primeira parcela para {15} dias futuros
@@ -84,20 +90,6 @@ And memorize o N doc do contrato a ser excluido
 When clicar nas actions Excluir / Cancelar 
 And confirmar clicando no botao Excluir da modal
 Then o contrato nao deve ser excluido motivo {'Não foi possível apagar o contrato!'}
-
-
-#{'Incompleto'} contrato sem parcela
-#para add em contrato que ja possua parcelas alterar para {'Aberto'}
-@add_parcela_contrato_criado
-Scenario: Adicionar parcela em contrato criado
-Given que o status do contrato seja {'Incompleto'}
-And clique nas actions Parcelas
-And seja redirecionado para a index de Contrato/Parcelas
-When clicar no botao Nova Parcela
-And inserir no input Valor Original R${85.0}
-And inserir no input Data de Vencimento com horas para {15} dias futuros
-And clicar no botao salvar parcela
-Then a parcela deve ser criadas validando valor e vencimento
 
 
 @lancar_pagamento_antecipado
