@@ -137,6 +137,56 @@ namespace QACoreBusiness.StepDefinitions
             pcu.CliqueBotaoFinalizarConferenciaCOM();
         }
 
+        [When(@"serei redirecionado para index de pedidos")]
+        public void WhenSereiRedirecionadoParaIndexDePedidos()
+        {
+            pcu.ValidaUrlIndexPedido();
+        }
+
+        [When(@"clique no botao Conferencia")]
+        public void WhenCliqueNoBotaoConferencia()
+        {
+            pcu.CliqueActionsConferenciaPedido();
+        }
+
+        [When(@"seja redirecionado para tela de WMS Conferencia")]
+        public void WhenSejaRedirecionadoParaTelaDeWMSConferencia()
+        {
+            pcu.IndexConferenciaPedido();
+        }
+
+        [When(@"o codigo sku e qtd\. total sejam copidos de suas colunas")]
+        public void WhenOCodigoSkuEQtd_TotalSejamCopidosDeSuasColunas()
+        {
+            pcu.CopiarCodigoSkuEQtdEmMassa();
+        }
+
+        [When(@"uma mensagem de Conferência Finalizada deve aparecer")]
+        public void WhenUmaMensagemDeConferenciaFinalizadaDeveAparecer()
+        {
+            pcu.MensagemConferenciaFinalizada();
+        }
+
+        [When(@"o sistema deve redirecionar para tela Entrega e Remessas do Pedido")]
+        public void WhenOSistemaDeveRedirecionarParaTelaEntregaERemessasDoPedido()
+        {
+            pcu.UrlEntregasRemessasPedidoConferido();
+        }
+
+        [When(@"seja feita a conferencia desses produtos")]
+        public void WhenSejaFeitaAConferenciaDessesProdutos()
+        {
+            pcu.ColarCodigoSkuEQtdEmMassa();
+        }
+
+
+        [Then(@"clicar no botao Concluir Processo")]
+        public void ThenClicarNoBotaoConcluirProcesso()
+        {
+            pcu.CliqueConcluirProcessoConferencia();
+        }
+
+
         [Then(@"uma mensagem de conferido com sucesso deve aparecer")]
         public void ThenUmaMensagemDeConferidoComSucessoDeveAparecer()
         {
@@ -178,6 +228,7 @@ namespace QACoreBusiness.StepDefinitions
         {
             pcu.UrlEntregasRemessasPedidoConferido();
         }
+
 
 
 

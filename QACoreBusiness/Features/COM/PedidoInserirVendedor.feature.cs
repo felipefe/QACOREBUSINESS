@@ -78,16 +78,6 @@ namespace QACoreBusiness.Features.COM
 testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
 testRunner.And("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 6
-testRunner.And("tenha um pedido criado na situaçao {\'Lançamento / Edição\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 7
-testRunner.And("clique para editar este pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
-testRunner.And("seja redirecionado para tela de ediçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
-testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
-testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -104,18 +94,27 @@ testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir ou trocar vendedor ao pedido", null, new string[] {
                         "inserir_vendedor_pedido_sucesso"});
-#line 13
+#line 12
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
+#line 13
+testRunner.When("o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços" +
+                    "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
-testRunner.When("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("fechar a primeira mensagem de dados do pedido carregado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
-testRunner.Then("o sistema redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
+testRunner.And("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+testRunner.Then("o sistema redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
 testRunner.And("uma mensagem de dados carregados deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -129,20 +128,35 @@ testRunner.And("uma mensagem de dados carregados deve aparecer", ((string)(null)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir vendedor já selecionado ao pedido", null, new string[] {
                         "trocar_vendedor_pedido_falha"});
-#line 20
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 21
-testRunner.Given("que o pedido ja tenha um vendedor informado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
-testRunner.When("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
-testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.Then("o sistema nao redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços" +
+                    "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
+testRunner.And("fechar a primeira mensagem de dados do pedido carregado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+testRunner.And("for redirecionado para tela de trocar vendedor pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+testRunner.And("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+testRunner.And("o sistema redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+testRunner.When("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+testRunner.Then("o sistema nao redireciona para ediçao do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
 testRunner.And("uma mensagem para indicar um vendedor diferente do atual deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

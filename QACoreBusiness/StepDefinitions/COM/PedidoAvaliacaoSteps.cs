@@ -39,6 +39,56 @@ namespace QACoreBusiness.StepDefinitions
             pau.MotivoDois(motivoDois);
         }
 
+        [When(@"eu clicar no botao Efetivar Pedido")]
+        public void WhenEuClicarNoBotaoEfetivarPedido()
+        {
+            pau.CliqueEfetivarPedido();
+        }
+
+
+        [When(@"o sistema redireciona para index de pedidos")]
+        public void WhenOSistemaRedirecionaParaIndexDePedidos()
+        {
+            pau.ValidaUrlIndexPedido();
+        }
+
+        [When(@"a situaçao do pedido deve ser \{'(.*)'}")]
+        public void WhenASituacaoDoPedidoDeveSer(string status)
+        {
+            pau.SituacaoPedido(status);
+        }
+
+        [When(@"que eu acesse as actions do pedido")]
+        public void WhenQueEuAcesseAsActionsDoPedido()
+        {
+            pau.ActionsDoPedido();
+        }
+
+        [When(@"clique no botao Avaliaçao do Pedido")]
+        public void WhenCliqueNoBotaoAvaliacaoDoPedido()
+        {
+            pau.CliqueAvaliacaoPedido();
+        }
+
+        [When(@"seja redirecionado para tela CRM Avaliar Pedido")]
+        public void WhenSejaRedirecionadoParaTelaCRMAvaliarPedido()
+        {
+            pau.IndexAvaliarPedido();
+        }
+
+        [When(@"um dos motivos seja \{'(.*)'}")]
+        public void WhenUmDosMotivosSeja(string motivoUm)
+        {
+            pau.MotivoUm(motivoUm);
+        }
+
+        [When(@"outro motivo seja \{'(.*)'}")]
+        public void WhenOutroMotivoSeja(string motivoDois)
+        {
+            pau.MotivoDois(motivoDois);
+        }
+
+
         [When(@"eu clicar no botao Prosseguir")]
         public void WhenEuClicarNoBotaoProsseguir()
         {

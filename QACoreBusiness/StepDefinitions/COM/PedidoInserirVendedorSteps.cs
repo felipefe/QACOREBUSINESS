@@ -26,7 +26,20 @@ namespace QACoreBusiness.StepDefinitions
         {
             piv.VendedorJaInformado();
         }
-        
+
+        [When(@"for redirecionado para tela de trocar vendedor pedido")]
+        public void WhenForRedirecionadoParaTelaDeTrocarVendedorPedido()
+        {
+            piv.UrlTrocarVendedorPedido();
+        }
+
+        [When(@"o sistema redireciona para ediçao do pedido")]
+        public void WhenOSistemaRedirecionaParaEdicaoDoPedido()
+        {
+            piv.UrlEdicaoPedido();
+        }
+
+
         [When(@"informar o vendedor \{'(.*)'}")]
         public void WhenInformarOVendedor(string nomeVendedor)
         {

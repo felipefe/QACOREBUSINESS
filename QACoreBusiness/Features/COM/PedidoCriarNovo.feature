@@ -10,6 +10,12 @@ Scenario: Criar novo pedido
 When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
 Then seja redirecionado para tela de ediçao
 
+@efetivar_pedido_falha
+Scenario: Falha efetivar pedido
+When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
+And eu clicar no botao Efetivar Pedido
+Then o sistema nao redireciona para tela de pedidos
+And uma alerta com as pendencias deve ser exibido 
 
 @criar_e_efetivar_pedido
 Scenario: Criar e efetivar pedido
@@ -68,3 +74,4 @@ And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 Then o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
+

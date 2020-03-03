@@ -44,6 +44,12 @@ namespace QACoreBusiness.Util
 
         }
 
+        public void FecharMensagemCarregada()
+        {
+            Thread.Sleep(1000);
+            pedido.FecharMensagem.Click();
+        }
+
         //sleep aqui evita que o selenium execute mto rapido e capture a primeira mensagem ao editar o pedido
         //queremos a segunda mensagem de pessoa adicionada com sucesso que ocorrera mais adiante
         public void AcessarUrlEditPedido()

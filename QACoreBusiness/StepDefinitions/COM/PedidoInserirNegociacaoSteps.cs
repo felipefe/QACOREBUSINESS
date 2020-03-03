@@ -9,30 +9,33 @@ namespace QACoreBusiness.StepDefinitions
     {
         PedidoInserirNegociacaoUtil pin = new PedidoInserirNegociacaoUtil();
 
-        [Given(@"que eu nao tenha informado o cliente")]
-        public void GivenQueEuNaoTenhaInformadoOCliente()
-        {
-            pin.PedidoSemCliente();
-        }
         
         [Given(@"que eu cliquei na sessao de Pagamento")]
         public void GivenQueEuCliqueiNaSessaoDePagamento()
         {
             pin.SessaoPagamento();
         }
-        
-        [Given(@"nao tenha itens adicionados ao pedido")]
-        public void GivenNaoTenhaItensAdicionadosAoPedido()
-        {
-            pin.PedidoSemItens();
-        }
-        
+                
         [Given(@"valor do pedido seja maior que zero")]
         public void GivenValorDoPedidoSejaMaiorQueZero()
         {
             pin.ValorPedidoMaiorQueZero();
         }
-        
+
+        [When(@"que eu nao tenha informado o cliente")]
+        public void WhenQueEuNaoTenhaInformadoOCliente()
+        {
+            pin.PedidoSemCliente();
+        }
+
+        [When(@"nao tenha itens adicionados ao pedido")]
+        public void WhenNaoTenhaItensAdicionadosAoPedido()
+        {
+            pin.PedidoSemItens();
+        }
+
+
+
         [When(@"eu clicar no botao Criar Negociaçao")]
         public void WhenEuClicarNoBotaoCriarNegociacao()
         {

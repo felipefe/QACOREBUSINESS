@@ -58,5 +58,20 @@ namespace QACoreBusiness.Util
             Thread.Sleep(2000);
             pedido.ActionsTrocarVendedor.Click();
         }
+
+        public void AlertaPendenciasPedido()
+        {
+            Assert.Equal("Pendências", pedido.PendenciasPedido.Text);
+        }
+
+        public void NaoRedirecionaIndexPedido()
+        {
+            Assert.Contains(pedido.UrlEditPedido, driver.Url);
+        }
+
+        public void RedirecionaIndexPedidos()
+        {
+            Assert.Equal(pedido.UrlIndexPedido, driver.Url);
+        }
     }
 }

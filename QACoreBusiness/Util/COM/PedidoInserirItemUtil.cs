@@ -59,6 +59,7 @@ namespace QACoreBusiness.Util
         public void CliqueAdicionarItem()
         {
             pedido.BotaoAddItemPedido.Click();
+            Thread.Sleep(800);
         }
 
         public void MensagemMotivoItemNaoAdicionado()

@@ -20,6 +20,7 @@ namespace QACoreBusiness.Elements
         #endregion
 
         #region Avaliar Pedido
+        public IWebElement ActionsEfetivarPedido => chromeDriver.FindElement(By.XPath("//div[@class='actions']//a[@class='popup-link'][@data-content='Efetivar Pedido']"));
         public IWebElement ActionsAvaliarPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@class='popup-link tool-item gradient'][@data-content='Avaliação do Pedido']");
         public IWebElement BotaoProsseguir => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@class='ui large button'][@value='Prosseguir']");
         public IWebElement AvaliacaoMotivoUm => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='pedidos']//tbody//tr[1]//td[2]");
@@ -60,6 +61,9 @@ namespace QACoreBusiness.Elements
         #region Emitir DFe
         public IWebElement ActionsEmitirDFePedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@class='popup-link tool-item gradient'][@data-content='Emitir Documentos Fiscais']");
         public IWebElement ColunaValorPedido => ElementWait.WaitForElementXpath(chromeDriver, "//table//tbody//tr[1]//td[10][@class='left aligned'][@data-field='ValorNegociado']");
+        public IWebElement ActionPedido => ElementWait.WaitForElementXpath(chromeDriver, "//tr[3]//a//img[@alt='Opções']");
+        public IWebElement ActionEmitirDocFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Emitir documentos fiscais']");
+
         #endregion
 
 

@@ -31,6 +31,7 @@ namespace QACoreBusiness.Util
 
         public void IndexConferenciaPedido()
         {
+            Thread.Sleep(1000);
             Assert.Contains(conferencia.UrlConferenciaPedido, driver.Url);
         }
 
@@ -115,6 +116,7 @@ namespace QACoreBusiness.Util
 
         public void ColarCodigoSkuEQtdEmMassa()
         {
+            Thread.Sleep(1000);
             for (int i=0; i<conferenciasSKUProduto.Count; i++)
             {
                 conferencia.EditTextCodigoProduto.Clear();
@@ -148,6 +150,12 @@ namespace QACoreBusiness.Util
             int conferir = Int32.Parse(GetQuantidadeProdutoConferir());
             int conferido = Int32.Parse(conferencia.ColunaQtdConferida.Text);
             Assert.True(conferir != conferido);
+        }
+
+        public void ValidaUrlIndexPedido()
+        {
+            Thread.Sleep(1000);
+            Assert.Equal(conferencia.UrlIndexPedido, driver.Url);
         }
 
         public void UrlFinalizarConferenciaCOM()

@@ -69,5 +69,42 @@ namespace QACoreBusiness.StepDefinitions
         {
             psu.CliqueFinalizarSeparacaoCOM();
         }
+
+        [When(@"clique no botao Separaçao")]
+        public void WhenCliqueNoBotaoSeparacao()
+        {
+            psu.CliqueActionSeparacao();
+        }
+
+        [When(@"seja redirecionado para tela WMS Separaçao")]
+        public void WhenSejaRedirecionadoParaTelaWMSSeparacao()
+        {
+            psu.IndexSeparacaoWMS();
+        }
+
+        [When(@"clique no botao Definir todos")]
+        public void WhenCliqueNoBotaoDefinirTodos()
+        {
+            psu.CliqueBotaoDefinirTodos();
+        }
+
+        [When(@"uma mensagem de sucesso aparecera \{'(.*)'}")]
+        public void WhenUmaMensagemDeSucessoAparecera(string mensagem)
+        {
+            psu.MensagemSucessoSeparacao(mensagem);
+        }
+
+        [When(@"depois clicar no botao Marcar Todos")]
+        public void WhenDepoisClicarNoBotaoMarcarTodos()
+        {
+            psu.CliqueBotaoMarcarTodos();
+        }
+
+        [When(@"uma mensagem de sucesso deve aparecer \{'(.*)'}")]
+        public void WhenUmaMensagemDeSucessoDeveAparecer(string mensagem)
+        {
+            psu.MensagemSucessoSeparacao(mensagem);
+        }
+
     }
 }

@@ -54,6 +54,7 @@ namespace QACoreBusiness.Util
         public IWebElement TagReservaEstoqueSemReserva => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular violet label sui-tooltip']");
         public IWebElement BotaoAddItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui stackable row three column grid']//div[@class='sixteen wide field']//div[@class='ui large action input']//button[@class='ui right labeled icon button']");
         public IWebElement MensagemItemNaoAdd => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='iziToast-capsule'][1]//div[@class='iziToast-body']//div[@class='iziToast-texts']//strong[@class='iziToast-title slideIn']");
+        public IWebElement FecharMensagem => ElementWait.WaitForElementXpath(chromeDriver, "//button[@class='iziToast-close']");
         public IWebElement MensagemMotivoItemNaoAdd => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='iziToast-capsule'][2]//div[@class='iziToast-body']//div[@class='iziToast-texts']//strong[@class='iziToast-title slideIn']");
         public IWebElement ActionsItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//table[@id='table-itens']//tr//td[@class='center aligned collapsing']//div[@class='v-popover']//a[@class='tooltip-target b3']");
         public IWebElement BotaoRemoverItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='wrapper']//div[@class='tooltip-inner popover-inner']//a[@class='popup-link'][@data-content='Remover item']");
@@ -87,7 +88,6 @@ namespace QACoreBusiness.Util
         #endregion
 
         #region Efetivar Pedido
-        public IWebElement ActionsEfetivarPedido => chromeDriver.FindElement(By.XPath("//div[@class='actions']//a[@class='popup-link'][@data-content='Efetivar Pedido']"));
         public IWebElement PedidoComCliente => chromeDriver.FindElement(By.XPath("//div[@id='pedido-pessoa-wrapper']//h4[@class='ui header']//div[@class='ui stackable row two column grid']//div[@class='ui column']"));
         public IWebElement PendenciasPedido => chromeDriver.FindElement(By.XPath("//div[@class='notify error notify-without-icon notify-top-right']//div[@class='notify-text']//h3"));
         #endregion

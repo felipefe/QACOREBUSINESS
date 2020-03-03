@@ -31,6 +31,13 @@ namespace QACoreBusiness.Util.COM
             servidor.isHabilitadoCoreService();
         }
 
+        public void CliqueEmitirDocumentoFiscal()
+        {
+            Thread.Sleep(1000);
+            pedido.ActionPedido.Click();
+            pedido.ActionEmitirDocFiscal.Click();
+        }
+
         public void AmbienteHomologacao()
         {
             parametro.isHomologacao();
@@ -46,10 +53,10 @@ namespace QACoreBusiness.Util.COM
             driver.Navigate().GoToUrl(nfee.UrlNFEEmitidas);
         }
 
-        //espero 10seg ate a nota ser validada entao atualizo a pagina para pegar o status autorizado
+        //espero 12seg ate a nota ser validada entao atualizo a pagina para pegar o status autorizado
         public void SituacaoNFE()
         {
-            Thread.Sleep(10000);
+            Thread.Sleep(12000);
             driver.Navigate().Refresh();
             Assert.True(ElementWait.WaitTextToBePresentInElement(driver, nfee.ColunaUsoAutorizadoNFE, "Autorizado o uso da NF-e"));
         }

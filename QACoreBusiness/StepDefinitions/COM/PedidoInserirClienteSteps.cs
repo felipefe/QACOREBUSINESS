@@ -28,6 +28,12 @@ namespace QACoreBusiness.StepDefinitions
             pic.CliqueEditPedido();
         }
 
+        [When(@"fechar a primeira mensagem de dados do pedido carregado")]
+        public void WhenFecharAPrimeiraMensagemDeDadosDoPedidoCarregado()
+        {
+            pic.FecharMensagemCarregada();
+        }
+
         [When(@"eu pesquisar no editText o cliente por CP \{(.*)}")]
        public void WhenEuPesquisarNoEditTextOClientePorCP(Decimal cp)
         {

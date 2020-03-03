@@ -53,6 +53,11 @@ namespace QACoreBusiness.Util
             Assert.Equal("Separação", avaliar.SituacaoPedido.Text);
         }
 
+        public void CliqueEfetivarPedido()
+        {
+            avaliar.ActionsEfetivarPedido.Click();
+        }
+
         public void ValidaUrlIndexPedido()
         {
             Assert.Equal(avaliar.UrlIndexPedido, driver.Url);

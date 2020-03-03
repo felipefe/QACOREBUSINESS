@@ -26,8 +26,14 @@ namespace QACoreBusiness.StepDefinitions.COM
         {
             pdfeu.CliqueEmitirDFE();
         }
-        
-        
+
+        [When(@"clicar nas actions Emitir Documentos Fiscais")]
+        public void WhenClicarNasActionsEmitirDocumentosFiscais()
+        {
+            pdfeu.CliqueEmitirDocumentoFiscal();
+        }
+
+
         [Then(@"o usuário deve acessar o contexto de NF-e Emitidas")]
         public void ThenOUsuarioDeveAcessarOContextoDeNF_EEmitidas()
         {

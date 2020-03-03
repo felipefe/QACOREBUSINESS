@@ -46,13 +46,29 @@ namespace QACoreBusiness.StepDefinitions
             pedido.CliqueTrocarVendedor();
         }
 
-
         [Then(@"seja redirecionado para tela de ediçao")]
         public void ThenSejaRedirecionadoParaTelaDeEdicao()
         {
             pedido.UrlEditPedido();
         }
 
+        [Then(@"o sistema nao redireciona para tela de pedidos")]
+        public void ThenOSistemaNaoRedirecionaParaTelaDePedidos()
+        {
+            pedido.NaoRedirecionaIndexPedido();
+        }
+
+        [Then(@"uma alerta com as pendencias deve ser exibido")]
+        public void ThenUmaAlertaComAsPendenciasDeveSerExibido()
+        {
+            pedido.AlertaPendenciasPedido();
+        }
+
+        [Then(@"o sistema redireciona para index de pedidos")]
+        public void ThenOSistemaRedirecionaParaIndexDePedidos()
+        {
+            pedido.RedirecionaIndexPedidos();
+        }
 
 
     }
