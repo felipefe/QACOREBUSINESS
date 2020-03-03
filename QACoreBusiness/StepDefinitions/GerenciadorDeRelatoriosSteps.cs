@@ -44,17 +44,12 @@ namespace QACoreBusiness.StepDefinitions
             gru.RelatorioIsImportado(nomeRelatorio);
         }
 
-        [Given(@"clique nas actions deste relatorio Criar Relatorio A partir Desta Definição")]
-        public void GivenCliqueNasActionsDesteRelatorioCriarRelatorioAPartirDestaDefinicao()
+        [Given(@"clique nas actions relatorio \{'(.*)'} Editar Definiçao")]
+        public void GivenCliqueNasActionsRelatorioEditarDefinicao(string report)
         {
-            gru.CliqueActionsCriarRptApartirDestaDefinicao();
+            gru.CliqueActionEditarDefinicao(report);
         }
 
-        [Given(@"clique nas actions deste relatorio Editar Definiçao")]
-        public void GivenCliqueNasActionsDesteRelatorioEditarDefinicao()
-        {
-            gru.CliqueActionEditarDefinicao();
-        }
 
         [Given(@"seja redirecionado para tela de edicao do rpt /RPT/ReportView/EditBuilder/")]
         public void GivenSejaRedirecionadoParaTelaDeEdicaoDoRptRPTReportViewEditBuilder()
@@ -103,6 +98,56 @@ namespace QACoreBusiness.StepDefinitions
         {
             gru.MemorizarColunasMarcadas();
         }
+
+        [Given(@"clicar no botao Carregar rpt")]
+        public void GivenClicarNoBotaoCarregarRpt()
+        {
+            gru.CarregarRptSelecionado();
+        }
+
+        [Given(@"clique nas actions relatorio \('(.*)'\) Criar Relatorio A partir Desta Definição")]
+        public void GivenCliqueNasActionsRelatorioCriarRelatorioAPartirDestaDefinicao(string rpt)
+        {
+            gru.CliqueActionsCriarRptApartirDestaDefinicao(rpt);
+        }
+
+        [Given(@"clicar no botao Salvar relatorio")]
+        public void GivenClicarNoBotaoSalvarRelatorio()
+        {
+            gru.SalvarRptApartirDestaDefinicao();
+        }
+
+        [Given(@"seja redirecionado para index de Gerenciador de relatorio /RPT/ReportView")]
+        public void GivenSejaRedirecionadoParaIndexDeGerenciadorDeRelatorioRPTReportView()
+        {
+            gru.ValidaUrlGerenciadorDeRelatorios();
+        }
+
+        [Given(@"selecionar todas as colunas possiveis")]
+        public void GivenSelecionarTodasAsColunasPossiveis()
+        {
+            gru.SelecionarColunasEditDefinicao();
+        }
+
+        [Given(@"clicar no botao Gravar denificao editada")]
+        public void GivenClicarNoBotaoGravarDenificaoEditada()
+        {
+            gru.CliqueGravarEditDefinicaoRpt();
+        }
+
+
+        [When(@"seja redirecionado para index de Definiçoes de Relatorios /RPT/Report")]
+        public void WhenSejaRedirecionadoParaIndexDeDefinicoesDeRelatoriosRPTReport()
+        {
+            gru.ValidaUrlDefinicoesDeRelatorios();
+        }
+
+        [When(@"clique nas actions relatorio \('(.*)'\) Criar Relatorio A partir Desta Definição")]
+        public void WhenCliqueNasActionsRelatorioCriarRelatorioAPartirDestaDefinicao(string rpt)
+        {
+            gru.CliqueActionsCriarRptApartirDestaDefinicao(rpt);
+        }
+
 
         [When(@"clique na aba Colunas")]
         public void WhenCliqueNaAbaColunas()

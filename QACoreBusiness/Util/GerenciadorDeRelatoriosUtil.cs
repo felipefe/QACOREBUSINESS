@@ -70,8 +70,9 @@ namespace QACoreBusiness.Util
             Assert.NotNull(relatorioEdit);  
         }
 
-        public void CliqueActionEditarDefinicao()
+        public void CliqueActionEditarDefinicao(string report)
         {
+            ReportExiste(report);
             if (relatorioEdit != null)
             {
                 relatorioEdit.FindElement(By.CssSelector("td:nth-child(5)")).Click();
@@ -226,14 +227,31 @@ namespace QACoreBusiness.Util
             Assert.True(!achou);
         }
 
-        public void CliqueActionsCriarRptApartirDestaDefinicao()
+
+        public void CliqueActionsCriarRptApartirDestaDefinicao(string reportName)
         {
+            RelatorioIsImportado(reportName);
             if (relatorioEdit != null)
             {
                 relatorioEdit.FindElement(By.CssSelector("td:nth-child(6)")).Click();
-                rpt.ListaContainerActions[indexContainerAction].FindElement(By.TagName("a[data-content='Criar Relatório a partir desta definição']")).Click() ;
+                rpt.ListaContainerActions[indexContainerAction].FindElement(By.TagName("a[data-content='Criar Relatório a partir desta definição']")).Click();
             }
         }
+
+
+        //public void CliqueActionsCriarRptApartirDestaDefinicao(string reportName)
+        //{
+        //    foreach (IWebElement report in rpt.RelatoriosImportados)
+        //    {
+        //        if (reportName.Equals(report.FindElement(By.CssSelector("td:nth-child(2)")).Text))
+        //        {
+        //            report.FindElement(By.CssSelector("td:nth-child(6)")).Click();
+        //            System.Threading.Thread.Sleep(800);
+        //            rpt.ListaContainerActions[indexContainerAction].FindElement(By.TagName("a[data-content='Criar Relatório a partir desta definição']")).Click();
+        //            break;
+        //        }
+        //    }
+        //}
 
         public void SalvarRptApartirDestaDefinicao()
         {
