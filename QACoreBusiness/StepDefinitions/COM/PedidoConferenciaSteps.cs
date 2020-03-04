@@ -87,6 +87,29 @@ namespace QACoreBusiness.StepDefinitions
             pcu.ColarCodigoSkuEQtdEmMassa();
         }
 
+        [When(@"o SKU seja copiado da coluna Código")]
+        public void WhenOSKUSejaCopiadoDaColunaCodigo()
+        {
+            pcu.CopiarCodigoSKU();
+        }
+
+        [When(@"seja colado no editText Código do Produto")]
+        public void WhenSejaColadoNoEditTextCodigoDoProduto()
+        {
+            pcu.ColarCodigoSKU();
+        }
+
+        [When(@"a quantidade seja copiada da coluna Qtd\. Total")]
+        public void WhenAQuantidadeSejaCopiadaDaColunaQtd_Total()
+        {
+            pcu.CopiarQuantidadeConferencia();
+        }
+
+        [When(@"seja colada no editText Quantidade")]
+        public void WhenSejaColadaNoEditTextQuantidade()
+        {
+            pcu.ColarQuantidadeConferencia();
+        }
 
         [When(@"eu clicar Enter")]
         public void WhenEuClicarEnter()

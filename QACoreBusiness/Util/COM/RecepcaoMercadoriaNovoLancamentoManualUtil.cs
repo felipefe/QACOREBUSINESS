@@ -200,6 +200,11 @@ namespace QACoreBusiness.Util.COM
             recepcao.SearchSTItemLF.SendKeys(Keys.Enter);
         }
 
+        public void EspereTantosSegundos(int segundos)
+        {
+            Thread.Sleep(segundos*1000);
+        }
+
         public void CliqueSalvarItensLF()
         {
             recepcao.InputValorBruto.Click(); //esse clique é so para realizar os calculos da base de calculo senao ha necessidade de 2 cliques no salvar

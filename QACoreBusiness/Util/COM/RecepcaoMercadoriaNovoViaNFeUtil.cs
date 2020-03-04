@@ -92,7 +92,9 @@ namespace QACoreBusiness.Util.COM
 
         public void CliqueConfirmarExcluirRecepcao()
         {
+            System.Threading.Thread.Sleep(800);
             recepcao.BotaoExcluirRecepcaoModal.Click();
+            System.Threading.Thread.Sleep(700);
         }
 
         public void SelecionarImpostosFederais(string impFederal)

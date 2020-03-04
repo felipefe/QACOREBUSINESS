@@ -100,6 +100,34 @@ namespace QACoreBusiness.StepDefinitions
             rmxml.ValidaNumeroRecepcaoExcluida();
         }
 
+        [Then(@"que eu clique no botao da header Gerenciar recepcoes")]
+        public void ThenQueEuCliqueNoBotaoDaHeaderGerenciarRecepcoes()
+        {
+            rmxml.CliqueGerenciarRecepcoes();
+        }
 
+        [Then(@"seja redirecionado para index de gerenciar recepcoes")]
+        public void ThenSejaRedirecionadoParaIndexDeGerenciarRecepcoes()
+        {
+            rmxml.ValidaGerenciarRecepcoes();
+        }
+
+        [Then(@"memorizo o numero dessa recepcao")]
+        public void ThenMemorizoONumeroDessaRecepcao()
+        {
+            rmxml.ArmazenarNumeroRecepcaoExcluir();
+        }
+
+        [Then(@"clicar no botao da action para Excluir recepcao")]
+        public void ThenClicarNoBotaoDaActionParaExcluirRecepcao()
+        {
+            rmxml.CliqueActionsExcluirRecepcao();
+        }
+
+        [Then(@"clicar no botao Excluir da modal")]
+        public void ThenClicarNoBotaoExcluirDaModal()
+        {
+            rmxml.CliqueConfirmarExcluirRecepcao();
+        }
     }
 }

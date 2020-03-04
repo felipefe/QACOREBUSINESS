@@ -129,6 +129,54 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.ValidaUrlEscriturarItemManual();
         }
 
+        [Given(@"clicar no botao Salvar")]
+        public void GivenClicarNoBotaoSalvar()
+        {
+            rmmanual.ClicarBotaoSalvarRecepcao();
+        }
+
+        [Given(@"o sistema redirecionada para index de recepçao")]
+        public void GivenOSistemaRedirecionadaParaIndexDeRecepcao()
+        {
+            rmmanual.ValidaUrlIndexRecepcaoMercadoria();
+        }
+
+        [When(@"seja redirecionado para tela de Mercadorias da recepcao")]
+        public void WhenSejaRedirecionadoParaTelaDeMercadoriasDaRecepcao()
+        {
+            rmmanual.ValidaUrlLoteFiscalItem();
+        }
+
+        [When(@"o SKU do item da recepcao informado deve aparecer na tabela")]
+        public void WhenOSKUDoItemDaRecepcaoInformadoDeveAparecerNaTabela()
+        {
+            rmmanual.ValidaSKUItemRecepcao();
+        }
+
+        [When(@"tenha na coluna Escriturado do item o valor \{'(.*)'}")]
+        public void WhenTenhaNaColunaEscrituradoDoItemOValor(string isEscriturado)
+        {
+            rmmanual.StatusItemIsEscriturado(isEscriturado); 
+        }
+
+        [When(@"clique nas actions para Escriturar")]
+        public void WhenCliqueNasActionsParaEscriturar()
+        {
+            rmmanual.CliqueActionsEscriturarItemLoteFiscal();
+        }
+
+        [When(@"seja redirecionado para tela de EscriturarProduto")]
+        public void WhenSejaRedirecionadoParaTelaDeEscriturarProduto()
+        {
+            rmmanual.ValidaUrlEscriturarItemManual();
+        }
+
+        [When(@"espere \{(.*)} segundos ate as mensagem de valor nao calculado sumirem")]
+        public void WhenEspereSegundosAteAsMensagemDeValorNaoCalculadoSumirem(int segundos)
+        {
+            rmmanual.EspereTantosSegundos(segundos);
+        }
+
         [When(@"clicar no botao Salvar")]
         public void WhenClicarNoBotaoSalvar()
         {
@@ -486,6 +534,78 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.InformarValorCofinsEscrituraItem();
         }
 
+        [When(@"o status do item deve mudar para \{'(.*)'}")]
+        public void WhenOStatusDoItemDeveMudarPara(string statusEscriturado)
+        {
+            rmmanual.ValidaItemEscrituradoSucesso(statusEscriturado);
+        }
+
+        [When(@"quando clicar no botao Prosseguir")]
+        public void WhenQuandoClicarNoBotaoProsseguir()
+        {
+            rmmanual.CliqueProsseguirEscrituracao();
+        }
+
+        [When(@"o sistema redirecionada para index de recepçao")]
+        public void WhenOSistemaRedirecionadaParaIndexDeRecepcao()
+        {
+            rmmanual.ValidaUrlIndexRecepcaoMercadoria();
+        }
+
+        [When(@"seja clicado no botao Mercadoria nas actions")]
+        public void WhenSejaClicadoNoBotaoMercadoriaNasActions()
+        {
+            rmmanual.CliqueActionsMercadorias();
+        }
+
+        [When(@"o status da recepcao deve ser \{'(.*)'}")]
+        public void WhenOStatusDaRecepcaoDeveSer(string status)
+        {
+            rmmanual.ValidaStatusRecepcao(status);
+        }
+
+        [When(@"seja clicado no botao Conferencia Fisica de Recebimento nas actions")]
+        public void WhenSejaClicadoNoBotaoConferenciaFisicaDeRecebimentoNasActions()
+        {
+            rmmanual.CliqueActionsConferenciaFisicaRecebimento();
+        }
+
+        [Then(@"seja clicado no botao Finalizar Recebimento nas actions")]
+        public void ThenSejaClicadoNoBotaoFinalizarRecebimentoNasActions()
+        {
+            rmmanual.CliqueActionsFinalizarRecebimento();
+        }
+
+        [Then(@"seja redirecionado para tela de Finalizar recepcao")]
+        public void ThenSejaRedirecionadoParaTelaDeFinalizarRecepcao()
+        {
+            rmmanual.ValidaUrlFinalizarRecepcao();
+        }
+
+        [Then(@"clicar no botao Finalizar Recepcao")]
+        public void ThenClicarNoBotaoFinalizarRecepcao()
+        {
+            rmmanual.CliqueBotaoFinalizarRecepcao();
+        }
+
+        [Then(@"clicar no botao Finalizar Lançamento de Itens")]
+        public void ThenClicarNoBotaoFinalizarLancamentoDeItens()
+        {
+            rmmanual.CliqueBotaoFinalizarLancamentoItens();
+        }
+
+        [Then(@"marcar Eu concluí o lançamento de todos os itens")]
+        public void ThenMarcarEuConcluiOLancamentoDeTodosOsItens()
+        {
+            rmmanual.EuConcluiLancamentoTodosItens();
+        }
+
+        [Then(@"clicar no botao Confirmar")]
+        public void ThenClicarNoBotaoConfirmar()
+        {
+            rmmanual.CliqueBotaoConfirmarLancamentoTodosItens();
+        }
+
         [Then(@"clicar no botao Gravar escrituraçao")]
         public void ThenClicarNoBotaoGravarEscrituracao()
         {
@@ -532,6 +652,12 @@ namespace QACoreBusiness.StepDefinitions.COM
         public void ThenQuandoClicarNoBotaoProsseguir()
         {
             rmmanual.CliqueProsseguirEscrituracao();
+        }
+
+        [Then(@"que tenha uma recepcao no status \{'(.*)'}")]
+        public void ThenQueTenhaUmaRecepcaoNoStatus(string status)
+        {
+            rmmanual.StatusRecepcaoMercadoria(status);
         }
     }
 }
