@@ -136,6 +136,97 @@ namespace QACoreBusiness.StepDefinitions
             gfu.MemorizarValorLiquidoRenegociar();
         }
 
+        [Given(@"acesse a url\{'(.*)'}")]
+        public void GivenAcesseAUrlDeContratos(string url)
+        {
+            gfu.GoToUrl(url);
+        }
+
+        [When(@"inserir no input Data de Vencimento \{(.*)} dias RETROATIVOS")]
+        public void WhenInserirNoInputDataDeVencimentoDiasRETROATIVOS(int diasVencidos)
+        {
+            gfu.AddDataVencimentoRetroativaContratoManual(diasVencidos);
+        }
+
+        [When(@"acesse a url\{'(.*)'}")]
+        public void WhenAcesseAUrlDeContratos(string url)
+        {
+            gfu.GoToUrl(url);
+        }
+
+        [When(@"que clica na aba Contas a Receber")]
+        public void WhenQueClicaNaAbaContasAReceber()
+        {
+            gfu.CliqueAbaContasReceber();
+        }
+
+        [When(@"clique na pesquisa")]
+        public void WhenCliqueNaPesquisa()
+        {
+            gfu.CliquePesquisaGestorFin();
+        }
+
+        [When(@"clique para limpar filtros")]
+        public void WhenCliqueParaLimparFiltros()
+        {
+            gfu.CliqueLimparFiltros();
+        }
+
+        [When(@"clique no botao Filtrar Receitas")]
+        public void WhenCliqueNoBotaoFiltrarReceitas()
+        {
+            gfu.CliqueFiltrarReceitas();
+        }
+
+        [When(@"o numero de parcelas filtradas seja maior que \{(.*)}")]
+        public void WhenONumeroDeParcelasFiltradasSejaMaiorQue(int quantidadeParcelas)
+        {
+            gfu.ValidaQuantidadeParcelasReceitasFiltradas(quantidadeParcelas);
+        }
+
+        [When(@"o vencimento da parcela seja retroativo a data atual")]
+        public void WhenOVencimentoDaParcelaSejaRetroativoADataAtual()
+        {
+            gfu.ValidaVencimentoParcelaRetroativoDataAtual();
+        }
+
+        [When(@"selecione a primeira parcela listada")]
+        public void WhenSelecioneAPrimeiraParcelaListada()
+        {
+            gfu.SelecionarPrimeiraParcelaListada();
+        }
+
+        [When(@"clique no botao movimentar parcela")]
+        public void WhenCliqueNoBotaoMovimentarParcela()
+        {
+            gfu.CliqueMovimentarParcelaSelecionada();
+        }
+
+        [When(@"o valor a ser movimentado seja maior que zero")]
+        public void WhenOValorASerMovimentadoSejaMaiorQueZero()
+        {
+            gfu.ValidaValorParcelasSelecionadas();
+        }
+
+        [When(@"clique no icone Baixar Parcela")]
+        public void WhenCliqueNoIconeBaixarParcela()
+        {
+            gfu.CliqueIconeBaixarParcelas();
+        }
+
+        [When(@"seja redirecionado para /FIN/Contrato/ListarParcelasBaixa")]
+        public void WhenSejaRedirecionadoParaFINContratoListarParcelasBaixa()
+        {
+            gfu.ValidaRedirecionamentoListarParcelasBaixa();
+        }
+
+        [When(@"clique no collapse para exibir meio pagamento parcela")]
+        public void WhenCliqueNoCollapseParaExibirMeioPagamentoParcela()
+        {
+            gfu.CliqueCollapseExibirMeioPagamentoParcela();
+        }
+
+
         [When(@"clique no botao Adicionar Multiplos Meios de Pagamento")]
         public void WhenCliqueNoBotaoAdicionarMultiplosMeiosDePagamento()
         {
@@ -148,10 +239,17 @@ namespace QACoreBusiness.StepDefinitions
             gfu.CliqueBotaoEfetuarBaixa();
         }
 
+        [When(@"inserir no input Data de Emissao do contrato \{(.*)} dias RETROATIVOS")]
+        public void WhenInserirNoInputDataDeEmissaoDoContratoDiasRETROATIVOS(int dias)
+        {
+            gfu.DataEmissaoContratoRetroativa(dias);
+        }
+
+
         [When(@"selecione o meio de pagamento \{'(.*)'}")]
         public void WhenSelecioneOMeioDePagamento(string meioPagamento)
         {
-            gfu.SelecionarMeioPagamentoMultiplosMeios(meioPagamento);
+            gfu.SelectMeioPagamentoBaixaParcela(meioPagamento);
         }
 
         [When(@"selecione o segundo meio de pagamento \{'(.*)'}")]

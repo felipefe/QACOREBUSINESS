@@ -304,7 +304,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaParcelaCriadaManualmente()
         {
-            Assert.Equal(auxValorOriginal.ToString("N2"), contr.ValorParcelaManual.GetAttribute("value").Replace(',', '.'));
+            Assert.Equal(auxValorOriginal.ToString("N2").Replace(",",""), contr.ValorParcelaManual.GetAttribute("value").Replace(',', '.'));
         }
 
         public void ValidaNovaParcelaContrato()
@@ -331,7 +331,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaColunaValor(decimal colunaValor)
         {
-            Assert.Equal(colunaValor.ToString("N2") , contr.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(7)")).Text.Replace(',','.'));
+            Assert.Equal(colunaValor.ToString("N2").Replace(",",".") , contr.FirstLinhaTabelaContrato.FindElement(By.CssSelector("td:nth-child(7)")).Text.Replace(',','.'));
         }
 
         public void ValidaStatusContratoCREPGA(string statusCREPGA)

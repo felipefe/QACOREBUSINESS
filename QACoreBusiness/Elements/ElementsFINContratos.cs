@@ -49,13 +49,12 @@ namespace QACoreBusiness.Elements
         public IWebElement InputValorPorParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoViewModel_ValorParcela']");
         public IWebElement InputQntidadeParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_QtdParcelasOriginal']");
         public IWebElement InputIntervaloDiasParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_IntervaloParcelas']");
-        public IWebElement InputVencimentoPrimeiraParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_DataPrimeiraParcela']");
+  
         public IWebElement TabelaParcelas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='divParcelas']//table//tbody");
         #endregion
 
         #region Adicionar Parcelas Manualmente Contrato
         public IWebElement InputValorOriginalManualmente => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_Valor']");
-        public IWebElement InputDataVencimentoManualmente => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_Vencimento']");
         public IWebElement BotaoAddParcelasCriadas => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Adicionar']");
         public IWebElement ValorParcelaManual => ElementWait.WaitForElementXpath(chromeDriver, "//tbody//tr//td[3]//div//div//input");
         public IWebElement ActionsParcelasContrato => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Parcelas']");

@@ -88,6 +88,13 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaUrlContrato();
         }
 
+        [When(@"a parcela deve ser criadas conforme valor informado")]
+        public void WhenAParcelaDeveSerCriadasConformeValorInformado()
+        {
+            cfu.ValidaParcelaCriadaManualmente();
+        }
+
+
         [When(@"o status do contrato deve ser \{'(.*)'}")]
         public void WhenOStatusDoContratoDeveSer(string status)
         {

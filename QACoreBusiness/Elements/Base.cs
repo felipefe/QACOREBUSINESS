@@ -26,6 +26,11 @@ namespace QACoreBusiness.Elements
         public IWebElement MenuUsuarioLogadoSair => ElementWait.WaitForElementXpath(chromeDriver, "//div//a[@href='/COREBusiness/Account/LogOff']");
         public IWebElement SearchGenerico => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
 
+        #region FIN
+        public IWebElement InputDataVencimentoManualmente => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_Vencimento']");
+        public IWebElement InputVencimentoPrimeiraParcelaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_DataPrimeiraParcela']");
+        public IWebElement InputDataEmissaoContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_Emissao']");
+        #endregion
 
     }
 }

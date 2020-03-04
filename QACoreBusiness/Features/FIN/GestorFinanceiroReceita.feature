@@ -174,7 +174,28 @@ Scenario: Baixar Parcela Transferência Bancária
 #valor a pagar deve ser o valor original da parcela 
 @receita_baixar_parcela_vencida_desconto
 Scenario: Baixar Parcela Vencida C/ Desconto 
-	Given que clica na aba Contas a Receber
+	Given acesse a url{'/FIN/Contrato'}
+	And que seja clicado no botao criar contrato
+	And seja redirecionado para /Contrato/Create
+	When inserir no input numero do documento 
+	And inserir no input Data de Emissao do contrato {20} dias RETROATIVOS
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar a empresa do contrato {'Deltacon Informática'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And informar no textArea um historico  {'Contrato com datas emissao e parcela retroativas'}
+	And selecionar a conta prevista pagamento {'BB Fake'}
+	And clicar no botao adicionar parcelas manualmente 
+	And inserir no input Valor Original R${1994.5}
+	And inserir no input Data de Vencimento {20} dias RETROATIVOS
+	And clicar no botao Adicionar parcela
+	And a parcela deve ser criadas conforme valor informado
+	And clicar no botao salvar/criar contrato
+	And o sistema redireciona para index de contratos
+	And o status do contrato deve ser {'Aberto'}
+	And a coluna referente ao valor original {'1994.5'}
+	And acesse a url{'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Receber
 	And clique na pesquisa 
 	And clique para limpar filtros
 	And clique no botao Filtrar Receitas
@@ -204,7 +225,28 @@ Scenario: Baixar Parcela Vencida C/ Desconto
 
 @receita_baixar_parcela_vencida_alterar_movimento
 Scenario: Baixar Parcela Vencida Alterando Movimento
-	Given que clica na aba Contas a Receber
+	Given acesse a url{'/FIN/Contrato'}
+	And que seja clicado no botao criar contrato
+	And seja redirecionado para /Contrato/Create
+	When inserir no input numero do documento 
+	And inserir no input Data de Emissao do contrato {20} dias RETROATIVOS
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar a empresa do contrato {'Deltacon Informática'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And informar no textArea um historico  {'Contrato com datas emissao e parcela retroativas'}
+	And selecionar a conta prevista pagamento {'BB Fake'}
+	And clicar no botao adicionar parcelas manualmente 
+	And inserir no input Valor Original R${150.0}
+	And inserir no input Data de Vencimento {20} dias RETROATIVOS
+	And clicar no botao Adicionar parcela
+	And a parcela deve ser criadas conforme valor informado
+	And clicar no botao salvar/criar contrato
+	And o sistema redireciona para index de contratos
+	And o status do contrato deve ser {'Aberto'}
+	And a coluna referente ao valor original {'150.0'}
+	And acesse a url{'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Receber
 	And clique na pesquisa 
 	And clique para limpar filtros
 	And clique no botao Filtrar Receitas
@@ -217,7 +259,7 @@ Scenario: Baixar Parcela Vencida Alterando Movimento
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	And clique no collapse para exibir meio pagamento parcela
 	And selecione o meio de pagamento {'Dinheiro'}
-	When clicar no botao Alterar dados da baixa (todas as parcelas)
+	And clicar no botao Alterar dados da baixa (todas as parcelas)
 	And marcar a flag Alterar Data de Pagamento para Data de vencimento
 	And clicar no botao Alterar dados baixa
 	Then o valor a pagar deve ser o mesmo que valor original

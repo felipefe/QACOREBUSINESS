@@ -147,6 +147,18 @@ namespace QACoreBusiness.Util.FIN
             Assert.NotNull(ParcelaCreditoAbatimento);
         }
 
+        public void AddDataVencimentoRetroativaContratoManual(int diasVencidos)
+        {
+            gestor.InputDataVencimentoManualmente.SendKeys(DateTime.Now.AddDays(-diasVencidos).ToString("dd/MM/yyyy"));
+            Thread.Sleep(700);
+        }
+
+        public void GoToUrl(string url)
+        {
+            driver.Navigate().GoToUrl(gestor.UrlCoreBusiness + url);
+            Thread.Sleep(1500);
+        }
+
         public void MemorizarValorLiquidoRenegociar()
         {
             auxValorRenegociar = Double.Parse(gestor.InputValorLiquidoRenegociar.GetAttribute("value").Replace(",", "."));
@@ -212,6 +224,13 @@ namespace QACoreBusiness.Util.FIN
         {
             Thread.Sleep(1000);
             Assert.Equal(gestor.UrlImprimirMovimentacao, driver.Url);
+        }
+
+        public void DataEmissaoContratoRetroativa(int dias)
+        {
+            gestor.InputDataEmissaoContrato.Clear();
+            Thread.Sleep(800);
+            gestor.InputDataEmissaoContrato.SendKeys(DateTime.Now.AddDays(-dias).ToString("dd/MM/yyyy"));
         }
 
         public void SelecionarPlanoContasMultiplosMeios(string pC)
