@@ -208,12 +208,13 @@ namespace QACoreBusiness.Util.FIN
 
         public void CliqueBotaoEfetuarBaixa()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(1800);
             gestor.BotaoEfetuarBaixa.Click();
         }
 
         public void SelecionarMeioPagamentoMultiplosMeios(string meioPagamento)
         {
+            Thread.Sleep(800);
             gestor.SelectMeioPagamentoMultiplosMeios.Click();
             gestor.SearchGenerico.SendKeys(meioPagamento);
             Thread.Sleep(1000);

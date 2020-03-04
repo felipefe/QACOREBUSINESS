@@ -13,6 +13,7 @@ And eu pesquisar no editText o cliente por CP {34816670947}
 And em seguida no botao selecionar
 Then uma mensagem de pessoa adicionada ao pedido deve aparecer
 And a situaçao do cliente deve ser {Normal}
+And feche o navegador quando terminar
 
 @inserir_nome_cliente_valido_pedido
 Scenario: Inserir o cliente por nome no pedido com sucesso
@@ -22,6 +23,7 @@ And eu pesquisar no editText o cliente por nome {'Valentina La Ferrugem'}
 And em seguida no botao selecionar
 Then uma mensagem de pessoa adicionada ao pedido deve aparecer
 And a situaçao do cliente deve ser {Normal}
+And feche o navegador quando terminar
 
 @inserir_cliente_restrito_pedido
 Scenario: Inserir cliente com restriçao ao pedido
@@ -31,3 +33,4 @@ And eu pesquisar no editText o cliente por nome {'Luiz Inacio da Silva - Restri�
 And em seguida no botao selecionar
 Then uma mensagem de pessoa adicionada ao pedido deve aparecer
 And um alerta referente a situaçao é exibido
+And feche o navegador quando terminar

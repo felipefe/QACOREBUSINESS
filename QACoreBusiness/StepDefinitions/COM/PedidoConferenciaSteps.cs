@@ -202,6 +202,23 @@ namespace QACoreBusiness.StepDefinitions
             pcu.ColarCodigoSkuEQtdEmMassa();
         }
 
+        [Then(@"o codigo sku e qtd\. total sejam copidos de suas colunas")]
+        public void ThenOCodigoSkuEQtd_TotalSejamCopidosDeSuasColunas()
+        {
+            pcu.CopiarCodigoSkuEQtdEmMassa();
+        }
+
+        [Then(@"seja feita a conferencia desses produtos")]
+        public void ThenSejaFeitaAConferenciaDessesProdutos()
+        {
+            pcu.ColarCodigoSkuEQtdEmMassa();
+        }
+
+        [Then(@"clicar no botao Finalizar")]
+        public void ThenClicarNoBotaoFinalizar()
+        {
+            pcu.CliqueBotaoFinalizar();
+        }
 
         [Then(@"clicar no botao Concluir Processo")]
         public void ThenClicarNoBotaoConcluirProcesso()
@@ -209,6 +226,11 @@ namespace QACoreBusiness.StepDefinitions
             pcu.CliqueConcluirProcessoConferencia();
         }
 
+        [Then(@"seja redirecionado para tela de WMS Conferencia")]
+        public void ThenSejaRedirecionadoParaTelaDeWMSConferencia()
+        {
+            pcu.IndexConferenciaPedido();
+        }
 
         [Then(@"uma mensagem de conferido com sucesso deve aparecer")]
         public void ThenUmaMensagemDeConferidoComSucessoDeveAparecer()

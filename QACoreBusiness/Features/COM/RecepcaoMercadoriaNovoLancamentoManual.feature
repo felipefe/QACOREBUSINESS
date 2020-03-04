@@ -19,6 +19,7 @@ Scenario: Criar recepcao manual de mercadoria
 	When clicar no botao Salvar
 	Then o sistema redirecionada para index de recepçao
 	And o status da recepcao deve ser {'Lançamento'}
+	And feche o navegador quando terminar
 
 
 
@@ -54,6 +55,7 @@ Scenario: Lancar itens recepcao manual (Semi-automatico)
 	And clicar no botao de Salvar itens
 	Then seja redirecionado para tela de Mercadorias da recepcao
 	And o SKU do item da recepcao informado deve aparecer na tabela
+	And feche o navegador quando terminar
 
 
 @escriturar_item_mercadoria_recepcao
@@ -97,7 +99,7 @@ Scenario: Escriturar itens da recepcao (Semi-automatico)
 	Then o status do item deve mudar para {'Escriturado'}
 	And quando clicar no botao Prosseguir
 	And o sistema redirecionada para index de recepçao
-
+	And feche o navegador quando terminar
 
 
 
@@ -181,7 +183,7 @@ Scenario: Finalizar lancamento de itens escriturados
 	And clicar no botao Confirmar
 	And o sistema redirecionada para index de recepçao
 	And o status da recepcao deve ser {'Conferência Física'}
-
+	And feche o navegador quando terminar
 
 @conferir_item_recepcao
 Scenario: Conferir item recepcao 
@@ -245,7 +247,7 @@ Scenario: Conferir item recepcao
 	And clicar no botao Concluir
 	Then o sistema redirecionada para index de recepçao
 	And o status da recepcao deve ser {'Aguardando Finalização'} 
-
+	And feche o navegador quando terminar
 
 @finalizar_recepcao_mercadoria
 Scenario: Finalizar recepcao de mercadoria
@@ -313,7 +315,7 @@ Scenario: Finalizar recepcao de mercadoria
 	And seja redirecionado para tela de Finalizar recepcao
 	And clicar no botao Finalizar Recepcao
 	And o sistema redirecionada para index de recepçao
-
+	And feche o navegador quando terminar
 
 @excluir_recepcao_mercadoria
 Scenario: Excluir recepcao mercadoria
@@ -391,7 +393,7 @@ Given que seja clicado no botao Novo Lancamento Manual
 	And acessamos gerenciar recepcoes novamente
 	And valido o numero memorizado dessa recepcao
 	And o status da recepcao deve ser {'Cancelado'} 
-
+	And feche o navegador quando terminar
 
 
 @lancar_item_calculo_manual_de_imposto
@@ -443,7 +445,7 @@ Scenario: Lancar item calculo Manual de imposto
 	And clicar no botao de Salvar itens
 	Then seja redirecionado para tela de Mercadorias da recepcao
 	And o SKU do item da recepcao informado deve aparecer na tabela
-
+	And feche o navegador quando terminar
 
 
 
@@ -523,5 +525,5 @@ Scenario: Escriturar item da recepcao (Manual)
 	Then clicar no botao Gravar escrituraçao
 	And seja redirecionado para tela de Mercadorias da recepcao
 	And tenha na coluna Escriturado do item o valor {'Sim'}
-
+	And feche o navegador quando terminar
 

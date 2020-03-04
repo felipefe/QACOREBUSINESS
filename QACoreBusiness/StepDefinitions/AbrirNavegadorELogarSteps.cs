@@ -90,5 +90,12 @@ namespace QACoreBusiness.StepDefinitions
             open.ValidaUrlLoginCore();
         }
 
+        [Then(@"feche o navegador quando terminar")]
+        public void ThenFecheONavegadorQuandoTerminar()
+        {
+            open.CloseNavegador();
+        }
+
+
     }
 }

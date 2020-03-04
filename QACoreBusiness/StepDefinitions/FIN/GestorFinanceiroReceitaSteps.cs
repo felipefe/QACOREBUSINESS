@@ -252,6 +252,13 @@ namespace QACoreBusiness.StepDefinitions
             gfu.SelectMeioPagamentoBaixaParcela(meioPagamento);
         }
 
+        [When(@"selecione o primeiro meio de pagamento \{'(.*)'}")]
+        public void WhenSelecioneOPrimeiroMeioDePagamento(string primeiroMeioPagamento)
+        {
+            gfu.SelecionarMeioPagamentoMultiplosMeios(primeiroMeioPagamento);
+        }
+
+
         [When(@"selecione o segundo meio de pagamento \{'(.*)'}")]
         public void WhenSelecioneOSegundoMeioDePagamento(string segundoMeio)
         {

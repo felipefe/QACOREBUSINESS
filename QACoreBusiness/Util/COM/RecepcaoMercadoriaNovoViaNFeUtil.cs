@@ -109,5 +109,27 @@ namespace QACoreBusiness.Util.COM
         {
             Assert.Equal(auxNumRecepcao, recepcao.ColunaNumeroRecepcaoMercadoria.Text);
         }
+
+        public void CliqueActionsAlterarSituacao()
+        {
+            System.Threading.Thread.Sleep(1000);
+            recepcao.ActionsRecepcao.Click();
+            recepcao.ActionsAlterarSituacao.Click();
+        }
+
+        public void SelectNovaSituacao(string situacao)
+        {
+            System.Threading.Thread.Sleep(1000);
+            recepcao.SelectNovaSituacao.Click();
+            recepcao.SearchGenerico.SendKeys(situacao);
+            System.Threading.Thread.Sleep(1000);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void CliqueSalvarNovaSituacao()
+        {
+            recepcao.SalvarNovaSituacao.Click();
+            System.Threading.Thread.Sleep(1000);
+        }
     }
 }

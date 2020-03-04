@@ -15,6 +15,7 @@ And informar a quantidade no editText
 And em seguida clicar no botao adicionar  
 Then uma mensagem de item adicionado ao pedido deve aparecer
 And sua tag de reserva estoque deve ser {'Normal'}
+And feche o navegador quando terminar
 
 @inserir_item_pedido_por_nome 
 Scenario: Inserir item com reserva ao pedido por nome
@@ -26,6 +27,7 @@ And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
 Then uma mensagem de item adicionado ao pedido deve aparecer
 And sua tag de reserva estoque deve ser {'Normal'}
+And feche o navegador quando terminar
 
 @inserir_item_sem_reserva_pedido 
 Scenario: Inserir item ao pedido sem reserva
@@ -37,6 +39,7 @@ And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
 Then uma mensagem de item adicionado ao pedido deve aparecer
 And sua tag de reserva estoque deve ser {'Sem reserva'}
+And feche o navegador quando terminar
 
 @inserir_item_invalido_pedido
 Scenario: Item nao inserido ao pedido 
@@ -48,3 +51,4 @@ And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
 Then uma mensagem de item nao adicionado ao pedido deve aparecer
 And uma outra mensagem com os detalhes deve aparecer
+And feche o navegador quando terminar

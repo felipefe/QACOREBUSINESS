@@ -21,6 +21,7 @@ Scenario: Baixar Parcela Dinheiro
 	And selecione o meio de pagamento {'Dinheiro'}
 	When clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 @receita_baixar_parcela_abatimento
@@ -41,6 +42,7 @@ Scenario: Baixar Parcela Abatimento
 	And selecione a parcela de crédito/abatimento
 	When clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 @receita_baixar_multiplas_parcela_dinheiro_abatimento
@@ -56,7 +58,7 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Abatimento
 	And clique no icone Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	When clique no botao Adicionar Multiplos Meios de Pagamento
-	And selecione o meio de pagamento {'Dinheiro'}
+	And selecione o primeiro meio de pagamento {'Dinheiro'}
 	And ratear o valor exibido no input por {2}
 	And informar o planos de contas {'Contratos Financeiros'}
 	And informar o centro de custo {'Contratos Financeiros'}
@@ -79,6 +81,7 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Abatimento
 	And clicar no botao Vincular creditos 
 	And clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 @receita_baixar_multiplas_parcela_cheque_abatimento
@@ -94,7 +97,7 @@ Scenario: Baixar Multiplas Parcelas Cheque + Abatimento
 	And clique no icone Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	When clique no botao Adicionar Multiplos Meios de Pagamento
-	And selecione o meio de pagamento {'Cheque'}
+	And selecione o primeiro meio de pagamento {'Cheque'}
 	And ratear o valor exibido no input por {2}
 	And informar o planos de contas {'Contratos Financeiros'}
 	And informar o centro de custo {'Contratos Financeiros'}
@@ -117,6 +120,8 @@ Scenario: Baixar Multiplas Parcelas Cheque + Abatimento
 	And clicar no botao Vincular creditos 
 	And clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
+
 
 @receita_baixar_multiplas_parcela__cheque_transferencia
 Scenario: Baixar Multiplas Parcelas Cheque + Transferência
@@ -131,7 +136,7 @@ Scenario: Baixar Multiplas Parcelas Cheque + Transferência
 	And clique no icone Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	When clique no botao Adicionar Multiplos Meios de Pagamento
-	And selecione o meio de pagamento {'Cheque'}
+	And selecione o primeiro meio de pagamento {'Cheque'}
 	And ratear o valor exibido no input por {2}
 	And informar o planos de contas {'Contratos Financeiros'}
 	And informar o centro de custo {'Contratos Financeiros'}
@@ -149,6 +154,7 @@ Scenario: Baixar Multiplas Parcelas Cheque + Transferência
 	And seja validado o resto do rateio
 	And clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 @receita_baixar_parcela_operacao_bancaria
 Scenario: Baixar Parcela Transferência Bancária
@@ -167,6 +173,7 @@ Scenario: Baixar Parcela Transferência Bancária
 	And selecione a conta bancaria {'BB Fake'}
 	When clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 
@@ -219,6 +226,7 @@ Scenario: Baixar Parcela Vencida C/ Desconto
 	And o valor do desconto deve ser o mesmo memorizado anteriormente
 	And clicar no botao Efetuar Baixa
 	And o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 
@@ -267,6 +275,7 @@ Scenario: Baixar Parcela Vencida Alterando Movimento
 	And os juros devem ser zerados
 	And clicar no botao Efetuar Baixa
 	And o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 
@@ -293,4 +302,5 @@ Given que clica na aba Contas a Receber
 	And clique no botao Gerar Renegociacao
 	Then o sistema redireciona para index de visualizar contrato
 	And valide o valor bruto a pagar da parcela substituida
+	And feche o navegador quando terminar
 

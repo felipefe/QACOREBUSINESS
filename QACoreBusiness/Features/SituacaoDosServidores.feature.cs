@@ -107,6 +107,8 @@ testRunner.Given("que a situacao do coreservice seja {\'Stopped\'}", ((string)(n
 testRunner.When("eu clicar para Iniciar o Serviço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
 testRunner.Then("a situacao deve ser alterada para {\'Running\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -119,21 +121,23 @@ testRunner.Then("a situacao deve ser alterada para {\'Running\'}", ((string)(nul
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reiniciar o COREService", null, new string[] {
                         "reiniciar_coreservice"});
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 18
-testRunner.Given("que a situacao do coreservice seja {\'Running\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 19
-testRunner.And("eu clicar para Parar o Serviço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que a situacao do coreservice seja {\'Running\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
-testRunner.And("a situacao ser alterada para {\'Stopped\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("eu clicar para Parar o Serviço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
-testRunner.When("eu clicar para Iniciar o Serviço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("a situacao ser alterada para {\'Stopped\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
+testRunner.When("eu clicar para Iniciar o Serviço", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
 testRunner.Then("a situacao deve ser alterada para {\'Running\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -146,23 +150,25 @@ testRunner.Then("a situacao deve ser alterada para {\'Running\'}", ((string)(nul
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Limpar mensagens COREService", null, new string[] {
                         "limpar_mensagens_coreservice"});
-#line 25
+#line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 26
-testRunner.When("clicar no botao Limpar Mensagens do COREService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
-testRunner.And("confirme clicando sim na modal aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
-testRunner.And("seja redirecionado para tela UserTask", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("clicar no botao Limpar Mensagens do COREService", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 29
-testRunner.And("aguarde ate progresso de limpar hisporico seja concluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("confirme clicando sim na modal aberta", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
-testRunner.Then("clique no botao voltar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("seja redirecionado para tela UserTask", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
+testRunner.And("aguarde ate progresso de limpar hisporico seja concluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+testRunner.Then("clique no botao voltar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
 testRunner.And("seja redirecionado para URL de situacao dos servidores", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

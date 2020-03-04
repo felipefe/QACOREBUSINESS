@@ -200,6 +200,8 @@ testRunner.And("seja feita a conferencia desses produtos", ((string)(null)), ((T
 testRunner.Then("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
 testRunner.And("uma mensagem de conferido com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -324,6 +326,8 @@ testRunner.And("ser redirecionado para tela de COM Finalizar Conferencia", ((str
 testRunner.And("clicar em Finalizar Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 116
 testRunner.Then("o sistema deve redirecionar para tela Entrega e Remessas do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 117
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -448,6 +452,8 @@ testRunner.And("eu clicar no botao Reiniciar Processo Conferencia", ((string)(nu
 testRunner.And("confirmar clicando no botao OK do alerta exibido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 172
 testRunner.Then("a coluna Qtd. Conferida deve ser zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 173
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

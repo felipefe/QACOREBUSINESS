@@ -9,6 +9,7 @@ And clicar para acessar o contexto {'Meus Pedidos'}
 Scenario: Criar novo pedido
 When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
 Then seja redirecionado para tela de ediçao
+And feche o navegador quando terminar
 
 @efetivar_pedido_falha
 Scenario: Falha efetivar pedido
@@ -16,6 +17,7 @@ When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Se
 And eu clicar no botao Efetivar Pedido
 Then o sistema nao redireciona para tela de pedidos
 And uma alerta com as pendencias deve ser exibido 
+And feche o navegador quando terminar
 
 @criar_e_efetivar_pedido
 Scenario: Criar e efetivar pedido
@@ -44,7 +46,7 @@ And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 Then o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
-
+And feche o navegador quando terminar
 
 
 @criar_e_efetivar_pedido_restricao
@@ -74,4 +76,4 @@ And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 Then o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
-
+And feche o navegador quando terminar

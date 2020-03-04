@@ -216,6 +216,8 @@ testRunner.And("clicar nas actions Emitir Documentos Fiscais", ((string)(null)),
 testRunner.Then("o usuário deve acessar o contexto de NF-e Emitidas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
 testRunner.And("a situaçãp da nota deve ser Autorizado o uso da NF-e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

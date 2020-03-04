@@ -582,6 +582,18 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.ValidaUrlFinalizarRecepcao();
         }
 
+        [Then(@"ser redirecionado para tela de COM Conferencia Fisica da Recepcao")]
+        public void ThenSerRedirecionadoParaTelaDeCOMConferenciaFisicaDaRecepcao()
+        {
+            rmmanual.ValidaUrlConferenciaFisicaLoteFiscalItem();
+        }
+
+        [Then(@"clicar no botao Concluir")]
+        public void ThenClicarNoBotaoConcluir()
+        {
+            rmmanual.CliqueBotaoConcluirConferenciaRecepcao();
+        }
+
         [Then(@"clicar no botao Finalizar Recepcao")]
         public void ThenClicarNoBotaoFinalizarRecepcao()
         {
@@ -658,6 +670,18 @@ namespace QACoreBusiness.StepDefinitions.COM
         public void ThenQueTenhaUmaRecepcaoNoStatus(string status)
         {
             rmmanual.StatusRecepcaoMercadoria(status);
+        }
+
+        [Then(@"seja clicado no botao Mercadoria nas actions")]
+        public void ThenSejaClicadoNoBotaoMercadoriaNasActions()
+        {
+            rmmanual.CliqueActionsMercadorias();
+        }
+
+        [Then(@"seja clicado no botao Conferencia Fisica de Recebimento nas actions")]
+        public void ThenSejaClicadoNoBotaoConferenciaFisicaDeRecebimentoNasActions()
+        {
+            rmmanual.CliqueActionsConferenciaFisicaRecebimento();
         }
     }
 }

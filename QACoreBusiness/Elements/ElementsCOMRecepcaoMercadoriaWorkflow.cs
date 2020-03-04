@@ -85,6 +85,9 @@ namespace QACoreBusiness.Elements
         public IWebElement InfoBaseCalculoCofins => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscCOFINS']//div[@class='ui stackable three column row grid']//div[@class='ui column displayFor'][2]");
         public IWebElement InfoValorCofins => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabEscCOFINS']//div[@class='ui stackable three column row grid']//div[@class='ui column displayFor'][3]");
         public IWebElement BotaoGravarEscrituraManual => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Gravar']");
+        public IWebElement ActionsAlterarSituacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Alterar Situação']");
+        public IWebElement SelectNovaSituacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscal_Status_auto_wrapper']");
+        public IWebElement SalvarNovaSituacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
         #endregion
 
 

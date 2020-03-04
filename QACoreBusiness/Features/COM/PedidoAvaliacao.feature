@@ -40,6 +40,7 @@ And seja redirecionado para tela CRM Avaliar Pedido
 And eu clicar no botao Prosseguir
 Then serei redirecionado para index de pedidos
 And a situaçao do pedido deve ser {'Separação'}
+And feche o navegador quando terminar
 
 
 
@@ -79,6 +80,7 @@ And outro motivo seja {'Cliente com situação restrita para vendas à prazo'}
 And eu clicar no botao Bloquear 
 Then serei redirecionado para index de pedido
 And a situaçao do pedido deve ser {'Não Liberado / Recusado'}
+And feche o navegador quando terminar
 
 #@cancelar_retornar_pedido_para_ediçao
 #Scenario: Cancelar e retornar pedido para ediçao

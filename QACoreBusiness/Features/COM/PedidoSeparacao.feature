@@ -50,3 +50,4 @@ And ser redicionado para a tela COM Finalizar Separaçao
 And clicar no botao Finalizar Separaçao
 Then serei redirecionado para index de pedidos
 And a situaçao do pedido deve ser {'Conferência'}
+And feche o navegador quando terminar

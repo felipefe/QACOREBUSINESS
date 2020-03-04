@@ -21,6 +21,7 @@ Scenario: Baixar Parcela Dinheiro
 	And selecione o meio de pagamento {'Dinheiro'}
 	When clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 @despesa_baixar_parcela_abatimento
@@ -41,6 +42,7 @@ Scenario: Baixar Parcela Abatimento
 	And selecione a parcela de crédito/abatimento
 	When clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 @despesa_baixar_parcela_operacao_bancaria
@@ -60,7 +62,7 @@ Scenario: Baixar Parcela Op. Bancária
 	And selecione a conta bancaria de pagamento {'BB Fake'}
 	When clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
-
+	And feche o navegador quando terminar
 
 
 
@@ -77,7 +79,7 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Transferência
 	And clique no icone para Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	When clique no botao Adicionar Multiplos Meios de Pagamento
-	And selecione o meio de pagamento {'Dinheiro'}
+	And selecione o primeiro meio de pagamento {'Dinheiro'}
 	And ratear o valor exibido no input por {2}
 	And informar o planos de contas {'Contratos Financeiros'}
 	And informar o centro de custo {'Contratos Financeiros'}
@@ -95,6 +97,7 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Transferência
 	And seja validado o resto do rateio
 	And clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
 
 
 
@@ -111,7 +114,7 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Abatimento
 	And clique no icone para Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	When clique no botao Adicionar Multiplos Meios de Pagamento
-	And selecione o meio de pagamento {'Dinheiro'}
+	And selecione o primeiro meio de pagamento {'Dinheiro'}
 	And ratear o valor exibido no input por {2}
 	And informar o planos de contas {'Contratos Financeiros'}
 	And informar o centro de custo {'Contratos Financeiros'}
@@ -134,3 +137,4 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Abatimento
 	And clicar no botao Vincular creditos 
 	And clicar no botao Efetuar Baixa
 	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar

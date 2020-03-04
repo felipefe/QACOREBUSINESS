@@ -17,6 +17,8 @@ And que eu nao tenha informado o cliente
 And que eu cliquei na sessao de Pagamento
 When eu clicar no botao Criar Negociaçao
 Then um alerta é exibido para informar o cliente
+And feche o navegador quando terminar
+
 
 @inserir_negociacao_sem_itens_pedido
 Scenario: Negociacao sem itens de pedido
@@ -28,6 +30,7 @@ And nao tenha itens adicionados ao pedido
 And que eu cliquei na sessao de Pagamento
 When eu clicar no botao Criar Negociaçao
 Then um alerta é exibido sobre pedido sem itens
+And feche o navegador quando terminar
 
 
 @inserir_negociacao_pedido
@@ -47,7 +50,7 @@ And selecionar a forma de pagamento {'A vista no Dinheiro'}
 And clicar no botao Salvar Negociaçao
 Then o valor total geral da negociçao deve ser maior que zero
 And uma mensagem de dados atualizado deve aparecer
-
+And feche o navegador quando terminar
 
 #@inserir_negociacao_pedido_sem_informar_fp
 #Scenario: Inserir negociçao ao pedido sem inserir forma de pagamento

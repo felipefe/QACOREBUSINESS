@@ -26,13 +26,14 @@ namespace QACoreBusiness.Util.FIN
 
         public void CliquePesquisarDespesas()
         {
-            Thread.Sleep(500);
+            Thread.Sleep(800);
             gestor.PesquisaDespesaGestorFinanceiro.Click();
-            Thread.Sleep(1500);
+            Thread.Sleep(1000);
         }
 
         public void CliqueLimparFiltro()
         {
+            Thread.Sleep(500);
             gestor.LimparFiltroDespesas.Click();
             Thread.Sleep(1000);
         }

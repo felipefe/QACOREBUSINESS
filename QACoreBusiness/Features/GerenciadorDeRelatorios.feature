@@ -14,7 +14,7 @@ Scenario: Importar definicao de relatorio Estoque (Separacoes)
 	And selecione o arquivo rpt
 	When clicar no botao Carregar rpt
 	Then seja redirecionado para index de Definiçoes de Relatorios /RPT/Report
-
+	And feche o navegador quando terminar
 
 @criar_definicao_relatorio
 Scenario: Criar definicao de relatorio (Separacoes)
@@ -28,7 +28,7 @@ Scenario: Criar definicao de relatorio (Separacoes)
 	And clique nas actions relatorio ('Separações') Criar Relatorio A partir Desta Definição
 	And clicar no botao Salvar relatorio
 	Then seja redirecionado para index de Gerenciador de relatorio /RPT/ReportView
-
+	And feche o navegador quando terminar
 
 @editar_definicao_relatorio
 Scenario: Editar definicao relatorio
@@ -39,7 +39,7 @@ Scenario: Editar definicao relatorio
 	When selecionar todas as colunas possiveis
 	And clicar no botao Gravar denificao editada
 	Then seja redirecionado para index de Gerenciador de relatorio /RPT/ReportView
-
+	And feche o navegador quando terminar
 
 @executar_relatorio
 Scenario: Executar Relatorio
@@ -67,7 +67,7 @@ Scenario: Executar Relatorio
 	And ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/
 	And clicar no botao Executar meu relatorio
 	Then o relatorio deve ser exibido em uma nova guia do navegador
-
+	And feche o navegador quando terminar
 
 @validar_definicao_relatorio
 Scenario: Validar colunas personalizadas definicao relatorio
@@ -84,7 +84,7 @@ Scenario: Validar colunas personalizadas definicao relatorio
 	And ser redirecionado para Parametros de execucao /RPT/ReportView/OpenReportView/
 	And clique na aba Colunas
 	Then as colunas marcadas devem ser as mesmas do Editar Definicao
-
+	And feche o navegador quando terminar
 
 
 #@excluir_definicao_relatorio

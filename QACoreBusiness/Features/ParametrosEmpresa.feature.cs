@@ -118,6 +118,8 @@ testRunner.Then("serei redirecionado para url dos parametros {/Parametro/Paramet
 #line 19
 testRunner.And("a coluna valor do parametro Config. NF-e deve ser Ambiente de Testes ou Homologaç" +
                     "ao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -142,6 +144,8 @@ testRunner.And("esteja na tela de ediçao do parametro {\'Config. NF-e\'}", ((st
 #line 26
 testRunner.Then("Ambiente de Testes ou Homologacao deve estar selecionado no select Ambiente de Em" +
                     "issao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

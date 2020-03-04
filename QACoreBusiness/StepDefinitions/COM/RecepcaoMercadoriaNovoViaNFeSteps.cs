@@ -46,6 +46,12 @@ namespace QACoreBusiness.StepDefinitions
             rmxml.ArmazenarNumeroRecepcaoExcluir();
         }
 
+        [Given(@"clicar no botao Iniciar importacao da NFe")]
+        public void GivenClicarNoBotaoIniciarImportacaoDaNFe()
+        {
+            rmxml.CliqueBotaoIniciarImportacaoXML();
+        }
+
         [When(@"clicar no botao Iniciar importacao da NFe")]
         public void WhenClicarNoBotaoIniciarImportacaoDaNFe()
         {
@@ -128,6 +134,24 @@ namespace QACoreBusiness.StepDefinitions
         public void ThenClicarNoBotaoExcluirDaModal()
         {
             rmxml.CliqueConfirmarExcluirRecepcao();
+        }
+
+        [Then(@"clique nas actions para Alterar Situação")]
+        public void ThenCliqueNasActionsParaAlterarSituacao()
+        {
+            rmxml.CliqueActionsAlterarSituacao();
+        }
+
+        [Then(@"selecione a situaçao \{'(.*)'}")]
+        public void ThenSelecioneASituacao(string situacao)
+        {
+            rmxml.SelectNovaSituacao(situacao);
+        }
+
+        [Then(@"clique no botao Salvar situacao")]
+        public void ThenCliqueNoBotaoSalvarSituacao()
+        {
+            rmxml.CliqueSalvarNovaSituacao();
         }
     }
 }

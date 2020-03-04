@@ -97,6 +97,8 @@ testRunner.And("as informações de aceso forem inseridas", ((string)(null)), ((
 testRunner.And("o botão de logar for clicado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
 testRunner.Then("acessar a pagina inicial do hub de contexto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 10
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -109,19 +111,21 @@ testRunner.Then("acessar a pagina inicial do hub de contexto", ((string)(null)),
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("abrir navegador e inserir login invalido", null, new string[] {
                         "abrir_sistema_login_invalido"});
-#line 13
+#line 14
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 14
-testRunner.When("o sistema rodar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
-testRunner.And("estiver na tela de login coreBusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("o sistema rodar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
-testRunner.And("as informações de aceso forem inseridas erroneamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("estiver na tela de login coreBusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
-testRunner.And("o botão de logar for clicado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("as informações de aceso forem inseridas erroneamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+testRunner.And("o botão de logar for clicado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
 testRunner.Then("uma mensagem de Erro ao efetuar login deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -134,15 +138,17 @@ testRunner.Then("uma mensagem de Erro ao efetuar login deve aparecer", ((string)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("logado e acesse o contexto", null, new string[] {
                         "logado_acesse_contexto"});
-#line 21
+#line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 22
-testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
-testRunner.When("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+testRunner.When("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
 testRunner.Then("sistema deve redirecionar a pagina", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -155,17 +161,19 @@ testRunner.Then("sistema deve redirecionar a pagina", ((string)(null)), ((TechTa
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("logado e deslogar", null, new string[] {
                         "logado_contexto_deslogar"});
-#line 28
+#line 30
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 29
-testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
-testRunner.And("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
-testRunner.When("clicar para Sair do sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
+testRunner.And("clicar para acessar o contexto {\'Meus Pedidos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+testRunner.When("clicar para Sair do sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
 testRunner.Then("redireciona para tela de login do corebusiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

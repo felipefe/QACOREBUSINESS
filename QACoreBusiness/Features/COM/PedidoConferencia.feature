@@ -57,7 +57,7 @@ And o codigo sku e qtd. total sejam copidos de suas colunas
 And seja feita a conferencia desses produtos
 Then clicar no botao Concluir Processo
 And  uma mensagem de conferido com sucesso deve aparecer
-
+And feche o navegador quando terminar
 
 
 @concluir_conferencia
@@ -114,7 +114,7 @@ And clicar no botao Finalizar
 And ser redirecionado para tela de COM Finalizar Conferencia
 And clicar em Finalizar Conferencia
 Then o sistema deve redirecionar para tela Entrega e Remessas do Pedido 
-
+And feche o navegador quando terminar
 
 @conferir_e_reiniciar_processo
 Scenario: Conferir e reiniciar processo
@@ -170,7 +170,7 @@ And uma mensagem de Conferência Finalizada deve aparecer
 And eu clicar no botao Reiniciar Processo Conferencia
 And confirmar clicando no botao OK do alerta exibido
 Then a coluna Qtd. Conferida deve ser zero
-
+And feche o navegador quando terminar
 
 
 

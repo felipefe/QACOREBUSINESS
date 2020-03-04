@@ -67,3 +67,4 @@ And o sistema deve redirecionar para tela Entrega e Remessas do Pedido
 And clicar nas actions Emitir Documentos Fiscais
 Then o usuário deve acessar o contexto de NF-e Emitidas
 And a situaçãp da nota deve ser Autorizado o uso da NF-e
+And feche o navegador quando terminar

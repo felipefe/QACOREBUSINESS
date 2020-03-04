@@ -150,9 +150,10 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarPessoaContrato(string pessoa)
         {
+            Thread.Sleep(200);
             contr.SelectPessoaContrato.Click();
             contr.SearchPessoaContrato.SendKeys(pessoa);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             contr.SearchPessoaContrato.SendKeys(Keys.Enter);
         }
 
@@ -293,7 +294,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaUrlContrato()
         {
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             Assert.Equal( contr.UrlContextoContrato, driver.Url);
         }
 

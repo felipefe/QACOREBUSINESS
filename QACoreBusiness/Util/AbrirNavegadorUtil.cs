@@ -97,6 +97,12 @@ namespace QACoreBusiness.Util
         {
             Assert.Equal(login.UrlLoginCoreBusiness, driverNavegadorChrome.Url);
         }
+
+        public void CloseNavegador()
+        {
+            Thread.Sleep(1000);
+            driverNavegadorChrome.Close();
+        }
     }
 
 }

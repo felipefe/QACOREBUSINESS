@@ -19,6 +19,7 @@ And inserir uma data prevista em dias {1}
 And inserir o valor do frete {50.0}
 And clicar em salvar
 Then uma mensagem de dados atualizado deve aparecer
+And feche o navegador quando terminar
 
 @criar_entrega_futura_pedido
 Scenario: Criar entrega futura pedido
@@ -34,3 +35,4 @@ And inserir uma data prevista em dias {15}
 And inserir o valor do frete {50.0}
 And clicar em salvar
 Then uma mensagem de dados atualizado deve aparecer
+And feche o navegador quando terminar
