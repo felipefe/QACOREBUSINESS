@@ -8,6 +8,7 @@ using Xunit;
 using SeleniumExtras.WaitHelpers;
 using System.Threading;
 using QACoreBusiness.Elements;
+using System.Linq;
 
 namespace QACoreBusiness.Util
 {
@@ -101,7 +102,12 @@ namespace QACoreBusiness.Util
         public void CloseNavegador()
         {
             Thread.Sleep(1000);
-            driverNavegadorChrome.Close();
+            //fecha aba por aba da ultima aberta para a primeira
+            for (int i = driverNavegadorChrome.WindowHandles.ToList().Count -1; i >= 0 ; i--)
+            {
+                driverNavegadorChrome = driverNavegadorChrome.SwitchTo().Window(driverNavegadorChrome.WindowHandles.ToList()[i]);
+                driverNavegadorChrome.Close();
+            }
         }
     }
 

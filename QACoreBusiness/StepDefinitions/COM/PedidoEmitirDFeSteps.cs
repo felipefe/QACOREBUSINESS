@@ -20,7 +20,14 @@ namespace QACoreBusiness.StepDefinitions.COM
         {
             pdfeu.AmbienteHomologacao();
         }
-        
+
+        [Given(@"o usuário deve acessar o contexto by url \{'(.*)'}")]
+        public void GivenOUsuarioDeveAcessarOContextoByUrl(string contexto)
+        {
+            pdfeu.AcesseContextoByUrl(contexto);
+        }
+
+
         [When(@"clicar no botao Emitir Documentos Fiscais")]
         public void WhenClicarNoBotaoEmitirDocumentosFiscais()
         {
@@ -33,13 +40,12 @@ namespace QACoreBusiness.StepDefinitions.COM
             pdfeu.CliqueEmitirDocumentoFiscal();
         }
 
-
-        [Then(@"o usuário deve acessar o contexto de NF-e Emitidas")]
-        public void ThenOUsuarioDeveAcessarOContextoDeNF_EEmitidas()
+        [Then(@"o usuário deve acessar o contexto by url \{'(.*)'}")]
+        public void ThenOUsuarioDeveAcessarOContextoByUrl(string contexto)
         {
-            pdfeu.AcessoContextoNFE();
+            pdfeu.AcesseContextoByUrl(contexto);
         }
-        
+
         [Then(@"a situaçãp da nota deve ser Autorizado o uso da NF-e")]
         public void ThenASituacapDaNotaDeveSerAutorizadoOUsoDaNF_E()
         {

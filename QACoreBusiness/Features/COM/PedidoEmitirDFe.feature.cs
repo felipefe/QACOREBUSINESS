@@ -213,7 +213,7 @@ testRunner.And("o sistema deve redirecionar para tela Entrega e Remessas do Pedi
 #line 67
 testRunner.And("clicar nas actions Emitir Documentos Fiscais", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
-testRunner.Then("o usuário deve acessar o contexto de NF-e Emitidas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("o usuário deve acessar o contexto by url {\'/IDFe/NFe\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
 testRunner.And("a situaçãp da nota deve ser Autorizado o uso da NF-e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70

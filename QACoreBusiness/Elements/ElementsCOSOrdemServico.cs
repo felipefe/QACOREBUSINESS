@@ -8,7 +8,7 @@ using System.Text;
 namespace QACoreBusiness.Elements
 {
     class ElementsCOSOrdemServico : Base
-    {       // public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+    {      
 
         #region URLs de Acesso
         public string UrlOrdemServico => UrlCoreBusiness + "/COS/OrdemServico";
@@ -50,13 +50,22 @@ namespace QACoreBusiness.Elements
         public List<IWebElement> ListaResultadoOS => chromeDriver.FindElements(By.XPath("//div[@id='divResultados']//table//tbody//tr")).ToList();
         #endregion
 
-        #region
+        #region Manutenção Itens
         public IWebElement ActionManutencaoItens => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Manutenção de Itens da O.S./O.P.']");
-        public IWebElement BotaoMarcarTodosManutencaoInsumos => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Marcar Todos')]");
+        public IWebElement BotaoMarcarTodosManutencaoInsumos => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='selectAll_auto_wrapper']//label");
         public IWebElement BotaoReservarInsumosManutencao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Reservar/Requisitar Insumos']");
         public IWebElement BotaoSepararInsumosManutencao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Separar Insumos']");
         public List<IWebElement> TabelaManutencaoItens => chromeDriver.FindElements(By.XPath("//div[@id='divInsumos']//table//tbody//tr")).ToList();
+
         #endregion
+
+        #region Encaminhar OS
+        public IWebElement ActionEncaminhar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Encaminhar']");
+        public IWebElement SelectNovaSituacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OSEncaminhamentoViewModel_Situacao_auto_wrapper']//div[@class='ui select2 fluid']");
+        public IWebElement InputSelectGrupoUsuario => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OSEncaminhamentoViewModel_Grupos_auto_wrapper']//input");
+        public IWebElement BotaoEncaminharNovaSituacaoOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Encaminhar']");
+        #endregion
+
 
     }
 }

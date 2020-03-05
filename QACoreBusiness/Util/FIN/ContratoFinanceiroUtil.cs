@@ -110,6 +110,8 @@ namespace QACoreBusiness.Util.FIN
 
         public void InserirValorPagtoAntecipado(decimal valor)
         {
+            contr.InputValorContratoPagtoAntecipado.Clear();
+            Thread.Sleep(500);
             contr.InputValorContratoPagtoAntecipado.SendKeys(valor.ToString());
             Thread.Sleep(500);
         }

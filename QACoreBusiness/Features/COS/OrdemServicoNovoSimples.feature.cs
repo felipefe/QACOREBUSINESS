@@ -115,6 +115,8 @@ testRunner.And("seja informado no textarea uma Observacao {\'Observado absurdame
 testRunner.When("clicar no botao Salvar novo simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
 testRunner.Then("o sistema deve redirecionar para o edit da OS criada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -127,23 +129,43 @@ testRunner.Then("o sistema deve redirecionar para o edit da OS criada", ((string
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Excluir OS Aberta", null, new string[] {
                         "excluir_os_sucesso"});
-#line 20
+#line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 21
-testRunner.Given("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
-testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("que seja clicado no botao Novo Simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 23
-testRunner.And("que seja clicado Excluir nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja selecionado o tipo de OS {\'Produção\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.And("seja inserido no textarea uma justificativa {\'Cancelamento extraordinario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("seja seleciona a pessoa {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
-testRunner.When("clicar no botao Cancelar O.S.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("seja informado no input o prazo final para {30} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
+testRunner.And("seja informado no textarea um Resumo {\'Resumidamente sintetico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+testRunner.And("seja informado no textarea uma Observacao {\'Observado absurdamente\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+testRunner.And("clicar no botao Salvar novo simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+testRunner.And("o sistema deve redirecionar para o edit da OS criada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+testRunner.And("seja clicado no botao Salvar OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+testRunner.And("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+testRunner.And("que seja clicado Excluir nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+testRunner.And("seja inserido no textarea uma justificativa {\'Cancelamento extraordinario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+testRunner.When("clicar no botao Cancelar O.S.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
 testRunner.Then("a OS deve ser excluida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -156,27 +178,39 @@ testRunner.Then("a OS deve ser excluida", ((string)(null)), ((TechTalk.SpecFlow.
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Inserir Receita OS", null, new string[] {
                         "incluir_item_os"});
-#line 30
+#line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 31
-testRunner.Given("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
-testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
-testRunner.And("que seja clicado Editar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 42
+testRunner.Given("que seja clicado no botao Novo Simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 43
+testRunner.And("seja selecionado o tipo de OS {\'Produção\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+testRunner.And("seja seleciona a pessoa {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+testRunner.And("seja informado no input o prazo final para {30} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+testRunner.And("seja informado no textarea um Resumo {\'Resumidamente sintetico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+testRunner.And("seja informado no textarea uma Observacao {\'Observado absurdamente\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+testRunner.And("clicar no botao Salvar novo simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+testRunner.And("o sistema deve redirecionar para o edit da OS criada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
 testRunner.And("seja clicado no botao Novo Item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 51
 testRunner.And("seja informado no select a receita {\'Receita Boné Hurley\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 52
 testRunner.And("seja informado o multiplicador da receita {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 53
 testRunner.When("clicar no botao Salvar item O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 38
+#line 54
 testRunner.Then("o sistema redireciona para /COS/OrdemServicoItem/Edit/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 55
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -189,31 +223,166 @@ testRunner.Then("o sistema redireciona para /COS/OrdemServicoItem/Edit/", ((stri
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manutenção de Itens - Reservar/Separar", null, new string[] {
                         "manutenção_de_itens"});
-#line 42
+#line 59
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 43
-testRunner.Given("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 44
+#line 60
+testRunner.Given("que seja clicado no botao Novo Simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 61
+testRunner.And("seja selecionado o tipo de OS {\'Produção\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+testRunner.And("seja seleciona a pessoa {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+testRunner.And("seja informado no input o prazo final para {30} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+testRunner.And("seja informado no textarea um Resumo {\'Resumidamente sintetico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+testRunner.And("seja informado no textarea uma Observacao {\'Observado absurdamente\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+testRunner.And("clicar no botao Salvar novo simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+testRunner.And("o sistema deve redirecionar para o edit da OS criada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+testRunner.And("seja clicado no botao Novo Item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+testRunner.And("seja informado no select a receita {\'Receita Boné Hurley\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+testRunner.And("seja informado o multiplicador da receita {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+testRunner.And("clicar no botao Salvar item O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+testRunner.And("o sistema redireciona para /COS/OrdemServicoItem/Edit/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+testRunner.And("o usuário deve acessar o contexto by url {\'/COS/OrdemServico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+testRunner.And("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
 testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 76
+testRunner.And("clique Encaminhar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+testRunner.And("selecione a situação {\'Manutenção de Itens\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+testRunner.And("selecione o Grupo de usuário {\'Administradores\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+testRunner.And("clique no botao Encaminhar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+testRunner.And("valide que a situacao da OS esteja na situacao encaminhada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
 testRunner.And("que seja clicado Manutenção de Itens nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 82
 testRunner.And("seja redirecionado para /COS/Agrupador/ManutencaoItensOS/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
-testRunner.When("clicar no botao Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 83
+testRunner.When("clicar na flag para Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
 testRunner.And("clicar no botao Reservar/Requisitar Insumos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
-testRunner.And("clicar no botao Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 85
+testRunner.And("validar que a Qtd. Reservada deve ser a mesma que Qtd. Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+testRunner.And("clicar na flag para Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
 testRunner.And("clicar no botao Separar Insumos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 88
 testRunner.Then("o status dos insumos devem ser {\'Separado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 52
-testRunner.And("a Qtd. Reservada igual a Qtd. Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Produzir O.S/O.P")]
+        [Xunit.TraitAttribute("FeatureTitle", "OrdemServicoNovoSimples")]
+        [Xunit.TraitAttribute("Description", "Produzir O.S/O.P")]
+        [Xunit.TraitAttribute("Category", "produzir_os")]
+        public virtual void ProduzirO_SO_P()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Produzir O.S/O.P", null, new string[] {
+                        "produzir_os"});
+#line 92
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 93
+testRunner.Given("que seja clicado no botao Novo Simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 94
+testRunner.And("seja selecionado o tipo de OS {\'Produção\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+testRunner.And("seja seleciona a pessoa {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+testRunner.And("seja informado no input o prazo final para {30} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+testRunner.And("seja informado no textarea um Resumo {\'Resumidamente sintetico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+testRunner.And("seja informado no textarea uma Observacao {\'Observado absurdamente\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+testRunner.And("clicar no botao Salvar novo simples", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+testRunner.And("o sistema deve redirecionar para o edit da OS criada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+testRunner.And("seja clicado no botao Novo Item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+testRunner.And("seja informado no select a receita {\'Receita Boné Hurley\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
+testRunner.And("seja informado o multiplicador da receita {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 104
+testRunner.And("clicar no botao Salvar item O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 105
+testRunner.And("o sistema redireciona para /COS/OrdemServicoItem/Edit/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+testRunner.And("o usuário deve acessar o contexto by url {\'/COS/OrdemServico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+testRunner.And("tenha uma ordem de serviço com status {\'Normal\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+testRunner.And("coluna Itens Finalizados como {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+testRunner.And("clique Encaminhar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+testRunner.And("selecione a situação {\'Manutenção de Itens\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+testRunner.And("selecione o Grupo de usuário {\'Administradores\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+testRunner.And("clique no botao Encaminhar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
+testRunner.And("valide que a situacao da OS esteja na situacao encaminhada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+testRunner.And("que seja clicado Manutenção de Itens nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+testRunner.And("seja redirecionado para /COS/Agrupador/ManutencaoItensOS/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+testRunner.And("clicar na flag para Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+testRunner.And("clicar no botao Reservar/Requisitar Insumos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+testRunner.And("validar que a Qtd. Reservada deve ser a mesma que Qtd. Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+testRunner.And("clicar na flag para Marcar Todos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+testRunner.And("clicar no botao Separar Insumos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+testRunner.And("o status dos insumos devem ser {\'Separado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+testRunner.And("o usuário deve acessar o contexto by url {\'/COS/OrdemServico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+testRunner.And("clique Encaminhar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+testRunner.And("selecione a situação {\'Em Produção\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+testRunner.And("selecione o Grupo de usuário {\'Administradores\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+testRunner.And("clique no botao Encaminhar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+testRunner.And("valide que a situacao da OS esteja na situacao encaminhada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
+testRunner.And("que seja clicado Editar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 129
+testRunner.And("o sistema deve redirecionar para o edit da OS criada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
+testRunner.When("for clicado no botao Produzir Tudo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 131
+testRunner.And("confirmar clicando no botao da modal Produzir tudo(em cadeia)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

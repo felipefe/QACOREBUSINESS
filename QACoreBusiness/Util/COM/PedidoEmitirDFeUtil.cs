@@ -48,9 +48,9 @@ namespace QACoreBusiness.Util.COM
             pedido.ActionsEmitirDFePedido.Click();
         }
 
-        public void AcessoContextoNFE()
+        public void AcesseContextoByUrl(string contexto)
         {
-            driver.Navigate().GoToUrl(nfee.UrlNFEEmitidas);
+            driver.Navigate().GoToUrl(nfee.UrlCoreBusiness + contexto);
         }
 
         //espero 12seg ate a nota ser validada entao atualizo a pagina para pegar o status autorizado

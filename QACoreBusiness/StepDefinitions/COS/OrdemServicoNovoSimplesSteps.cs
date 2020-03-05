@@ -105,6 +105,67 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ValidaUrlAgrupadorManutencaoItens();
         }
 
+        [Given(@"clicar no botao Salvar novo simples")]
+        public void GivenClicarNoBotaoSalvarNovoSimples()
+        {
+            osns.CliqueSalvarNovoSimples();
+        }
+
+        [Given(@"o sistema deve redirecionar para o edit da OS criada")]
+        public void GivenOSistemaDeveRedirecionarParaOEditDaOSCriada()
+        {
+            osns.ValidaUrlEditOrdemServico();
+        }
+
+        [Given(@"seja clicado no botao Salvar OS")]
+        public void GivenSejaClicadoNoBotaoSalvarOS()
+        {
+            osns.CliqueSalvarNovoSimples();
+        }
+
+        [Given(@"clicar no botao Salvar item O\.S")]
+        public void GivenClicarNoBotaoSalvarItemO_S()
+        {
+            osns.CliqueBotaoSalvarItemOS();
+        }
+
+        [Given(@"o sistema redireciona para /COS/OrdemServicoItem/Edit/")]
+        public void GivenOSistemaRedirecionaParaCOSOrdemServicoItemEdit()
+        {
+            osns.ValidaUrlOrdemServicoItemEdit();
+        }
+
+        [Given(@"clique Encaminhar nas actions da OS")]
+        public void GivenCliqueEncaminharNasActionsDaOS()
+        {
+            osns.CliqueActionsEncaminhar();
+        }
+
+        [Given(@"selecione a situação \{'(.*)'}")]
+        public void GivenSelecioneASituacao(string situacao)
+        {
+            osns.SelecioneNovaSituacao(situacao);
+        }
+
+        [Given(@"selecione o Grupo de usuário \{'(.*)'}")]
+        public void GivenSelecioneOGrupoDeUsuario(string grupo)
+        {
+            osns.SelecioneGrupoUsuario(grupo);
+        }
+
+        [Given(@"clique no botao Encaminhar")]
+        public void GivenCliqueNoBotaoEncaminhar()
+        {
+            osns.CliqueBotaoEncaminhar();
+        }
+
+        [Given(@"valide que a situacao da OS esteja na situacao encaminhada")]
+        public void GivenValideQueASituacaoDaOSEstejaNaSituacaoEncaminhada()
+        {
+            osns.ValideSituacaoEncaminhadaOS();
+        }
+
+
         [When(@"clicar no botao Salvar novo simples")]
         public void WhenClicarNoBotaoSalvarNovoSimples()
         {
@@ -123,12 +184,6 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.CliqueBotaoSalvarItemOS();
         }
 
-        [When(@"clicar no botao Marcar Todos")]
-        public void WhenClicarNoBotaoMarcarTodos()
-        {
-            osns.CliqueBotaoMarcarTodos();
-        }
-
         [When(@"clicar no botao Reservar/Requisitar Insumos")]
         public void WhenClicarNoBotaoReservarRequisitarInsumos()
         {
@@ -139,6 +194,18 @@ namespace QACoreBusiness.StepDefinitions.COS
         public void WhenClicarNoBotaoSepararInsumos()
         {
             osns.CliqueBotaoSepararInsumos();
+        }
+
+        [When(@"clicar na flag para Marcar Todos")]
+        public void WhenClicarNaFlagParaMarcarTodos()
+        {
+            osns.CliqueBotaoMarcarTodos();
+        }
+
+        [When(@"validar que a Qtd\. Reservada deve ser a mesma que Qtd\. Receita")]
+        public void WhenValidarQueAQtd_ReservadaDeveSerAMesmaQueQtd_Receita()
+        {
+            osns.ValidaQntidadeReservadaInsumos();
         }
 
         [Then(@"o sistema redireciona para /COS/OrdemServicoItem/Edit/")]
@@ -160,15 +227,10 @@ namespace QACoreBusiness.StepDefinitions.COS
         }
 
         [Then(@"o status dos insumos devem ser \{'(.*)'}")]
-        public void ThenOStatusDosInsumosDevemSer(string isReservadoInsumo)
+        public void ThenOStatusDosInsumosDevemSer(string status)
         {
-            osns.ValidaReservaInsumos(isReservadoInsumo);
+            osns.ValidaStatusSeparadoInsumos(status);
         }
 
-        [Then(@"a Qtd\. Reservada igual a Qtd\. Receita")]
-        public void ThenAQtd_ReservadaIgualAQtd_Receita()
-        {
-            osns.ValidaQntidadeReservadaInsumos();
-        }
     }
 }

@@ -257,7 +257,7 @@ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((str
 #line 105
 testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 106
-testRunner.And("informar no input o Valor a pagar {90.50}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informar no input o Valor a pagar {600.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 107
 testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 108

@@ -103,7 +103,7 @@ When selecionar a pessoa do contrato {'Laura La Caronita'}
 And selecionar o plano de contas {'Contratos Financeiros'}
 And selecionar o centro de custo {'Contratos Financeiros'}
 And selecionar o meio de pagamento {'Dinheiro'}
-And informar no input o Valor a pagar {90.50}
+And informar no input o Valor a pagar {600.0}
 And clicar no botao Salvar pagto antecipado
 Then o sistema redireciona para index de contratos
 And um contrato de pagamento Num Doc {'PGA'} deve ser criado

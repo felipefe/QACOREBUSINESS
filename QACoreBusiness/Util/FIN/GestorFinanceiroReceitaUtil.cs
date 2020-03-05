@@ -360,8 +360,9 @@ namespace QACoreBusiness.Util.FIN
 
         public void CliqueAddParcelaManualRenegociacao()
         {
-            gestor.BotaoInserirParcelaManualmente.Click();
             Thread.Sleep(1000);
+            gestor.BotaoInserirParcelaManualmente.Click();
+            Thread.Sleep(1500);
         }
 
         public void InserirDataVencimentoContratoRenegocicao(int dias)
@@ -382,7 +383,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaDataInseridaParcela()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             Assert.Equal(novoVencimento, gestor.InputDtVencNovaParcelaContratoRenegociacao.GetAttribute("value"));
         }
 

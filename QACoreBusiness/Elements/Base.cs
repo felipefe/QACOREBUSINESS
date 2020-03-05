@@ -32,5 +32,13 @@ namespace QACoreBusiness.Elements
         public IWebElement InputDataEmissaoContrato => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_Emissao']");
         #endregion
 
+
+        //#region XXX
+        //public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+        //public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+        //public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+        //public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+        //#endregion
+
     }
 }

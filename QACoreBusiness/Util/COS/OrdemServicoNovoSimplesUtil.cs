@@ -13,6 +13,7 @@ namespace QACoreBusiness.Util.COS
         public IWebDriver driver;
         public ElementsCOSOrdemServico cos;
         string codigo;
+        string situacaoEncaminhada;
 
         public OrdemServicoNovoSimplesUtil()
         {
@@ -161,6 +162,44 @@ namespace QACoreBusiness.Util.COS
             Assert.Contains(cos.UrlEditItemOrdemServico, driver.Url);
         }
 
+        public void CliqueActionsEncaminhar()
+        {
+            int index = 0;
+            cos.ListaOS[index].FindElement(By.TagName("img[alt='Opções']")).Click();
+            cos.ActionEncaminhar.Click();
+            Thread.Sleep(1500);
+        }
+
+        public void SelecioneNovaSituacao(string situacao)
+        {
+            situacaoEncaminhada = situacao;
+            Thread.Sleep(1200);
+            cos.SelectNovaSituacao.Click();
+            cos.SearchGenerico.SendKeys(situacao);
+            Thread.Sleep(1800);
+            cos.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void CliqueBotaoEncaminhar()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoEncaminharNovaSituacaoOS.Click();
+        }
+
+        public void ValideSituacaoEncaminhadaOS()
+        {
+            Thread.Sleep(1500);
+            String situacao = cos.ListaOS[0].FindElement(By.CssSelector("td:nth-child(5)")).Text;
+            Assert.Equal(situacaoEncaminhada, situacao);
+        }
+
+        public void SelecioneGrupoUsuario(string grupo)
+        {
+            cos.InputSelectGrupoUsuario.SendKeys(grupo);
+            Thread.Sleep(1200);
+            cos.InputSelectGrupoUsuario.SendKeys(Keys.Enter);
+        }
+
         public void CliqueBotaoSepararInsumos()
         {
             Thread.Sleep(800);
@@ -184,15 +223,15 @@ namespace QACoreBusiness.Util.COS
             Assert.NotEqual(codigo, codOS);
         }
 
-        public void ValidaReservaInsumos(string isReservadoInsumo)
+        public void ValidaStatusSeparadoInsumos(string isSeparado)
         {
             int insumos = cos.TabelaManutencaoItens.Count;
             int reservou = 0;
             Thread.Sleep(1000);
             foreach(IWebElement insumo in cos.TabelaManutencaoItens)
             {
-                string statusReserva = insumo.FindElement(By.CssSelector("td:nth-child(6)")).Text;
-                if (isReservadoInsumo.Equals(statusReserva)){ 
+                string statusReserva = insumo.FindElement(By.CssSelector("td:nth-child(2)")).Text;
+                if (isSeparado.Equals(statusReserva)){ 
                     reservou++; 
                 }
                 Thread.Sleep(500);
