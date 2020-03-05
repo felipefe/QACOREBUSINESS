@@ -279,116 +279,118 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Finalizar recepcao de mercadoria", null, new string[] {
                         "finalizar_recepcao_mercadoria"});
-#line 113
+#line 88
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 114
+#line 89
 testRunner.Given("que eu clique no botao da header Novo Via NFe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 115
+#line 90
  testRunner.And("selecione o arquivo xml da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 91
  testRunner.And("informe a operacao fiscal {\'Recepção de Mercadoria\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 92
  testRunner.And("clicar no botao Iniciar importacao da NFe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 93
  testRunner.And("que tenha uma recepcao no status {\'Lançamento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
+#line 94
  testRunner.And("seja clicado no botao Mercadoria nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
+#line 95
  testRunner.And("seja redirecionado para tela de Mercadorias da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
+#line 96
  testRunner.And("tenha na coluna Escriturado do item o valor {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 97
  testRunner.When("clicar no botao da header Escriturar todos os itens automaticamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 123
+#line 98
  testRunner.And("seja redirecionado para index de escriturar lote fiscal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 99
  testRunner.And("clicar na aba Configuração", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 100
  testRunner.And("selecione o CFOP {1102} Compra para Comercialização", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+#line 101
  testRunner.And("selecione o protocolo ICMS de destino/empresa {\'ICMS_SC_01\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 102
  testRunner.And("selecione os impostos federais {\'Impostos Federais - Compra para comercialização\'" +
                     "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 103
  testRunner.And("clicar no botao Calcular", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line 104
  testRunner.Then("o status do item deve mudar para {\'Escriturado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 130
+#line 105
  testRunner.And("quando clicar no botao Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 106
  testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 107
  testRunner.And("o status da recepcao deve ser {\'Lançamento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
+#line 108
  testRunner.And("seja clicado no botao Mercadoria nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 109
  testRunner.And("seja redirecionado para tela de Mercadorias da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 110
  testRunner.And("tenha na coluna Escriturado do item o valor {\'Sim\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
+#line 111
  testRunner.And("clicar no botao Finalizar Lançamento de Itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 112
  testRunner.And("marcar Eu concluí o lançamento de todos os itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 113
  testRunner.And("clicar no botao Confirmar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 114
  testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
+#line 115
  testRunner.And("o status da recepcao deve ser {\'Conferência Física\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 116
  testRunner.And("seja clicado no botao Conferencia Fisica de Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 117
  testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 118
  testRunner.And("o codigo sku e qtd. total sejam copidos de suas colunas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 119
  testRunner.And("seja feita a conferencia desses produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 145
+#line 120
  testRunner.And("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 146
+#line 121
  testRunner.And("uma mensagem de conferido com sucesso deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
+#line 122
  testRunner.And("clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
+#line 123
  testRunner.And("ser redirecionado para tela de COM Conferencia Fisica da Recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
+#line 124
  testRunner.And("clicar no botao Concluir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 125
  testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 151
+#line 126
  testRunner.And("o status da recepcao deve ser {\'Aguardando Finalização\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 152
+#line 127
  testRunner.And("seja clicado no botao Finalizar Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 153
+#line 128
  testRunner.And("seja redirecionado para tela de Finalizar recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 154
+#line 129
  testRunner.And("clicar no botao Finalizar Recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 155
+#line 130
  testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 156
+#line 131
  testRunner.And("que eu clique no botao da header Gerenciar recepcoes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 157
+#line 132
  testRunner.And("seja redirecionado para index de gerenciar recepcoes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 158
+#line 133
  testRunner.And("que tenha uma recepcao no status {\'Finalizado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 159
+#line 134
  testRunner.And("memorizo o numero dessa recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 160
+#line 135
  testRunner.And("clicar no botao da action para Excluir recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 161
+#line 136
  testRunner.And("clicar no botao Excluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
+#line 137
  testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
+#line 138
  testRunner.And("acessamos gerenciar recepcoes novamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
+#line 139
  testRunner.And("valido o numero memorizado dessa recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 165
+#line 140
  testRunner.And("o status da recepcao deve ser {\'Cancelado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

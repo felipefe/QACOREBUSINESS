@@ -364,9 +364,10 @@ namespace QACoreBusiness.Util.COM
 
         public void SelectStPIS(string stPIS)
         {
+            Thread.Sleep(500);
             recepcao.SelectStPis.Click();
             recepcao.SearchGenerico.SendKeys(stPIS);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             recepcao.SearchGenerico.SendKeys(Keys.Enter);
         }
 
