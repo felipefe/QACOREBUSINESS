@@ -165,6 +165,35 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ValideSituacaoEncaminhadaOS();
         }
 
+        [Given(@"clicar na flag para Marcar Todos")]
+        public void GivenClicarNaFlagParaMarcarTodos()
+        {
+            osns.CliqueBotaoMarcarTodos();
+        }
+
+        [Given(@"clicar no botao Reservar/Requisitar Insumos")]
+        public void GivenClicarNoBotaoReservarRequisitarInsumos()
+        {
+            osns.CliqueBotaoReservarInsumos();
+        }
+
+        [Given(@"validar que a Qtd\. Reservada deve ser a mesma que Qtd\. Receita")]
+        public void GivenValidarQueAQtd_ReservadaDeveSerAMesmaQueQtd_Receita()
+        {
+            osns.ValidaQntidadeReservadaInsumos();
+        }
+
+        [Given(@"clicar no botao Separar Insumos")]
+        public void GivenClicarNoBotaoSepararInsumos()
+        {
+            osns.CliqueBotaoSepararInsumos();
+        }
+
+        [Given(@"o status dos insumos devem ser \{'(.*)'}")]
+        public void GivenOStatusDosInsumosDevemSer(string status)
+        {
+            osns.ValidaStatusSeparadoInsumos(status);
+        }
 
         [When(@"clicar no botao Salvar novo simples")]
         public void WhenClicarNoBotaoSalvarNovoSimples()
@@ -206,6 +235,164 @@ namespace QACoreBusiness.StepDefinitions.COS
         public void WhenValidarQueAQtd_ReservadaDeveSerAMesmaQueQtd_Receita()
         {
             osns.ValidaQntidadeReservadaInsumos();
+        }
+
+        [When(@"for clicado no botao Executar Tudo")]
+        public void WhenForClicadoNoBotaoExecutarTudo()
+        {
+            osns.CliqueBotaoExecutarTudo();
+        }
+
+        [When(@"espere por \{(.*)} segundos ate ser processado")]
+        public void WhenEsperePorSegundosAteExecutarTudo(int segundos)
+        {
+            osns.EspereXSegundosAteExecutarOS(segundos);
+        }
+
+        [When(@"desmarque a opção Tentar Finalizar itens")]
+        public void WhenDesmarqueAOpcaoTentarFinalizarItens()
+        {
+            osns.DesmarqueTentarFinalizarItensAoExecutarTudo();
+        }
+
+        [When(@"confirmar clicando no botao Confirmar Execuções da modal")]
+        public void WhenConfirmarClicandoNoBotaoConfirmarExecucoesDaModal()
+        {
+            osns.CliqueConfirmarExecutarTudoModal();
+        }
+
+        [When(@"clique Encaminhar nas actions da OS")]
+        public void WhenCliqueEncaminharNasActionsDaOS()
+        {
+            osns.CliqueActionsEncaminhar();
+        }
+
+        [When(@"selecione a situação \{'(.*)'}")]
+        public void WhenSelecioneASituacao(string situacao)
+        {
+            osns.SelecioneNovaSituacao(situacao);
+        }
+
+        [When(@"selecione o Grupo de usuário \{'(.*)'}")]
+        public void WhenSelecioneOGrupoDeUsuario(string grupo)
+        {
+            osns.SelecioneGrupoUsuario(grupo);
+        }
+
+        [When(@"clique no botao Encaminhar")]
+        public void WhenCliqueNoBotaoEncaminhar()
+        {
+            osns.CliqueBotaoEncaminhar();
+        }
+
+        [When(@"valide que a situacao da OS esteja na situacao encaminhada")]
+        public void WhenValideQueASituacaoDaOSEstejaNaSituacaoEncaminhada()
+        {
+            osns.ValideSituacaoEncaminhadaOS();
+        }
+
+        [When(@"memorize o numero da OS")]
+        public void WhenMemorizeONumeroDaOS()
+        {
+            osns.MemorizarNumeroOrdemServico();
+        }
+
+        [When(@"clique nas actions Finalizar O\.S/O\.P")]
+        public void WhenCliqueNasActionsFinalizarO_SO_P()
+        {
+            osns.CliqueActionsFinalizarOS();
+        }
+
+        [When(@"informe no textArea uma mensagem de Conclusão \{'(.*)'}")]
+        public void WhenInformeNoTextAreaUmaMensagemDeConclusao(string conclusao)
+        {
+            osns.InformeTextoConclusao(conclusao);
+        }
+
+        [When(@"marque a flag para Tentar Finalizar Todos os Itens")]
+        public void WhenMarqueAFlagParaTentarFinalizarTodosOsItens()
+        {
+            osns.MarqueFinalizarTodosItensAoFinalizarOS();
+        }
+
+        [When(@"confirme clicando no botao Finalizar OS")]
+        public void WhenConfirmeClicandoNoBotaoFinalizarOS()
+        {
+            osns.ConfirmarFinalizarOSModal();
+        }
+
+        [When(@"clique no botao da Header Gerenciar O\.S")]
+        public void WhenCliqueNoBotaoDaHeaderGerenciarO_S()
+        {
+            osns.CliqueHeaderGerenciarOSs();
+        }
+
+        [When(@"informar no input a Qtd Reservar \{(.*)}")]
+        public void WhenInformarNoInputAQtdReservar(decimal qtdReservar)
+        {
+            osns.InformarQntdReservarManutencaoItens(qtdReservar);
+        }
+
+        [When(@"for clicado no botao Produzir Tudo")]
+        public void WhenForClicadoNoBotaoProduzirTudo()
+        {
+            osns.CliqueBotaoProduzirTudo();
+        }
+
+        [When(@"confirmar clicando no botao Produzir tudo\(em cadeia\)")]
+        public void WhenConfirmarClicandoNoBotaoProduzirTudoEmCadeia()
+        {
+            osns.ConfirmeProduzirTudoModal();
+        }
+
+        [When(@"clique para editar item de OS")]
+        public void WhenCliqueParaEditarItemDeOS()
+        {
+            osns.CliqueEditarItemOrdemServico();
+        }
+
+        [When(@"clique no botao Concluir Item")]
+        public void WhenCliqueNoBotaoConcluirItem()
+        {
+            osns.CliqueBotaoConcluirItem();
+        }
+
+        [When(@"confirme clicando no botao Concluir da modal")]
+        public void WhenConfirmeClicandoNoBotaoConcluirDaModal()
+        {
+            osns.ConfirmeConcluirItemModal();
+        }
+
+
+        [When(@"marcar a flag Alterar Qtd\. dos Insumos ao Reservar")]
+        public void WhenMarcarAFlagAlterarQtd_DosInsumosAoReservar()
+        {
+            osns.MarcarFlagalterarQtdDosInsumosReservar();
+        }
+
+        [Then(@"validar que a Qtd\. Reservada deve ser a mesma que Qtd\. Total")]
+        public void ThenValidarQueAQtd_ReservadaDeveSerAMesmaQueQtd_Total()
+        {
+            osns.ValidaQtdReservadaEQtdTotal();
+        }
+
+        [Then(@"validar que a Qtd\. a Reservar \+ Qtd\. Reservada deve ser a mesma que Qtd\. Total")]
+        public void ThenValidarQueAQtd_AReservarQtd_ReservadaDeveSerAMesmaQueQtd_Total()
+        {
+            osns.ValidarQtdReservarMaisReservadaIgualTotal();
+        }
+
+
+        [Then(@"valide a OS memorizada")]
+        public void ThenValideAOSMemorizada()
+        {
+            osns.ValidaCodigoOSMemorizada();
+        }
+
+        [Then(@"o status final da OS deve ser \{'(.*)'}")]
+        public void ThenOStatusFinalDaOSDeveSer(string status)
+        {
+            osns.ValidaStatusOsByGerenciarOS(status);
         }
 
         [Then(@"o sistema redireciona para /COS/OrdemServicoItem/Edit/")]

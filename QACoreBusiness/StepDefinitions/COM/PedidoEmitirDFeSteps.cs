@@ -27,6 +27,11 @@ namespace QACoreBusiness.StepDefinitions.COM
             pdfeu.AcesseContextoByUrl(contexto);
         }
 
+        [When(@"o usuário deve acessar o contexto by url \{'(.*)'}")]
+        public void WhenOUsuarioDeveAcessarOContextoByUrl(string contexto)
+        {
+            pdfeu.AcesseContextoByUrl(contexto); 
+        }
 
         [When(@"clicar no botao Emitir Documentos Fiscais")]
         public void WhenClicarNoBotaoEmitirDocumentosFiscais()

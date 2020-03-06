@@ -94,53 +94,53 @@ testRunner.And("clicar para acessar o contexto {\'Contratos\'}", ((string)(null)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar contrato FIN + parcelas AUTO", null, new string[] {
                         "create_contrato_com_parcelas_auto"});
-#line 32
+#line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 33
+#line 9
  testRunner.Given("que seja clicado no botao criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
+#line 10
  testRunner.And("seja redirecionado para /Contrato/Create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 11
  testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 12
  testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 13
  testRunner.And("selecionar a empresa do contrato {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 14
  testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 15
  testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 16
  testRunner.And("informar no textArea um historico  {\'Contrato referente venda de testes autorimat" +
                     "izados\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 17
  testRunner.And("selecionar a conta prevista pagamento {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 18
  testRunner.And("clicar no botao adicionar parcelas automaticamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
+#line 19
  testRunner.And("inserir no input o valor a pagar(futuro) da parcela R${931.5}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 20
  testRunner.And("inserir no input a quantidade de {3} parcelas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 21
  testRunner.And("inserir no input o intervalo de {15} dias entre parcelas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 22
  testRunner.And("inserir o vencimento da primeira parcela para {15} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 23
  testRunner.And("clicar no botao salvar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 24
  testRunner.Then("as parcelas devem ser criadas conforme a qntdade informada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 49
+#line 25
  testRunner.And("clicar no botao salvar/criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 26
  testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 27
  testRunner.And("o status do contrato deve ser {\'Aberto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 28
  testRunner.And("a coluna referente ao valor original {\'931.5\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 29
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -154,49 +154,49 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Criar contrato FIN + parcelas MANUAL", null, new string[] {
                         "create_contrato_com_parcelas_manual"});
-#line 57
+#line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 58
+#line 34
  testRunner.Given("que seja clicado no botao criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 59
+#line 35
  testRunner.And("seja redirecionado para /Contrato/Create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 36
  testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
+#line 37
  testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
+#line 38
  testRunner.And("selecionar a empresa do contrato {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 39
  testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 40
  testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 41
  testRunner.And("informar no textArea um historico  {\'Contrato referente venda de testes autorimat" +
                     "izados\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 42
  testRunner.And("selecionar a conta prevista pagamento {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
+#line 43
  testRunner.And("clicar no botao adicionar parcelas manualmente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+#line 44
  testRunner.And("inserir no input Valor Original R${420.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 45
  testRunner.And("inserir no input Data de Vencimento {15} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 46
  testRunner.And("clicar no botao Adicionar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 47
  testRunner.Then("a parcela deve ser criadas conforme valor informado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 72
+#line 48
  testRunner.And("clicar no botao salvar/criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 49
  testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 50
  testRunner.And("o status do contrato deve ser {\'Aberto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 51
  testRunner.And("a coluna referente ao valor original {\'420.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 52
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -210,23 +210,58 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Excluir contrato Aberto", null, new string[] {
                         "excluir_contrato_restricao"});
-#line 89
+#line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 90
-testRunner.Given("que o status do contrato seja {\'Aberto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 91
-testRunner.And("memorize o N doc do contrato a ser excluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
-testRunner.When("clicar nas actions Excluir / Cancelar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 93
-testRunner.And("confirmar clicando no botao Excluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
-testRunner.Then("o contrato nao deve ser excluido motivo {\'Não foi possível apagar o contrato!\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 95
-testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.Given("que seja clicado no botao criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 58
+ testRunner.And("seja redirecionado para /Contrato/Create", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+ testRunner.And("selecionar a empresa do contrato {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("informar no textArea um historico  {\'Contrato referente venda de testes autorimat" +
+                    "izados\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.And("selecionar a conta prevista pagamento {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("clicar no botao adicionar parcelas manualmente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And("inserir no input Valor Original R${420.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.And("inserir no input Data de Vencimento {15} dias futuros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.And("clicar no botao Adicionar parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And("a parcela deve ser criadas conforme valor informado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+ testRunner.And("clicar no botao salvar/criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.And("o status do contrato deve ser {\'Aberto\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
+ testRunner.And("a coluna referente ao valor original {\'420.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+ testRunner.And("memorize o N doc do contrato a ser excluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("clicar nas actions Excluir / Cancelar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("confirmar clicando no botao Excluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.Then("o contrato deve ser excluido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
+ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -239,38 +274,38 @@ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar Pagto Antecipado", null, new string[] {
                         "lancar_pagamento_antecipado"});
-#line 99
+#line 83
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 100
+#line 84
 testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 101
+#line 85
 testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 86
 testRunner.When("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 87
 testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 88
 testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 89
 testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 90
 testRunner.And("informar no input o Valor a pagar {600.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line 91
 testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 92
 testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 109
+#line 93
 testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 94
 testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 95
 testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 96
 testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 97
 testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -284,40 +319,40 @@ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar Despesa", null, new string[] {
                         "lancar_despesa_contrato"});
-#line 117
+#line 128
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 118
- testRunner.Given("que seja clicado no botao Lançar Despesa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 119
- testRunner.And("seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=D", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
- testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 121
- testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
- testRunner.And("selecionar o plano de contas {\'Contratos - Despesa\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
- testRunner.And("inserir no input Valor Original R${70.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
- testRunner.And("inserir no input Valor Pago R${70.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
- testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
- testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
- testRunner.And("informar no textArea um historico  {\'Contrato despesa\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
- testRunner.And("clicar no botao salvar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("que seja clicado no botao Lançar Despesa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 130
- testRunner.And("o status do contrato deve ser {\'Quitado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=D", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 131
- testRunner.And("a coluna referente ao valor original {\'70.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 132
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.And("selecionar o plano de contas {\'Contratos - Despesa\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 134
+ testRunner.And("inserir no input Valor Original R${70.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 135
+ testRunner.And("inserir no input Valor Pago R${70.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 137
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 138
+ testRunner.And("informar no textArea um historico  {\'Contrato despesa\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 139
+ testRunner.And("clicar no botao salvar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 140
+ testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 141
+ testRunner.And("o status do contrato deve ser {\'Quitado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 142
+ testRunner.And("a coluna referente ao valor original {\'70.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -331,40 +366,40 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lançar Receita", null, new string[] {
                         "lancar_receita_contrato"});
-#line 136
+#line 147
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 137
- testRunner.Given("que seja clicado no botao Lançar Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 138
- testRunner.And("seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=C", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
- testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
- testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
- testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
- testRunner.And("inserir no input Valor Original R${420.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
- testRunner.And("inserir no input Valor Pago R${420.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
- testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 145
- testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 146
- testRunner.And("informar no textArea um historico  {\'Contrato receita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 147
- testRunner.And("clicar no botao salvar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 148
- testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("que seja clicado no botao Lançar Receita", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 149
- testRunner.And("o status do contrato deve ser {\'Quitado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("seja redirecionado para /FIN/DespesaReceita/Create?tipoPC=C", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 150
- testRunner.And("a coluna referente ao valor original {\'420.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("inserir no input numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 151
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 152
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 153
+ testRunner.And("inserir no input Valor Original R${420.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 154
+ testRunner.And("inserir no input Valor Pago R${420.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 155
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 156
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 157
+ testRunner.And("informar no textArea um historico  {\'Contrato receita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
+ testRunner.And("clicar no botao salvar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 159
+ testRunner.Then("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 160
+ testRunner.And("o status do contrato deve ser {\'Quitado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 161
+ testRunner.And("a coluna referente ao valor original {\'420.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

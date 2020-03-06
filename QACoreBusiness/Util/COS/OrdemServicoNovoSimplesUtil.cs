@@ -173,10 +173,10 @@ namespace QACoreBusiness.Util.COS
         public void SelecioneNovaSituacao(string situacao)
         {
             situacaoEncaminhada = situacao;
-            Thread.Sleep(1200);
+            Thread.Sleep(2000);
             cos.SelectNovaSituacao.Click();
             cos.SearchGenerico.SendKeys(situacao);
-            Thread.Sleep(1800);
+            Thread.Sleep(2500);
             cos.SearchGenerico.SendKeys(Keys.Enter);
         }
 
@@ -196,7 +196,7 @@ namespace QACoreBusiness.Util.COS
         public void SelecioneGrupoUsuario(string grupo)
         {
             cos.InputSelectGrupoUsuario.SendKeys(grupo);
-            Thread.Sleep(1200);
+            Thread.Sleep(2000);
             cos.InputSelectGrupoUsuario.SendKeys(Keys.Enter);
         }
 
@@ -255,9 +255,175 @@ namespace QACoreBusiness.Util.COS
             Assert.True(reservou);
         }
 
+        public void CliqueBotaoExecutarTudo()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoExecutarTudo.Click();
+        }
+
+        public void EspereXSegundosAteExecutarOS(int segundos)
+        {
+            Thread.Sleep(segundos * 1000);
+        }
+
+        public void DesmarqueTentarFinalizarItensAoExecutarTudo()
+        {
+            Thread.Sleep(500);
+            cos.FlagFinalizarItensAoExecutarOS.Click();
+        }
+
         private Double Insere6CasasDecimais(int multiplicador)
         {
             return Convert.ToDouble(multiplicador * 1000000) ;
+        }
+
+        public void CliqueConfirmarExecutarTudoModal()
+        {
+            cos.BotaoConfirmarExecucaoModal.Click();
+        }
+
+        public void InformeTextoConclusao(string conclusao)
+        {
+            Thread.Sleep(3000);
+            cos.TextAreaConclusaoOS.SendKeys(conclusao);
+        }
+
+        public void CliqueActionsFinalizarOS()
+        {
+            int index = 0;
+            cos.ListaOS[index].FindElement(By.TagName("img[alt='Opções']")).Click();
+            cos.ActionsFinalizarOS.Click();
+        }
+
+        public void MarqueFinalizarTodosItensAoFinalizarOS()
+        {
+            Thread.Sleep(800);
+            cos.FlagTentarFinalizarItensAoFinalizarOS.Click();
+        }
+
+        public void ConfirmarFinalizarOSModal()
+        {
+            Thread.Sleep(500);
+            cos.BotaoFinalizarOSModal.Click();
+        }
+
+        public void CliqueHeaderGerenciarOSs()
+        {
+            cos.BotaoHeaderGerenciarOS.Click();
+            Thread.Sleep(1500);
+        }
+
+        public void MemorizarNumeroOrdemServico()
+        {
+            Thread.Sleep(1000);
+            codigo = cos.ListaOS[0].FindElement(By.CssSelector("td:nth-child(1)")).Text;
+        }
+
+        public void ValidaCodigoOSMemorizada()
+        {
+            Thread.Sleep(1000);
+            string codigoOSFinalizada = cos.ListaOS[0].FindElement(By.CssSelector("td:nth-child(1)")).Text;
+            Assert.Equal(codigo, codigoOSFinalizada);
+        }
+
+        public void ValidaStatusOsByGerenciarOS(string status)
+        {
+            Thread.Sleep(1000);
+            string finalizada = cos.ListaOS[0].FindElement(By.CssSelector("td:nth-child(5)")).Text;
+            Assert.Equal(status, finalizada);
+        }
+
+        public void InformarQntdReservarManutencaoItens(decimal qtdReservar)
+        {
+            foreach(IWebElement insumo in cos.TabelaManutencaoItens)
+            {
+                Thread.Sleep(500);
+                IWebElement inputQtdReservar = insumo.FindElement(By.CssSelector("td:nth-child(7) > div > div > input"));
+                inputQtdReservar.Clear();
+                Thread.Sleep(500);
+                inputQtdReservar.SendKeys(Keys.ArrowRight);
+                inputQtdReservar.SendKeys(Insere5CasasDecimais(qtdReservar).ToString());
+            }
+        }
+
+        private Double Insere5CasasDecimais(decimal num)
+        {
+            return Convert.ToDouble(num * 100000);
+        }
+
+        public void CliqueBotaoProduzirTudo()
+        {
+            Thread.Sleep(1200);
+            cos.BotaoProduzirTudo.Click();
+        }
+
+        public void MarcarFlagalterarQtdDosInsumosReservar()
+        {
+            Thread.Sleep(500);
+            cos.FlagAlterarQtdInsumosReservar.Click();
+        }
+
+        public void ConfirmeProduzirTudoModal()
+        {
+            Thread.Sleep(1300);
+            cos.BotaoProduzirTudoEmCadeia.Click();
+        }
+
+        public void CliqueEditarItemOrdemServico()
+        {
+            int index = 0;
+            cos.TabelaItensOS[index].FindElement(By.CssSelector("td:nth-child(11) > div")).Click();
+            Thread.Sleep(1000);
+            cos.EditarItemOS.Click();
+            Thread.Sleep(1500);
+        }
+
+        public void ValidaQtdReservadaEQtdTotal()
+        {
+            bool reservou = true;
+            Thread.Sleep(1000);
+            foreach (IWebElement insumo in cos.TabelaManutencaoItens)
+            {
+                string QtdReservada = insumo.FindElement(By.CssSelector("td:nth-child(10)")).Text;
+                string QtdTotal = insumo.FindElement(By.CssSelector("td:nth-child(11)")).Text;
+                if (!QtdTotal.Equals(QtdReservada))
+                {
+                    reservou = false;
+                }
+                Thread.Sleep(500);
+            }
+            Assert.True(reservou);
+        }
+
+        public void ConfirmeConcluirItemModal()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoConfirmarConcluirItem.Click();
+        }
+
+        public void CliqueBotaoConcluirItem()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoConcluirItem.Click();
+        }
+
+        public void ValidarQtdReservarMaisReservadaIgualTotal()
+        {
+            bool validou = true;
+            Thread.Sleep(1000);
+            foreach (IWebElement insumo in cos.TabelaManutencaoItens)
+            {
+                string InputQtdReservar = insumo.FindElement(By.CssSelector("td:nth-child(7) > div > div > input")).GetAttribute("value");
+                string QtdReservada = insumo.FindElement(By.CssSelector("td:nth-child(10)")).Text;
+                string QtdTotal = insumo.FindElement(By.CssSelector("td:nth-child(11)")).Text;
+                Double resultado = Double.Parse(InputQtdReservar.Replace(",",".")) + Double.Parse(QtdReservada.Replace(",", "."));
+                if (!QtdTotal.Equals(resultado.ToString("N5").Replace(".",",")))
+                {
+                    validou = false;
+                }
+                Thread.Sleep(500);
+            }
+            Assert.True(validou);
         }
     }
 }

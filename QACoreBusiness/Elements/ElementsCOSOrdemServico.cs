@@ -20,6 +20,7 @@ namespace QACoreBusiness.Elements
         #region Index Ordem Serviço
         public IWebElement BotaoNovoSimples => ElementWait.WaitForElementXpath(chromeDriver, "//a[@data-content='Novo Simples...']");
         public List<IWebElement> ListaOS => chromeDriver.FindElements(By.XPath("//table[@class='ui table selectable striped coregrid']//tbody//tr")).ToList();
+        public IWebElement BotaoHeaderGerenciarOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Gerenciar O.S.s']");
         #endregion
 
         #region Novo Simples
@@ -42,9 +43,11 @@ namespace QACoreBusiness.Elements
         public IWebElement SelectReceitaNovoItem => ElementWait.WaitForElementXpath(chromeDriver, "//span[@id='select2-OrdemServicoItem_Item-container']");
         public IWebElement InputMultiplicadorReceitaNovoItem => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='OrdemServicoItem_MultiplicadorReceita']");
         public IWebElement BotaoSalvarItemOS => ElementWait.WaitForElementXpath(chromeDriver, "//form[@action='/COREBusiness/COS/OrdemServicoItem/Create']//input[@value='Salvar']");
+        public List<IWebElement> TabelaItensOS => chromeDriver.FindElements(By.XPath("//div[@id='divItens']//table//tbody//tr")).ToList();
         #endregion
 
         #region Edit Ordem Servico Item
+        public IWebElement EditarItemOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Editar']");
         public IWebElement AbaResultadosOSI => ElementWait.WaitForElementXpath(chromeDriver, "//a[@id='tab-menu-tabResultados']");
         public List<IWebElement> ListaInsumosOS => chromeDriver.FindElements(By.XPath("//div[@id='divProdutos']//table//tbody//tr")).ToList();
         public List<IWebElement> ListaResultadoOS => chromeDriver.FindElements(By.XPath("//div[@id='divResultados']//table//tbody//tr")).ToList();
@@ -56,6 +59,7 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoReservarInsumosManutencao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Reservar/Requisitar Insumos']");
         public IWebElement BotaoSepararInsumosManutencao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Separar Insumos']");
         public List<IWebElement> TabelaManutencaoItens => chromeDriver.FindElements(By.XPath("//div[@id='divInsumos']//table//tbody//tr")).ToList();
+        public IWebElement FlagAlterarQtdInsumosReservar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='ManutencaoItensOSViewModel_AlterarQtdInsumos_auto_wrapper']//label");
 
         #endregion
 
@@ -65,6 +69,23 @@ namespace QACoreBusiness.Elements
         public IWebElement InputSelectGrupoUsuario => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OSEncaminhamentoViewModel_Grupos_auto_wrapper']//input");
         public IWebElement BotaoEncaminharNovaSituacaoOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Encaminhar']");
         #endregion
+
+
+        #region Finalizar OS
+        public IWebElement TextAreaConclusaoOS => ElementWait.WaitForElementXpath(chromeDriver, "//textarea[@id='OrdemServico_MsgConclusao']");
+        public IWebElement ActionsFinalizarOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Finalizar O.S.s/O.P.s']");
+        public IWebElement FlagFinalizarItensAoExecutarOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OrdemServico_TentarFinalizar_auto_wrapper']//label");
+        public IWebElement BotaoFinalizarOSModal  => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Finalizar']");
+        public IWebElement FlagTentarFinalizarItensAoFinalizarOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='OrdemServico_Opcao_auto_wrapper']//label");
+        public IWebElement BotaoExecutarTudo  => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Executar Tudo')]");
+        public IWebElement BotaoConfirmarExecucaoModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Confirmar Execuções']");
+        public IWebElement BotaoConcluirItem => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Concluir o Item')]");
+        public IWebElement BotaoConfirmarConcluirItem => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Concluir']");
+        public IWebElement BotaoProduzirTudo => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Produzir Tudo')]");
+        public IWebElement BotaoProduzirTudoEmCadeia => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Produzir tudo (em cadeia)']");
+        #endregion
+
+
 
 
     }

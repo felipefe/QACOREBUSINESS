@@ -143,7 +143,14 @@ namespace QACoreBusiness.StepDefinitions.FIN
         {
             cfu.InserirNumeroContrato();
         }
-        
+
+        [When(@"memorize o N doc do contrato a ser excluido")]
+        public void WhenMemorizeONDocDoContratoASerExcluido()
+        {
+            cfu.MemorizarNumeroContrato();
+        }
+
+
         [When(@"selecionar a pessoa do contrato \{'(.*)'}")]
         public void WhenSelecionarAPessoaDoContrato(string pessoa)
         {
