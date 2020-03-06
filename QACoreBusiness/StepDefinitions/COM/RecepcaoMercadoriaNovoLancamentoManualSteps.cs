@@ -141,6 +141,13 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.ValidaUrlIndexRecepcaoMercadoria();
         }
 
+        [Given(@"selecione o contratante do processo \{'(.*)'}")]
+        public void GivenSelecioneOContratanteDoProcesso(string contratante)
+        {
+            rmmanual.SelecionarContratanteIndustrializacao(contratante);
+        }
+
+
         [When(@"seja redirecionado para tela de Mercadorias da recepcao")]
         public void WhenSejaRedirecionadoParaTelaDeMercadoriasDaRecepcao()
         {
@@ -683,5 +690,60 @@ namespace QACoreBusiness.StepDefinitions.COM
         {
             rmmanual.CliqueActionsConferenciaFisicaRecebimento();
         }
+
+        [Then(@"clicar no botao da action Industrialização do lote recebido")]
+        public void ThenClicarNoBotaoDaActionIndustrializacaoDoLoteRecebido()
+        {
+            rmmanual.CliqueActionsIndustrializacaoDoLoteRecebido();
+        }
+
+        [Then(@"seja redirecionado para url contains \{'(.*)'}")]
+        public void ThenSejaRedirecionadoParaUrlContains(string url)
+        {
+            rmmanual.ValidaUrlAtualContains(url);
+        }
+
+        [Then(@"selecione os produtos para criar produçao")]
+        public void ThenSelecioneOsProdutosParaCriarProducao()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"clique no botao Criar Produção")]
+        public void ThenCliqueNoBotaoCriarProducao()
+        {
+            rmmanual.CliqueBotaoCriarProducaoLoteTriangular();
+        }
+
+        [Then(@"selecione a receita \{'(.*)'}")]
+        public void ThenSelecioneAReceita(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"clique no botao OK da modal de criar produção")]
+        public void ThenCliqueNoBotaoOKDaModalDeCriarProducao()
+        {
+            rmmanual.CliqueBotaoOkSelectReceitaTriangularModal();
+        }
+
+        [Then(@"clique no botao Salvar producao de lote")]
+        public void ThenCliqueNoBotaoSalvarProducaoDeLote()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"clique no botao Industrializar")]
+        public void ThenCliqueNoBotaoIndustrializar()
+        {
+            rmmanual.CliqueBotaoIndustrializarLoteTriangular();
+        }
+
+        [Then(@"compartilhe o estado do driver")]
+        public void ThenCompartilheOEstadoDoDriver()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }

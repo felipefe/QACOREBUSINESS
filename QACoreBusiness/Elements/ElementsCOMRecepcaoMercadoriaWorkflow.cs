@@ -159,5 +159,19 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoExcluirRecepcaoModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Excluir']");
         #endregion
 
+
+
+
+        #region Op. Traingular
+        public IWebElement SelectContratanteTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscal_PessoaTerceira_auto_wrapper']");
+        public IWebElement ActionsIndustrializacaoLoteRecebido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Industrialização do Lote Recebido']");
+        public List<IWebElement> ListaProdutosTriangular => chromeDriver.FindElements(By.XPath("//form[@id='frmProducao']//table[@class='ui table striped definition selectable coregrid']//tbody//tr")).ToList();
+        public IWebElement BotaoCriarProducaoTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Criar Produção')]");
+        public IWebElement BotaoIndustrializarLoteTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Industrializar']");
+        public IWebElement BotaoOKSelectReceitaTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='OK']");
+
+        #endregion
+
+
     }
 }

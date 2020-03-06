@@ -167,6 +167,15 @@ namespace QACoreBusiness.Util.COM
             Assert.Equal(recepcao.UrlEscriturarItens, driver.Url);
         }
 
+        public void SelecionarContratanteIndustrializacao(string contratante)
+        {
+            Thread.Sleep(1000);
+            recepcao.SelectContratanteTriangular.Click();
+            recepcao.SearchGenerico.SendKeys(contratante);
+            Thread.Sleep(1500);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
         public void SelecionarItemLoteFiscal(string sku)
         {
             recepcao.SelectProdutoRecebido.Click();
@@ -595,6 +604,34 @@ namespace QACoreBusiness.Util.COM
         public Double Input4CasasDecimais(decimal valor)
         {
             return decimal.ToDouble(valor * 1000);
+        }
+
+        public void CliqueActionsIndustrializacaoDoLoteRecebido()
+        {
+            recepcao.ActionsItem.Click();
+            recepcao.ActionsIndustrializacaoLoteRecebido.Click();
+        }
+
+        public void ValidaUrlAtualContains(string url)
+        {
+            Thread.Sleep(1500);
+            Assert.Contains(url, driver.Url);
+        }
+
+        public void CliqueBotaoCriarProducaoLoteTriangular()
+        {
+            recepcao.BotaoCriarProducaoTriangular.Click();
+        }
+
+        public void CliqueBotaoIndustrializarLoteTriangular()
+        {
+            recepcao.BotaoIndustrializarLoteTriangular.Click();
+        }
+
+        public void CliqueBotaoOkSelectReceitaTriangularModal()
+        {
+            Thread.Sleep(1000);
+            recepcao.BotaoOKSelectReceitaTriangular.Click();
         }
     }
 }

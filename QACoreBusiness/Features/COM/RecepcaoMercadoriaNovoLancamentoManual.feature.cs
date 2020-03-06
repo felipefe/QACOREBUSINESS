@@ -1221,6 +1221,156 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Recepcao Manual (Op. Triangular)")]
+        [Xunit.TraitAttribute("FeatureTitle", "RecepcaoMercadoriaNovoLancamentoManual")]
+        [Xunit.TraitAttribute("Description", "Recepcao Manual (Op. Triangular)")]
+        [Xunit.TraitAttribute("Category", "recepcao_triangular")]
+        public virtual void RecepcaoManualOp_Triangular()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recepcao Manual (Op. Triangular)", null, new string[] {
+                        "recepcao_triangular"});
+#line 534
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 535
+ testRunner.Given("que seja clicado no botao Novo Lancamento Manual", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 536
+ testRunner.And("seja redirecionado para tela de criar recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 537
+ testRunner.And("seja informado a operação fiscal {\'Operação Triangular\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 538
+ testRunner.And("seja informado no editText o fornecedor {\'New Era Fornecedor LTDA\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 539
+ testRunner.And("seja informado no editText a data de recebimento [data atual]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 540
+ testRunner.And("seja informado no editText o Numero do documento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 541
+ testRunner.And("seja informado no editText a Serie do documento {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 542
+ testRunner.And("seja informado no editText a data de emissao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 543
+ testRunner.And("seja informado o modelo de documento {\'Nota Fiscal modelo 1 ou 1-A\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 544
+ testRunner.And("selecione o contratante do processo {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 545
+ testRunner.And("clicar no botao Salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 546
+ testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 547
+ testRunner.And("que tenha uma recepcao no status {\'Lançamento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 548
+ testRunner.And("seja clicado no botao Mercadoria nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 549
+ testRunner.And("seja redirecionado para tela de Mercadorias da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 550
+ testRunner.And("seja clicado no botao Nova Mercadoria Recebida", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 551
+ testRunner.And("seja redirecionado para criar item da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 552
+ testRunner.When("informar o produto SKU {\'TST0002\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 553
+ testRunner.And("informar no editText o valor unitario {65}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 554
+ testRunner.And("informar no editText a quantidade {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 555
+ testRunner.And("informar no editText o numero do lote", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 556
+ testRunner.And("informar no editText a data de fabricacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 557
+ testRunner.And("informar no editText a data de validade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 558
+ testRunner.And("clicar na aba de Impostos Conforme Documento de Entrada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 559
+ testRunner.And("informar o CFOP 5924 - {\'Remessa para industrialização por conta e ordem do adqui" +
+                    "rente da mercadoria, quando esta não transitar pelo estabelecimento do adquirent" +
+                    "e\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 560
+ testRunner.And("informar a origem da Mercadoria {\'Nacional - exceto as indicadas nos códigos 3 a " +
+                    "5\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 561
+ testRunner.And("informar o codigo da ST {\'Tributada integralmente\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 562
+ testRunner.And("informar no editText o percentual da Aliquota {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 563
+ testRunner.And("clicar no botao de Salvar itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 564
+ testRunner.And("seja redirecionado para tela de Mercadorias da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 565
+ testRunner.And("o SKU do item da recepcao informado deve aparecer na tabela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 566
+ testRunner.And("tenha na coluna Escriturado do item o valor {\'Não\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 567
+ testRunner.And("clicar no botao da header Escriturar todos os itens automaticamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 568
+ testRunner.And("seja redirecionado para index de escriturar lote fiscal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 569
+ testRunner.And("clicar na aba Configuração", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 570
+ testRunner.And("selecione o CFOP {1924} Compra para Comercialização", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 571
+ testRunner.And("clicar no botao Calcular", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 572
+ testRunner.And("o status do item deve mudar para {\'Escriturado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 573
+ testRunner.And("quando clicar no botao Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 574
+ testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 575
+ testRunner.And("seja clicado no botao Mercadoria nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 576
+ testRunner.And("seja redirecionado para tela de Mercadorias da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 577
+ testRunner.And("tenha na coluna Escriturado do item o valor {\'Sim\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 578
+ testRunner.And("clicar no botao Finalizar Lançamento de Itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 579
+ testRunner.And("marcar Eu concluí o lançamento de todos os itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 580
+ testRunner.And("clicar no botao Confirmar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 581
+ testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 582
+ testRunner.And("o status da recepcao deve ser {\'Conferência Física\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 583
+ testRunner.And("seja clicado no botao Conferencia Fisica de Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 584
+ testRunner.And("seja redirecionado para tela de WMS Conferencia", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 585
+ testRunner.And("o SKU seja copiado da coluna Código", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 586
+ testRunner.And("seja colado no editText Código do Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 587
+ testRunner.And("a quantidade seja copiada da coluna Qtd. Total", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 588
+ testRunner.And("seja colada no editText Quantidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 589
+ testRunner.And("eu clicar Enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 590
+ testRunner.And("clicar no botao Concluir Processo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 591
+ testRunner.And("clicar no botao Finalizar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 592
+ testRunner.And("ser redirecionado para tela de COM Conferencia Fisica da Recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 593
+ testRunner.And("clicar no botao Concluir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 594
+ testRunner.Then("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 595
+ testRunner.And("o status da recepcao deve ser {\'Aguardando Finalização\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 596
+ testRunner.And("seja clicado no botao Finalizar Recebimento nas actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 597
+ testRunner.And("seja redirecionado para tela de Finalizar recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 598
+ testRunner.And("clicar no botao Finalizar Recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 599
+ testRunner.And("o sistema redirecionada para index de recepçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
