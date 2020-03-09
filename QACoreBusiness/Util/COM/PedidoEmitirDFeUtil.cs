@@ -56,7 +56,6 @@ namespace QACoreBusiness.Util.COM
         //espero 12seg ate a nota ser validada entao atualizo a pagina para pegar o status autorizado
         public void SituacaoNFE()
         {
-            Thread.Sleep(12000);
             driver.Navigate().Refresh();
             Assert.True(ElementWait.WaitTextToBePresentInElement(driver, nfee.ColunaUsoAutorizadoNFE, "Autorizado o uso da NF-e"));
         }

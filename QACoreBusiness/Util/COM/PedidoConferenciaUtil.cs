@@ -119,9 +119,11 @@ namespace QACoreBusiness.Util
             Thread.Sleep(1000);
             for (int i=0; i<conferenciasSKUProduto.Count; i++)
             {
+                Thread.Sleep(1000);
                 conferencia.EditTextCodigoProduto.Clear();
                 conferencia.EditTextCodigoProduto.SendKeys(conferenciasSKUProduto[i]);
                 conferencia.EditTextQuantidadeProduto.Clear();
+                Thread.Sleep(500);
                 conferencia.EditTextQuantidadeProduto.SendKeys(conferenciasQTDProduto[i]);
                 conferencia.EditTextQuantidadeProduto.SendKeys(Keys.Enter);  
             }
@@ -130,7 +132,7 @@ namespace QACoreBusiness.Util
 
         public void ConfirmarReiniciarConferencia()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(1800);
             driver.SwitchTo().Alert().Accept();
         }
 
@@ -176,7 +178,7 @@ namespace QACoreBusiness.Util
 
         public void ColunaQuantidadeConferidaZero()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Assert.True((Int32.Parse(conferencia.ColunaQtdConferida.Text) == 0));
         }
 

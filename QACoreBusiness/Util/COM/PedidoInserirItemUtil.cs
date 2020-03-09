@@ -45,8 +45,11 @@ namespace QACoreBusiness.Util
 
         public void TagDeReservaItemPedido(string reserva)
         {
-            Thread.Sleep(1500);
+            pedido.FecharMensagem.Click();
+            Thread.Sleep(4000);
             IWebElement item = pedido.TabelaItensPedido[pedido.TabelaItensPedido.Count - 1];
+            ElementWait.WaitTextToBePresentInElement(driver, item, reserva);
+            Thread.Sleep(1000);
             Assert.Equal(reserva , item.FindElement(By.CssSelector("td:nth-child(1) > div > div")).Text);
         }
 

@@ -26,16 +26,16 @@ namespace QACoreBusiness.Util.FIN
 
         public void CliquePesquisarDespesas()
         {
-            Thread.Sleep(800);
+            Thread.Sleep(1000);
             gestor.PesquisaDespesaGestorFinanceiro.Click();
             Thread.Sleep(1000);
         }
 
         public void CliqueLimparFiltro()
         {
-            Thread.Sleep(500);
-            gestor.LimparFiltroDespesas.Click();
             Thread.Sleep(1000);
+            gestor.LimparFiltroDespesas.Click();
+            Thread.Sleep(1500);
         }
 
         public void CliqueFiltrarDespesa()
@@ -52,6 +52,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarPrimeiraLinhaTabela()
         {
+            Thread.Sleep(1000);
             gestor.LinhasTabelaDespesas[0].FindElement(By.CssSelector("td:nth-child(1)")).Click();
         }
 
@@ -62,7 +63,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaValorMovimentacao()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Assert.NotEqual("0,00", gestor.TextViewValorParcelasMovimentarDespesa.Text);
         }
 

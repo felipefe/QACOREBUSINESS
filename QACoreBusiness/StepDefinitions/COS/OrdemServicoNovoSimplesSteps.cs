@@ -419,5 +419,12 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ValidaStatusSeparadoInsumos(status);
         }
 
+        [Then(@"espere por \{(.*)} segundos ate ser processado")]
+        public void ThenEsperePorSegundosAteSerProcessado(int seg)
+        {
+            osns.EspereXSegundosAteExecutarOS(seg);
+        }
+
+
     }
 }

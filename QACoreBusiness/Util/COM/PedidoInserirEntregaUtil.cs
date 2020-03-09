@@ -37,9 +37,7 @@ namespace QACoreBusiness.Util
 
         public void SelecionarTransportadora(String transportadora)
         {
-            //modal entrega
-            ElementWait.WaitForElementXpath(driver, "//div[@id='entrega-modal-placeholder']//form[@id='frmPedidoEntrega']");
-            //elementos transportadora - clique
+            Thread.Sleep(2000);
             pedido.SelectTransportadora.Click();
             //search transportadora
             pedido.SearchTransportadora.SendKeys(transportadora);

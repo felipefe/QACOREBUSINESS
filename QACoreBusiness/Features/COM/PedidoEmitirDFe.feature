@@ -66,5 +66,6 @@ And clicar em Finalizar Conferencia
 And o sistema deve redirecionar para tela Entrega e Remessas do Pedido 
 And clicar nas actions Emitir Documentos Fiscais
 Then o usuário deve acessar o contexto by url {'/IDFe/NFe'}
+And espere por {20} segundos ate ser processado
 And a situaçãp da nota deve ser Autorizado o uso da NF-e
 And feche o navegador quando terminar

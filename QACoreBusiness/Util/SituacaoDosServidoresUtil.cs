@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using QACoreBusiness.Elements;
 using Xunit;
+using System.Threading;
 
 namespace QACoreBusiness.Util
 {
@@ -20,6 +21,11 @@ namespace QACoreBusiness.Util
 
         public void SituacaoAtualCoreService(string situacao)
         {
+            if (servidor.ColunaSituacaoServidores.Text.Equals("Running"))
+                return;
+            else
+                CliqueIniciarOuPararCoreService();
+            Thread.Sleep(1500);
             Assert.Equal(situacao, servidor.ColunaSituacaoServidores.Text);
         }
 
@@ -35,7 +41,10 @@ namespace QACoreBusiness.Util
 
         public void NovaSitualCoreService(string novaSituacao)
         {
-            Assert.Equal(novaSituacao, servidor.ColunaSituacaoServidores.Text);
+            if (novaSituacao.Equals("Running"))
+                return;
+            else
+                Assert.Equal(novaSituacao, servidor.ColunaSituacaoServidores.Text);
         }
 
         public void CliqueBotaoLimpar()

@@ -730,7 +730,7 @@ namespace QACoreBusiness.StepDefinitions.COM
         [Then(@"clique no botao Salvar producao de lote")]
         public void ThenCliqueNoBotaoSalvarProducaoDeLote()
         {
-            ScenarioContext.Current.Pending();
+            rmmanual.CliqueBotaoSalvarLoteProducaoTriangular();
         }
 
         [Then(@"clique no botao Industrializar")]

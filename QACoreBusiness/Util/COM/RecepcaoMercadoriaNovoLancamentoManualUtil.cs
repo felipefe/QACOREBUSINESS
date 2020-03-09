@@ -46,6 +46,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarFornecedor(string fornecedor)
         {
+            Thread.Sleep(1000);
             recepcao.SelectFornecedor.Click();
             recepcao.SearchFornecedor.SendKeys(fornecedor);
             Thread.Sleep(1000);
@@ -76,6 +77,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarModeloDocumento(string modeloDocumento)
         {
+            Thread.Sleep(500);
             recepcao.SelectModeloDocumento.Click();
             recepcao.SearchModeloDocumento.SendKeys(modeloDocumento);
             Thread.Sleep(500);
@@ -110,6 +112,7 @@ namespace QACoreBusiness.Util.COM
 
         public void ValidaUrlLoteFiscalItem()
         {
+            Thread.Sleep(1500);
             Assert.Contains(recepcao.UrlLoteFiscalItem, driver.Url);
         }
 
@@ -178,6 +181,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarItemLoteFiscal(string sku)
         {
+            Thread.Sleep(1000);
             recepcao.SelectProdutoRecebido.Click();
             recepcao.SearchProdutoRecebido.SendKeys(sku);
             Thread.Sleep(1000);
@@ -187,6 +191,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarCFOPItemLF(string cfop)
         {
+            Thread.Sleep(2500);
             recepcao.SelectCFOPItemLF.Click();
             recepcao.SearchCFOPItemLF.SendKeys(cfop);
             Thread.Sleep(2000);
@@ -195,6 +200,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarOrigemMercadoria(string origemFiscal)
         {
+            Thread.Sleep(1000);
             recepcao.SelectOrigemItemLF.Click();
             recepcao.SearchOrigemItemLF.SendKeys(origemFiscal.ToString());
             Thread.Sleep(1000);
@@ -410,6 +416,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelectStCofins(string stCofins)
         {
+            Thread.Sleep(500);
             recepcao.SelectStCOFINS.Click();
             recepcao.SearchGenerico.SendKeys(stCofins);
             Thread.Sleep(1000);
@@ -418,6 +425,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelectCfopEscrituraItem(string cfopEscrituraItem)
         {
+            Thread.Sleep(500);
             recepcao.EscriturarSelectCFOP.Click();
             recepcao.SearchGenerico.SendKeys(cfopEscrituraItem);
             Thread.Sleep(1000);
@@ -426,6 +434,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelectOrigemIcmsEscrituraItem(string origem)
         {
+            Thread.Sleep(500);
             recepcao.EscriturarSelectOrigemICMS.Click();
             recepcao.SearchGenerico.SendKeys(origem);
             Thread.Sleep(1000);
@@ -434,6 +443,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarStEscriturarItem(string stICMS)
         {
+            Thread.Sleep(500);
             recepcao.EscriturarSelectstIcms.Click();
             recepcao.SearchGenerico.SendKeys(stICMS);
             Thread.Sleep(1000);
@@ -463,6 +473,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarTipoAliquotaPIS(string tipoAliquotaPIS)
         {
+            Thread.Sleep(500);
             recepcao.EscriturarSelectTipoAliquotaPIS.Click();
             recepcao.SearchGenerico.SendKeys(tipoAliquotaPIS);
             Thread.Sleep(1000);
@@ -490,6 +501,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelectStCofinsEscrituraItem(string st)
         {
+            Thread.Sleep(500);
             recepcao.EscriturarSelectStCOFINS.Click();
             recepcao.SearchGenerico.SendKeys(st);
             Thread.Sleep(1000);
@@ -498,6 +510,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelectTipoAliquotaCofinsEscrituraItem(string tipoAliquota)
         {
+            Thread.Sleep(500);
             recepcao.EscriturarSelectTipoAliquotaCOFINS.Click();
             recepcao.SearchGenerico.SendKeys(tipoAliquota);
             Thread.Sleep(1000);
@@ -632,6 +645,12 @@ namespace QACoreBusiness.Util.COM
         {
             Thread.Sleep(1000);
             recepcao.BotaoOKSelectReceitaTriangular.Click();
+        }
+
+        public void CliqueBotaoSalvarLoteProducaoTriangular()
+        {
+            Thread.Sleep(1500);
+            recepcao.BotaoSalvarLoteProducaoTriangular.Click();
         }
     }
 }

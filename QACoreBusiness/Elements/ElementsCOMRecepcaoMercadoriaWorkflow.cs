@@ -169,7 +169,7 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoCriarProducaoTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Criar Produção')]");
         public IWebElement BotaoIndustrializarLoteTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Industrializar']");
         public IWebElement BotaoOKSelectReceitaTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='OK']");
-
+        public IWebElement BotaoSalvarLoteProducaoTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
         #endregion
 
 

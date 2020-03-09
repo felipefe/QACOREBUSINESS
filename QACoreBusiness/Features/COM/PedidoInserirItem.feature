@@ -4,7 +4,7 @@ Background: Ter um pedido criado
 Given que eu esteja logado no sistema
 And clicar para acessar o contexto {'Meus Pedidos'}
 
-
+#Then uma mensagem de item adicionado ao pedido deve aparecer
 @inserir_item_pedido_por_sku 
 Scenario: Inserir item com reserva ao pedido por sku
 When o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços}
@@ -13,9 +13,9 @@ And que eu clique na sessao de Produtos
 And eu pesquisar no editText o produto por SKU {'TST0001'}
 And informar a quantidade no editText
 And em seguida clicar no botao adicionar  
-Then uma mensagem de item adicionado ao pedido deve aparecer
-And sua tag de reserva estoque deve ser {'Normal'}
+Then sua tag de reserva estoque deve ser {'Normal'}
 And feche o navegador quando terminar
+
 
 @inserir_item_pedido_por_nome 
 Scenario: Inserir item com reserva ao pedido por nome
@@ -25,8 +25,7 @@ And que eu clique na sessao de Produtos
 And eu pesquisar no editText o produto por nome {'Boné Oakley'}
 And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
-Then uma mensagem de item adicionado ao pedido deve aparecer
-And sua tag de reserva estoque deve ser {'Normal'}
+Then sua tag de reserva estoque deve ser {'Normal'}
 And feche o navegador quando terminar
 
 @inserir_item_sem_reserva_pedido 
@@ -37,8 +36,7 @@ And que eu clique na sessao de Produtos
 And eu pesquisar no editText o produto por SKU {'TST0003'}
 And informar a quantidade no editText
 And em seguida clicar no botao adicionar 
-Then uma mensagem de item adicionado ao pedido deve aparecer
-And sua tag de reserva estoque deve ser {'Sem reserva'}
+Then sua tag de reserva estoque deve ser {'Sem reserva'}
 And feche o navegador quando terminar
 
 @inserir_item_invalido_pedido
