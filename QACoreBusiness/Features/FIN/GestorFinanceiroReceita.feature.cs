@@ -506,7 +506,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 184
- testRunner.Given("acesse a url{\'/FIN/Contrato\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("o usuário deve acessar o contexto by url {\'/FIN/Contrato\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 185
  testRunner.And("que seja clicado no botao criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 186
@@ -547,7 +547,7 @@ this.FeatureBackground();
 #line 203
  testRunner.And("a coluna referente ao valor original {\'1994.5\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 204
- testRunner.And("acesse a url{\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 205
  testRunner.And("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 206
@@ -616,7 +616,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 236
- testRunner.Given("acesse a url{\'/FIN/Contrato\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("o usuário deve acessar o contexto by url {\'/FIN/Contrato\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 237
  testRunner.And("que seja clicado no botao criar contrato", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 238
@@ -657,7 +657,7 @@ this.FeatureBackground();
 #line 255
  testRunner.And("a coluna referente ao valor original {\'150.0\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 256
- testRunner.And("acesse a url{\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 257
  testRunner.And("que clica na aba Contas a Receber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 258

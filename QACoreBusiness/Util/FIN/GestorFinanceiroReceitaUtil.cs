@@ -153,12 +153,6 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(700);
         }
 
-        public void GoToUrl(string url)
-        {
-            driver.Navigate().GoToUrl(gestor.UrlCoreBusiness + url);
-            Thread.Sleep(1500);
-        }
-
         public void MemorizarValorLiquidoRenegociar()
         {
             auxValorRenegociar = Double.Parse(gestor.InputValorLiquidoRenegociar.GetAttribute("value").Replace(",", "."));

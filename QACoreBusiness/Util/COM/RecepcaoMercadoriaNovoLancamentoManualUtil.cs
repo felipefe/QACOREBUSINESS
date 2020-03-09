@@ -11,7 +11,7 @@ namespace QACoreBusiness.Util.COM
     class RecepcaoMercadoriaNovoLancamentoManualUtil
     {
         ElementsCOMRecepcaoMercadoriaWorkflow recepcao;
-        IWebDriver driver;
+        public IWebDriver driver;
         string auxSKUItemLF;
         Double auxValorUnitario;
         int auxQuantidadeItem;
@@ -264,7 +264,7 @@ namespace QACoreBusiness.Util.COM
 
         public void CliqueAbaImpostosLoteFiscalItem()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             recepcao.AbaImpostosLFI.Click();
         }
 
@@ -651,6 +651,26 @@ namespace QACoreBusiness.Util.COM
         {
             Thread.Sleep(1500);
             recepcao.BotaoSalvarLoteProducaoTriangular.Click();
+        }
+
+        public void SelecioneProdutosParaIndustrializar()
+        {
+            Thread.Sleep(2000);
+            foreach(IWebElement insumo in recepcao.ListaProdutosTriangular)
+            {
+                insumo.FindElement(By.TagName("label[for='ProdutoIndustrializacaoLoteFiscalViewModel_Selecionado']")).Click();
+                Thread.Sleep(500);
+            }
+        }
+
+        public void SelecioneReceitaIndustrializar(string receita)
+        {
+            Thread.Sleep(1500);
+            recepcao.SelectReceitaTriangular.Click();
+            recepcao.SearchGenerico.SendKeys(receita);
+            Thread.Sleep(1500);
+            recepcao.SearchGenerico.SendKeys(Keys.Enter);
+            
         }
     }
 }

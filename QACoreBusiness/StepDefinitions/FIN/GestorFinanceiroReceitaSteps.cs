@@ -136,22 +136,10 @@ namespace QACoreBusiness.StepDefinitions
             gfu.MemorizarValorLiquidoRenegociar();
         }
 
-        [Given(@"acesse a url\{'(.*)'}")]
-        public void GivenAcesseAUrlDeContratos(string url)
-        {
-            gfu.GoToUrl(url);
-        }
-
         [When(@"inserir no input Data de Vencimento \{(.*)} dias RETROATIVOS")]
         public void WhenInserirNoInputDataDeVencimentoDiasRETROATIVOS(int diasVencidos)
         {
             gfu.AddDataVencimentoRetroativaContratoManual(diasVencidos);
-        }
-
-        [When(@"acesse a url\{'(.*)'}")]
-        public void WhenAcesseAUrlDeContratos(string url)
-        {
-            gfu.GoToUrl(url);
         }
 
         [When(@"que clica na aba Contas a Receber")]

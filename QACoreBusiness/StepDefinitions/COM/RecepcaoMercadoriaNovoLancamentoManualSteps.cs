@@ -1,4 +1,5 @@
-﻿using QACoreBusiness.Util.COM;
+﻿using QACoreBusiness.Util;
+using QACoreBusiness.Util.COM;
 using System;
 using TechTalk.SpecFlow;
 
@@ -706,7 +707,7 @@ namespace QACoreBusiness.StepDefinitions.COM
         [Then(@"selecione os produtos para criar produçao")]
         public void ThenSelecioneOsProdutosParaCriarProducao()
         {
-            ScenarioContext.Current.Pending();
+            rmmanual.SelecioneProdutosParaIndustrializar();
         }
 
         [Then(@"clique no botao Criar Produção")]
@@ -716,9 +717,9 @@ namespace QACoreBusiness.StepDefinitions.COM
         }
 
         [Then(@"selecione a receita \{'(.*)'}")]
-        public void ThenSelecioneAReceita(string p0)
+        public void ThenSelecioneAReceita(string receita)
         {
-            ScenarioContext.Current.Pending();
+            rmmanual.SelecioneReceitaIndustrializar(receita);
         }
 
         [Then(@"clique no botao OK da modal de criar produção")]
@@ -742,7 +743,7 @@ namespace QACoreBusiness.StepDefinitions.COM
         [Then(@"compartilhe o estado do driver")]
         public void ThenCompartilheOEstadoDoDriver()
         {
-            ScenarioContext.Current.Pending();
+            DriveOfDriver.SetInstanceDrive(rmmanual.driver);
         }
 
     }

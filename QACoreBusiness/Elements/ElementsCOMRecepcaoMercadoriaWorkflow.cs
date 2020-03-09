@@ -160,9 +160,10 @@ namespace QACoreBusiness.Elements
         #endregion
 
 
-
+        
 
         #region Op. Traingular
+        public IWebElement SelectReceitaTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscalProducao_Receita_auto_wrapper']");
         public IWebElement SelectContratanteTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='LoteFiscal_PessoaTerceira_auto_wrapper']");
         public IWebElement ActionsIndustrializacaoLoteRecebido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Industrialização do Lote Recebido']");
         public List<IWebElement> ListaProdutosTriangular => chromeDriver.FindElements(By.XPath("//form[@id='frmProducao']//table[@class='ui table striped definition selectable coregrid']//tbody//tr")).ToList();

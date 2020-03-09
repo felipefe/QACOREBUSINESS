@@ -181,7 +181,7 @@ Scenario: Baixar Parcela Transferência Bancária
 #valor a pagar deve ser o valor original da parcela 
 @receita_baixar_parcela_vencida_desconto
 Scenario: Baixar Parcela Vencida C/ Desconto 
-	Given acesse a url{'/FIN/Contrato'}
+	Given o usuário deve acessar o contexto by url {'/FIN/Contrato'}
 	And que seja clicado no botao criar contrato
 	And seja redirecionado para /Contrato/Create
 	When inserir no input numero do documento 
@@ -201,7 +201,7 @@ Scenario: Baixar Parcela Vencida C/ Desconto
 	And o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Aberto'}
 	And a coluna referente ao valor original {'1994.5'}
-	And acesse a url{'/FIN/GestorFinanceiro'}
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
 	And que clica na aba Contas a Receber
 	And clique na pesquisa 
 	And clique para limpar filtros
@@ -233,7 +233,7 @@ Scenario: Baixar Parcela Vencida C/ Desconto
 
 @receita_baixar_parcela_vencida_alterar_movimento
 Scenario: Baixar Parcela Vencida Alterando Movimento
-	Given acesse a url{'/FIN/Contrato'}
+	Given o usuário deve acessar o contexto by url {'/FIN/Contrato'}
 	And que seja clicado no botao criar contrato
 	And seja redirecionado para /Contrato/Create
 	When inserir no input numero do documento 
@@ -253,7 +253,7 @@ Scenario: Baixar Parcela Vencida Alterando Movimento
 	And o sistema redireciona para index de contratos
 	And o status do contrato deve ser {'Aberto'}
 	And a coluna referente ao valor original {'150.0'}
-	And acesse a url{'/FIN/GestorFinanceiro'}
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
 	And que clica na aba Contas a Receber
 	And clique na pesquisa 
 	And clique para limpar filtros
