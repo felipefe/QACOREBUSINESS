@@ -75,6 +75,13 @@ namespace QACoreBusiness.Util.GEM
             inventario.FlagVincularTodosOsLotes.Click();
         }
 
+        public void CliqueBotaoVoltar()
+        {
+            Thread.Sleep(1000);
+            inventario.BotaoVoltarPagina.Click();
+            Thread.Sleep(2000);
+        }
+
         public void CliqueBotaoIniciarExecucao()
         {
             Thread.Sleep(2000);
@@ -104,12 +111,53 @@ namespace QACoreBusiness.Util.GEM
 
         public void SelecioneOpFiscalInvestario(string opFiscal)
         {
-            
+            Thread.Sleep(1000);
+            inventario.SelectOpFiscalInventario.Click();
+            inventario.SearchGenerico.SendKeys(opFiscal);
+            Thread.Sleep(1500);
+            inventario.SearchGenerico.SendKeys(Keys.Enter);
         }
 
         public void CliqueBotaoConcluirProcesso()
         {
             inventario.BotaoConcluirExecuçao.Click();
+        }
+
+        public void SelectOrigemInvetario(string origem)
+        {
+            Thread.Sleep(1000);
+            inventario.SelectOrigemInventario.Click();
+            inventario.SearchGenerico.SendKeys(origem);
+            Thread.Sleep(1500);
+            inventario.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void CliqueBotaoResolver()
+        {
+            inventario.BotaoResolver.Click();
+        }
+
+        public void SelectSituacaoInventario(string situacao)
+        {
+            Thread.Sleep(1000);
+            inventario.SelectSituacaoLoteInvetario.Click();
+            inventario.SearchGenerico.SendKeys(situacao);
+            Thread.Sleep(1500);
+            inventario.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void ValidaStatusInventario(string status)
+        {
+            Assert.Equal(status, inventario.ListaInvetarios[0].FindElement(By.CssSelector("td:nth-child(3)")).Text);
+        }
+
+        public void SelectCFOPInventario(string cfop)
+        {
+            Thread.Sleep(1000);
+            inventario.SelectCFOPInventario.Click();
+            inventario.SearchGenerico.SendKeys(cfop);
+            Thread.Sleep(1500);
+            inventario.SearchGenerico.SendKeys(Keys.Enter);
         }
 
         public void CliqueBotaoCriarProduto()

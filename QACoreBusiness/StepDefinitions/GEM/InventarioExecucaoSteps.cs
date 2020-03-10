@@ -21,49 +21,49 @@ namespace QACoreBusiness.StepDefinitions.GEM
         {
             ieu.CliqueBotaoNovoInventario();
         }
-        
+
         [When(@"selecione a empresa \{'(.*)'}")]
         public void WhenSelecioneAEmpresa(string empresa)
         {
             ieu.SelecioneEmpresa(empresa);
         }
-        
+
         [When(@"insira no input o Nome do inventario")]
         public void WhenInsiraNoInputONomeDoInventario()
         {
             ieu.InformeNomeInventario();
         }
-        
+
         [When(@"clique no botao Criar")]
         public void WhenCliqueNoBotaoCriar()
         {
             ieu.CliqueBotaoCriar();
         }
-        
+
         [When(@"valide que o inventario foi criado")]
         public void WhenValideQueOInventarioFoiCriado()
         {
             ieu.ValidaNomeInventarioCriado();
         }
-        
+
         [When(@"clique no botao Produtos das actions")]
         public void WhenCliqueNoBotaoProdutosDasActions()
         {
             ieu.CliqueBotaoProdutosActions();
         }
-        
+
         [When(@"clique no botao Incluir Produto")]
         public void WhenCliqueNoBotaoIncluirProduto()
         {
             ieu.CliqueIncluirProduto();
         }
-        
+
         [When(@"selecionar o produto \{'(.*)'}")]
         public void WhenSelecionarOProduto(string produto)
         {
             ieu.SelecioneProduto(produto);
         }
-        
+
         [When(@"clique no botao criar")]
         public void WhenCliqueNoBotaoSalvarProduto()
         {
@@ -76,66 +76,65 @@ namespace QACoreBusiness.StepDefinitions.GEM
             ieu.FlagVincularTodosLotes();
         }
 
-
         [When(@"clique no botao Iniciar execução das actions")]
         public void WhenCliqueNoBotaoIniciarExecucaoDasActions()
         {
             ieu.CliqueBotaoIniciarExecucao();
         }
-        
+
         [When(@"clique no botao Iniciar da modal")]
         public void WhenCliqueNoBotaoIniciarDaModal()
         {
             ieu.CliqueBotaoIniciarExecucaoModal();
         }
-        
+
         [When(@"informe a quantidade \{(.*)} a ser inventariada para todos os produtos")]
         public void WhenInformeAQuantidadeASerInventariadaParaTodosOsProdutos(int quantidade)
         {
             ieu.InformeQuantidadeInvetariada(quantidade);
         }
-        
+
         [When(@"clique no botao Concluir Execucao")]
         public void WhenCliqueNoBotaoConcluirExecucao()
         {
             ieu.CliqueBotaoConcluirProcesso();
         }
-        
+
         [When(@"selecione a op fiscal \{'(.*)'} do inventario")]
         public void WhenSelecioneAOpFiscalDoInventario(string opFiscal)
         {
             ieu.SelecioneOpFiscalInvestario(opFiscal);
         }
-        
+
         [When(@"selecione cfop \{'(.*)'} do inventario")]
-        public void WhenSelecioneCfopDoInventario(string p0)
+        public void WhenSelecioneCfopDoInventario(string cfop)
         {
-            ScenarioContext.Current.Pending();
+            ieu.SelectCFOPInventario(cfop);
         }
-        
+
         [When(@"selecione a origem \{'(.*)'} do inventario")]
-        public void WhenSelecioneAOrigemDoInventario(string p0)
+        public void WhenSelecioneAOrigemDoInventario(string origem)
         {
-            ScenarioContext.Current.Pending();
+            ieu.SelectOrigemInvetario(origem);
         }
-        
+
         [When(@"selecione a situaçao do lote \{'(.*)'} inventariado")]
-        public void WhenSelecioneASituacaoDoLoteInventariado(string p0)
+        public void WhenSelecioneASituacaoDoLoteInventariado(string situacao)
         {
-            ScenarioContext.Current.Pending();
+            ieu.SelectSituacaoInventario(situacao);
         }
-        
+
         [When(@"clique no botao Resolver")]
         public void WhenCliqueNoBotaoResolver()
         {
-            ScenarioContext.Current.Pending();
+            ieu.CliqueBotaoResolver();
         }
-        
-        
+
+
         [Then(@"o status do inventario deve ser \{'(.*)'}")]
-        public void ThenOStatusDoInventarioDeveSer(string p0)
+        public void ThenOStatusDoInventarioDeveSer(string status)
         {
-            ScenarioContext.Current.Pending();
+            ieu.ValidaStatusInventario(status);
         }
     }
 }

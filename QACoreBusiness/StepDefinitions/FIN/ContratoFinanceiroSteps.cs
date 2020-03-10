@@ -82,6 +82,73 @@ namespace QACoreBusiness.StepDefinitions.FIN
             cfu.ValidaUrlLancarReceitaContrato();
         }
 
+        [Given(@"selecionar a pessoa do contrato \{'(.*)'}")]
+        public void GivenSelecionarAPessoaDoContrato(string pessoa)
+        {
+            cfu.SelecionarPessoaContrato(pessoa);
+        }
+
+        [Given(@"selecionar o plano de contas \{'(.*)'}")]
+        public void GivenSelecionarOPlanoDeContas(string pc)
+        {
+            cfu.SelecionarPlanoContas(pc);
+        }
+
+        [Given(@"selecionar o centro de custo \{'(.*)'}")]
+        public void GivenSelecionarOCentroDeCusto(string cc)
+        {
+            cfu.SelecionarCentroCusto(cc);
+        }
+
+        [Given(@"selecionar o meio de pagamento \{'(.*)'}")]
+        public void GivenSelecionarOMeioDePagamento(string meioPagamento)
+        {
+            cfu.SelecionarMeioPagto(meioPagamento);
+        }
+
+        [Given(@"informar no input o Valor a pagar \{(.*)}")]
+        public void GivenInformarNoInputOValorAPagar(Decimal valor)
+        {
+            cfu.InserirValorPagtoAntecipado(valor);
+        }
+
+        [Given(@"clicar no botao Salvar pagto antecipado")]
+        public void GivenClicarNoBotaoSalvarPagtoAntecipado()
+        {
+            cfu.CliqueSalvarPagtoAntecipado();
+        }
+
+        [Given(@"o sistema redireciona para index de contratos")]
+        public void GivenOSistemaRedirecionaParaIndexDeContratos()
+        {
+            cfu.ValidaUrlContrato();
+        }
+
+        [Given(@"um contrato de pagamento Num Doc \{'(.*)'} deve ser criado")]
+        public void GivenUmContratoDePagamentoNumDocDeveSerCriado(string numDocPGA)
+        {
+            cfu.ValidaNumDocContratoPGA(numDocPGA);
+        }
+
+        [Given(@"com status \{'(.*)'} na primeira linha da tabela de contratos")]
+        public void GivenComStatusNaPrimeiraLinhaDaTabelaDeContratos(string statusPGA)
+        {
+            cfu.ValidaStatusContratoPGA(statusPGA);
+        }
+
+        [Given(@"um contrato de credito Num Doc \{'(.*)'} deve ser criado")]
+        public void GivenUmContratoDeCreditoNumDocDeveSerCriado(string numDocCREPGA)
+        {
+            cfu.ValidaNumDocContratoCREPGA(numDocCREPGA);
+        }
+
+        [Given(@"com status \{'(.*)'} na segunda linha da tabela contratos")]
+        public void GivenComStatusNaSegundaLinhaDaTabelaContratos(string statusCREPGA)
+        {
+            cfu.ValidaStatusContratoCREPGA(statusCREPGA);
+        }
+
+
         [When(@"o sistema redireciona para index de contratos")]
         public void WhenOSistemaRedirecionaParaIndexDeContratos()
         {

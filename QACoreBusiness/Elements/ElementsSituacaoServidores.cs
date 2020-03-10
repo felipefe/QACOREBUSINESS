@@ -23,8 +23,6 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoLimparCoreService => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Limpar Mensagens do CORE Business Service']");
         public IWebElement BotaoSimModalConfirmarLimpeza => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='confirmation-modal']//div[@class='actions']//a[@class='ui approve positive right labeled icon button']");
         public IWebElement ProgressoLimpeza => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='bar']//div[@class='progress']");
-        public IWebElement BotaoVoltarPagina => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//img[@title='Voltar para página anterior']");
-
         #endregion
 
     }

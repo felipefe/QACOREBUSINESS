@@ -50,7 +50,9 @@ namespace QACoreBusiness.Util.COM
 
         public void AcesseContextoByUrl(string contexto)
         {
+            Thread.Sleep(1000);
             driver.Navigate().GoToUrl(nfee.UrlCoreBusiness + contexto);
+            Thread.Sleep(2000);
         }
 
         //espero 12seg ate a nota ser validada entao atualizo a pagina para pegar o status autorizado

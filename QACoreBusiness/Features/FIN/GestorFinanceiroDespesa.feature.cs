@@ -77,7 +77,7 @@ namespace QACoreBusiness.Features.FIN
 #line 4
 testRunner.Given("que eu esteja logado no sistema", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
-testRunner.And("clicar para acessar o contexto {\'Gestor Financeiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicar para acessar o contexto {\'Contratos\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
@@ -100,34 +100,62 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 10
- testRunner.Given("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
- testRunner.And("clique para pesquisar despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("clique no botao limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And("clique no botao Filtrar Despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("o numero de parcelas despesas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("selecione a primeira parcela da lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("clique no botao Movimentar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("informar no input o Valor a pagar {200.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And("o valor a ser movimentado seja maior que Zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("clique no icone para Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("selecione o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
+ testRunner.And("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("clique para pesquisar despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.And("clique no botao limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("clique no botao Filtrar Despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("o numero de parcelas despesas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("selecione a primeira parcela da lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("clique no botao Movimentar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("o valor a ser movimentado seja maior que Zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("clique no icone para Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("selecione o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 38
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -141,45 +169,73 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Abatimento", null, new string[] {
                         "despesa_baixar_parcela_abatimento"});
-#line 28
+#line 42
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 29
- testRunner.Given("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
+#line 43
+ testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 44
+ testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.And("informar no input o Valor a pagar {200.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+ testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
  testRunner.And("clique para pesquisar despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 59
  testRunner.And("clique no botao limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 60
  testRunner.And("clique no botao Filtrar Despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 61
  testRunner.And("o numero de parcelas despesas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 62
  testRunner.And("selecione a primeira parcela da lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 63
  testRunner.And("clique no botao Movimentar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 64
  testRunner.And("o valor a ser movimentado seja maior que Zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 65
  testRunner.And("clique no icone para Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 66
  testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 67
  testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 68
  testRunner.And("selecione o meio de pagamento {\'Abatimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 69
  testRunner.And("ache no select a parcela de crédito/abatimento que seja maior que o valor a quita" +
                     "r", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 70
  testRunner.And("selecione a parcela de crédito/abatimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
+#line 71
  testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
+#line 72
  testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 45
+#line 73
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -193,42 +249,70 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Parcela Op. Bancária", null, new string[] {
                         "despesa_baixar_parcela_operacao_bancaria"});
-#line 49
+#line 77
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 50
- testRunner.Given("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 51
+#line 78
+ testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 79
+ testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And("informar no input o Valor a pagar {200.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
  testRunner.And("clique para pesquisar despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 94
  testRunner.And("clique no botao limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 95
  testRunner.And("clique no botao Filtrar Despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 96
  testRunner.And("o numero de parcelas despesas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 97
  testRunner.And("selecione a primeira parcela da lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 98
  testRunner.And("clique no botao Movimentar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 99
  testRunner.And("o valor a ser movimentado seja maior que Zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 100
  testRunner.And("clique no icone para Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 101
  testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 102
  testRunner.And("clique no collapse para exibir meio pagamento parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 103
  testRunner.And("selecione o meio de pagamento {\'Operação Bancária\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
+#line 104
  testRunner.And("selecione a conta bancaria de pagamento {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 105
  testRunner.When("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 64
+#line 106
  testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 65
+#line 107
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -242,71 +326,99 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Dinheiro + Transferência", null, new string[] {
                         "despesa_baixar_multiplas_parcela_dinheiro_transferencia"});
-#line 70
+#line 112
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 71
- testRunner.Given("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 72
+#line 113
+ testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 114
+ testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.And("informar no input o Valor a pagar {200.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
+ testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 123
+ testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 126
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.And("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 128
  testRunner.And("clique para pesquisar despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 129
  testRunner.And("clique no botao limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 130
  testRunner.And("clique no botao Filtrar Despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 131
  testRunner.And("o numero de parcelas despesas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 132
  testRunner.And("selecione a primeira parcela da lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 133
  testRunner.And("clique no botao Movimentar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 134
  testRunner.And("o valor a ser movimentado seja maior que Zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 135
  testRunner.And("clique no icone para Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 136
  testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 137
  testRunner.When("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 82
+#line 138
  testRunner.And("selecione o primeiro meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 139
  testRunner.And("ratear o valor exibido no input por {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 140
  testRunner.And("informar o planos de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 141
  testRunner.And("informar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 142
  testRunner.And("informar no input o historico {\'Multiplos meios de pagamento  - ÉusGuri\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 143
  testRunner.And("clicar no botao Adicionar para multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 144
  testRunner.And("seja validado o valor do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 145
  testRunner.And("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 146
  testRunner.And("selecione o segundo meio de pagamento {\'Transferência\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 147
  testRunner.And("valide que o resto do rateio seja inserido no input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 148
  testRunner.And("selecione a conta bancaria do segundo meio de pagamento {\'BB Fake\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 149
  testRunner.And("informar o planos de contas do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 150
  testRunner.And("informar o centro de custo do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 151
  testRunner.And("informar no input o historico do segundo meio {\'Multiplos meios de pagamento  - É" +
                     "usGuriDeNovoPae\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 152
  testRunner.And("clicar no botao Adicionar para segundo multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 153
  testRunner.And("seja validado o resto do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 154
  testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 155
  testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 100
+#line 156
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -320,83 +432,111 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Baixar Multiplas Parcelas Dinheiro + Abatimento", null, new string[] {
                         "despesa_baixar_multiplas_parcela_dinheiro_abatimento"});
-#line 105
+#line 161
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 106
- testRunner.Given("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 107
+#line 162
+ testRunner.Given("seja clicado no botao da Header Lançar Pagamento Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 163
+ testRunner.And("seja redirecionado para index de Pagto Antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 164
+ testRunner.And("selecionar a pessoa do contrato {\'Laura La Caronita\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 165
+ testRunner.And("selecionar o plano de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 166
+ testRunner.And("selecionar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And("selecionar o meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And("informar no input o Valor a pagar {200.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.And("clicar no botao Salvar pagto antecipado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 170
+ testRunner.And("o sistema redireciona para index de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.And("um contrato de pagamento Num Doc {\'PGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 172
+ testRunner.And("com status {\'Quitado\'} na primeira linha da tabela de contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+ testRunner.And("um contrato de credito Num Doc {\'CREPGA\'} deve ser criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 174
+ testRunner.And("com status {\'Aberto\'} na segunda linha da tabela contratos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 175
+ testRunner.And("o usuário deve acessar o contexto by url {\'/FIN/GestorFinanceiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
+ testRunner.And("que clica na aba Contas a Pagar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 177
  testRunner.And("clique para pesquisar despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line 178
  testRunner.And("clique no botao limpar filtros", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 179
  testRunner.And("clique no botao Filtrar Despesas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 180
  testRunner.And("o numero de parcelas despesas filtradas seja maior que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 181
  testRunner.And("selecione a primeira parcela da lista", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 182
  testRunner.And("clique no botao Movimentar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 183
  testRunner.And("o valor a ser movimentado seja maior que Zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
+#line 184
  testRunner.And("clique no icone para Baixar Parcela", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 185
  testRunner.And("seja redirecionado para /FIN/Contrato/ListarParcelasBaixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 186
  testRunner.When("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
+#line 187
  testRunner.And("selecione o primeiro meio de pagamento {\'Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 188
  testRunner.And("ratear o valor exibido no input por {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
+#line 189
  testRunner.And("informar o planos de contas {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 120
+#line 190
  testRunner.And("informar o centro de custo {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
+#line 191
  testRunner.And("informar no input o historico {\'Multiplos meios de pagamento  - ÉusGuri\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 192
  testRunner.And("clicar no botao Adicionar para multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
+#line 193
  testRunner.And("seja validado o valor do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 194
  testRunner.And("clique no botao Adicionar Multiplos Meios de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 195
  testRunner.And("selecione o segundo meio de pagamento {\'Abatimento\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+#line 196
  testRunner.And("valide que o resto do rateio seja inserido no input", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 197
  testRunner.And("informar o planos de contas do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 198
  testRunner.And("informar o centro de custo do segundo meio {\'Contratos Financeiros\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line 199
  testRunner.And("informar no input o historico do segundo meio {\'Multiplos meios de pagamento  - É" +
                     "usGuriDeNovoPae\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 200
  testRunner.And("clicar no botao Adicionar para segundo multiplos meios de pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 201
  testRunner.And("seja validado o resto do rateio", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 202
  testRunner.And("clicar no botao Vincular Parcelas de Crédito/Abatimento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
+#line 203
  testRunner.And("memorizar o valor a quitar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 204
  testRunner.And("validar que os créditos disponíveis são maiores que {0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 205
  testRunner.And("validar que o valor total dos creditos disponiveis sao maiores que o valor a quit" +
                     "ar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 136
+#line 206
  testRunner.And("selecionar os creditos até o valor total selecionado ser igual ou maior que o val" +
                     "or a quitar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
+#line 207
  testRunner.And("clicar no botao Vincular creditos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 138
+#line 208
  testRunner.And("clicar no botao Efetuar Baixa", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 209
  testRunner.Then("o sistema redireciona para imprimir movimentacao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 140
+#line 210
  testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

@@ -2,12 +2,26 @@
 
 Background: Logar e acessar gestor financeiro
 Given que eu esteja logado no sistema
-And clicar para acessar o contexto {'Gestor Financeiro'}
+And clicar para acessar o contexto {'Contratos'}
 
 
 @despesa_baixar_parcela_dinheiro
 Scenario: Baixar Parcela Dinheiro
-	Given que clica na aba Contas a Pagar
+	Given seja clicado no botao da Header Lançar Pagamento Antecipado
+	And seja redirecionado para index de Pagto Antecipado
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And informar no input o Valor a pagar {200.0}
+	And clicar no botao Salvar pagto antecipado
+	And o sistema redireciona para index de contratos
+	And um contrato de pagamento Num Doc {'PGA'} deve ser criado
+	And com status {'Quitado'} na primeira linha da tabela de contratos
+	And um contrato de credito Num Doc {'CREPGA'} deve ser criado
+	And com status {'Aberto'} na segunda linha da tabela contratos
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Pagar
 	And clique para pesquisar despesas
 	And clique no botao limpar filtros
 	And clique no botao Filtrar Despesas
@@ -26,7 +40,21 @@ Scenario: Baixar Parcela Dinheiro
 
 @despesa_baixar_parcela_abatimento
 Scenario: Baixar Parcela Abatimento
-	Given que clica na aba Contas a Pagar
+	Given seja clicado no botao da Header Lançar Pagamento Antecipado
+	And seja redirecionado para index de Pagto Antecipado
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And informar no input o Valor a pagar {300.0}
+	And clicar no botao Salvar pagto antecipado
+	And o sistema redireciona para index de contratos
+	And um contrato de pagamento Num Doc {'PGA'} deve ser criado
+	And com status {'Quitado'} na primeira linha da tabela de contratos
+	And um contrato de credito Num Doc {'CREPGA'} deve ser criado
+	And com status {'Aberto'} na segunda linha da tabela contratos
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Pagar
 	And clique para pesquisar despesas
 	And clique no botao limpar filtros
 	And clique no botao Filtrar Despesas
@@ -47,7 +75,21 @@ Scenario: Baixar Parcela Abatimento
 
 @despesa_baixar_parcela_operacao_bancaria
 Scenario: Baixar Parcela Op. Bancária
-	Given que clica na aba Contas a Pagar
+	Given seja clicado no botao da Header Lançar Pagamento Antecipado
+	And seja redirecionado para index de Pagto Antecipado
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And informar no input o Valor a pagar {400.0}
+	And clicar no botao Salvar pagto antecipado
+	And o sistema redireciona para index de contratos
+	And um contrato de pagamento Num Doc {'PGA'} deve ser criado
+	And com status {'Quitado'} na primeira linha da tabela de contratos
+	And um contrato de credito Num Doc {'CREPGA'} deve ser criado
+	And com status {'Aberto'} na segunda linha da tabela contratos
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Pagar
 	And clique para pesquisar despesas
 	And clique no botao limpar filtros
 	And clique no botao Filtrar Despesas
@@ -68,7 +110,21 @@ Scenario: Baixar Parcela Op. Bancária
 
 @despesa_baixar_multiplas_parcela_dinheiro_transferencia
 Scenario: Baixar Multiplas Parcelas Dinheiro + Transferência
-	Given que clica na aba Contas a Pagar
+	Given seja clicado no botao da Header Lançar Pagamento Antecipado
+	And seja redirecionado para index de Pagto Antecipado
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And informar no input o Valor a pagar {500.0}
+	And clicar no botao Salvar pagto antecipado
+	And o sistema redireciona para index de contratos
+	And um contrato de pagamento Num Doc {'PGA'} deve ser criado
+	And com status {'Quitado'} na primeira linha da tabela de contratos
+	And um contrato de credito Num Doc {'CREPGA'} deve ser criado
+	And com status {'Aberto'} na segunda linha da tabela contratos
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Pagar
 	And clique para pesquisar despesas
 	And clique no botao limpar filtros
 	And clique no botao Filtrar Despesas
@@ -103,7 +159,21 @@ Scenario: Baixar Multiplas Parcelas Dinheiro + Transferência
 
 @despesa_baixar_multiplas_parcela_dinheiro_abatimento
 Scenario: Baixar Multiplas Parcelas Dinheiro + Abatimento
-	Given que clica na aba Contas a Pagar
+	Given seja clicado no botao da Header Lançar Pagamento Antecipado
+	And seja redirecionado para index de Pagto Antecipado
+	And selecionar a pessoa do contrato {'Laura La Caronita'}
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And selecionar o meio de pagamento {'Dinheiro'}
+	And informar no input o Valor a pagar {550.0}
+	And clicar no botao Salvar pagto antecipado
+	And o sistema redireciona para index de contratos
+	And um contrato de pagamento Num Doc {'PGA'} deve ser criado
+	And com status {'Quitado'} na primeira linha da tabela de contratos
+	And um contrato de credito Num Doc {'CREPGA'} deve ser criado
+	And com status {'Aberto'} na segunda linha da tabela contratos
+	And o usuário deve acessar o contexto by url {'/FIN/GestorFinanceiro'}
+	And que clica na aba Contas a Pagar
 	And clique para pesquisar despesas
 	And clique no botao limpar filtros
 	And clique no botao Filtrar Despesas

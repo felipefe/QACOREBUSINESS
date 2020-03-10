@@ -425,5 +425,15 @@ namespace QACoreBusiness.Util.COS
             }
             Assert.True(validou);
         }
+
+        public void SelectTipoOSParaTriangular(string tipoOS)
+        {
+            Thread.Sleep(1500);
+            cos.SelectTipoOSTriangular.Click();
+            cos.SearchGenerico.SendKeys(tipoOS);
+            Thread.Sleep(1000);
+            cos.SearchGenerico.SendKeys(Keys.Enter);
+
+        }
     }
 }

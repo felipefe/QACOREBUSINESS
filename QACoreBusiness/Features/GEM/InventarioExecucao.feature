@@ -17,14 +17,16 @@ And clique no botao Incluir Produto
 And selecionar o produto {'TST0001'}
 And desmarque a opção vincular todos os lotes
 And clique no botao criar
-And clicar para acessar o contexto {'/GEM/Inventario'}
+And o usuário deve acessar o contexto by url {'/GEM/Inventario'}
 And clique no botao Iniciar execução das actions
 And clique no botao Iniciar da modal
-And informe a quantidade {10000} a ser inventariada para todos os produtos
+And informe a quantidade {1000} a ser inventariada para todos os produtos
 And clique no botao Concluir Execucao
 And selecione a op fiscal {'Inventário'} do inventario
 And selecione cfop {'Compra para industrialização'} do inventario
 And selecione a origem {'Nacional - exceto as indicadas nos códigos 3 a 5'} do inventario
 And selecione a situaçao do lote {'Disponível para operações de Entrada e Saída'} inventariado
 And clique no botao Resolver
+And espere por {4} segundos ate ser processado
 Then o status do inventario deve ser {'Finalizado'}
+And feche o navegador quando terminar

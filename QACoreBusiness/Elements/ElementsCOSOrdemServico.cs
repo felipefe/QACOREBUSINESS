@@ -85,8 +85,8 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoProduzirTudoEmCadeia => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Produzir tudo (em cadeia)']");
         #endregion
 
-
-
-
+        #region Triangular
+        public IWebElement SelectTipoOSTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='IndustrializacaoLoteFiscalViewModel_TipoOS_auto_wrapper']");
+        #endregion
     }
 }

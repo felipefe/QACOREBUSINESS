@@ -122,13 +122,13 @@ testRunner.And("desmarque a opção vincular todos os lotes", ((string)(null)), 
 #line 19
 testRunner.And("clique no botao criar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
-testRunner.And("clicar para acessar o contexto {\'/GEM/Inventario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("o usuário deve acessar o contexto by url {\'/GEM/Inventario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
 testRunner.And("clique no botao Iniciar execução das actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
 testRunner.And("clique no botao Iniciar da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
-testRunner.And("informe a quantidade {10000} a ser inventariada para todos os produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informe a quantidade {1000} a ser inventariada para todos os produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
 testRunner.And("clique no botao Concluir Execucao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
@@ -144,7 +144,11 @@ testRunner.And("selecione a situaçao do lote {\'Disponível para operações de
 #line 29
 testRunner.And("clique no botao Resolver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
+testRunner.And("espere por {4} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
 testRunner.Then("o status do inventario deve ser {\'Finalizado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 32
+testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

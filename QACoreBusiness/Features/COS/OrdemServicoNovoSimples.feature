@@ -282,7 +282,6 @@ And feche o navegador quando terminar
 @recepcao_triangular
 Scenario: Operação Triangular
 	Given o usuário deve acessar o contexto by url {'/COM/LoteFiscal'}
-	And memorizar o ultimo inventario
 	And que seja clicado no botao Novo Lancamento Manual
 	And seja redirecionado para tela de criar recepcao	
 	And seja informado a operação fiscal {'Operação Triangular'}
@@ -359,6 +358,7 @@ Scenario: Operação Triangular
 	And clique no botao OK da modal de criar produção
 	And seja redirecionado para url contains {'/COM/LoteFiscalProducao/CreateIndividual?idLoteFiscal'}
 	And clique no botao Salvar producao de lote
+	And selecione o tipo de OS {'Triangular'}
 	And clique no botao Industrializar
 	And seja redirecionado para url contains {'/COS/OrdemServico/Edit/'}
 	And o usuário deve acessar o contexto by url {'/COS/OrdemServico'}

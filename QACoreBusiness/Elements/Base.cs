@@ -25,6 +25,8 @@ namespace QACoreBusiness.Elements
         public IWebElement MensagemLoginInvalido => chromeDriver.FindElement(By.XPath("//div[@class='red card z-depth-4']//span[@class='card-title']"));
         public IWebElement MenuUsuarioLogadoSair => ElementWait.WaitForElementXpath(chromeDriver, "//div//a[@href='/COREBusiness/Account/LogOff']");
         public IWebElement SearchGenerico => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-search select2-search--dropdown']//input[@class='select2-search__field']");
+        public IWebElement BotaoVoltarPagina => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//img[@title='Voltar para página anterior']");
+
 
         #region FIN
         public IWebElement InputDataVencimentoManualmente => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_Vencimento']");

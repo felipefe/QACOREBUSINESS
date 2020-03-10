@@ -39,10 +39,10 @@ namespace QACoreBusiness.Util
         public void SelecionarVendedor(String nomeVendedor)
         {
             pedido.SelectVendedor.Click();
-
-            pedido.SearchInformarVendedor.SendKeys(nomeVendedor); 
-            Thread.Sleep(2000);
-            pedido.SearchInformarVendedor.SendKeys(Keys.Enter);
+            Thread.Sleep(500);
+            pedido.SearchGenerico.SendKeys(nomeVendedor); 
+            Thread.Sleep(3000);
+            pedido.SearchGenerico.SendKeys(Keys.Enter);
             
         }
 

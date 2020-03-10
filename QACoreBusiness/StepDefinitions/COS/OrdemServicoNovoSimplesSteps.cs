@@ -425,6 +425,12 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.EspereXSegundosAteExecutarOS(seg);
         }
 
+        [Then(@"selecione o tipo de OS \{'(.*)'}")]
+        public void ThenSelecioneOTipoDeOS(string tipoOS)
+        {
+            osns.SelectTipoOSParaTriangular(tipoOS);
+        }
+
 
     }
 }
