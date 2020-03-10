@@ -17,17 +17,17 @@ namespace QACoreBusiness.Features.GEM
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class InventarioExecucaoFeature : Xunit.IClassFixture<InventarioExecucaoFeature.FixtureData>, System.IDisposable
+    public partial class InventarioFeature : Xunit.IClassFixture<InventarioFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "InventarioExecucao.feature"
+#line 1 "Inventario.feature"
 #line hidden
         
-        public InventarioExecucaoFeature(InventarioExecucaoFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public InventarioFeature(InventarioFeature.FixtureData fixtureData, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -36,7 +36,7 @@ namespace QACoreBusiness.Features.GEM
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "InventarioExecucao", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Inventario", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -86,68 +86,68 @@ testRunner.And("clicar para acessar o contexto {\'Inventários\'}", ((string)(nu
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Executar inventario")]
-        [Xunit.TraitAttribute("FeatureTitle", "InventarioExecucao")]
-        [Xunit.TraitAttribute("Description", "Executar inventario")]
-        [Xunit.TraitAttribute("Category", "executar_inventario")]
-        public virtual void ExecutarInventario()
+        [Xunit.FactAttribute(DisplayName="Realizar Inventario")]
+        [Xunit.TraitAttribute("FeatureTitle", "Inventario")]
+        [Xunit.TraitAttribute("Description", "Realizar Inventario")]
+        [Xunit.TraitAttribute("Category", "realizar_inventario")]
+        public virtual void RealizarInventario()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Executar inventario", null, new string[] {
-                        "executar_inventario"});
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Realizar Inventario", null, new string[] {
+                        "realizar_inventario"});
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 9
-testRunner.Given("memorize a numeracao do ultimo invetario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-testRunner.When("seja clicado no botao Novo inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("memorize a numeracao do ultimo invetario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
-testRunner.And("selecione a empresa {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.When("seja clicado no botao Novo inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
-testRunner.And("insira no input o Nome do inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecione a empresa {\'Deltacon Informática\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
-testRunner.And("clique no botao Criar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("insira no input o Nome do inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
-testRunner.And("valide que o inventario foi criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Criar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
-testRunner.And("clique no botao Produtos das actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("valide que o inventario foi criado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
-testRunner.And("clique no botao Incluir Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Produtos das actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
-testRunner.And("selecionar o produto {\'TST0001\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Incluir Produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
-testRunner.And("desmarque a opção vincular todos os lotes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecionar o produto {\'TST0012\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
-testRunner.And("clique no botao criar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("desmarque a opção vincular todos os lotes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
-testRunner.And("o usuário deve acessar o contexto by url {\'/GEM/Inventario\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao criar produto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
-testRunner.And("clique no botao Iniciar execução das actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao voltar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
-testRunner.And("clique no botao Iniciar da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Iniciar execução das actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
-testRunner.And("informe a quantidade {1000} a ser inventariada para todos os produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Iniciar da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.And("clique no botao Concluir Execucao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informe a quantidade {5} a ser inventariada para todos os produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
-testRunner.And("selecione a op fiscal {\'Inventário\'} do inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Concluir Execucao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
-testRunner.And("selecione cfop {\'Compra para industrialização\'} do inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecione a op fiscal {\'Inventário\'} do inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
+testRunner.And("selecione cfop {\'Compra para industrialização\'} do inventario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
 testRunner.And("selecione a origem {\'Nacional - exceto as indicadas nos códigos 3 a 5\'} do invent" +
                     "ario", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 29
 testRunner.And("selecione a situaçao do lote {\'Disponível para operações de Entrada e Saída\'} inv" +
                     "entariado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
-testRunner.And("clique no botao Resolver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
-testRunner.And("espere por {4} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Resolver", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
-testRunner.Then("o status do inventario deve ser {\'Finalizado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("espere por {4} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
+testRunner.Then("o status do inventario deve ser {\'Finalizado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
 testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -160,12 +160,12 @@ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk
             
             public FixtureData()
             {
-                InventarioExecucaoFeature.FeatureSetup();
+                InventarioFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                InventarioExecucaoFeature.FeatureTearDown();
+                InventarioFeature.FeatureTearDown();
             }
         }
     }

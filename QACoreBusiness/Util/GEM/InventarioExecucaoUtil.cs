@@ -63,7 +63,7 @@ namespace QACoreBusiness.Util.GEM
 
         public void SelecioneProduto(string produto)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             inventario.SelectProdutoInventario.Click();
             inventario.SearchGenerico.SendKeys(produto);
             Thread.Sleep(2000);
@@ -78,7 +78,7 @@ namespace QACoreBusiness.Util.GEM
         public void CliqueBotaoVoltar()
         {
             Thread.Sleep(1000);
-            inventario.BotaoVoltarPagina.Click();
+            driver.Navigate().Back();
             Thread.Sleep(2000);
         }
 

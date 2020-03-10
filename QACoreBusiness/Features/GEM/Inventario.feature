@@ -1,11 +1,12 @@
-﻿Feature: InventarioExecucao
+﻿Feature: Inventario
 
 Background: acesse a index de inventario
 Given que eu esteja logado no sistema
 And clicar para acessar o contexto {'Inventários'}
 
-@executar_inventario
-Scenario: Executar inventario
+
+@realizar_inventario
+Scenario: Realizar Inventario
 Given memorize a numeracao do ultimo invetario
 When seja clicado no botao Novo inventario
 And selecione a empresa {'Deltacon Informática'}
@@ -14,13 +15,13 @@ And clique no botao Criar
 And valide que o inventario foi criado
 And clique no botao Produtos das actions
 And clique no botao Incluir Produto
-And selecionar o produto {'TST0001'}
+And selecionar o produto {'TST0012'}
 And desmarque a opção vincular todos os lotes
-And clique no botao criar
-And o usuário deve acessar o contexto by url {'/GEM/Inventario'}
+And clique no botao criar produto
+And clique no botao voltar
 And clique no botao Iniciar execução das actions
 And clique no botao Iniciar da modal
-And informe a quantidade {1000} a ser inventariada para todos os produtos
+And informe a quantidade {5} a ser inventariada para todos os produtos
 And clique no botao Concluir Execucao
 And selecione a op fiscal {'Inventário'} do inventario
 And selecione cfop {'Compra para industrialização'} do inventario
