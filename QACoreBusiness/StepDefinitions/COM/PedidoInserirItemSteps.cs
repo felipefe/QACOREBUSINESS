@@ -32,7 +32,13 @@ namespace QACoreBusiness.StepDefinitions
         {
             pii.CliqueAdicionarItem();
         }
-        
+
+        [When(@"sua tag de reserva estoque deve ser \{'(.*)'}")]
+        public void WhenSuaTagDeReservaEstoqueDeveSer(string reserva)
+        {
+            pii.TagDeReservaItemPedido(reserva);
+        }
+
         [When(@"eu pesquisar no editText o produto por nome \{'(.*)'}")]
         public void WhenEuPesquisarNoEditTextOProdutoPorNome(string nome)
         {

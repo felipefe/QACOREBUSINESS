@@ -195,6 +195,25 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ValidaStatusSeparadoInsumos(status);
         }
 
+        [When(@"que seja clicado Manutenção de Itens nas actions da OS")]
+        public void WhenQueSejaClicadoManutencaoDeItensNasActionsDaOS()
+        {
+            osns.CliqueActionsManutencaoItensOrdemServico();
+        }
+
+        [When(@"seja redirecionado para /COS/Agrupador/ManutencaoItensOS/")]
+        public void WhenSejaRedirecionadoParaCOSAgrupadorManutencaoItensOS()
+        {
+            osns.ValidaUrlAgrupadorManutencaoItens();
+        }
+
+        [When(@"o status dos insumos devem ser \{'(.*)'}")]
+        public void WhenOStatusDosInsumosDevemSer(string status)
+        {
+            osns.ValidaStatusSeparadoInsumos(status);
+        }
+
+
         [When(@"clicar no botao Salvar novo simples")]
         public void WhenClicarNoBotaoSalvarNovoSimples()
         {

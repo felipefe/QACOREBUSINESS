@@ -21,7 +21,7 @@ And clique no botao criar produto
 And clique no botao voltar
 And clique no botao Iniciar execução das actions
 And clique no botao Iniciar da modal
-And informe a quantidade {20000} a ser inventariada para todos os produtos
+And informe a quantidade {2} a ser inventariada para todos os produtos
 And clique no botao Concluir Execucao
 And selecione a op fiscal {'Inventário'} do inventario
 And selecione cfop {'Compra para industrialização'} do inventario

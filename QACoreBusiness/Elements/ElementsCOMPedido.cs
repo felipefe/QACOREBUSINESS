@@ -90,7 +90,20 @@ namespace QACoreBusiness.Util
         #region Efetivar Pedido
         public IWebElement PedidoComCliente => chromeDriver.FindElement(By.XPath("//div[@id='pedido-pessoa-wrapper']//h4[@class='ui header']//div[@class='ui stackable row two column grid']//div[@class='ui column']"));
         public IWebElement PendenciasPedido => chromeDriver.FindElement(By.XPath("//div[@class='notify error notify-without-icon notify-top-right']//div[@class='notify-text']//h3"));
-       #endregion
+        #endregion
+
+        #region Requisitar Itens
+        public IWebElement BotaoRequisitarItens => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Requisitar Itens não reservados']");
+        public IWebElement FlagTudoOuNada => ElementWait.WaitForElementXpath(chromeDriver, "//input[@name='RequisitarTodos'][2]");
+        public IWebElement BotaoExecutarRequisicoes => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Executar']");
+        public IWebElement TituloPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='page-title']");
+        public List<IWebElement> ListaRequisicoes => chromeDriver.FindElements(By.XPath("//div[@id='pageContent']//table//tbody//tr")).ToList();
+        public IWebElement BotaoGerarOSProducao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Gerar O.S. de Produção']");
+        public IWebElement BotaoGerarProducaoModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Gerar Produção']");
+        public IWebElement BotaoDetalhesRequisicao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Detalhes da Requisição']");
+        public IWebElement DetalhesRequisicaoNumeroOSGerada => ElementWait.WaitForElementXpath(chromeDriver, "//a[@class='step'][2]//div[@class='content']//div[@class='description']");
+
+        #endregion
 
     }
 }
