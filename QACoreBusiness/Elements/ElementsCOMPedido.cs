@@ -90,7 +90,7 @@ namespace QACoreBusiness.Util
         #region Efetivar Pedido
         public IWebElement PedidoComCliente => chromeDriver.FindElement(By.XPath("//div[@id='pedido-pessoa-wrapper']//h4[@class='ui header']//div[@class='ui stackable row two column grid']//div[@class='ui column']"));
         public IWebElement PendenciasPedido => chromeDriver.FindElement(By.XPath("//div[@class='notify error notify-without-icon notify-top-right']//div[@class='notify-text']//h3"));
-        #endregion
+       #endregion
 
     }
 }

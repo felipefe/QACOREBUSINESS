@@ -63,7 +63,14 @@ namespace QACoreBusiness.Elements
         public IWebElement ColunaValorPedido => ElementWait.WaitForElementXpath(chromeDriver, "//table//tbody//tr[1]//td[10][@class='left aligned'][@data-field='ValorNegociado']");
         public IWebElement ActionPedido => ElementWait.WaitForElementXpath(chromeDriver, "//tr[3]//a//img[@alt='Opções']");
         public IWebElement ActionEmitirDocFiscal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Emitir documentos fiscais']");
+        public IWebElement BotaoEditarAgregadores => chromeDriver.FindElement(By.XPath("//div[@class='actions']//a[@data-content='Editar Agregadores']"));
+        public IWebElement InputDescontoPercentualAgregador => chromeDriver.FindElement(By.XPath("//input[@id='EditPedidoItemAgregadorViewModel_DescontoPedidoPercentual']"));
+        public IWebElement InputAcrescimoPercentualAgregador => chromeDriver.FindElement(By.XPath("//input[@id='EditPedidoItemAgregadorViewModel_AcrescimoPedidoPercentual']"));
+        public IWebElement BotaoAgregadorAtualizarPedido => chromeDriver.FindElement(By.XPath("//div[@class='actions']//input[@value='Atualizar Pedido']"));
+        public IWebElement ModalAgregadores => chromeDriver.FindElement(By.XPath("//div[contains(text(),'Editar agregadores do pedido')]"));
+        public IWebElement FlagDescontoComoValorUnitario => chromeDriver.FindElement(By.XPath("//label[@for='EditPedidoItemAgregadorViewModel_DescontoAplicadoComoValor']"));
 
+        
         #endregion
 
 

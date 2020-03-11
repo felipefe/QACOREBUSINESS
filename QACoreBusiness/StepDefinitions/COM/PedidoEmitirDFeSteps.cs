@@ -33,6 +33,37 @@ namespace QACoreBusiness.StepDefinitions.COM
             pdfeu.AcesseContextoByUrl(contexto); 
         }
 
+        [When(@"clique na header Editar Agregadores")]
+        public void WhenCliqueNaHeaderEditarAgregadores()
+        {
+            pdfeu.CliqueEditarAgregadores();
+        }
+
+        [When(@"informe \{(.*)} porcento de desconto no input")]
+        public void WhenInformePorcentoDeDescontoNoInput(int desconto)
+        {
+            pdfeu.InserirAgregadorPercentualDesconto(desconto);
+        }
+
+        [When(@"informe \{(.*)} porcento de acrescimo no input")]
+        public void WhenInformePorcentoDeAcrescimoNoInput(int acrescimo)
+        {
+            pdfeu.InserirAgregadorPercentualAcrescimo(acrescimo);
+        }
+
+
+        [When(@"clique no botao Atualizar Pedido")]
+        public void WhenCliqueNoBotaoAtualizarPedido()
+        {
+            pdfeu.CliqueBotaoAtualizarAgregadorModal();
+        }
+
+        [When(@"marque a flag Aplicar Desconto como alterações do valor unitario")]
+        public void WhenMarqueAFlagAplicarDescontoComoAlteracoesDoValorUnitario()
+        {
+            pdfeu.CliqueFlagDescontoComoAlteracaoValorUnitario();
+        }
+
         [When(@"clicar no botao Emitir Documentos Fiscais")]
         public void WhenClicarNoBotaoEmitirDocumentosFiscais()
         {

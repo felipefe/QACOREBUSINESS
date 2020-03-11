@@ -128,7 +128,7 @@ testRunner.And("clique no botao Iniciar execução das actions", ((string)(null)
 #line 23
 testRunner.And("clique no botao Iniciar da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.And("informe a quantidade {5} a ser inventariada para todos os produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informe a quantidade {20000} a ser inventariada para todos os produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
 testRunner.And("clique no botao Concluir Execucao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26

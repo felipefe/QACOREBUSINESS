@@ -38,9 +38,51 @@ namespace QACoreBusiness.Util.COM
             pedido.ActionEmitirDocFiscal.Click();
         }
 
+        public void CliqueEditarAgregadores()
+        {
+            Thread.Sleep(3000);
+            pedido.BotaoEditarAgregadores.Click();
+        }
+
         public void AmbienteHomologacao()
         {
             parametro.isHomologacao();
+        }
+
+        public void InserirAgregadorPercentualDesconto(int desconto)
+        {
+            pedido.InputDescontoPercentualAgregador.Clear();
+            Thread.Sleep(1500);
+            pedido.InputDescontoPercentualAgregador.SendKeys(FormatAgregador(desconto));
+            Thread.Sleep(1000);
+            pedido.ModalAgregadores.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void InserirAgregadorPercentualAcrescimo(int acrescimo)
+        {
+            pedido.InputAcrescimoPercentualAgregador.Clear();
+            Thread.Sleep(1500);
+            pedido.InputAcrescimoPercentualAgregador.SendKeys(FormatAgregador(acrescimo));
+            Thread.Sleep(1000);
+            pedido.ModalAgregadores.Click();
+            Thread.Sleep(1000);
+        }
+
+        public void CliqueFlagDescontoComoAlteracaoValorUnitario()
+        {
+            pedido.FlagDescontoComoValorUnitario.Click();
+        }
+
+        public void CliqueBotaoAtualizarAgregadorModal()
+        {
+            pedido.BotaoAgregadorAtualizarPedido.Click();
+            Thread.Sleep(2000);
+        }
+
+        private string FormatAgregador(int desconto)
+        {
+            return Convert.ToDouble(desconto).ToString("N2").Replace(".",",");
         }
 
         public void CliqueEmitirDFE()
