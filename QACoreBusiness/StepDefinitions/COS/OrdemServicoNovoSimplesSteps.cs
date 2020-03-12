@@ -310,6 +310,19 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ValideSituacaoEncaminhadaOS();
         }
 
+        [When(@"valide que o pedido foi gerado pela OS")]
+        public void WhenValideQueOPedidoFoiGeradoPelaOS()
+        {
+            osns.ValidaPedidoGeradoPelaOS();
+        }
+
+        [When(@"que sua situação seja \{'(.*)'}")]
+        public void WhenQueSuaSituacaoSeja(string situacao)
+        {
+            osns.ValidaSituacaoPedidoGeradoOS(situacao);
+        }
+
+
         [When(@"memorize o numero da OS")]
         public void WhenMemorizeONumeroDaOS()
         {
@@ -388,6 +401,50 @@ namespace QACoreBusiness.StepDefinitions.COS
         {
             osns.MarcarFlagalterarQtdDosInsumosReservar();
         }
+
+        [When(@"clicar no botao Executar")]
+        public void WhenClicarNoBotaoExecutar()
+        {
+            osns.CliqueBotaoExecutarItemOS();
+        }
+
+        [When(@"marcar a flag Confirmar Execuçao")]
+        public void WhenMarcarAFlagConfirmarExecucao()
+        {
+            osns.FlagConfirmarExecucoes();
+        }
+
+        [When(@"clicar no botao Salvar para executar")]
+        public void WhenClicarNoBotaoSalvarParaExecutar()
+        {
+            osns.CliqueBotaoSalvarExecucao();
+        }
+
+        [When(@"valide que seja criada a execuçao")]
+        public void WhenValideQueSejaCriadaAExecucao()
+        {
+            osns.ValidaCriouExecucoes();
+        }
+
+        [When(@"coluna Itens Finalizados como \{'(.*)'}")]
+        public void WhenColunaItensFinalizadosComo(string isItensFinalizados)
+        {
+            osns.ValidaItensIsFinalizados(isItensFinalizados);
+        }
+
+
+        [Then(@"clique na aba Ordens de Serviço")]
+        public void ThenCliqueNaAbaOrdensDeServico()
+        {
+            osns.CliqueAbaOrdensServico();
+        }
+
+        [Then(@"valide a OS que gerou o pedido")]
+        public void ThenValideAOSQueGerouOPedido()
+        {
+            osns.ValidaOSQueGerouPedidoViewPedido();
+        }
+
 
         [Then(@"validar que a Qtd\. Reservada deve ser a mesma que Qtd\. Total")]
         public void ThenValidarQueAQtd_ReservadaDeveSerAMesmaQueQtd_Total()

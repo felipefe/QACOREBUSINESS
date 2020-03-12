@@ -73,5 +73,11 @@ namespace QACoreBusiness.Util
         {
             Assert.Equal(pedido.UrlIndexPedido, driver.Url);
         }
+
+        public void CliqueVisualizarPrimeiroPedido()
+        {
+            Thread.Sleep(3000);
+            pedido.TabelaPedidos[0].FindElement(By.TagName("a[data-content='Visualizar Pedido']")).Click();
+        }
     }
 }

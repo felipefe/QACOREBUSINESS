@@ -70,6 +70,11 @@ namespace QACoreBusiness.StepDefinitions
             pedido.RedirecionaIndexPedidos();
         }
 
+        [Then(@"clique para visualizar o primeiro pedido")]
+        public void ThenCliqueParaVisualizarOPrimeiroPedido()
+        {
+            pedido.CliqueVisualizarPrimeiroPedido();
+        }
 
     }
 }

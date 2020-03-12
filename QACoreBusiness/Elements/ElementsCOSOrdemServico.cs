@@ -33,7 +33,13 @@ namespace QACoreBusiness.Elements
         public IWebElement ActionExcluir => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Excluir']");
         public IWebElement TextAreaJustificativa => ElementWait.WaitForElementXpath(chromeDriver, "//textarea[@id='OrdemServico_JustificativaCancelamento']");
         public IWebElement BotaoCancelarOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Cancelar O.S.']");
-
+        public List<IWebElement> ListaPedidosGeradosOS => chromeDriver.FindElements(By.XPath("//div[@id='pageContent']//table//tbody//tr")).ToList();
+        public IWebElement AbaOrdensServicoPedido => ElementWait.WaitForElementXpath(chromeDriver, "//a[@id='tab-menu-tabOrdensServico']");
+        public IWebElement NomeOSQueGerouPedidoViewPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='tabOrdensServico']//table//tbody//tr//td//div[@class='ui column displayFor']");
+        public IWebElement BotaoExecutar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[contains(text(),'Executar')]");
+        public IWebElement FlagConfirmarExecucao => ElementWait.WaitForElementXpath(chromeDriver, "//label[@for='OrdemServicoItemExecucao_ConfirmarExecucao']");
+        public IWebElement BotaoSalvarExecucao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
+        public List<IWebElement> ListaExecucoes => chromeDriver.FindElements(By.XPath("//div[@id='divExecucoes']//table//tbody//tr")).ToList();
         #endregion
 
 

@@ -333,6 +333,11 @@ namespace QACoreBusiness.Util.COS
             Assert.Equal(status, finalizada);
         }
 
+        public void ValidaPedidoGeradoPelaOS()
+        {
+            Assert.True(cos.ListaPedidosGeradosOS.Count == 1);
+        }
+
         public void InformarQntdReservarManutencaoItens(decimal qtdReservar)
         {
             foreach(IWebElement insumo in cos.TabelaManutencaoItens)
@@ -344,6 +349,11 @@ namespace QACoreBusiness.Util.COS
                 inputQtdReservar.SendKeys(Keys.ArrowRight);
                 inputQtdReservar.SendKeys(Insere5CasasDecimais(qtdReservar).ToString());
             }
+        }
+
+        public void ValidaSituacaoPedidoGeradoOS(string situacao)
+        {
+            Assert.Equal(situacao, cos.ListaPedidosGeradosOS[0].FindElement(By.CssSelector("td:nth-child(5)")).Text);
         }
 
         private Double Insere5CasasDecimais(decimal num)
@@ -397,13 +407,14 @@ namespace QACoreBusiness.Util.COS
 
         public void ConfirmeConcluirItemModal()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             cos.BotaoConfirmarConcluirItem.Click();
+            Thread.Sleep(1500);
         }
 
         public void CliqueBotaoConcluirItem()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             cos.BotaoConcluirItem.Click();
         }
 
@@ -424,6 +435,42 @@ namespace QACoreBusiness.Util.COS
                 Thread.Sleep(500);
             }
             Assert.True(validou);
+        }
+
+        public void ValidaCriouExecucoes()
+        {
+            Thread.Sleep(2000);
+            Assert.True(cos.ListaExecucoes.Count > 0);
+        }
+
+        public void CliqueBotaoSalvarExecucao()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoSalvarExecucao.Click();
+        }
+
+        public void FlagConfirmarExecucoes()
+        {
+            Thread.Sleep(2000);
+            cos.FlagConfirmarExecucao.Click();
+        }
+
+        public void CliqueBotaoExecutarItemOS()
+        {
+            Thread.Sleep(2000);
+            cos.BotaoExecutar.Click();
+        }
+
+        public void ValidaOSQueGerouPedidoViewPedido()
+        {
+            Thread.Sleep(1500);
+            Assert.Equal(codigo, cos.NomeOSQueGerouPedidoViewPedido.Text);
+        }
+
+        public void CliqueAbaOrdensServico()
+        {
+            Thread.Sleep(3000);
+            cos.AbaOrdensServicoPedido.Click();
         }
 
         public void SelectTipoOSParaTriangular(string tipoOS)

@@ -2,6 +2,7 @@
 using QACoreBusiness.Util;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace QACoreBusiness.Elements
@@ -13,5 +14,6 @@ namespace QACoreBusiness.Elements
         public IWebElement ActionsPedido => ElementWait.WaitForElementXpath(chromeDriver, "//table[@class='ui table selectable striped coregrid']//tr[1]//td[@class=' hidden-mobile']//div//div//a[@class='fsm-ignore']");
         public IWebElement AlertaMensagemPedidoAtualizado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='iziToast-body']//div[@class='iziToast-texts']//p[@class='iziToast-message slideIn']");
         public IWebElement CloseAlertaPedidoAtualizado => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='iziToast-capsule']//button[@type='button'][@class='iziToast-close']");
+        public List<IWebElement> TabelaPedidos => chromeDriver.FindElements(By.XPath("//div[@id='pageContent']//table//tbody//tr")).ToList();
     }
 }
