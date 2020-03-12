@@ -96,6 +96,7 @@ namespace QACoreBusiness.Util.COM
 
         public void StatusRecepcaoMercadoria(string status)
         {
+            Thread.Sleep(1500);
             Assert.Equal(status, recepcao.ColunaStatusRecepcaoMercadoria.Text);
         }
 
@@ -191,7 +192,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarCFOPItemLF(string cfop)
         {
-            Thread.Sleep(2500);
+            Thread.Sleep(3000);
             recepcao.SelectCFOPItemLF.Click();
             recepcao.SearchCFOPItemLF.SendKeys(cfop);
             Thread.Sleep(2000);

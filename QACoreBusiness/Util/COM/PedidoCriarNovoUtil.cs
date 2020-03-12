@@ -55,7 +55,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueTrocarVendedor()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             pedido.ActionsTrocarVendedor.Click();
         }
 

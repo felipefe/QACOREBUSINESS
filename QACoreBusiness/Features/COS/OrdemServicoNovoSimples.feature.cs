@@ -410,7 +410,7 @@ testRunner.And("marque a flag para Tentar Finalizar Todos os Itens", ((string)(n
 #line 145
 testRunner.And("confirme clicando no botao Finalizar OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 146
-testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {8} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 147
 testRunner.And("clique no botao da Header Gerenciar O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 148
@@ -545,7 +545,7 @@ testRunner.And("marque a flag para Tentar Finalizar Todos os Itens", ((string)(n
 #line 208
 testRunner.And("confirme clicando no botao Finalizar OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 209
-testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {8} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 210
 testRunner.And("clique no botao da Header Gerenciar O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 211

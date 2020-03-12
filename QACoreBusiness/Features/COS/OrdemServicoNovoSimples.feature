@@ -143,7 +143,7 @@ And clique nas actions Finalizar O.S/O.P
 And informe no textArea uma mensagem de Conclusão {'OS Concluída 100% level hard'}
 And marque a flag para Tentar Finalizar Todos os Itens
 And confirme clicando no botao Finalizar OS
-And espere por {3} segundos ate ser processado
+And espere por {8} segundos ate ser processado
 And clique no botao da Header Gerenciar O.S
 Then valide a OS memorizada
 And o status final da OS deve ser {'Finalizada'}
@@ -206,7 +206,7 @@ And clique nas actions Finalizar O.S/O.P
 And informe no textArea uma mensagem de Conclusão {'OS Concluída 100% level hard'}
 And marque a flag para Tentar Finalizar Todos os Itens
 And confirme clicando no botao Finalizar OS
-And espere por {3} segundos ate ser processado
+And espere por {8} segundos ate ser processado
 And clique no botao da Header Gerenciar O.S
 Then valide a OS memorizada
 And o status final da OS deve ser {'Finalizada'}
