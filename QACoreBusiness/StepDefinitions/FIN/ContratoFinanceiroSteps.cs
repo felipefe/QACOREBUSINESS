@@ -8,7 +8,19 @@ namespace QACoreBusiness.StepDefinitions.FIN
     public class ContratoFinanceiroSteps
     {
         ContratoFinanceiroUtil cfu = new ContratoFinanceiroUtil();
-        
+
+        [Given(@"clicar no botao adicionar parcelas manualmente")]
+        public void GivenClicarNoBotaoAdicionarParcelasManualmente()
+        {
+            cfu.CliqueAddParcelasManualmente();
+        }
+
+        [Given(@"clicar no botao Adicionar parcela")]
+        public void GivenClicarNoBotaoAdicionarParcela()
+        {
+            cfu.CliqueAddParcelasAutomaticamente();
+        }
+
         [Given(@"que seja clicado no botao criar contrato")]
         public void GivenQueSejaClicadoNoBotaoCriarContrato()
         {
@@ -364,7 +376,6 @@ namespace QACoreBusiness.StepDefinitions.FIN
         {
             cfu.CliqueBotaoCriarSalvarContrato();
         }
-
 
         [Then(@"o sistema redireciona para index de contratos")]
         public void ThenOSistemaRedirecionaParaIndexDeContratos()

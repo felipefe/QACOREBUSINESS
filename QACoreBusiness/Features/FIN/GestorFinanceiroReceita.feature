@@ -304,3 +304,33 @@ Given que clica na aba Contas a Receber
 	And valide o valor bruto a pagar da parcela substituida
 	And feche o navegador quando terminar
 
+
+@substituir_contrato
+Scenario: Substituir parcela contrato
+	Given que clica na aba Contas a Receber
+	And clique na pesquisa 
+	And clique para limpar filtros
+	And clique no botao Filtrar Receitas
+	And o numero de parcelas filtradas seja maior que {0}
+	And selecione a primeira parcela listada
+	And clique no botao movimentar parcela
+	And o valor a ser movimentado seja maior que zero
+	And clique no botao Açoes
+	And clique no botao Substituir
+	And seja redirecionado para url contains {'/FIN/Contrato/SubstituirParcelas'}
+	And memorize o valor da parcela a substituir
+	And clique no botao para Criar Contrato
+	And selecionar o plano de contas {'Contratos Financeiros'}
+	And selecionar o centro de custo {'Contratos Financeiros'}
+	And memorize do input o nome do novo contrato
+	And clicar no botao adicionar parcelas by modal contrato
+	And clicar no botao salvar parcela by modal contrato
+	When a parcela deve ser criadas conforme valor da parcela original
+	And clicar no botao salvar contrato substituido
+	And selecione o novo contrato inserindo o nome memorizado
+	And clique no botao substituir parcelas
+	Then seja redirecionado para url contains {'/FIN/Contrato/Visualizar?idContrato'}
+	And feche o navegador quando terminar
+
+	
+

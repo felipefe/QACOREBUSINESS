@@ -76,6 +76,30 @@ namespace QACoreBusiness.StepDefinitions
             gfu.SelectMeioPagamentoBaixaParcela(meioPagamento);
         }
 
+        [Given(@"clicar no botao adicionar parcelas by modal contrato")]
+        public void GivenClicarNoBotaoAdicionarParcelasByModalContrato()
+        {
+            gfu.AddParcelaByModalContrato();
+        }
+
+        [Given(@"clicar no botao salvar parcela by modal contrato")]
+        public void GivenClicarNoBotaoSalvarParcelaByModalContrato()
+        {
+            gfu.SalvarParcelaByModalContrato();
+        }
+
+        [Given(@"clique no botao Substituir")]
+        public void GivenCliqueNoBotaoSubstituir()
+        {
+            gfu.CliqueBotaoAcoesSubstituir();
+        }
+
+        [Given(@"clique no botao para Criar Contrato")]
+        public void GivenCliqueNoBotaoParaCriarContrato()
+        {
+            gfu.CliqueAbrirlModalCriarContrato();
+        }
+
         [Given(@"o numero de parcelas filtradas seja maior que \{(.*)}")]
         public void GivenONumeroDeParcelasFiltradasSejaMaiorQue(int quantidadeParcelas)
         {
@@ -135,6 +159,38 @@ namespace QACoreBusiness.StepDefinitions
         {
             gfu.MemorizarValorLiquidoRenegociar();
         }
+
+        [Given(@"memorize o valor da parcela a substituir")]
+        public void GivenMemorizeOValorDaParcelaASubstituir()
+        {
+            gfu.MemorizeValorParcelaSubstituir();
+        }
+
+        [Given(@"memorize do input o nome do novo contrato")]
+        public void GivenMemorizeDoInputONomeDoNovoContrato()
+        {
+            gfu.MemorizeNumDocContratoSubstituto();
+        }
+
+        [When(@"selecione o novo contrato inserindo o nome memorizado")]
+        public void WhenSelecioneONovoContratoInserindoONomeMemorizado()
+        {
+            gfu.SelecioneContratoSubstituto();
+        }
+
+        [When(@"clique no botao substituir parcelas")]
+        public void WhenCliqueNoBotaoSubstituirParcelas()
+        {
+            gfu.CliqueBotaoSubstituirParcela();
+        }
+
+
+        [When(@"a parcela deve ser criadas conforme valor da parcela original")]
+        public void WhenAParcelaDeveSerCriadasConformeValorDaParcelaOriginal()
+        {
+            gfu.ValidaNovaParcelaByModalContratoSubstituir();
+        }
+
 
         [When(@"inserir no input Data de Vencimento \{(.*)} dias RETROATIVOS")]
         public void WhenInserirNoInputDataDeVencimentoDiasRETROATIVOS(int diasVencidos)
@@ -281,6 +337,12 @@ namespace QACoreBusiness.StepDefinitions
         public void WhenClicarNoBotaoVincularParcelasDeCreditoAbatimento()
         {
             gfu.CliqueVincularParcelasAbatimento();
+        }
+
+        [When(@"clicar no botao salvar contrato substituido")]
+        public void WhenClicarNoBotaoSalvarContratoSubstituido()
+        {
+            gfu.CliqueBotaoSalvarContratoSubstituido();
         }
 
         [When(@"memorizar o valor a quitar")]

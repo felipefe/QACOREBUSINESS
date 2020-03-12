@@ -104,7 +104,10 @@ namespace QACoreBusiness.Elements
         #endregion
 
 
-        #region Renegociar Parcela
+        #region Renegociar/Substituir Parcela
+        public IWebElement AddParcelaContratoByModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='ui right aligned buttons']//div[@class='ui basic green button'][1]");
+        public IWebElement BotaoCriarContratoByModal => ElementWait.WaitForElementXpath(chromeDriver, "//a[@data-content='Criar Contrato']");
+        public IWebElement AcoesSubstituir => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='sidebarMenuAcoes']//a[4]");
         public IWebElement AcoesRenegociar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='sidebarMenuAcoes']//a[3]");
         public IWebElement InputValorLiquidoRenegociar => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoRenegociacaoViewModel_ValorLiquidoRenegociar']");
         public IWebElement BotaoMontarRenegociacao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[contains(text(),'Montar Renegociação')]");
@@ -116,6 +119,12 @@ namespace QACoreBusiness.Elements
         public IWebElement LinhaParcelaSubstituidaContrato => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='contratoParcelasSubstituidas']//table//tbody//tr");
         public IWebElement InputDataVencimentoParcela => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ContratoParcela_Vencimento']");
         public IWebElement BotaoSalvarParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Adicionar']");
+        public IWebElement ValorParcelaSubstituir => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='ParcelasASubstituir']//tbody//tr//td[6]");
+        public IWebElement InputValorNovaParcelaSubstituta => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='parcelaValor1']");
+        public IWebElement BotaoSalvarContratoSubstituido => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='contrato-submit']");
+        public IWebElement InputNumeroContratoByModal => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Contrato_NumDoc']");
+        public IWebElement SelectContratoSubstituto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='SubstituicaoParcelasViewModel_ContratoSubstituto_auto_wrapper']");
+        public IWebElement BotaoSubstituirParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Substituir Parcelas']");
         #endregion
 
     }

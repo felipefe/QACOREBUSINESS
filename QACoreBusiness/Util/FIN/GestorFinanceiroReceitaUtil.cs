@@ -16,6 +16,7 @@ namespace QACoreBusiness.Util.FIN
         IWebDriver driver;
         IWebElement ParcelaCreditoAbatimento = null;
         string novoVencimento;
+        string numDoc;
         Double auxValorAbater;
         Double auxValorRenegociar;
         Double rateioValorMultiplosMeio;
@@ -94,6 +95,33 @@ namespace QACoreBusiness.Util.FIN
             Assert.Contains(gestor.UrlListaParcelasBaixa, driver.Url);
         }
 
+        public void SalvarParcelaByModalContrato()
+        {
+            Thread.Sleep(2000);
+            gestor.BotaoSalvarParcela.Click();
+        }
+
+        public void AddParcelaByModalContrato()
+        {
+            Thread.Sleep(1000);
+            gestor.AddParcelaContratoByModal.Click();
+        }
+
+        public void CliqueAbrirlModalCriarContrato()
+        {
+            Thread.Sleep(1000);
+            gestor.BotaoCriarContratoByModal.Click();
+            Thread.Sleep(2000);
+        }
+
+        public void CliqueBotaoAcoesSubstituir()
+        {
+            Thread.Sleep(1000);
+            gestor.AcoesSubstituir.Click();
+            int lastIndex = driver.WindowHandles.ToList().Count - 1; //lanca o driver para nova janela aberta
+            driver = driver.SwitchTo().Window(driver.WindowHandles.ToList()[lastIndex]);
+        }
+
         public void CliqueCollapseExibirMeioPagamentoParcela()
         {
             gestor.CollapseParcela.Click();
@@ -145,6 +173,39 @@ namespace QACoreBusiness.Util.FIN
             }
             //falha qndo nao encontra credito para pagar
             Assert.NotNull(ParcelaCreditoAbatimento);
+        }
+
+        public void CliqueBotaoSubstituirParcela()
+        {
+            Thread.Sleep(1000);
+            gestor.BotaoSubstituirParcela.Click();
+        }
+
+        public void SelecioneContratoSubstituto()
+        {
+            Thread.Sleep(3000);
+            gestor.SelectContratoSubstituto.Click();
+            gestor.SearchGenerico.SendKeys(numDoc);
+            Thread.Sleep(1000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void MemorizeNumDocContratoSubstituto()
+        {
+            Thread.Sleep(1000);
+            numDoc = gestor.InputNumeroContratoByModal.GetAttribute("value");
+        }
+
+        public void ValidaNovaParcelaByModalContratoSubstituir()
+        {
+            Double pSubstituta = Double.Parse(gestor.InputValorNovaParcelaSubstituta.GetAttribute("value").Replace(".", ",").Replace(",", "."));
+            Assert.Equal(auxValorRenegociar, pSubstituta);
+        }
+
+        public void MemorizeValorParcelaSubstituir()
+        {
+            Thread.Sleep(2000);
+            auxValorRenegociar = Double.Parse(gestor.ValorParcelaSubstituir.Text);
         }
 
         public void AddDataVencimentoRetroativaContratoManual(int diasVencidos)
@@ -272,6 +333,12 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(1000);
             gestor.InputValorMultiplosMeiosPagto.SendKeys(Keys.ArrowRight + rateioValorMultiplosMeio.ToString("N2"));
             //arrowRight clica pra inserir os digitos antes da virgula no input, por padrao insere depois e caga o valor
+        }
+
+        public void CliqueBotaoSalvarContratoSubstituido()
+        {
+            Thread.Sleep(2000);
+            gestor.BotaoSalvarContratoSubstituido.Click();
         }
 
         public void SelectSegundoPlanoContasMeioPagamento(string pc)

@@ -124,6 +124,12 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.CliqueActionsEscriturarItemLoteFiscal();
         }
 
+        [Given(@"seja redirecionado para url contains \{'(.*)'}")]
+        public void GivenSejaRedirecionadoParaUrlContains(string url)
+        {
+            rmmanual.ValidaUrlAtualContains(url);
+        }
+
         [Given(@"seja redirecionado para tela de EscriturarProduto")]
         public void GivenSejaRedirecionadoParaTelaDeEscriturarProduto()
         {
