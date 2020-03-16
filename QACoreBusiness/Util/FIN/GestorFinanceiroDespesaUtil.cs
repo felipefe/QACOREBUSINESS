@@ -94,5 +94,11 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(1000);
             gestor.InputDataEntradaChequeEmCaixa.SendKeys(DateTime.Now.ToString("dd/MM/yyyy hh:mm"));
         }
+
+        public void CliqueNovoLancarNovoChequeProprioViaIndex()
+        {
+            Thread.Sleep(2000);
+            gestor.BotaoLancarChequeProprio.Click();
+        }
     }
 }

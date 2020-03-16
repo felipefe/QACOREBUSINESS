@@ -676,7 +676,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaStatusCheque(string status)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Assert.Equal(status, gestor.ListaChequesTerceiro[0].FindElement(By.CssSelector("td:nth-child(10)")).Text);
         }
 

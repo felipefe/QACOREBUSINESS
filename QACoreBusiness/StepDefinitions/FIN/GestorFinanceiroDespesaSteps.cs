@@ -93,5 +93,12 @@ namespace QACoreBusiness.StepDefinitions.FIN
             gfd.InformeDataEntradaChequeEmCaixa();
         }
 
+        [When(@"clicar no botao da header Novo Cheque Proprio")]
+        public void WhenClicarNoBotaoDaHeaderNovoChequeProprio()
+        {
+            gfd.CliqueNovoLancarNovoChequeProprioViaIndex();
+        }
+
+
     }
 }

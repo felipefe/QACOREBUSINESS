@@ -151,6 +151,7 @@ namespace QACoreBusiness.Elements
         public List<IWebElement> ListaChequesTerceiro => chromeDriver.FindElements(By.XPath("//div[@id='pageContent']//table//tbody//tr")).ToList();
         public IWebElement ActionExcluirCheque => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Excluir']");
         public IWebElement BotaoExcluirCheque => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Excluir']");
+        public IWebElement BotaoLancarChequeProprio=> ElementWait.WaitForElementXpath(chromeDriver, "//a[@data-content='Novo Cheque Próprio']");
 
         #endregion
 
