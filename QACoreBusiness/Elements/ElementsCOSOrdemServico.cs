@@ -21,6 +21,8 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoNovoSimples => ElementWait.WaitForElementXpath(chromeDriver, "//a[@data-content='Novo Simples...']");
         public List<IWebElement> ListaOS => chromeDriver.FindElements(By.XPath("//table[@class='ui table selectable striped coregrid']//tbody//tr")).ToList();
         public IWebElement BotaoHeaderGerenciarOS => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//a[@data-content='Gerenciar O.S.s']");
+        public IWebElement BotaoConfirmarCriarExecucao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Criar Execuções']");
+        public IWebElement ActionsCriarExecucao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Criar a Execução por O.S./O.P.']");
         #endregion
 
         #region Novo Simples
@@ -89,10 +91,15 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoConfirmarConcluirItem => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Concluir']");
         public IWebElement BotaoProduzirTudo => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Produzir Tudo')]");
         public IWebElement BotaoProduzirTudoEmCadeia => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Produzir tudo (em cadeia)']");
+        public IWebElement ActionConfirmarExecucao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Confirmar']");
+        public IWebElement BotaoConfirmarExecucao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Confirmar']");
         #endregion
 
         #region Triangular
         public IWebElement SelectTipoOSTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='IndustrializacaoLoteFiscalViewModel_TipoOS_auto_wrapper']");
+        public IWebElement BotaoExecutarTriangular => ElementWait.WaitForElementXpath(chromeDriver, "//div[contains(text(),'Executar Ind. Triangular')]");
+        public IWebElement BotaoConfirmarExecutar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Executar']");
+        public IWebElement BotaoCliqueAquiVerPedidos => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='notify-text']//a");
         #endregion
     }
 }

@@ -907,9 +907,9 @@ this.FeatureBackground();
 #line 374
  testRunner.When("informar o produto SKU {\'TST0011\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 375
- testRunner.And("informar no editText o valor unitario {65}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("informar no editText o valor unitario {35}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 376
- testRunner.And("informar no editText a quantidade {2}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("informar no editText a quantidade {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 377
  testRunner.And("informar no editText o numero do lote", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 378
@@ -1034,7 +1034,19 @@ this.FeatureBackground();
 #line 435
  testRunner.And("seja redirecionado para url contains {\'/COS/OrdemServico/Edit/\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 436
- testRunner.And("o usuário deve acessar o contexto by url {\'/COS/OrdemServico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("clique no botao Executar Triangular", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 437
+ testRunner.And("confirme clicando no botao Executar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 438
+ testRunner.And("espere por {8} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 439
+ testRunner.And("uma mensagem Execução finalizada deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 440
+ testRunner.And("clique no botao CLIQUE AQUI para visualizar os pedidos gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 441
+ testRunner.And("valide que {2} pedidos foram gerados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 442
+ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

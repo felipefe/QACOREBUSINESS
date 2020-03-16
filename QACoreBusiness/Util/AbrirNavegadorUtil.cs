@@ -19,7 +19,7 @@ namespace QACoreBusiness.Util
         public  IWebDriver driverNavegadorChrome;
 
         public AbrirNavegadorUtil()
-        {
+        {                     
             driverNavegadorChrome = Base.GetChromeDriver();
             login = new Base { chromeDriver = driverNavegadorChrome };        
         }

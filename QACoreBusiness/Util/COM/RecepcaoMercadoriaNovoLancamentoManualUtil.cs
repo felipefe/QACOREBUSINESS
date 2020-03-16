@@ -96,7 +96,7 @@ namespace QACoreBusiness.Util.COM
 
         public void StatusRecepcaoMercadoria(string status)
         {
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);
             Assert.Equal(status, recepcao.ColunaStatusRecepcaoMercadoria.Text);
         }
 
@@ -192,7 +192,7 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarCFOPItemLF(string cfop)
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
             recepcao.SelectCFOPItemLF.Click();
             recepcao.SearchCFOPItemLF.SendKeys(cfop);
             Thread.Sleep(2000);
@@ -265,8 +265,9 @@ namespace QACoreBusiness.Util.COM
 
         public void CliqueAbaImpostosLoteFiscalItem()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             recepcao.AbaImpostosLFI.Click();
+            Thread.Sleep(1500);
         }
 
         public void CliqueBotaoFinalizarLancamentoItens()

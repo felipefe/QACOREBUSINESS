@@ -77,16 +77,16 @@ namespace QACoreBusiness.Util.GEM
 
         public void CliqueBotaoVoltar()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             driver.Navigate().Back();
             Thread.Sleep(2000);
         }
 
         public void CliqueBotaoIniciarExecucao()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             inventario.ListaInvetarios[0].FindElement(By.TagName("img[alt='Opções']")).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             inventario.ActionsInvetarioIniciarExecucao.Click();
         }
 

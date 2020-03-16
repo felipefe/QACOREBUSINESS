@@ -207,6 +207,12 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ValidaUrlAgrupadorManutencaoItens();
         }
 
+        [When(@"que seja clicado Editar nas actions da OS")]
+        public void WhenQueSejaClicadoEditarNasActionsDaOS()
+        {
+            osns.CliqueActionsEditarOrdemServico();
+        }
+
         [When(@"o status dos insumos devem ser \{'(.*)'}")]
         public void WhenOStatusDosInsumosDevemSer(string status)
         {
@@ -395,11 +401,40 @@ namespace QACoreBusiness.StepDefinitions.COS
             osns.ConfirmeConcluirItemModal();
         }
 
+        [When(@"o sistema deve redirecionar para o edit da OS criada")]
+        public void WhenOSistemaDeveRedirecionarParaOEditDaOSCriada()
+        {
+            osns.ValidaUrlEditOrdemServico();
+        }
 
         [When(@"marcar a flag Alterar Qtd\. dos Insumos ao Reservar")]
         public void WhenMarcarAFlagAlterarQtd_DosInsumosAoReservar()
         {
             osns.MarcarFlagalterarQtdDosInsumosReservar();
+        }
+
+        [When(@"clique nas actions para Confirmar Execuçao")]
+        public void WhenCliqueNasActionsParaConfirmarExecucao()
+        {
+            osns.CliqueActionsExecucoesConfirmar();
+        }
+
+        [When(@"clique nas actions da OS Criar Execuçoes")]
+        public void WhenCliqueNasActionsDaOSCriarExecucoes()
+        {
+            osns.CliqueActionsCriarExecucoes();
+        }
+
+        [When(@"confirme clicando no botao Criar Execuçoes")]
+        public void WhenConfirmeClicandoNoBotaoCriarExecucoes()
+        {
+            osns.ConfirmeCriarExecucoes();
+        }
+
+        [When(@"clique Confirmar no botao da modal")]
+        public void WhenCliqueConfirmarNoBotaoDaModal()
+        {
+            osns.CliqueConfirmarBotaoModal();
         }
 
         [When(@"clicar no botao Executar")]
@@ -430,6 +465,36 @@ namespace QACoreBusiness.StepDefinitions.COS
         public void WhenColunaItensFinalizadosComo(string isItensFinalizados)
         {
             osns.ValidaItensIsFinalizados(isItensFinalizados);
+        }
+
+        [Then(@"clique no botao Executar Triangular")]
+        public void ThenCliqueNoBotaoExecutarTriangular()
+        {
+            osns.CliqueExecutarTriangular();
+        }
+
+        [Then(@"confirme clicando no botao Executar")]
+        public void ThenConfirmeClicandoNoBotaoExecutar()
+        {
+            osns.ConfirmeClicandoBotaoExecutar();
+        }
+
+        [Then(@"uma mensagem Execução finalizada deve aparecer")]
+        public void ThenUmaMensagemExecucaoFinalizadaDeveAparecer()
+        {
+            osns.MensagemExecucaoTriangularFinalizada();
+        }
+
+        [Then(@"valide que \{(.*)} pedidos foram gerados")]
+        public void ThenValideQuePedidosForamGerados(int nPedidos)
+        {
+            osns.ValidaPedidosGeradosTriangular(nPedidos);
+        }
+
+        [Then(@"clique no botao CLIQUE AQUI para visualizar os pedidos gerados")]
+        public void ThenCliqueNoBotaoCLIQUEAQUIParaVisualizarOsPedidosGerados()
+        {
+            osns.CliqueAquiParaVisualizarPedidos();
         }
 
 

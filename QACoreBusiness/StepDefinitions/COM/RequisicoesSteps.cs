@@ -69,6 +69,23 @@ namespace QACoreBusiness.StepDefinitions.COM
             ru.ValideNumeroOSGerada();
         }
 
+        [When(@"armazene o codigo da requisicao")]
+        public void WhenArmazeneOCodigoDaRequisicao()
+        {
+            ru.ArmazeneCodigoRequisicao();
+        }
+
+        [Then(@"validar o numero da requisicao armazenada")]
+        public void ThenValidarONumeroDaRequisicaoArmazenada()
+        {
+            ru.ValidaNumRequisicaoAtendida();
+        }
+
+        [Then(@"a situacao da requisicao deve ser \{'(.*)'}")]
+        public void ThenASituacaoDaRequisicaoDeveSer(string situacao)
+        {
+            ru.ValidaRequisicaoGeradaBySituacao(situacao);
+        }
 
     }
 }

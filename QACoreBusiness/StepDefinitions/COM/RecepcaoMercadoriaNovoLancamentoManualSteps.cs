@@ -566,6 +566,12 @@ namespace QACoreBusiness.StepDefinitions.COM
             rmmanual.ValidaUrlIndexRecepcaoMercadoria();
         }
 
+        [When(@"seja redirecionado para url contains \{'(.*)'}")]
+        public void WhenSejaRedirecionadoParaUrlContains(string url)
+        {
+            rmmanual.ValidaUrlAtualContains(url);
+        }
+
         [When(@"seja clicado no botao Mercadoria nas actions")]
         public void WhenSejaClicadoNoBotaoMercadoriaNasActions()
         {

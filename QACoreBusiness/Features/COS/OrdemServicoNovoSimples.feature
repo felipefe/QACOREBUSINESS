@@ -372,8 +372,8 @@ Scenario: Operação Triangular
 	And seja clicado no botao Nova Mercadoria Recebida
 	And seja redirecionado para criar item da recepcao
 	When informar o produto SKU {'TST0011'}
-	And informar no editText o valor unitario {65}
-	And informar no editText a quantidade {2}
+	And informar no editText o valor unitario {35}
+	And informar no editText a quantidade {1}
 	And informar no editText o numero do lote
 	And informar no editText a data de fabricacao
 	And informar no editText a data de validade
@@ -433,4 +433,10 @@ Scenario: Operação Triangular
 	And selecione o tipo de OS {'Triangular'}
 	And clique no botao Industrializar
 	And seja redirecionado para url contains {'/COS/OrdemServico/Edit/'}
-	And o usuário deve acessar o contexto by url {'/COS/OrdemServico'}
+	And clique no botao Executar Triangular
+	And confirme clicando no botao Executar
+	And espere por {8} segundos ate ser processado
+	And uma mensagem Execução finalizada deve aparecer
+	And clique no botao CLIQUE AQUI para visualizar os pedidos gerados
+	And valide que {2} pedidos foram gerados
+	And feche o navegador quando terminar

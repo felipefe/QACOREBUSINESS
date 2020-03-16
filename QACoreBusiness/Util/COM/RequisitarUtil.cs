@@ -15,6 +15,7 @@ namespace QACoreBusiness.Util.COM
         IWebDriver driver;
         string numPedido;
         string numOS;
+        string numRequisicao;
 
         public RequisitarUtil()
         {
@@ -36,20 +37,20 @@ namespace QACoreBusiness.Util.COM
 
         public void ArmazeneNumeroPedido()
         {
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             numPedido = pedido.TituloPedido.Text.Replace(" - Venda de Mercadorias e Serviços", "");
         }
 
         public void ValideRequicaoGeradaByNumPedido()
         {
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             string numPed = pedido.ListaRequisicoes[0].FindElement(By.CssSelector("td:nth-child(11)")).Text;
             Assert.Equal(numPedido.Replace("/", "-"), numPed);
         }
 
         public void ValidaRequisicaoGeradaBySituacao(string situacao)
         {
-            Thread.Sleep(500);
+            Thread.Sleep(2000);
             Assert.Equal(situacao, pedido.ListaRequisicoes[0].FindElement(By.CssSelector("td:nth-child(9)")).Text);
         }
 
@@ -73,6 +74,19 @@ namespace QACoreBusiness.Util.COM
             pedido.ListaRequisicoes[0].FindElement(By.CssSelector("td:nth-child(14) > div > div > a > img")).Click();
             Thread.Sleep(500);
             pedido.BotaoDetalhesRequisicao.Click();
+        }
+
+        public void ArmazeneCodigoRequisicao()
+        {
+            Thread.Sleep(1000);
+            numRequisicao = pedido.ListaRequisicoes[0].FindElement(By.CssSelector("td:nth-child(1)")).Text;
+        }
+
+        public void ValidaNumRequisicaoAtendida()
+        {
+            Thread.Sleep(3000);
+            string atendida = pedido.ListaRequisicoes[0].FindElement(By.CssSelector("td:nth-child(1)")).Text;
+            Assert.Equal(numRequisicao, atendida);
         }
 
         public void MemorizeNumeroOSGerada()

@@ -158,7 +158,7 @@ namespace QACoreBusiness.Util.COS
 
         public void ValidaUrlOrdemServicoItemEdit()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             Assert.Contains(cos.UrlEditItemOrdemServico, driver.Url);
         }
 
@@ -173,7 +173,7 @@ namespace QACoreBusiness.Util.COS
         public void SelecioneNovaSituacao(string situacao)
         {
             situacaoEncaminhada = situacao;
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             cos.SelectNovaSituacao.Click();
             cos.SearchGenerico.SendKeys(situacao);
             Thread.Sleep(2500);
@@ -182,19 +182,20 @@ namespace QACoreBusiness.Util.COS
 
         public void CliqueBotaoEncaminhar()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             cos.BotaoEncaminharNovaSituacaoOS.Click();
         }
 
         public void ValideSituacaoEncaminhadaOS()
         {
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);
             String situacao = cos.ListaOS[0].FindElement(By.CssSelector("td:nth-child(5)")).Text;
             Assert.Equal(situacaoEncaminhada, situacao);
         }
 
         public void SelecioneGrupoUsuario(string grupo)
         {
+            Thread.Sleep(1000);
             cos.InputSelectGrupoUsuario.SendKeys(grupo);
             Thread.Sleep(2000);
             cos.InputSelectGrupoUsuario.SendKeys(Keys.Enter);
@@ -381,6 +382,7 @@ namespace QACoreBusiness.Util.COS
 
         public void CliqueEditarItemOrdemServico()
         {
+            Thread.Sleep(3000);
             int index = 0;
             cos.TabelaItensOS[index].FindElement(By.CssSelector("td:nth-child(11) > div")).Click();
             Thread.Sleep(1000);
@@ -437,16 +439,75 @@ namespace QACoreBusiness.Util.COS
             Assert.True(validou);
         }
 
+        public void ConfirmeCriarExecucoes()
+        {
+            Thread.Sleep(2000);
+            cos.BotaoConfirmarCriarExecucao.Click();
+        }
+
+        public void CliqueActionsCriarExecucoes()
+        {
+            Thread.Sleep(2000);
+            int index = 0;
+            cos.ListaOS[index].FindElement(By.CssSelector("td:nth-child(11) > div")).Click();
+            Thread.Sleep(1000);
+            cos.ActionsCriarExecucao.Click();
+            Thread.Sleep(1500);
+        }
+
+        public void CliqueConfirmarBotaoModal()
+        {
+            Thread.Sleep(2000);
+            cos.BotaoConfirmarExecucao.Click();
+        }
+
+        public void CliqueActionsExecucoesConfirmar()
+        {
+            Thread.Sleep(1500);
+            cos.ListaExecucoes[0].FindElement(By.CssSelector("td:nth-child(3)")).Click();
+            Thread.Sleep(1000);
+            cos.ActionConfirmarExecucao.Click();
+        }
+
         public void ValidaCriouExecucoes()
         {
             Thread.Sleep(2000);
             Assert.True(cos.ListaExecucoes.Count > 0);
         }
 
+        public void CliqueExecutarTriangular()
+        {
+            Thread.Sleep(2000);
+            cos.BotaoExecutarTriangular.Click();
+        }
+
+        public void ConfirmeClicandoBotaoExecutar()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoConfirmarExecutar.Click();
+        }
+
         public void CliqueBotaoSalvarExecucao()
         {
             Thread.Sleep(1000);
             cos.BotaoSalvarExecucao.Click();
+        }
+
+        public void MensagemExecucaoTriangularFinalizada()
+        {
+            ElementWait.WaitForElementXpath(driver, "//div[@class='notify-text']");
+        }
+
+        public void ValidaPedidosGeradosTriangular(int nPedidos)
+        {
+            Thread.Sleep(1000);
+            Assert.Equal(nPedidos, cos.ListaPedidosGeradosOS.Count);
+        }
+
+        public void CliqueAquiParaVisualizarPedidos()
+        {
+            Thread.Sleep(1000);
+            cos.BotaoCliqueAquiVerPedidos.Click();
         }
 
         public void FlagConfirmarExecucoes()
