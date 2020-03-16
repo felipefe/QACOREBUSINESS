@@ -127,5 +127,26 @@ namespace QACoreBusiness.Elements
         public IWebElement BotaoSubstituirParcela => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Substituir Parcelas']");
         #endregion
 
+
+        #region Cadastro Cheque
+        public IWebElement BotaoSalvarCheque  => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Salvar']");
+        public IWebElement TextAreaObservacao => ElementWait.WaitForElementXpath(chromeDriver, "//textarea[@id='Cheque_Observacao']");
+        public IWebElement InputDataEmissaoCheque => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Cheque_Emissao']");
+        public IWebElement InputDataBomParaCheque => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Cheque_BomPara']");
+        public IWebElement InputNumeroCheque => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Cheque_NumeroCheque']");
+        public IWebElement SelectBancoEmitente => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='Cheque_Emitente_auto_wrapper']//div");
+        public IWebElement BotaoLancarCheque => ElementWait.WaitForElementXpath(chromeDriver, "//a[@data-content='Lançar Cheque']");
+        public IWebElement SelectCheque => ElementWait.WaitForElementXpath(chromeDriver, "//span[@class='select2-selection select2-selection--single']//span[contains(text(),'Selecionar Cheque')]");
+        public IWebElement BotaoIncluirNovoCheque => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='chequeMultiplaBXApp']//a//img");
+        public IWebElement BotaoVincularChequeMultiplosMeios => ElementWait.WaitForElementXpath(chromeDriver, "//a[@data-content='Vincular documento do Cheque']");
+        public IWebElement SelectEmpresaCheque => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='Cheque_Empresa_auto_wrapper']");
+        public IWebElement SelectResponsavelCheque => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='Cheque_Responsavel_auto_wrapper']");
+        public IWebElement InputBuscarCheques => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='ConfigMovimento_TermCheques']");
+        public IWebElement RemoverContaBancariaBaixa => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='field'][3]//div[@class='ui select2 fluid']//span[@class='select2-selection__clear']");
+        public List<IWebElement> LinhasTabelaCheques => chromeDriver.FindElements(By.XPath("//table[@id='ChequesMultiplaBaixa']//tbody//tr")).ToList();
+        public IWebElement SelectCaixaRecebido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='Cheque_CaixaRecebido_auto_wrapper']");
+        public IWebElement InputDataEntradaChequeEmCaixa => ElementWait.WaitForElementXpath(chromeDriver, "//input[@id='Cheque_DataEntradaCaixa']");
+        #endregion
+
     }
 }

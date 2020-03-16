@@ -23,6 +23,34 @@ Scenario: Baixar Parcela Dinheiro
 	Then o sistema redireciona para imprimir movimentacao
 	And feche o navegador quando terminar
 
+@receita_baixar_parcela_cheque
+Scenario: Baixar Parcela Cheque Terceiro
+	Given que clica na aba Contas a Receber
+	And clique na pesquisa 
+	And clique para limpar filtros
+	And clique no botao Filtrar Receitas
+	And o numero de parcelas filtradas seja maior que {0}
+	And selecione a primeira parcela listada
+	And clique no botao movimentar parcela
+	And o valor a ser movimentado seja maior que zero
+	And clique no icone Baixar Parcela
+	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
+	And clique no collapse para exibir meio pagamento parcela
+	And selecione o meio de pagamento {'Cheque'}
+	And remova a conta bancaria
+	And clique no botao para incluir/cadastrar cheque
+	And informe a data de emissao {7} dias retroativos
+	And informe a data bom para {data atual}
+	And informe o numero do cheque
+	And selecione o banco {'Banco do Brasil'}
+	And informe alguma observaçao {'Cheque dos guri'}
+	And clique no botao Salvar cheque
+	And clique no collapse para exibir meio pagamento parcela
+	And selecione o cheque criado
+	When clicar no botao Efetuar Baixa
+	Then o sistema redireciona para imprimir movimentacao
+	And feche o navegador quando terminar
+
 
 @receita_baixar_parcela_abatimento
 Scenario: Baixar Parcela Abatimento
@@ -96,6 +124,7 @@ Scenario: Baixar Multiplas Parcelas Cheque + Abatimento
 	And o valor a ser movimentado seja maior que zero
 	And clique no icone Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
+	And memorize o nome do cliente da parcela
 	When clique no botao Adicionar Multiplos Meios de Pagamento
 	And selecione o primeiro meio de pagamento {'Cheque'}
 	And ratear o valor exibido no input por {2}
@@ -104,6 +133,19 @@ Scenario: Baixar Multiplas Parcelas Cheque + Abatimento
 	And informar no input o historico {'Multiplos meios de pagamento  - ÉusGuri'}
 	And clicar no botao Adicionar para multiplos meios de pagamento
 	And seja validado o valor do rateio
+	And clique no botao Vincular documento cheque
+	And clique enter para listar as opçoes cheques
+	And clique no botao para incluir cheque
+	And selecione a empresa responsavel {'Deltacon Informática'}
+	And selecione a pessoa responsavel/cliente parcela
+	And informe a data de emissao {7} dias retroativos
+	And informe a data bom para {data atual}
+	And informe o numero do cheque
+	And selecione o banco {'Banco do Brasil'}
+	And informe alguma observaçao {'Cheque dos guri'}
+	And clique no botao Salvar cheque
+	And pesquise o numero do cheque criado
+	And clicar no botao Vincular creditos
 	And clique no botao Adicionar Multiplos Meios de Pagamento
 	And selecione o segundo meio de pagamento {'Abatimento'}
 	And valide que o resto do rateio seja inserido no input
@@ -123,8 +165,8 @@ Scenario: Baixar Multiplas Parcelas Cheque + Abatimento
 	And feche o navegador quando terminar
 
 
-@receita_baixar_multiplas_parcela__cheque_transferencia
-Scenario: Baixar Multiplas Parcelas Cheque + Transferência
+@receita_baixar_multiplas_parcela__din_transferencia
+Scenario: Baixar Multiplas Parcelas Dinheiro + Transferência
 	Given que clica na aba Contas a Receber
 	And clique na pesquisa 
 	And clique para limpar filtros
@@ -136,7 +178,7 @@ Scenario: Baixar Multiplas Parcelas Cheque + Transferência
 	And clique no icone Baixar Parcela
 	And seja redirecionado para /FIN/Contrato/ListarParcelasBaixa
 	When clique no botao Adicionar Multiplos Meios de Pagamento
-	And selecione o primeiro meio de pagamento {'Cheque'}
+	And selecione o primeiro meio de pagamento {'Dinheiro'}
 	And ratear o valor exibido no input por {2}
 	And informar o planos de contas {'Contratos Financeiros'}
 	And informar o centro de custo {'Contratos Financeiros'}

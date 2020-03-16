@@ -69,5 +69,29 @@ namespace QACoreBusiness.StepDefinitions.FIN
             gfd.SelecionarContaBancariaPagamento(contaBancaria);
         }
 
+        [Given(@"selecione o caixa recebido \('(.*)'\)")]
+        public void GivenSelecioneOCaixaRecebido(string caixa)
+        {
+            gfd.SelectCaixaRecebidoCheque(caixa);
+        }
+
+        [Given(@"informe a data de entrada do cheque em caixa")]
+        public void GivenInformeADataDeEntradaDoChequeEmCaixa()
+        {
+            gfd.InformeDataEntradaChequeEmCaixa();
+        }
+
+        [When(@"selecione o caixa recebido \('(.*)'\)")]
+        public void WhenSelecioneOCaixaRecebido(string caixa)
+        {
+            gfd.SelectCaixaRecebidoCheque(caixa);
+        }
+
+        [When(@"informe a data de entrada do cheque em caixa")]
+        public void WhenInformeADataDeEntradaDoChequeEmCaixa()
+        {
+            gfd.InformeDataEntradaChequeEmCaixa();
+        }
+
     }
 }

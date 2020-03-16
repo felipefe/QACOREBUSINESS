@@ -17,6 +17,8 @@ namespace QACoreBusiness.Util.FIN
         IWebElement ParcelaCreditoAbatimento = null;
         string novoVencimento;
         string numDoc;
+        string numCheque;
+        string nomeCliente;
         Double auxValorAbater;
         Double auxValorRenegociar;
         Double rateioValorMultiplosMeio;
@@ -173,6 +175,119 @@ namespace QACoreBusiness.Util.FIN
             }
             //falha qndo nao encontra credito para pagar
             Assert.NotNull(ParcelaCreditoAbatimento);
+        }
+
+        public void InserirDataEmissaoCheque(int dataEmissao)
+        {
+            Thread.Sleep(3000);
+            gestor.InputDataEmissaoCheque.SendKeys(DateTime.Now.AddDays(-dataEmissao).ToString("dd/MM/yyyy"));
+        }
+
+        public void InserirNumeroCheque()
+        {
+            Thread.Sleep(2000);
+            numCheque = new Random().Next(1000000, 9999999).ToString();
+            gestor.InputNumeroCheque.SendKeys(numCheque);
+        }
+
+        public void SelecionarEmitenteCheque(string emitente)
+        {
+            Thread.Sleep(1000);
+            gestor.SelectBancoEmitente.Click();
+            gestor.SearchGenerico.SendKeys(emitente);
+            Thread.Sleep(2000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+
+        }
+
+        public void InserirObservacaoCheque(string observacao)
+        {
+            Thread.Sleep(1000);
+            gestor.TextAreaObservacao.SendKeys(observacao);
+        }
+
+        public void SelecioneChequeCriado()
+        {
+            Thread.Sleep(2000);
+            gestor.SelectCheque.Click();
+            gestor.SearchGenerico.SendKeys(numCheque);
+            Thread.Sleep(2000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void RemovaContaBancariaBaixa()
+        {
+            Thread.Sleep(1000);
+            gestor.RemoverContaBancariaBaixa.Click();
+        }
+
+        public void MemorizarNomeClienteParcela()
+        {
+            Thread.Sleep(1000);
+            nomeCliente = gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(1)")).Text.Trim();
+        }
+
+        public void CliqueVincularNovoChequeMultiplosMeios()
+        {
+            Thread.Sleep(2000);
+            gestor.BotaoVincularChequeMultiplosMeios.Click();
+        }
+
+        public void CliqueEnter()
+        {
+            Thread.Sleep(2000);
+            gestor.InputBuscarCheques.SendKeys(Keys.Enter);
+        }
+
+        public void CliqueBotaoCadastrarNovoCheque()
+        {
+            Thread.Sleep(2000);
+            gestor.BotaoIncluirNovoCheque.Click();
+        }
+
+        public void SelecioneEmpresaCheque(string empresa)
+        {
+            Thread.Sleep(1000);
+            gestor.SelectEmpresaCheque.Click();
+            gestor.SearchGenerico.SendKeys(empresa);
+            Thread.Sleep(1500);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void PesquiseChequeCriado()
+        {
+            Thread.Sleep(1000);
+            gestor.InputBuscarCheques.SendKeys(numCheque);
+            Thread.Sleep(2000);
+            gestor.LinhasTabelaCheques[0].FindElement(By.CssSelector("td:nth-child(1) > input:nth-child(1)")).Click();
+        }
+
+        public void SelecioneResponsavelCheque()
+        {
+            Thread.Sleep(1000);
+            gestor.SelectResponsavelCheque.Click();
+            gestor.SearchGenerico.SendKeys(nomeCliente);
+            Thread.Sleep(1500);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InserirDataBomParaCheque()
+        {
+            Thread.Sleep(1000);
+            gestor.InputDataBomParaCheque.SendKeys(DateTime.Now.ToString("dd/MM/yyyy"));
+        }
+
+        public void CliqueSalvarChequeModal()
+        {
+            Thread.Sleep(1000);
+            gestor.BotaoSalvarCheque.Click();
+            Thread.Sleep(2500);
+        }
+
+        public void CliqueLancarCheque()
+        {
+            Thread.Sleep(1500);
+            gestor.BotaoLancarCheque.Click();
         }
 
         public void CliqueBotaoSubstituirParcela()
@@ -541,6 +656,7 @@ namespace QACoreBusiness.Util.FIN
         public void CliqueSalvarCreditosSelecionados()
         {
             gestor.BotaoSalvarParcelaSelecionadasAbatimento.Click();
+            Thread.Sleep(2000);
         }
 
         public void SelecionarCentroCustoMultiplosMeios(string cC)

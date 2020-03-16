@@ -79,5 +79,20 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(1000);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
+
+        public void SelectCaixaRecebidoCheque(string caixa)
+        {
+            Thread.Sleep(2000);
+            gestor.SelectCaixaRecebido.Click();
+            gestor.SearchGenerico.SendKeys(caixa);
+            Thread.Sleep(2000);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InformeDataEntradaChequeEmCaixa()
+        {
+            Thread.Sleep(1000);
+            gestor.InputDataEntradaChequeEmCaixa.SendKeys(DateTime.Now.ToString("dd/MM/yyyy hh:mm"));
+        }
     }
 }

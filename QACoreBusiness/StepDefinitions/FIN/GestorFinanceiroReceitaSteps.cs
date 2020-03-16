@@ -172,6 +172,139 @@ namespace QACoreBusiness.StepDefinitions
             gfu.MemorizeNumDocContratoSubstituto();
         }
 
+        [Given(@"clique no botao para incluir/cadastrar cheque")]
+        public void GivenCliqueNoBotaoParaIncluirCadastrarCheque()
+        {
+            gfu.CliqueLancarCheque();
+        }
+
+        [Given(@"informe a data de emissao \{(.*)} dias retroativos")]
+        public void GivenInformeADataDeEmissaoDiasRetroativos(int dataEmissao)
+        {
+            gfu.InserirDataEmissaoCheque(dataEmissao);
+        }
+
+        [Given(@"informe a data bom para \{data atual}")]
+        public void GivenInformeADataBomParaDataAtual()
+        {
+            gfu.InserirDataBomParaCheque();
+        }
+
+        [Given(@"informe o numero do cheque")]
+        public void GivenInformeONumeroDoCheque()
+        {
+            gfu.InserirNumeroCheque();
+        }
+
+        [Given(@"selecione o banco \{'(.*)'}")]
+        public void GivenSelecioneOBanco(string emitente)
+        {
+            gfu.SelecionarEmitenteCheque(emitente);
+        }
+
+        [Given(@"informe alguma observaçao \{'(.*)'}")]
+        public void GivenInformeAlgumaObservacao(string observacao)
+        {
+            gfu.InserirObservacaoCheque(observacao);
+        }
+
+        [Given(@"selecione o cheque criado")]
+        public void GivenSelecioneOChequeCriado()
+        {
+            gfu.SelecioneChequeCriado();
+        }
+
+
+        [Given(@"clique no botao Salvar cheque")]
+        public void GivenCliqueNoBotaoSalvarCheque()
+        {
+            gfu.CliqueSalvarChequeModal();
+        }
+
+        [Given(@"remova a conta bancaria")]
+        public void GivenRemovaAContaBancaria()
+        {
+            gfu.RemovaContaBancariaBaixa();
+        }
+
+        [Given(@"memorize o nome do cliente da parcela")]
+        public void GivenMemorizeONomeDoClienteDaParcela()
+        {
+            gfu.MemorizarNomeClienteParcela();
+        }
+
+        [When(@"clique no botao Vincular documento cheque")]
+        public void WhenCliqueNoBotaoVincularDocumentoCheque()
+        {
+            gfu.CliqueVincularNovoChequeMultiplosMeios();
+        }
+
+        [When(@"clique enter para listar as opçoes cheques")]
+        public void WhenCliqueEnterParaListarAsOpcoesCheques()
+        {
+            gfu.CliqueEnter();
+        }
+
+        [When(@"clique no botao para incluir cheque")]
+        public void WhenCliqueNoBotaoParaIncluirCheque()
+        {
+            gfu.CliqueBotaoCadastrarNovoCheque();
+        }
+
+        [When(@"selecione a empresa responsavel \{'(.*)'}")]
+        public void WhenSelecioneAEmpresaResponsavel(string empresa)
+        {
+            gfu.SelecioneEmpresaCheque(empresa);
+        }
+
+        [When(@"selecione a pessoa responsavel/cliente parcela")]
+        public void WhenSelecioneAPessoaResponsavelClienteParcela()
+        {
+            gfu.SelecioneResponsavelCheque();
+        }
+
+        [When(@"pesquise o numero do cheque criado")]
+        public void WhenPesquiseONumeroDoChequeCriado()
+        {
+            gfu.PesquiseChequeCriado();
+        }
+
+        [When(@"informe a data de emissao \{(.*)} dias retroativos")]
+        public void WhenInformeADataDeEmissaoDiasRetroativos(int dataEmissao)
+        {
+            gfu.InserirDataEmissaoCheque(dataEmissao);
+        }
+
+        [When(@"informe a data bom para \{data atual}")]
+        public void WhenInformeADataBomParaDataAtual()
+        {
+            gfu.InserirDataBomParaCheque();
+        }
+
+        [When(@"informe o numero do cheque")]
+        public void WhenInformeONumeroDoCheque()
+        {
+            gfu.InserirNumeroCheque();
+        }
+
+        [When(@"selecione o banco \{'(.*)'}")]
+        public void WhenSelecioneOBanco(string emitente)
+        {
+            gfu.SelecionarEmitenteCheque(emitente);
+        }
+
+        [When(@"informe alguma observaçao \{'(.*)'}")]
+        public void WhenInformeAlgumaObservacao(string observacao)
+        {
+            gfu.InserirObservacaoCheque(observacao);
+        }
+
+        [When(@"clique no botao Salvar cheque")]
+        public void WhenCliqueNoBotaoSalvarCheque()
+        {
+            gfu.CliqueSalvarChequeModal();
+        }
+
         [When(@"selecione o novo contrato inserindo o nome memorizado")]
         public void WhenSelecioneONovoContratoInserindoONomeMemorizado()
         {

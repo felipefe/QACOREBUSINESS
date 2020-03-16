@@ -344,12 +344,13 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaContratoExcluido()
         {
+            Thread.Sleep(1000);
             Assert.Null(FindLinhaInTabelaByNumDoc(auxNumDocContrato));
         }
 
         public void CliqueExcluirContratoModal()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             contr.BotaoExcluirContratoModal.Click();
         }
 
