@@ -227,6 +227,12 @@ namespace QACoreBusiness.Util.FIN
             nomeCliente = gestor.ParcelaABaixar.FindElement(By.CssSelector("td:nth-child(1)")).Text.Trim();
         }
 
+        public void CliqueLancarNovoChequeTerceiro()
+        {
+            Thread.Sleep(2000);
+            gestor.BotaoLancarChequeTerceiro.Click();
+        }
+
         public void CliqueVincularNovoChequeMultiplosMeios()
         {
             Thread.Sleep(2000);
@@ -267,6 +273,15 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(1000);
             gestor.SelectResponsavelCheque.Click();
             gestor.SearchGenerico.SendKeys(nomeCliente);
+            Thread.Sleep(1500);
+            gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void SelecioneResponsavelCheque(string cliente)
+        {
+            Thread.Sleep(1000);
+            gestor.SelectResponsavelCheque.Click();
+            gestor.SearchGenerico.SendKeys(cliente);
             Thread.Sleep(1500);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
@@ -622,6 +637,47 @@ namespace QACoreBusiness.Util.FIN
             gestor.SearchGenerico.SendKeys(contaBancaria);
             Thread.Sleep(1500);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
+        }
+
+        public void InsereValorCheque(decimal valor)
+        {
+            Thread.Sleep(1000);
+            gestor.InputValorChequeTerceiro.Clear();
+            Thread.Sleep(1000);
+            gestor.InputValorChequeTerceiro.SendKeys(valor.ToString());
+        }
+
+        public void ValidaNumeroChequeCadastrado()
+        {
+            Thread.Sleep(2000);
+            string cheque = gestor.ListaChequesTerceiro[0].FindElement(By.CssSelector("td:nth-child(1)")).Text;
+            Assert.Equal(numCheque, cheque);
+        }
+
+        public void CliqueActionExcluirCheque()
+        {
+            gestor.ListaChequesTerceiro[0].FindElement(By.CssSelector("td:nth-child(11) > div > div > a")).Click();
+            Thread.Sleep(1000);
+            gestor.ActionExcluirCheque.Click();
+        }
+
+        public void ConfirmeExcluirCheque()
+        {
+            Thread.Sleep(1000);
+            gestor.BotaoExcluirCheque.Click();
+        }
+
+        public void ValidaChequeExcluido()
+        {
+            Thread.Sleep(3000);
+            Assert.NotEqual(numCheque, gestor.ListaChequesTerceiro[0].FindElement(By.CssSelector("td:nth-child(1)")).Text);
+
+        }
+
+        public void ValidaStatusCheque(string status)
+        {
+            Thread.Sleep(1000);
+            Assert.Equal(status, gestor.ListaChequesTerceiro[0].FindElement(By.CssSelector("td:nth-child(10)")).Text);
         }
 
         public void ValidaRestoRateioSegundoMeio()

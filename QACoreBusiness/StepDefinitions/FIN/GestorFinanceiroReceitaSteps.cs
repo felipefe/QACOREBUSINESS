@@ -233,6 +233,18 @@ namespace QACoreBusiness.StepDefinitions
             gfu.MemorizarNomeClienteParcela();
         }
 
+        [When(@"clicar no botao da header Novo Cheque de Terceiro")]
+        public void WhenClicarNoBotaoDaHeaderNovoChequeDeTerceiro()
+        {
+            gfu.CliqueLancarNovoChequeTerceiro();
+        }
+
+        [When(@"selecione a pessoa responsavel \{'(.*)'}")]
+        public void WhenSelecioneAPessoaResponsavel(string cliente)
+        {
+            gfu.SelecioneResponsavelCheque(cliente);
+        }
+
         [When(@"clique no botao Vincular documento cheque")]
         public void WhenCliqueNoBotaoVincularDocumentoCheque()
         {
@@ -662,6 +674,42 @@ namespace QACoreBusiness.StepDefinitions
         public void WhenCliqueNoBotaoGerarRenegociacao()
         {
             gfu.CliqueGerarRenegociacao();
+        }
+
+        [When(@"informe o valor do cheque \{(.*)}")]
+        public void WhenInformeOValorDoCheque(Decimal valor)
+        {
+            gfu.InsereValorCheque(valor);
+        }
+
+        [Then(@"valide que o cheque seja criado conforme numero informado")]
+        public void ThenValideQueOChequeSejaCriadoConformeNumeroInformado()
+        {
+            gfu.ValidaNumeroChequeCadastrado();
+        }
+
+        [Then(@"o status do cheque deve ser \{'(.*)'}")]
+        public void ThenOStatusDoChequeDeveSer(string status)
+        {
+            gfu.ValidaStatusCheque(status);
+        }
+
+        [Then(@"clique nas actions para Excluir cheque")]
+        public void ThenCliqueNasActionsParaExcluirCheque()
+        {
+            gfu.CliqueActionExcluirCheque();
+        }
+
+        [Then(@"confirme clicando no botao Excluir")]
+        public void ThenConfirmeClicandoNoBotaoExcluir()
+        {
+            gfu.ConfirmeExcluirCheque();
+        }
+
+        [Then(@"valide que o cheque foi excluido")]
+        public void ThenValideQueOChequeFoiExcluido()
+        {
+            gfu.ValidaChequeExcluido();
         }
 
         [Then(@"o sistema redireciona para imprimir movimentacao")]
