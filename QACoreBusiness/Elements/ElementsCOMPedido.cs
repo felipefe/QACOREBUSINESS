@@ -49,7 +49,7 @@ namespace QACoreBusiness.Util
         public IWebElement SessaoProdutos => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//div[@class='collapse toggle']//h4[@class='ui header']//div[@class='ui column']");
         public IWebElement InputSKUProduto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui fields']//div[@class='four wide field']//div[@class='ui large input']//input[@name='sku']");
         public IWebElement InputNomeProduto => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-edit-wrapper']//div[@class='ui form container']//div[@class='components']//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui fields']//div[@class='ui large input']//input[@name='nome']");
-        public IWebElement InputQuantidadeItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui stackable row three column grid']//div[@class='sixteen wide field']//div[@class='ui large action input']//input[@name='quantidade']");
+        public IWebElement InputQuantidadeItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//input[@name='quantidade']");
         public IWebElement TagReservaEstoqueNormal => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular grey label sui-tooltip']");
         public IWebElement TagReservaEstoqueSemReserva => ElementWait.WaitForElementXpath(chromeDriver, "//table[@id='table-itens']//tbody//tr//td//div[@class='ui left']//div[@class='ui circular violet label sui-tooltip']");
         public IWebElement BotaoAddItemPedido => ElementWait.WaitForElementXpath(chromeDriver, "//div[@id='pedido-itens-wrapper']//div[@class='ui green segment']//div[@class='ui stackable row three column grid']//div[@class='sixteen wide field']//div[@class='ui large action input']//button[@class='ui right labeled icon button']");
@@ -102,8 +102,21 @@ namespace QACoreBusiness.Util
         public IWebElement BotaoGerarProducaoModal => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='actions']//input[@value='Gerar Produção']");
         public IWebElement BotaoDetalhesRequisicao => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Detalhes da Requisição']");
         public IWebElement DetalhesRequisicaoNumeroOSGerada => ElementWait.WaitForElementXpath(chromeDriver, "//a[@class='step'][2]//div[@class='content']//div[@class='description']");
-
         #endregion
+
+
+        #region Segmentar
+        public IWebElement ActionSegmentar => ElementWait.WaitForElementXpath(chromeDriver, "//div[@class='tool-items']//a[@data-content='Segmentar o pedido']");
+        public IWebElement BotaoSegmentar => ElementWait.WaitForElementXpath(chromeDriver, "//input[@value='Segmentar']");
+        public List<IWebElement> ListaItensSegmentar => chromeDriver.FindElements(By.XPath("//table[@id='pedidos']//tbody//tr")).ToList();
+
+        //public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+        //public IWebElement  => ElementWait.WaitForElementXpath(chromeDriver, "");
+        #endregion
+
+
+
+
 
     }
 }

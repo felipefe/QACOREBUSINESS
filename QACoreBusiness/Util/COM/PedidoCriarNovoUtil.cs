@@ -43,7 +43,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueSessaoProdutos()
         {
-            System.Threading.Thread.Sleep(4000);
+            Thread.Sleep(5000);
             pedido.SessaoProdutos.Click();
         }
 

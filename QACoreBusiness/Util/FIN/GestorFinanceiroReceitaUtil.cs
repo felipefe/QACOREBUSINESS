@@ -77,7 +77,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaValorParcelasSelecionadas()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             Assert.NotEqual( "0,00" ,gestor.TextViewValorParcelasMovimentar.Text);
         }
 
@@ -211,7 +211,7 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(2000);
             gestor.SelectCheque.Click();
             gestor.SearchGenerico.SendKeys(numCheque);
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 

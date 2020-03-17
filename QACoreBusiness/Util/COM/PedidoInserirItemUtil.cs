@@ -37,6 +37,17 @@ namespace QACoreBusiness.Util
             pedido.InputQuantidadeItemPedido.SendKeys("2,00");
         }
 
+        public void InformarQuantidadeItem(int quantidade)
+        {
+            Thread.Sleep(3000); //espera carregar os dados do item [estoque / preço]
+            pedido.InputQuantidadeItemPedido.Clear(); //isso aqui nao funciona neste campo
+            for(int i=0; i<4; i++)
+                pedido.InputQuantidadeItemPedido.SendKeys(Keys.Backspace);
+            Thread.Sleep(1000);
+            pedido.InputQuantidadeItemPedido.SendKeys(quantidade.ToString());
+        }
+
+
         public void PesquisarProdutoNome(string nome)
         {
             pedido.InputNomeProduto.SendKeys(nome);

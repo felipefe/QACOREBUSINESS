@@ -285,7 +285,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line 89
-testRunner.Given("que eu clique no botao da header Novo Via NFe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("que eu clique no botao da header Novo Via NFe", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 90
  testRunner.And("selecione o arquivo xml da recepcao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91

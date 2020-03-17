@@ -26,7 +26,13 @@ namespace QACoreBusiness.StepDefinitions
         {
             pii.InformarQuantidadeItem();
         }
-        
+
+        [When(@"informar a quantidade no editText \{(.*)}")]
+        public void WhenInformarAQuantidadeNoEditText(int quantidade)
+        {
+            pii.InformarQuantidadeItem(quantidade);
+        }
+
         [When(@"em seguida clicar no botao adicionar")]
         public void WhenEmSeguidaClicarNoBotaoAdicionar()
         {
