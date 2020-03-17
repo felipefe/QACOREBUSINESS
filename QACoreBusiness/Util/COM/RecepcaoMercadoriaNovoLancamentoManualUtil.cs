@@ -96,7 +96,7 @@ namespace QACoreBusiness.Util.COM
 
         public void StatusRecepcaoMercadoria(string status)
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             Assert.Equal(status, recepcao.ColunaStatusRecepcaoMercadoria.Text);
         }
 

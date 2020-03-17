@@ -408,7 +408,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaUrlImprimirMovimentacao()
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             Assert.Equal(gestor.UrlImprimirMovimentacao, driver.Url);
         }
 

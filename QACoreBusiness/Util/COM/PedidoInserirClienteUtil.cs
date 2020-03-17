@@ -65,7 +65,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueSelecionarClientePedido()
         {
-            Thread.Sleep(1000);   
+            Thread.Sleep(2000);   
             pedido.BotaoSelecionarCliente.Click();
         }
 

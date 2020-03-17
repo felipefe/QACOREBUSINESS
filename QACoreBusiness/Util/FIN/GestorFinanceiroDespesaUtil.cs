@@ -63,7 +63,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaValorMovimentacao()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             Assert.NotEqual("0,00", gestor.TextViewValorParcelasMovimentarDespesa.Text);
         }
 

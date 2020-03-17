@@ -86,7 +86,7 @@ Scenario: Finalizar lancamento de itens escriturados
 
 @finalizar_recepcao_mercadoria
 Scenario: Finalizar recepcao de mercadoria
-Given que eu clique no botao da header Novo Via NFe
+	Given que eu clique no botao da header Novo Via NFe
 	And selecione o arquivo xml da recepcao
 	And informe a operacao fiscal {'Recepção de Mercadoria'}
 	And clicar no botao Iniciar importacao da NFe

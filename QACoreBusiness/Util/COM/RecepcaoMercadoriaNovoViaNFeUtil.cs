@@ -8,6 +8,7 @@ using java.lang;
 using OpenQA.Selenium;
 using QACoreBusiness.Elements;
 using Xunit;
+using Thread = System.Threading.Thread;
 
 namespace QACoreBusiness.Util.COM
 {
@@ -70,7 +71,7 @@ namespace QACoreBusiness.Util.COM
         {
             recepcao.SelectProtocoloIcmsEscrituracao.Click();
             recepcao.SearchProtocoloIcmsEscrituracao.SendKeys(protocoloICMS);
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             recepcao.SearchProtocoloIcmsEscrituracao.SendKeys(Keys.Enter);
         }
 
@@ -87,21 +88,23 @@ namespace QACoreBusiness.Util.COM
 
         public void CliqueBotaoIniciarImportacaoXML()
         {
+            Thread.Sleep(1000);
             recepcao.BotaoIniciarImportacaoNFe.Click();
+            Thread.Sleep(2000);
         }
 
         public void CliqueConfirmarExcluirRecepcao()
         {
-            System.Threading.Thread.Sleep(800);
+            Thread.Sleep(800);
             recepcao.BotaoExcluirRecepcaoModal.Click();
-            System.Threading.Thread.Sleep(700);
+            Thread.Sleep(700);
         }
 
         public void SelecionarImpostosFederais(string impFederal)
         {
             recepcao.SelectImpostoFederalEscrituracao.Click();
             recepcao.SearchImpostoFederalEscrituracao.SendKeys(impFederal);
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             recepcao.SearchImpostoFederalEscrituracao.SendKeys(Keys.Enter);
         }
 
