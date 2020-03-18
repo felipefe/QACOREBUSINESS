@@ -115,6 +115,7 @@ Scenario: Finalizar recepcao de mercadoria
 	And o status da recepcao deve ser {'Conferência Física'}
 	And seja clicado no botao Conferencia Fisica de Recebimento nas actions
 	And seja redirecionado para tela de WMS Conferencia
+	And espere por {3} segundos ate ser processado
 	And o codigo sku e qtd. total sejam copidos de suas colunas
 	And seja feita a conferencia desses produtos
 	And clicar no botao Concluir Processo

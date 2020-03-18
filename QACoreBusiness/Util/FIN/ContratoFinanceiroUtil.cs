@@ -152,10 +152,10 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarPessoaContrato(string pessoa)
         {
-            Thread.Sleep(200);
+            Thread.Sleep(2000);
             contr.SelectPessoaContrato.Click();
             contr.SearchPessoaContrato.SendKeys(pessoa);
-            Thread.Sleep(1500);
+            Thread.Sleep(2500);
             contr.SearchPessoaContrato.SendKeys(Keys.Enter);
         }
 
@@ -171,25 +171,28 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarEmpresaContrato(string empresa)
         {
+            Thread.Sleep(1000);
             contr.SelectEmpresaContrato.Click();
             contr.SearchEmpresaContrato.SendKeys(empresa);
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             contr.SearchEmpresaContrato.SendKeys(Keys.Enter);
         }
 
         public void SelecionarCentroCusto(string cc)
         {
+            Thread.Sleep(1000);
             contr.SelectCentroCusto.Click();
             contr.SearchCentroCusto.SendKeys(cc);
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             contr.SearchCentroCusto.SendKeys(Keys.Enter);
         }
 
         public void SelecionarPlanoContas(string pc)
         {
+            Thread.Sleep(1000);
             contr.SelectPlanoContas.Click();
             contr.SearchPlanoContas.SendKeys(pc);
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             contr.SearchPlanoContas.SendKeys(Keys.Enter);
         }
 

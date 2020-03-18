@@ -69,9 +69,10 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarProtocoloICMS(string protocoloICMS)
         {
+            Thread.Sleep(1500);
             recepcao.SelectProtocoloIcmsEscrituracao.Click();
             recepcao.SearchProtocoloIcmsEscrituracao.SendKeys(protocoloICMS);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             recepcao.SearchProtocoloIcmsEscrituracao.SendKeys(Keys.Enter);
         }
 
@@ -102,9 +103,10 @@ namespace QACoreBusiness.Util.COM
 
         public void SelecionarImpostosFederais(string impFederal)
         {
+            Thread.Sleep(1000);
             recepcao.SelectImpostoFederalEscrituracao.Click();
             recepcao.SearchImpostoFederalEscrituracao.SendKeys(impFederal);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             recepcao.SearchImpostoFederalEscrituracao.SendKeys(Keys.Enter);
         }
 

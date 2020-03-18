@@ -56,7 +56,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaQuantidadeParcelasReceitasFiltradas(int quantidadeParcelas)
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             Assert.True(Int32.Parse(gestor.TextViewParcelasFiltradas.Text) > quantidadeParcelas);
         }
 
@@ -316,7 +316,7 @@ namespace QACoreBusiness.Util.FIN
             Thread.Sleep(3000);
             gestor.SelectContratoSubstituto.Click();
             gestor.SearchGenerico.SendKeys(numDoc);
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 
@@ -399,10 +399,10 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarMeioPagamentoMultiplosMeios(string meioPagamento)
         {
-            Thread.Sleep(800);
+            Thread.Sleep(2000);
             gestor.SelectMeioPagamentoMultiplosMeios.Click();
             gestor.SearchGenerico.SendKeys(meioPagamento);
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 
@@ -421,9 +421,10 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelecionarPlanoContasMultiplosMeios(string pC)
         {
+            Thread.Sleep(1000);
             gestor.SelectPlanoContasMultiplosMeios.Click();
             gestor.SearchGenerico.SendKeys(pC);
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 
@@ -481,9 +482,10 @@ namespace QACoreBusiness.Util.FIN
 
         public void SelectSegundoCentroCusto(string cc)
         {
+            Thread.Sleep(1000);
             gestor.SelectSegundoCentroCustoMultiplosMeios.Click();
             gestor.SearchGenerico.SendKeys(cc);
-            Thread.Sleep(1000);
+            Thread.Sleep(2500);
             gestor.SearchGenerico.SendKeys(Keys.Enter);
         }
 
@@ -682,6 +684,7 @@ namespace QACoreBusiness.Util.FIN
 
         public void ValidaRestoRateioSegundoMeio()
         {
+            Thread.Sleep(3000);
             Assert.Equal(rateioValorMultiplosMeio, Double.Parse(gestor.TextViewValorAddSecondMultiplosMeios.Text.Replace(".", "").Replace(",", ".")));
         }
 

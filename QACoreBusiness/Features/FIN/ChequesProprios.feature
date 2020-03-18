@@ -39,6 +39,8 @@ And clique no botao Salvar cheque
 Then valide que o cheque seja criado conforme numero informado
 And o status do cheque deve ser {'Em Caixa (sob guarda)'}
 And clique nas actions para Excluir cheque
+And espere por {2} segundos ate ser processado
 And confirme clicando no botao Excluir
+And espere por {3} segundos ate ser processado
 And o status do cheque deve ser {'Cancelado'}
 And feche o navegador quando terminar

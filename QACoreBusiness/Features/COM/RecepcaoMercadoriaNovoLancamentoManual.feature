@@ -236,6 +236,7 @@ Scenario: Conferir item recepcao
 	And o status da recepcao deve ser {'Conferência Física'}
 	And seja clicado no botao Conferencia Fisica de Recebimento nas actions
 	And seja redirecionado para tela de WMS Conferencia
+	And espere por {3} segundos ate ser processado
 	And o SKU seja copiado da coluna Código
 	And seja colado no editText Código do Produto
 	And a quantidade seja copiada da coluna Qtd. Total 
@@ -300,6 +301,7 @@ Scenario: Finalizar recepcao de mercadoria
 	And o status da recepcao deve ser {'Conferência Física'}
 	And seja clicado no botao Conferencia Fisica de Recebimento nas actions
 	And seja redirecionado para tela de WMS Conferencia
+	And espere por {3} segundos ate ser processado
 	And o SKU seja copiado da coluna Código
 	And seja colado no editText Código do Produto
 	And a quantidade seja copiada da coluna Qtd. Total 
@@ -368,6 +370,7 @@ Given que seja clicado no botao Novo Lancamento Manual
 	And o status da recepcao deve ser {'Conferência Física'}
 	And seja clicado no botao Conferencia Fisica de Recebimento nas actions
 	And seja redirecionado para tela de WMS Conferencia
+	And espere por {3} segundos ate ser processado
 	And o SKU seja copiado da coluna Código
 	And seja colado no editText Código do Produto
 	And a quantidade seja copiada da coluna Qtd. Total 

@@ -315,6 +315,7 @@ namespace QACoreBusiness.Util.COM
 
         public void CliqueBotaoCalcularEscrituracao()
         {
+            Thread.Sleep(1000);
             recepcao.BotaoCalcularEscrituracao.Click();
         }
 
