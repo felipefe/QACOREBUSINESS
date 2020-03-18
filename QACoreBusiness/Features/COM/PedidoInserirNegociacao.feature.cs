@@ -201,12 +201,14 @@ testRunner.And("inserir uma descriçao no editText {\'primeira negociacao\'}", (
 #line 49
 testRunner.And("selecionar a forma de pagamento {\'A vista no Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
-testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {2} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
-testRunner.Then("o valor total geral da negociçao deve ser maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
-testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("o valor total geral da negociçao deve ser maior que zero", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 53
+testRunner.And("uma mensagem de dados atualizado deve aparecer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
 testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

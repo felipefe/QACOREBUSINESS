@@ -72,6 +72,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueAdicionarItem()
         {
+            Thread.Sleep(2000);
             pedido.BotaoAddItemPedido.Click();
             Thread.Sleep(800);
         }

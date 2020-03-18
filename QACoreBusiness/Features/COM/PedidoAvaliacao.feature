@@ -19,6 +19,7 @@ And informar o tipo da entrega como {Entrega}
 And inserir uma data prevista em dias {1}
 And inserir o valor do frete {50.0}
 And clicar em salvar
+And espere por {3} segundos ate ser processado
 And que eu clique na sessao de Produtos
 And eu pesquisar no editText o produto por SKU {'TST0001'}
 And informar a quantidade no editText
@@ -28,9 +29,7 @@ And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'A vista no Dinheiro'}
 And clicar no botao Salvar Negociaçao
-And clicar no botao da action Trocar Vendedor
-And informar o vendedor {'Vendedor Pablo Escobar'}
-And clicar no botao trocar vendedor
+And espere por {3} segundos ate ser processado
 And eu clicar no botao Efetivar Pedido
 And o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
@@ -57,6 +56,7 @@ And informar o tipo da entrega como {Entrega}
 And inserir uma data prevista em dias {1}
 And inserir o valor do frete {50.0}
 And clicar em salvar
+And espere por {3} segundos ate ser processado
 And que eu clique na sessao de Produtos
 And eu pesquisar no editText o produto por SKU {'TST0001'}
 And informar a quantidade no editText
@@ -66,9 +66,7 @@ And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'Boleto 30/60/90'}
 And clicar no botao Salvar Negociaçao
-And clicar no botao da action Trocar Vendedor
-And informar o vendedor {'Vendedor Pablo Escobar'}
-And clicar no botao trocar vendedor
+And espere por {3} segundos ate ser processado
 And eu clicar no botao Efetivar Pedido
 And o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}

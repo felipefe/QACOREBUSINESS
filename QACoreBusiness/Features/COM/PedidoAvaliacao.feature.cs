@@ -121,48 +121,46 @@ testRunner.And("inserir o valor do frete {50.0}", ((string)(null)), ((TechTalk.S
 #line 21
 testRunner.And("clicar em salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
-testRunner.And("que eu clique na sessao de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
-testRunner.And("eu pesquisar no editText o produto por SKU {\'TST0001\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("que eu clique na sessao de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-testRunner.And("informar a quantidade no editText", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("eu pesquisar no editText o produto por SKU {\'TST0001\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
-testRunner.And("em seguida clicar no botao adicionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informar a quantidade no editText", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
-testRunner.And("que eu cliquei na sessao de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("em seguida clicar no botao adicionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 27
-testRunner.And("eu clicar no botao Criar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("que eu cliquei na sessao de Pagamento", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
-testRunner.And("inserir uma descriçao no editText {\'primeira negociacao\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("eu clicar no botao Criar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
-testRunner.And("selecionar a forma de pagamento {\'A vista no Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("inserir uma descriçao no editText {\'primeira negociacao\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
-testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecionar a forma de pagamento {\'A vista no Dinheiro\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
-testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
-testRunner.And("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
-testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
 testRunner.And("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 34
 testRunner.And("o sistema redireciona para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
+#line 35
 testRunner.And("a situaçao do pedido deve ser {\'Avaliação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 36
 testRunner.And("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 37
 testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 38
 testRunner.And("seja redirecionado para tela CRM Avaliar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 39
 testRunner.And("eu clicar no botao Prosseguir", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 40
 testRunner.Then("serei redirecionado para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 42
+#line 41
 testRunner.And("a situaçao do pedido deve ser {\'Separação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
+#line 42
 testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -176,32 +174,34 @@ testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bloquear pedido", null, new string[] {
                         "bloquear_pedido"});
-#line 49
+#line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 50
+#line 49
 testRunner.When("o usuario clicar no botao Criar Novo Pedido {Nova Venda de Mercadorias e Serviços" +
                     "}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
+#line 50
 testRunner.And("eu pesquisar no editText o cliente por nome {\'Luiz Inacio da Silva - Restrição\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
+#line 51
 testRunner.And("em seguida no botao selecionar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 52
 testRunner.And("que eu cliquei na sessao de Entregas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 53
 testRunner.And("clicar no botao Definir Entrega", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 54
 testRunner.And("informar a transportadora {\'Transportadora ACME\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 55
 testRunner.And("informar o tipo da entrega como {Entrega}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 56
 testRunner.And("inserir uma data prevista em dias {1}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 57
 testRunner.And("inserir o valor do frete {50.0}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 58
 testRunner.And("clicar em salvar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
 testRunner.And("que eu clique na sessao de Produtos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
@@ -221,34 +221,30 @@ testRunner.And("selecionar a forma de pagamento {\'Boleto 30/60/90\'}", ((string
 #line 68
 testRunner.And("clicar no botao Salvar Negociaçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
-testRunner.And("clicar no botao da action Trocar Vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
-testRunner.And("informar o vendedor {\'Vendedor Pablo Escobar\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
-testRunner.And("clicar no botao trocar vendedor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
 testRunner.And("eu clicar no botao Efetivar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 71
 testRunner.And("o sistema redireciona para index de pedidos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 72
 testRunner.And("a situaçao do pedido deve ser {\'Avaliação\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 73
 testRunner.And("que eu acesse as actions do pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 74
 testRunner.And("clique no botao Avaliaçao do Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 75
 testRunner.And("seja redirecionado para tela CRM Avaliar Pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 76
 testRunner.And("um dos motivos seja {\'Pedido possui parte da negociação a prazo\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 77
 testRunner.And("outro motivo seja {\'Cliente com situação restrita para vendas à prazo\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 78
 testRunner.And("eu clicar no botao Bloquear", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 79
 testRunner.Then("serei redirecionado para index de pedido", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 82
+#line 80
 testRunner.And("a situaçao do pedido deve ser {\'Não Liberado / Recusado\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 81
 testRunner.And("feche o navegador quando terminar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

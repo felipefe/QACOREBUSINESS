@@ -47,6 +47,7 @@ And que eu cliquei na sessao de Pagamento
 And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'A vista no Dinheiro'}
+And espere por {2} segundos ate ser processado
 And clicar no botao Salvar Negociaçao
 Then o valor total geral da negociçao deve ser maior que zero
 And uma mensagem de dados atualizado deve aparecer

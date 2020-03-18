@@ -31,9 +31,9 @@ And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'A vista no Dinheiro'}
 And clicar no botao Salvar Negociaçao
-And clicar no botao da action Trocar Vendedor
-And informar o vendedor {'Vendedor Pablo Escobar'}
-And clicar no botao trocar vendedor
+#And clicar no botao da action Trocar Vendedor
+#And informar o vendedor {'Vendedor Pablo Escobar'}
+#And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 And o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
@@ -97,9 +97,9 @@ And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'A vista no Dinheiro'}
 And clicar no botao Salvar Negociaçao
-And clicar no botao da action Trocar Vendedor
-And informar o vendedor {'Vendedor Pablo Escobar'}
-And clicar no botao trocar vendedor
+#And clicar no botao da action Trocar Vendedor
+#And informar o vendedor {'Vendedor Pablo Escobar'}
+#And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 And o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
@@ -164,9 +164,9 @@ And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'A vista no Dinheiro'}
 And clicar no botao Salvar Negociaçao
-And clicar no botao da action Trocar Vendedor
-And informar o vendedor {'Vendedor Pablo Escobar'}
-And clicar no botao trocar vendedor
+#And clicar no botao da action Trocar Vendedor
+#And informar o vendedor {'Vendedor Pablo Escobar'}
+#And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 And o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}
@@ -229,9 +229,9 @@ And eu clicar no botao Criar Negociaçao
 And inserir uma descriçao no editText {'primeira negociacao'}
 And selecionar a forma de pagamento {'A vista no Dinheiro'}
 And clicar no botao Salvar Negociaçao
-And clicar no botao da action Trocar Vendedor
-And informar o vendedor {'Vendedor Pablo Escobar'}
-And clicar no botao trocar vendedor
+#And clicar no botao da action Trocar Vendedor
+#And informar o vendedor {'Vendedor Pablo Escobar'}
+#And clicar no botao trocar vendedor
 And eu clicar no botao Efetivar Pedido
 And o sistema redireciona para index de pedidos
 And a situaçao do pedido deve ser {'Avaliação'}

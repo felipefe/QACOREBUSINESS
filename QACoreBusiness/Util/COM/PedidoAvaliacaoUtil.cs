@@ -3,6 +3,7 @@ using QACoreBusiness.Elements;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using Xunit;
 
 namespace QACoreBusiness.Util
@@ -55,6 +56,7 @@ namespace QACoreBusiness.Util
 
         public void CliqueEfetivarPedido()
         {
+            Thread.Sleep(4000);
             avaliar.ActionsEfetivarPedido.Click();
         }
 

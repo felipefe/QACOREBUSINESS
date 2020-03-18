@@ -56,20 +56,22 @@ namespace QACoreBusiness.Util
 
         public void DescricaoNegociacaoPedido(String descricao)
         {
+            Thread.Sleep(2000);
             pedido.InputDescricaoNegociacao.SendKeys(descricao);
         }
 
         public void SelecionarFormaPagamento(String formaPagamento)
         {
             pedido.SelectFormaPagamento.Click();
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             pedido.SearchFormaPagamento.SendKeys(formaPagamento);
-            Thread.Sleep(2000);
+            Thread.Sleep(3500);
             pedido.SearchFormaPagamento.SendKeys(Keys.Enter);
         }
 
         public void SalvarNegociacao()
         {
+            Thread.Sleep(2000);
             pedido.BotaoSalvarNegociacao.Click();
         }
 

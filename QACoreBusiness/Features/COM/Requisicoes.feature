@@ -42,7 +42,7 @@ And a situacao da requisicao deve ser {'Solicitada'}
 And armazene o codigo da requisicao
 And clique nas actions Gerar OS de Producao
 And confirme clicando no botao Gerar Producao da modal
-And espere por {3} segundos ate ser processado
+And espere por {5} segundos ate ser processado
 And a situacao da requisicao deve ser {'Em processo de Produção'}
 And clique nas actions Detalhes da Requisicao
 And memorize o numero da OS Gerada pela requicao
@@ -73,12 +73,14 @@ And confirme clicando no botao Criar Execuçoes
 And que seja clicado Editar nas actions da OS
 And o sistema deve redirecionar para o edit da OS criada
 When clique para editar item de OS
+And espere por {3} segundos ate ser processado
 And valide que seja criada a execuçao
 And clique nas actions para Confirmar Execuçao
 And clique Confirmar no botao da modal
 And espere por {3} segundos ate ser processado
 And clique no botao Concluir Item
 And confirme clicando no botao Concluir da modal
+And espere por {3} segundos ate ser processado
 And o usuário deve acessar o contexto by url {'/COS/OrdemServico'}
 And coluna Itens Finalizados como {'Sim'}
 And clique Encaminhar nas actions da OS

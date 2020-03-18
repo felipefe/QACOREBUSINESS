@@ -183,7 +183,7 @@ testRunner.And("clique nas actions Gerar OS de Producao", ((string)(null)), ((Te
 #line 44
 testRunner.And("confirme clicando no botao Gerar Producao da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
-testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {5} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
 testRunner.And("a situacao da requisicao deve ser {\'Em processo de Produção\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
@@ -245,54 +245,58 @@ testRunner.And("o sistema deve redirecionar para o edit da OS criada", ((string)
 #line 75
 testRunner.When("clique para editar item de OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
-testRunner.And("valide que seja criada a execuçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
-testRunner.And("clique nas actions para Confirmar Execuçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
-testRunner.And("clique Confirmar no botao da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
 testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+testRunner.And("valide que seja criada a execuçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+testRunner.And("clique nas actions para Confirmar Execuçao", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+testRunner.And("clique Confirmar no botao da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 80
-testRunner.And("clique no botao Concluir Item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
-testRunner.And("confirme clicando no botao Concluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Concluir Item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
-testRunner.And("o usuário deve acessar o contexto by url {\'/COS/OrdemServico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("confirme clicando no botao Concluir da modal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
-testRunner.And("coluna Itens Finalizados como {\'Sim\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("espere por {3} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
-testRunner.And("clique Encaminhar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("o usuário deve acessar o contexto by url {\'/COS/OrdemServico\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
-testRunner.And("selecione a situação {\'Produzida\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("coluna Itens Finalizados como {\'Sim\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
-testRunner.And("selecione o Grupo de usuário {\'Administradores\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique Encaminhar nas actions da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 87
-testRunner.And("clique no botao Encaminhar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecione a situação {\'Produzida\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
-testRunner.And("valide que a situacao da OS esteja na situacao encaminhada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("selecione o Grupo de usuário {\'Administradores\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 89
-testRunner.And("memorize o numero da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao Encaminhar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
-testRunner.And("clique nas actions Finalizar O.S/O.P", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("valide que a situacao da OS esteja na situacao encaminhada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
-testRunner.And("informe no textArea uma mensagem de Conclusão {\'OS Concluída 100% level hard\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("memorize o numero da OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
-testRunner.And("marque a flag para Tentar Finalizar Todos os Itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique nas actions Finalizar O.S/O.P", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
-testRunner.And("confirme clicando no botao Finalizar OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("informe no textArea uma mensagem de Conclusão {\'OS Concluída 100% level hard\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
-testRunner.And("espere por {8} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("marque a flag para Tentar Finalizar Todos os Itens", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95
-testRunner.And("clique no botao da Header Gerenciar O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("confirme clicando no botao Finalizar OS", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 96
-testRunner.Then("valide a OS memorizada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("espere por {8} segundos ate ser processado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 97
-testRunner.And("o status final da OS deve ser {\'Finalizada\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("clique no botao da Header Gerenciar O.S", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
-testRunner.And("o usuário deve acessar o contexto by url {\'/COM/ProdutoRequisicao\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Then("valide a OS memorizada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 99
-testRunner.And("validar o numero da requisicao armazenada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("o status final da OS deve ser {\'Finalizada\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 100
+testRunner.And("o usuário deve acessar o contexto by url {\'/COM/ProdutoRequisicao\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+testRunner.And("validar o numero da requisicao armazenada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
 testRunner.And("a situacao da requisicao deve ser {\'Solicitada\'}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

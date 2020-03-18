@@ -18,6 +18,7 @@ And informar o tipo da entrega como {Entrega}
 And inserir uma data prevista em dias {1}
 And inserir o valor do frete {50.0}
 And clicar em salvar
+And espere por {2} segundos ate ser processado
 Then uma mensagem de dados atualizado deve aparecer
 And feche o navegador quando terminar
 
@@ -34,5 +35,6 @@ And informar o tipo da entrega como {Entrega Futura}
 And inserir uma data prevista em dias {15}
 And inserir o valor do frete {50.0}
 And clicar em salvar
+And espere por {2} segundos ate ser processado
 Then uma mensagem de dados atualizado deve aparecer
 And feche o navegador quando terminar
